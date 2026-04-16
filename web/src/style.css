@@ -1,0 +1,101 @@
+:root {
+  --bg-deep: #0d1b2a;
+  --bg-panel: #1b2838;
+  --bg-panel-hover: #243447;
+  --border: #2d3d52;
+  --text: #e8eef4;
+  --text-muted: #8fa3b8;
+  --accent: #3d9cf5;
+  --accent-hot: #f5a623;
+  --danger: #e85d5d;
+  --success: #3dd68c;
+  --radius: 8px;
+  --header-h: 52px;
+  --footer-h: 28px;
+  --sidebar-w: 240px;
+  --sidebar-w-collapsed: 56px;
+  font-family: 'Segoe UI', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei',
+    sans-serif;
+  line-height: 1.45;
+  color: var(--text);
+  background: var(--bg-deep);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg-deep);
+}
+
+#app {
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+input,
+select {
+  font: inherit;
+}
+
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel-hover);
+  color: var(--text);
+}
+
+.btn:hover {
+  border-color: var(--accent);
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, #2a7cc9, #1f5f9a);
+  border-color: #3d9cf5;
+  color: #fff;
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  background: transparent;
+}
+
+.field-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+/* Leaflet z-index below modals */
+.leaflet-container {
+  font-family: inherit;
+}

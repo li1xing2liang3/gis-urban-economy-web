@@ -1,0 +1,25 @@
+{
+  "name": "gis-economy-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "cesium": "^1.115.0",
+    "leaflet": "^1.9.4",
+    "shpjs": "^6.2.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.15",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "typescript": "~5.7.2",
+    "vite": "^5.4.11",
+    "vite-plugin-cesium": "^1.2.23"
+  }
+}
