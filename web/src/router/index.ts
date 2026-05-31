@@ -6,8 +6,13 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      name: 'home',
+      component: () => import('@/views/HomeView.vue'),
+      meta: { title: 'AI+GIS 城市低空经济驱动的城市经济空间展示平台（融合武汉智眼）' },
+    },
+    {
+      path: '/',
       component: MainLayout,
-      redirect: '/overview',
       children: [
         {
           path: 'overview',
