@@ -9,22 +9,31 @@
             <strong>{{ s.name }}</strong>
             <span class="tag">{{ s.status }}</span>
           </div>
-          <div class="meta">{{ s.time }} · {{ s.res }}</div>
+          <div class="meta">{{ s.time }} · {{ s.res }} · 覆盖质量 {{ s.quality }}%</div>
           <label class="check">
             <input v-model="s.overlay" type="checkbox" />
             地图叠加
           </label>
           <label class="check">
-            <input v-model="s.model" type="checkbox" />
+            <input v-model="s.model" type="checkbox" @change="syncModel" />
             参与活力 / 商圈模型
           </label>
         </li>
       </ul>
+      <p v-if="sources.some((s) => s.model)" class="boost">
+        对活力分析精度提升约：{{ (gis.uavQualityBoost * 100).toFixed(0) }}%（演示；与全局 uav 开关同步）
+      </p>
       <div class="links">
-        <RouterLink class="btn btn-ghost" to="/scene3d">打开三维视点</RouterLink>
+        <RouterLink
+          class="btn btn-ghost"
+          :to="{ name: 'scene3d', query: { r: 'p:30.5928,114.3055' } }"
+        >
+          打开三维视点（带位置）
+        </RouterLink>
         <RouterLink class="btn btn-ghost" to="/overview">同位置二维总览</RouterLink>
+        <RouterLink class="btn btn-ghost" to="/vitality">精细区域 → 经济活力</RouterLink>
       </div>
-      <p class="hint">正射 / 倾斜切片与航线矢量待接 WMTS / 矢量服务后替换演示几何。</p>
+      <p class="hint">正射 / 倾斜切片与航线矢量可接 WMTS；参与模型时与第 3 页活力联动。</p>
     </aside>
   </div>
 </template>
@@ -35,6 +44,7 @@ import { RouterLink } from 'vue-router';
 import L from 'leaflet';
 import { useLeafletMap } from '@/composables/useLeafletMap';
 import { WUHAN_CENTER } from '@/utils/mapConstants';
+import { gis } from '@/stores/gisState';
 
 const mapEl = ref<HTMLElement | null>(null);
 const mapInstance = useLeafletMap(mapEl);
@@ -46,6 +56,7 @@ const sources = reactive([
     time: '2026-03-18',
     res: '5 cm',
     status: '已入库',
+    quality: 86,
     overlay: true,
     model: true,
   },
@@ -55,10 +66,18 @@ const sources = reactive([
     time: '2026-03-22',
     res: 'LOD2',
     status: '加载中',
+    quality: 62,
     overlay: false,
     model: false,
   },
 ]);
+
+function syncModel() {
+  gis.uavInVitalityModel = sources.some((s) => s.model);
+  const maxQ = sources.filter((s) => s.model).map((s) => s.quality);
+  gis.uavQualityBoost = maxQ.length ? Math.max(0.04, 0.001 * (maxQ[0]! - 50)) : 0.08;
+}
+syncModel();
 
 let routeLine: L.Polyline | null = null;
 let coverage: L.Polygon | null = null;
@@ -179,5 +198,10 @@ watch([mapInstance, () => sources.map((s) => s.overlay).join(',')], drawUav, { i
   color: var(--text-muted);
   line-height: 1.4;
   margin-top: 12px;
+}
+.boost {
+  font-size: 12px;
+  color: var(--success);
+  margin: 8px 0 0;
 }
 </style>

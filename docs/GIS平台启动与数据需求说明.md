@@ -31,11 +31,11 @@ npm -v
 
 ### 2. 前端代码在哪个文件夹？
 
-本仓库里，**网页前端的工程目录**是：
+本仓库里，**网页前端的工程目录**是根目录下的 **`web`** 文件夹（若你本机路径为 `e:\GIS project`，则完整路径为 `e:\GIS project\web`）。
 
-`e:\GIS project\web`
+**说明文档**集中在 **`docs`** 目录（本文件即位于 `docs/GIS平台启动与数据需求说明.md`）。
 
-后面所有命令，都要么在这个文件夹里执行，要么使用下面「一条命令启动」里从项目根调用的方式。
+后面所有命令，要么在 `web` 目录里执行，要么使用下面「一条命令启动」里从仓库根目录调用的方式。
 
 ---
 
@@ -124,53 +124,49 @@ Set-Location "e:\GIS project\web"; npm install
 
 ## 第二部分：湖北省 Shapefile 已如何接入、你如何更新
 
-### 1. 你放在项目根目录的原始文件
+### 1. 仓库里的两份数据（职责不同）
 
-你在 **`e:\GIS project`**（与 `web` 文件夹同级）下放置的湖北省数据，典型为一组文件：
+| 位置 | 作用 |
+|------|------|
+| **`data/geospatial/boundaries/hubei-province/`** | **权威数据源**：放置中文文件名的 `湖北省.shp` 全套（`.shx`、`.dbf`、`.prj` 必需；`.cpg`、`.sbn`、`.sbx` 可选）。适合版本管理、在 QGIS 中编辑。 |
+| **`web/public/geo/hubei/hubei.*`** | **给浏览器用**：由脚本从上一行目录**复制**而来，文件名统一为 **`hubei`** 前缀（避免 URL 中文编码问题）。 |
 
-- `.shp` / `.shx` / `.dbf` / `.prj`（必需）
-- `.cpg`、`.sbn`、`.sbx`（可选，有则一并保留）
+程序实际请求的是：`/geo/hubei/hubei.shp` 等（由 `shpjs` 按不含扩展名的 URL 前缀自动拼接扩展名）。
 
-这些是 **Shapefile** 标准格式，**浏览器不能直接读项目根目录**里的路径，因此工程内增加了一套供前端访问的副本。
+### 2. 从数据源同步到前端（克隆或更新省界后执行）
 
-### 2. 前端实际读取的位置（必须存在）
+在**仓库根目录**打开终端，执行其一即可：
 
-开发服务器只会对外提供 **`web` 文件夹下 `public` 目录**里的静态文件。当前省界副本路径为：
+```bash
+node scripts/sync-hubei-to-web-public.mjs
+```
 
-`e:\GIS project\web\public\geo\hubei\`
+或在 **`web`** 目录下：
 
-文件名已统一为英文前缀（避免 URL 编码问题）：
+```powershell
+npm run sync:geo
+```
 
-| 文件 |
-|------|
-| `hubei.shp` |
-| `hubei.shx` |
-| `hubei.dbf` |
-| `hubei.prj` |
-| `hubei.cpg`（若有） |
-| `hubei.sbn`、`hubei.sbx`（若有） |
-
-程序会请求：`/geo/hubei/hubei.shp` 等（由 `shpjs` 按前缀自动拼接扩展名）。
+执行后应看到 `hubei.shp`、`hubei.dbf` 等写入 `web/public/geo/hubei/`。
 
 ### 3. 地图上的效果
 
-所有使用 **Leaflet 二维地图**的页面（总览、活力、商圈、人口、动态、低空等）在加载时，会**自动请求**上述 shapefile，解析为 GeoJSON 后叠加**湖北省边界**（蓝色描边、浅蓝填充），并**自动缩放到全省范围**（`maxZoom` 限制为约 9 级，避免过近）。
+所有使用 **Leaflet 二维地图**的页面（总览、活力、商圈、人口、动态、低空等）在加载时，会**自动请求** `public` 下的 shapefile，解析为 GeoJSON 后叠加**湖北省边界**（蓝色描边、浅蓝填充），并**自动缩放到全省范围**（`maxZoom` 限制为约 9 级，避免过近）。
 
 若文件缺失或损坏，控制台会打印警告，地图会退回**以武汉为中心的默认缩放**。
 
 ### 4. 你以后更新了省界数据，要怎么做？
 
-1. 用 QGIS / ArcGIS 等导出新的 shapefile（仍建议 WGS84 经纬度，与当前 `hubei.prj` 一致可减少问题）。
-2. 将新文件**复制并覆盖**到 `web\public\geo\hubei\`，且**仍命名为** `hubei.shp`、`hubei.dbf` 等（与上表一致）。
-3. 保存后**刷新浏览器**即可；若 `npm run dev` 未在运行，需重新启动。
-
-> 若你希望**继续只在项目根**维护一份数据，可在资源管理器中手动复制到 `web\public\geo\hubei\`，或日后加一条拷贝脚本自动化。
+1. 用 QGIS / ArcGIS 等导出新的 shapefile（仍建议 WGS84 经纬度，与 `湖北省.prj` / `hubei.prj` 一致可减少问题）。
+2. **覆盖** `data/geospatial/boundaries/hubei-province/` 下的 `湖北省.*` 文件。
+3. 在仓库根目录执行 **`node scripts/sync-hubei-to-web-public.mjs`**（或 `web` 下 **`npm run sync:geo`**）。
+4. 刷新浏览器；若 `npm run dev` 未在运行，需重新启动后再访问。
 
 ---
 
 ## 第三部分：数据需求说明（需要哪些数据、支撑哪些功能）
 
-下列与《GIS前端页面设计说明》及当前前端路由**一一对应**。坐标系建议统一为 **CGCS2000 / WGS84（EPSG:4326 经纬度）**；栅格切片常用 **Web 墨卡托（EPSG:3857）** 或与底图一致。
+下列与《GIS前端页面设计说明》（见 **`docs/GIS前端页面设计说明.md`**）及当前前端路由**一一对应**。坐标系建议统一为 **CGCS2000 / WGS84（EPSG:4326 经纬度）**；栅格切片常用 **Web 墨卡托（EPSG:3857）** 或与底图一致。
 
 ### 1. 全局与基础设施
 

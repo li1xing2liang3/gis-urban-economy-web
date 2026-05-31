@@ -1,0 +1,4222 @@
+{
+  "meta": {
+    "region": "湖北省",
+    "unit": "合成指数（0–100）",
+    "monthlyRange": {
+      "start": "2024-05",
+      "end": "2026-04"
+    },
+    "seed": 20260408,
+    "indicators": [
+      "popIndex",
+      "econIndex",
+      "vitalityIndex",
+      "nightEconomyIdx",
+      "consumeIdx",
+      "trafficReachIdx",
+      "inboundFlowIdx"
+    ],
+    "disclaimer": "各地月度指数为模拟合成，非官方统计。"
+  },
+  "cities": [
+    {
+      "id": "420100",
+      "name": "武汉市",
+      "tier": 1,
+      "monthly": [
+        {
+          "month": "2024-05",
+          "popIndex": 81,
+          "econIndex": 68,
+          "vitalityIndex": 72,
+          "nightEconomyIdx": 93,
+          "consumeIdx": 76,
+          "trafficReachIdx": 92,
+          "inboundFlowIdx": 75
+        },
+        {
+          "month": "2024-06",
+          "popIndex": 86,
+          "econIndex": 73,
+          "vitalityIndex": 76,
+          "nightEconomyIdx": 92,
+          "consumeIdx": 81,
+          "trafficReachIdx": 93,
+          "inboundFlowIdx": 73
+        },
+        {
+          "month": "2024-07",
+          "popIndex": 92,
+          "econIndex": 75,
+          "vitalityIndex": 83,
+          "nightEconomyIdx": 96,
+          "consumeIdx": 82,
+          "trafficReachIdx": 91,
+          "inboundFlowIdx": 82
+        },
+        {
+          "month": "2024-08",
+          "popIndex": 100,
+          "econIndex": 82,
+          "vitalityIndex": 80,
+          "nightEconomyIdx": 94,
+          "consumeIdx": 81,
+          "trafficReachIdx": 90,
+          "inboundFlowIdx": 81
+        },
+        {
+          "month": "2024-09",
+          "popIndex": 95,
+          "econIndex": 74,
+          "vitalityIndex": 78,
+          "nightEconomyIdx": 94,
+          "consumeIdx": 84,
+          "trafficReachIdx": 94,
+          "inboundFlowIdx": 75
+        },
+        {
+          "month": "2024-10",
+          "popIndex": 97,
+          "econIndex": 81,
+          "vitalityIndex": 83,
+          "nightEconomyIdx": 99,
+          "consumeIdx": 87,
+          "trafficReachIdx": 93,
+          "inboundFlowIdx": 80
+        },
+        {
+          "month": "2024-11",
+          "popIndex": 85,
+          "econIndex": 72,
+          "vitalityIndex": 72,
+          "nightEconomyIdx": 94,
+          "consumeIdx": 84,
+          "trafficReachIdx": 96,
+          "inboundFlowIdx": 72
+        },
+        {
+          "month": "2024-12",
+          "popIndex": 81,
+          "econIndex": 71,
+          "vitalityIndex": 74,
+          "nightEconomyIdx": 95,
+          "consumeIdx": 82,
+          "trafficReachIdx": 89,
+          "inboundFlowIdx": 73
+        },
+        {
+          "month": "2025-01",
+          "popIndex": 80,
+          "econIndex": 71,
+          "vitalityIndex": 68,
+          "nightEconomyIdx": 87,
+          "consumeIdx": 79,
+          "trafficReachIdx": 88,
+          "inboundFlowIdx": 66
+        },
+        {
+          "month": "2025-02",
+          "popIndex": 80,
+          "econIndex": 71,
+          "vitalityIndex": 68,
+          "nightEconomyIdx": 92,
+          "consumeIdx": 83,
+          "trafficReachIdx": 89,
+          "inboundFlowIdx": 73
+        },
+        {
+          "month": "2025-03",
+          "popIndex": 81,
+          "econIndex": 69,
+          "vitalityIndex": 75,
+          "nightEconomyIdx": 89,
+          "consumeIdx": 79,
+          "trafficReachIdx": 89,
+          "inboundFlowIdx": 65
+        },
+        {
+          "month": "2025-04",
+          "popIndex": 80,
+          "econIndex": 71,
+          "vitalityIndex": 72,
+          "nightEconomyIdx": 86,
+          "consumeIdx": 77,
+          "trafficReachIdx": 83,
+          "inboundFlowIdx": 64
+        },
+        {
+          "month": "2025-05",
+          "popIndex": 77,
+          "econIndex": 68,
+          "vitalityIndex": 69,
+          "nightEconomyIdx": 81,
+          "consumeIdx": 74,
+          "trafficReachIdx": 87,
+          "inboundFlowIdx": 68
+        },
+        {
+          "month": "2025-06",
+          "popIndex": 82,
+          "econIndex": 68,
+          "vitalityIndex": 63,
+          "nightEconomyIdx": 85,
+          "consumeIdx": 75,
+          "trafficReachIdx": 84,
+          "inboundFlowIdx": 71
+        },
+        {
+          "month": "2025-07",
+          "popIndex": 84,
+          "econIndex": 71,
+          "vitalityIndex": 75,
+          "nightEconomyIdx": 85,
+          "consumeIdx": 74,
+          "trafficReachIdx": 91,
+          "inboundFlowIdx": 81
+        },
+        {
+          "month": "2025-08",
+          "popIndex": 94,
+          "econIndex": 67,
+          "vitalityIndex": 70,
+          "nightEconomyIdx": 85,
+          "consumeIdx": 80,
+          "trafficReachIdx": 89,
+          "inboundFlowIdx": 79
+        },
+        {
+          "month": "2025-09",
+          "popIndex": 90,
+          "econIndex": 73,
+          "vitalityIndex": 79,
+          "nightEconomyIdx": 93,
+          "consumeIdx": 81,
+          "trafficReachIdx": 94,
+          "inboundFlowIdx": 82
+        },
+        {
+          "month": "2025-10",
+          "popIndex": 95,
+          "econIndex": 75,
+          "vitalityIndex": 79,
+          "nightEconomyIdx": 97,
+          "consumeIdx": 86,
+          "trafficReachIdx": 96,
+          "inboundFlowIdx": 71
+        },
+        {
+          "month": "2025-11",
+          "popIndex": 92,
+          "econIndex": 82,
+          "vitalityIndex": 75,
+          "nightEconomyIdx": 94,
+          "consumeIdx": 81,
+          "trafficReachIdx": 95,
+          "inboundFlowIdx": 69
+        },
+        {
+          "month": "2025-12",
+          "popIndex": 88,
+          "econIndex": 78,
+          "vitalityIndex": 83,
+          "nightEconomyIdx": 99,
+          "consumeIdx": 89,
+          "trafficReachIdx": 91,
+          "inboundFlowIdx": 65
+        },
+        {
+          "month": "2026-01",
+          "popIndex": 89,
+          "econIndex": 79,
+          "vitalityIndex": 84,
+          "nightEconomyIdx": 93,
+          "consumeIdx": 85,
+          "trafficReachIdx": 95,
+          "inboundFlowIdx": 76
+        },
+        {
+          "month": "2026-02",
+          "popIndex": 92,
+          "econIndex": 81,
+          "vitalityIndex": 78,
+          "nightEconomyIdx": 98,
+          "consumeIdx": 88,
+          "trafficReachIdx": 94,
+          "inboundFlowIdx": 72
+        },
+        {
+          "month": "2026-03",
+          "popIndex": 83,
+          "econIndex": 83,
+          "vitalityIndex": 83,
+          "nightEconomyIdx": 95,
+          "consumeIdx": 88,
+          "trafficReachIdx": 92,
+          "inboundFlowIdx": 68
+        },
+        {
+          "month": "2026-04",
+          "popIndex": 92,
+          "econIndex": 75,
+          "vitalityIndex": 80,
+          "nightEconomyIdx": 91,
+          "consumeIdx": 84,
+          "trafficReachIdx": 93,
+          "inboundFlowIdx": 64
+        }
+      ]
+    },
+    {
+      "id": "420200",
+      "name": "黄石市",
+      "tier": 3,
+      "monthly": [
+        {
+          "month": "2024-05",
+          "popIndex": 76,
+          "econIndex": 56,
+          "vitalityIndex": 87,
+          "nightEconomyIdx": 83,
+          "consumeIdx": 55,
+          "trafficReachIdx": 72,
+          "inboundFlowIdx": 84
+        },
+        {
+          "month": "2024-06",
+          "popIndex": 82,
+          "econIndex": 60,
+          "vitalityIndex": 91,
+          "nightEconomyIdx": 85,
+          "consumeIdx": 60,
+          "trafficReachIdx": 71,
+          "inboundFlowIdx": 88
+        },
+        {
+          "month": "2024-07",
+          "popIndex": 84,
+          "econIndex": 65,
+          "vitalityIndex": 91,
+          "nightEconomyIdx": 89,
+          "consumeIdx": 60,
+          "trafficReachIdx": 70,
+          "inboundFlowIdx": 81
+        },
+        {
+          "month": "2024-08",
+          "popIndex": 80,
+          "econIndex": 69,
+          "vitalityIndex": 90,
+          "nightEconomyIdx": 87,
+          "consumeIdx": 59,
+          "trafficReachIdx": 72,
+          "inboundFlowIdx": 78
+        },
+        {
+          "month": "2024-09",
+          "popIndex": 73,
+          "econIndex": 67,
+          "vitalityIndex": 97,
+          "nightEconomyIdx": 87,
+          "consumeIdx": 57,
+          "trafficReachIdx": 78,
+          "inboundFlowIdx": 74
+        },
+        {
+          "month": "2024-10",
+          "popIndex": 72,
+          "econIndex": 64,
+          "vitalityIndex": 85,
+          "nightEconomyIdx": 90,
+          "consumeIdx": 58,
+          "trafficReachIdx": 72,
+          "inboundFlowIdx": 71
+        },
+        {
+          "month": "2024-11",
+          "popIndex": 76,
+          "econIndex": 63,
+          "vitalityIndex": 92,
+          "nightEconomyIdx": 86,
+          "consumeIdx": 59,
+          "trafficReachIdx": 73,
+          "inboundFlowIdx": 69
+        },
+        {
+          "month": "2024-12",
+          "popIndex": 73,
+          "econIndex": 63,
+          "vitalityIndex": 90,
+          "nightEconomyIdx": 89,
+          "consumeIdx": 56,
+          "trafficReachIdx": 70,
+          "inboundFlowIdx": 79
+        },
+        {
+          "month": "2025-01",
+          "popIndex": 70,
+          "econIndex": 65,
+          "vitalityIndex": 88,
+          "nightEconomyIdx": 86,
+          "consumeIdx": 52,
+          "trafficReachIdx": 69,
+          "inboundFlowIdx": 73
+        },
+        {
+          "month": "2025-02",
+          "popIndex": 64,
+          "econIndex": 56,
+          "vitalityIndex": 83,
+          "nightEconomyIdx": 81,
+          "consumeIdx": 53,
+          "trafficReachIdx": 70,
+          "inboundFlowIdx": 80
+        },
+        {
+          "month": "2025-03",
+          "popIndex": 69,
+          "econIndex": 62,
+          "vitalityIndex": 78,
+          "nightEconomyIdx": 86,
+          "consumeIdx": 53,
+          "trafficReachIdx": 64,
+          "inboundFlowIdx": 72
+        },
+        {
+          "month": "2025-04",
+          "popIndex": 65,
+          "econIndex": 57,
+          "vitalityIndex": 76,
+          "nightEconomyIdx": 84,
+          "consumeIdx": 53,
+          "trafficReachIdx": 65,
+          "inboundFlowIdx": 87
+        },
+        {
+          "month": "2025-05",
+          "popIndex": 68,
+          "econIndex": 52,
+          "vitalityIndex": 80,
+          "nightEconomyIdx": 78,
+          "consumeIdx": 54,
+          "trafficReachIdx": 68,
+          "inboundFlowIdx": 84
+        },
+        {
+          "month": "2025-06",
+          "popIndex": 71,
+          "econIndex": 55,
+          "vitalityIndex": 86,
+          "nightEconomyIdx": 79,
+          "consumeIdx": 49,
+          "trafficReachIdx": 68,
+          "inboundFlowIdx": 86
+        },
+        {
+          "month": "2025-07",
+          "popIndex": 70,
+          "econIndex": 57,
+          "vitalityIndex": 84,
+          "nightEconomyIdx": 80,
+          "consumeIdx": 48,
+          "trafficReachIdx": 67,
+          "inboundFlowIdx": 90
+        },
+        {
+          "month": "2025-08",
+          "popIndex": 70,
+          "econIndex": 54,
+          "vitalityIndex": 86,
+          "nightEconomyIdx": 90,
+          "consumeIdx": 55,
+          "trafficReachIdx": 71,
+          "inboundFlowIdx": 79
+        },
+        {
+          "month": "2025-09",
+          "popIndex": 75,
+          "econIndex": 65,
+          "vitalityIndex": 88,
+          "nightEconomyIdx": 89,
+          "consumeIdx": 59,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 81
+        },
+        {
+          "month": "2025-10",
+          "popIndex": 70,
+          "econIndex": 62,
+          "vitalityIndex": 91,
+          "nightEconomyIdx": 97,
+          "consumeIdx": 62,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 79
+        },
+        {
+          "month": "2025-11",
+          "popIndex": 76,
+          "econIndex": 63,
+          "vitalityIndex": 89,
+          "nightEconomyIdx": 90,
+          "consumeIdx": 62,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 77
+        },
+        {
+          "month": "2025-12",
+          "popIndex": 69,
+          "econIndex": 69,
+          "vitalityIndex": 94,
+          "nightEconomyIdx": 91,
+          "consumeIdx": 63,
+          "trafficReachIdx": 79,
+          "inboundFlowIdx": 80
+        },
+        {
+          "month": "2026-01",
+          "popIndex": 76,
+          "econIndex": 66,
+          "vitalityIndex": 89,
+          "nightEconomyIdx": 91,
+          "consumeIdx": 58,
+          "trafficReachIdx": 78,
+          "inboundFlowIdx": 71
+        },
+        {
+          "month": "2026-02",
+          "popIndex": 75,
+          "econIndex": 62,
+          "vitalityIndex": 93,
+          "nightEconomyIdx": 95,
+          "consumeIdx": 59,
+          "trafficReachIdx": 79,
+          "inboundFlowIdx": 70
+        },
+        {
+          "month": "2026-03",
+          "popIndex": 78,
+          "econIndex": 61,
+          "vitalityIndex": 87,
+          "nightEconomyIdx": 93,
+          "consumeIdx": 64,
+          "trafficReachIdx": 75,
+          "inboundFlowIdx": 75
+        },
+        {
+          "month": "2026-04",
+          "popIndex": 75,
+          "econIndex": 66,
+          "vitalityIndex": 86,
+          "nightEconomyIdx": 87,
+          "consumeIdx": 62,
+          "trafficReachIdx": 70,
+          "inboundFlowIdx": 83
+        }
+      ]
+    },
+    {
+      "id": "420300",
+      "name": "十堰市",
+      "tier": 3,
+      "monthly": [
+        {
+          "month": "2024-05",
+          "popIndex": 59,
+          "econIndex": 67,
+          "vitalityIndex": 57,
+          "nightEconomyIdx": 53,
+          "consumeIdx": 61,
+          "trafficReachIdx": 77,
+          "inboundFlowIdx": 50
+        },
+        {
+          "month": "2024-06",
+          "popIndex": 58,
+          "econIndex": 74,
+          "vitalityIndex": 53,
+          "nightEconomyIdx": 54,
+          "consumeIdx": 61,
+          "trafficReachIdx": 73,
+          "inboundFlowIdx": 58
+        },
+        {
+          "month": "2024-07",
+          "popIndex": 58,
+          "econIndex": 79,
+          "vitalityIndex": 53,
+          "nightEconomyIdx": 57,
+          "consumeIdx": 67,
+          "trafficReachIdx": 79,
+          "inboundFlowIdx": 54
+        },
+        {
+          "month": "2024-08",
+          "popIndex": 55,
+          "econIndex": 74,
+          "vitalityIndex": 61,
+          "nightEconomyIdx": 52,
+          "consumeIdx": 69,
+          "trafficReachIdx": 77,
+          "inboundFlowIdx": 45
+        },
+        {
+          "month": "2024-09",
+          "popIndex": 58,
+          "econIndex": 80,
+          "vitalityIndex": 58,
+          "nightEconomyIdx": 60,
+          "consumeIdx": 68,
+          "trafficReachIdx": 81,
+          "inboundFlowIdx": 46
+        },
+        {
+          "month": "2024-10",
+          "popIndex": 52,
+          "econIndex": 73,
+          "vitalityIndex": 55,
+          "nightEconomyIdx": 56,
+          "consumeIdx": 68,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 40
+        },
+        {
+          "month": "2024-11",
+          "popIndex": 58,
+          "econIndex": 75,
+          "vitalityIndex": 52,
+          "nightEconomyIdx": 58,
+          "consumeIdx": 63,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 38
+        },
+        {
+          "month": "2024-12",
+          "popIndex": 51,
+          "econIndex": 76,
+          "vitalityIndex": 51,
+          "nightEconomyIdx": 52,
+          "consumeIdx": 64,
+          "trafficReachIdx": 75,
+          "inboundFlowIdx": 53
+        },
+        {
+          "month": "2025-01",
+          "popIndex": 57,
+          "econIndex": 70,
+          "vitalityIndex": 54,
+          "nightEconomyIdx": 46,
+          "consumeIdx": 64,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 48
+        },
+        {
+          "month": "2025-02",
+          "popIndex": 58,
+          "econIndex": 71,
+          "vitalityIndex": 49,
+          "nightEconomyIdx": 55,
+          "consumeIdx": 59,
+          "trafficReachIdx": 72,
+          "inboundFlowIdx": 50
+        },
+        {
+          "month": "2025-03",
+          "popIndex": 52,
+          "econIndex": 71,
+          "vitalityIndex": 47,
+          "nightEconomyIdx": 53,
+          "consumeIdx": 62,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 50
+        },
+        {
+          "month": "2025-04",
+          "popIndex": 56,
+          "econIndex": 71,
+          "vitalityIndex": 49,
+          "nightEconomyIdx": 47,
+          "consumeIdx": 55,
+          "trafficReachIdx": 68,
+          "inboundFlowIdx": 55
+        },
+        {
+          "month": "2025-05",
+          "popIndex": 54,
+          "econIndex": 71,
+          "vitalityIndex": 48,
+          "nightEconomyIdx": 51,
+          "consumeIdx": 55,
+          "trafficReachIdx": 69,
+          "inboundFlowIdx": 58
+        },
+        {
+          "month": "2025-06",
+          "popIndex": 55,
+          "econIndex": 71,
+          "vitalityIndex": 50,
+          "nightEconomyIdx": 53,
+          "consumeIdx": 53,
+          "trafficReachIdx": 68,
+          "inboundFlowIdx": 52
+        },
+        {
+          "month": "2025-07",
+          "popIndex": 53,
+          "econIndex": 67,
+          "vitalityIndex": 53,
+          "nightEconomyIdx": 51,
+          "consumeIdx": 61,
+          "trafficReachIdx": 69,
+          "inboundFlowIdx": 47
+        },
+        {
+          "month": "2025-08",
+          "popIndex": 47,
+          "econIndex": 76,
+          "vitalityIndex": 46,
+          "nightEconomyIdx": 52,
+          "consumeIdx": 57,
+          "trafficReachIdx": 75,
+          "inboundFlowIdx": 52
+        },
+        {
+          "month": "2025-09",
+          "popIndex": 49,
+          "econIndex": 69,
+          "vitalityIndex": 57,
+          "nightEconomyIdx": 49,
+          "consumeIdx": 60,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 49
+        },
+        {
+          "month": "2025-10",
+          "popIndex": 57,
+          "econIndex": 73,
+          "vitalityIndex": 56,
+          "nightEconomyIdx": 58,
+          "consumeIdx": 63,
+          "trafficReachIdx": 78,
+          "inboundFlowIdx": 38
+        },
+        {
+          "month": "2025-11",
+          "popIndex": 59,
+          "econIndex": 81,
+          "vitalityIndex": 55,
+          "nightEconomyIdx": 61,
+          "consumeIdx": 64,
+          "trafficReachIdx": 82,
+          "inboundFlowIdx": 44
+        },
+        {
+          "month": "2025-12",
+          "popIndex": 55,
+          "econIndex": 79,
+          "vitalityIndex": 54,
+          "nightEconomyIdx": 62,
+          "consumeIdx": 68,
+          "trafficReachIdx": 80,
+          "inboundFlowIdx": 49
+        },
+        {
+          "month": "2026-01",
+          "popIndex": 63,
+          "econIndex": 80,
+          "vitalityIndex": 63,
+          "nightEconomyIdx": 64,
+          "consumeIdx": 65,
+          "trafficReachIdx": 78,
+          "inboundFlowIdx": 42
+        },
+        {
+          "month": "2026-02",
+          "popIndex": 67,
+          "econIndex": 79,
+          "vitalityIndex": 56,
+          "nightEconomyIdx": 57,
+          "consumeIdx": 72,
+          "trafficReachIdx": 83,
+          "inboundFlowIdx": 47
+        },
+        {
+          "month": "2026-03",
+          "popIndex": 70,
+          "econIndex": 74,
+          "vitalityIndex": 54,
+          "nightEconomyIdx": 58,
+          "consumeIdx": 66,
+          "trafficReachIdx": 78,
+          "inboundFlowIdx": 60
+        },
+        {
+          "month": "2026-04",
+          "popIndex": 62,
+          "econIndex": 73,
+          "vitalityIndex": 62,
+          "nightEconomyIdx": 51,
+          "consumeIdx": 64,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 49
+        }
+      ]
+    },
+    {
+      "id": "420500",
+      "name": "宜昌市",
+      "tier": 2,
+      "monthly": [
+        {
+          "month": "2024-05",
+          "popIndex": 72,
+          "econIndex": 93,
+          "vitalityIndex": 59,
+          "nightEconomyIdx": 57,
+          "consumeIdx": 93,
+          "trafficReachIdx": 78,
+          "inboundFlowIdx": 59
+        },
+        {
+          "month": "2024-06",
+          "popIndex": 72,
+          "econIndex": 100,
+          "vitalityIndex": 62,
+          "nightEconomyIdx": 56,
+          "consumeIdx": 91,
+          "trafficReachIdx": 80,
+          "inboundFlowIdx": 65
+        },
+        {
+          "month": "2024-07",
+          "popIndex": 79,
+          "econIndex": 100,
+          "vitalityIndex": 65,
+          "nightEconomyIdx": 57,
+          "consumeIdx": 98,
+          "trafficReachIdx": 82,
+          "inboundFlowIdx": 63
+        },
+        {
+          "month": "2024-08",
+          "popIndex": 75,
+          "econIndex": 98,
+          "vitalityIndex": 72,
+          "nightEconomyIdx": 59,
+          "consumeIdx": 95,
+          "trafficReachIdx": 83,
+          "inboundFlowIdx": 55
+        },
+        {
+          "month": "2024-09",
+          "popIndex": 81,
+          "econIndex": 100,
+          "vitalityIndex": 64,
+          "nightEconomyIdx": 64,
+          "consumeIdx": 100,
+          "trafficReachIdx": 83,
+          "inboundFlowIdx": 59
+        },
+        {
+          "month": "2024-10",
+          "popIndex": 79,
+          "econIndex": 100,
+          "vitalityIndex": 67,
+          "nightEconomyIdx": 62,
+          "consumeIdx": 95,
+          "trafficReachIdx": 81,
+          "inboundFlowIdx": 66
+        },
+        {
+          "month": "2024-11",
+          "popIndex": 77,
+          "econIndex": 97,
+          "vitalityIndex": 68,
+          "nightEconomyIdx": 59,
+          "consumeIdx": 92,
+          "trafficReachIdx": 83,
+          "inboundFlowIdx": 58
+        },
+        {
+          "month": "2024-12",
+          "popIndex": 81,
+          "econIndex": 93,
+          "vitalityIndex": 69,
+          "nightEconomyIdx": 56,
+          "consumeIdx": 93,
+          "trafficReachIdx": 79,
+          "inboundFlowIdx": 60
+        },
+        {
+          "month": "2025-01",
+          "popIndex": 81,
+          "econIndex": 94,
+          "vitalityIndex": 63,
+          "nightEconomyIdx": 64,
+          "consumeIdx": 97,
+          "trafficReachIdx": 79,
+          "inboundFlowIdx": 61
+        },
+        {
+          "month": "2025-02",
+          "popIndex": 82,
+          "econIndex": 89,
+          "vitalityIndex": 54,
+          "nightEconomyIdx": 56,
+          "consumeIdx": 91,
+          "trafficReachIdx": 78,
+          "inboundFlowIdx": 67
+        },
+        {
+          "month": "2025-03",
+          "popIndex": 82,
+          "econIndex": 92,
+          "vitalityIndex": 53,
+          "nightEconomyIdx": 57,
+          "consumeIdx": 89,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 68
+        },
+        {
+          "month": "2025-04",
+          "popIndex": 76,
+          "econIndex": 93,
+          "vitalityIndex": 52,
+          "nightEconomyIdx": 60,
+          "consumeIdx": 92,
+          "trafficReachIdx": 73,
+          "inboundFlowIdx": 62
+        },
+        {
+          "month": "2025-05",
+          "popIndex": 69,
+          "econIndex": 87,
+          "vitalityIndex": 58,
+          "nightEconomyIdx": 52,
+          "consumeIdx": 84,
+          "trafficReachIdx": 70,
+          "inboundFlowIdx": 69
+        },
+        {
+          "month": "2025-06",
+          "popIndex": 69,
+          "econIndex": 87,
+          "vitalityIndex": 52,
+          "nightEconomyIdx": 49,
+          "consumeIdx": 90,
+          "trafficReachIdx": 73,
+          "inboundFlowIdx": 57
+        },
+        {
+          "month": "2025-07",
+          "popIndex": 74,
+          "econIndex": 97,
+          "vitalityIndex": 59,
+          "nightEconomyIdx": 52,
+          "consumeIdx": 86,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 56
+        },
+        {
+          "month": "2025-08",
+          "popIndex": 74,
+          "econIndex": 92,
+          "vitalityIndex": 62,
+          "nightEconomyIdx": 57,
+          "consumeIdx": 93,
+          "trafficReachIdx": 75,
+          "inboundFlowIdx": 54
+        },
+        {
+          "month": "2025-09",
+          "popIndex": 77,
+          "econIndex": 96,
+          "vitalityIndex": 59,
+          "nightEconomyIdx": 62,
+          "consumeIdx": 93,
+          "trafficReachIdx": 75,
+          "inboundFlowIdx": 54
+        },
+        {
+          "month": "2025-10",
+          "popIndex": 79,
+          "econIndex": 100,
+          "vitalityIndex": 61,
+          "nightEconomyIdx": 68,
+          "consumeIdx": 100,
+          "trafficReachIdx": 77,
+          "inboundFlowIdx": 59
+        },
+        {
+          "month": "2025-11",
+          "popIndex": 87,
+          "econIndex": 100,
+          "vitalityIndex": 70,
+          "nightEconomyIdx": 65,
+          "consumeIdx": 100,
+          "trafficReachIdx": 79,
+          "inboundFlowIdx": 69
+        },
+        {
+          "month": "2025-12",
+          "popIndex": 90,
+          "econIndex": 100,
+          "vitalityIndex": 67,
+          "nightEconomyIdx": 68,
+          "consumeIdx": 97,
+          "trafficReachIdx": 82,
+          "inboundFlowIdx": 62
+        },
+        {
+          "month": "2026-01",
+          "popIndex": 87,
+          "econIndex": 100,
+          "vitalityIndex": 63,
+          "nightEconomyIdx": 61,
+          "consumeIdx": 98,
+          "trafficReachIdx": 86,
+          "inboundFlowIdx": 70
+        },
+        {
+          "month": "2026-02",
+          "popIndex": 91,
+          "econIndex": 100,
+          "vitalityIndex": 67,
+          "nightEconomyIdx": 68,
+          "consumeIdx": 96,
+          "trafficReachIdx": 85,
+          "inboundFlowIdx": 65
+        },
+        {
+          "month": "2026-03",
+          "popIndex": 87,
+          "econIndex": 100,
+          "vitalityIndex": 69,
+          "nightEconomyIdx": 68,
+          "consumeIdx": 100,
+          "trafficReachIdx": 80,
+          "inboundFlowIdx": 61
+        },
+        {
+          "month": "2026-04",
+          "popIndex": 84,
+          "econIndex": 99,
+          "vitalityIndex": 70,
+          "nightEconomyIdx": 59,
+          "consumeIdx": 99,
+          "trafficReachIdx": 81,
+          "inboundFlowIdx": 62
+        }
+      ]
+    },
+    {
+      "id": "420600",
+      "name": "襄阳市",
+      "tier": 2,
+      "monthly": [
+        {
+          "month": "2024-05",
+          "popIndex": 94,
+          "econIndex": 93,
+          "vitalityIndex": 81,
+          "nightEconomyIdx": 92,
+          "consumeIdx": 62,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 87
+        },
+        {
+          "month": "2024-06",
+          "popIndex": 93,
+          "econIndex": 94,
+          "vitalityIndex": 88,
+          "nightEconomyIdx": 89,
+          "consumeIdx": 57,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 85
+        },
+        {
+          "month": "2024-07",
+          "popIndex": 97,
+          "econIndex": 93,
+          "vitalityIndex": 91,
+          "nightEconomyIdx": 89,
+          "consumeIdx": 62,
+          "trafficReachIdx": 80,
+          "inboundFlowIdx": 87
+        },
+        {
+          "month": "2024-08",
+          "popIndex": 98,
+          "econIndex": 96,
+          "vitalityIndex": 92,
+          "nightEconomyIdx": 93,
+          "consumeIdx": 66,
+          "trafficReachIdx": 80,
+          "inboundFlowIdx": 90
+        },
+        {
+          "month": "2024-09",
+          "popIndex": 100,
+          "econIndex": 98,
+          "vitalityIndex": 89,
+          "nightEconomyIdx": 90,
+          "consumeIdx": 61,
+          "trafficReachIdx": 75,
+          "inboundFlowIdx": 94
+        },
+        {
+          "month": "2024-10",
+          "popIndex": 100,
+          "econIndex": 93,
+          "vitalityIndex": 91,
+          "nightEconomyIdx": 95,
+          "consumeIdx": 67,
+          "trafficReachIdx": 75,
+          "inboundFlowIdx": 83
+        },
+        {
+          "month": "2024-11",
+          "popIndex": 100,
+          "econIndex": 98,
+          "vitalityIndex": 90,
+          "nightEconomyIdx": 95,
+          "consumeIdx": 62,
+          "trafficReachIdx": 78,
+          "inboundFlowIdx": 90
+        },
+        {
+          "month": "2024-12",
+          "popIndex": 99,
+          "econIndex": 94,
+          "vitalityIndex": 93,
+          "nightEconomyIdx": 97,
+          "consumeIdx": 60,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 89
+        },
+        {
+          "month": "2025-01",
+          "popIndex": 100,
+          "econIndex": 96,
+          "vitalityIndex": 92,
+          "nightEconomyIdx": 85,
+          "consumeIdx": 60,
+          "trafficReachIdx": 72,
+          "inboundFlowIdx": 95
+        },
+        {
+          "month": "2025-02",
+          "popIndex": 93,
+          "econIndex": 92,
+          "vitalityIndex": 83,
+          "nightEconomyIdx": 89,
+          "consumeIdx": 59,
+          "trafficReachIdx": 71,
+          "inboundFlowIdx": 88
+        },
+        {
+          "month": "2025-03",
+          "popIndex": 90,
+          "econIndex": 93,
+          "vitalityIndex": 82,
+          "nightEconomyIdx": 82,
+          "consumeIdx": 60,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 81
+        },
+        {
+          "month": "2025-04",
+          "popIndex": 93,
+          "econIndex": 94,
+          "vitalityIndex": 85,
+          "nightEconomyIdx": 79,
+          "consumeIdx": 54,
+          "trafficReachIdx": 72,
+          "inboundFlowIdx": 78
+        },
+        {
+          "month": "2025-05",
+          "popIndex": 89,
+          "econIndex": 88,
+          "vitalityIndex": 76,
+          "nightEconomyIdx": 84,
+          "consumeIdx": 52,
+          "trafficReachIdx": 69,
+          "inboundFlowIdx": 81
+        },
+        {
+          "month": "2025-06",
+          "popIndex": 85,
+          "econIndex": 90,
+          "vitalityIndex": 82,
+          "nightEconomyIdx": 83,
+          "consumeIdx": 59,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 84
+        },
+        {
+          "month": "2025-07",
+          "popIndex": 93,
+          "econIndex": 87,
+          "vitalityIndex": 84,
+          "nightEconomyIdx": 91,
+          "consumeIdx": 59,
+          "trafficReachIdx": 68,
+          "inboundFlowIdx": 82
+        },
+        {
+          "month": "2025-08",
+          "popIndex": 96,
+          "econIndex": 94,
+          "vitalityIndex": 85,
+          "nightEconomyIdx": 83,
+          "consumeIdx": 59,
+          "trafficReachIdx": 73,
+          "inboundFlowIdx": 79
+        },
+        {
+          "month": "2025-09",
+          "popIndex": 94,
+          "econIndex": 99,
+          "vitalityIndex": 83,
+          "nightEconomyIdx": 85,
+          "consumeIdx": 60,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 89
+        },
+        {
+          "month": "2025-10",
+          "popIndex": 100,
+          "econIndex": 99,
+          "vitalityIndex": 90,
+          "nightEconomyIdx": 92,
+          "consumeIdx": 65,
+          "trafficReachIdx": 73,
+          "inboundFlowIdx": 87
+        },
+        {
+          "month": "2025-11",
+          "popIndex": 100,
+          "econIndex": 100,
+          "vitalityIndex": 95,
+          "nightEconomyIdx": 98,
+          "consumeIdx": 67,
+          "trafficReachIdx": 79,
+          "inboundFlowIdx": 86
+        },
+        {
+          "month": "2025-12",
+          "popIndex": 100,
+          "econIndex": 100,
+          "vitalityIndex": 91,
+          "nightEconomyIdx": 98,
+          "consumeIdx": 70,
+          "trafficReachIdx": 79,
+          "inboundFlowIdx": 92
+        },
+        {
+          "month": "2026-01",
+          "popIndex": 100,
+          "econIndex": 100,
+          "vitalityIndex": 93,
+          "nightEconomyIdx": 99,
+          "consumeIdx": 63,
+          "trafficReachIdx": 83,
+          "inboundFlowIdx": 85
+        },
+        {
+          "month": "2026-02",
+          "popIndex": 100,
+          "econIndex": 100,
+          "vitalityIndex": 91,
+          "nightEconomyIdx": 99,
+          "consumeIdx": 66,
+          "trafficReachIdx": 82,
+          "inboundFlowIdx": 87
+        },
+        {
+          "month": "2026-03",
+          "popIndex": 100,
+          "econIndex": 100,
+          "vitalityIndex": 88,
+          "nightEconomyIdx": 98,
+          "consumeIdx": 60,
+          "trafficReachIdx": 81,
+          "inboundFlowIdx": 92
+        },
+        {
+          "month": "2026-04",
+          "popIndex": 94,
+          "econIndex": 95,
+          "vitalityIndex": 96,
+          "nightEconomyIdx": 95,
+          "consumeIdx": 60,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 80
+        }
+      ]
+    },
+    {
+      "id": "420700",
+      "name": "鄂州市",
+      "tier": 4,
+      "monthly": [
+        {
+          "month": "2024-05",
+          "popIndex": 87,
+          "econIndex": 49,
+          "vitalityIndex": 67,
+          "nightEconomyIdx": 94,
+          "consumeIdx": 87,
+          "trafficReachIdx": 54,
+          "inboundFlowIdx": 59
+        },
+        {
+          "month": "2024-06",
+          "popIndex": 88,
+          "econIndex": 53,
+          "vitalityIndex": 65,
+          "nightEconomyIdx": 91,
+          "consumeIdx": 91,
+          "trafficReachIdx": 55,
+          "inboundFlowIdx": 52
+        },
+        {
+          "month": "2024-07",
+          "popIndex": 96,
+          "econIndex": 56,
+          "vitalityIndex": 65,
+          "nightEconomyIdx": 88,
+          "consumeIdx": 98,
+          "trafficReachIdx": 56,
+          "inboundFlowIdx": 62
+        },
+        {
+          "month": "2024-08",
+          "popIndex": 100,
+          "econIndex": 60,
+          "vitalityIndex": 64,
+          "nightEconomyIdx": 99,
+          "consumeIdx": 100,
+          "trafficReachIdx": 55,
+          "inboundFlowIdx": 55
+        },
+        {
+          "month": "2024-09",
+          "popIndex": 100,
+          "econIndex": 63,
+          "vitalityIndex": 70,
+          "nightEconomyIdx": 98,
+          "consumeIdx": 99,
+          "trafficReachIdx": 58,
+          "inboundFlowIdx": 64
+        },
+        {
+          "month": "2024-10",
+          "popIndex": 100,
+          "econIndex": 62,
+          "vitalityIndex": 70,
+          "nightEconomyIdx": 89,
+          "consumeIdx": 98,
+          "trafficReachIdx": 59,
+          "inboundFlowIdx": 58
+        },
+        {
+          "month": "2024-11",
+          "popIndex": 100,
+          "econIndex": 54,
+          "vitalityIndex": 73,
+          "nightEconomyIdx": 94,
+          "consumeIdx": 94,
+          "trafficReachIdx": 58,
+          "inboundFlowIdx": 60
+        },
+        {
+          "month": "2024-12",
+          "popIndex": 98,
+          "econIndex": 59,
+          "vitalityIndex": 62,
+          "nightEconomyIdx": 87,
+          "consumeIdx": 96,
+          "trafficReachIdx": 50,
+          "inboundFlowIdx": 55
+        },
+        {
+          "month": "2025-01",
+          "popIndex": 96,
+          "econIndex": 58,
+          "vitalityIndex": 64,
+          "nightEconomyIdx": 85,
+          "consumeIdx": 92,
+          "trafficReachIdx": 53,
+          "inboundFlowIdx": 65
+        },
+        {
+          "month": "2025-02",
+          "popIndex": 91,
+          "econIndex": 50,
+          "vitalityIndex": 58,
+          "nightEconomyIdx": 86,
+          "consumeIdx": 86,
+          "trafficReachIdx": 48,
+          "inboundFlowIdx": 51
+        },
+        {
+          "month": "2025-03",
+          "popIndex": 84,
+          "econIndex": 45,
+          "vitalityIndex": 58,
+          "nightEconomyIdx": 81,
+          "consumeIdx": 86,
+          "trafficReachIdx": 51,
+          "inboundFlowIdx": 59
+        },
+        {
+          "month": "2025-04",
+          "popIndex": 80,
+          "econIndex": 46,
+          "vitalityIndex": 59,
+          "nightEconomyIdx": 84,
+          "consumeIdx": 86,
+          "trafficReachIdx": 48,
+          "inboundFlowIdx": 52
+        },
+        {
+          "month": "2025-05",
+          "popIndex": 81,
+          "econIndex": 50,
+          "vitalityIndex": 61,
+          "nightEconomyIdx": 84,
+          "consumeIdx": 91,
+          "trafficReachIdx": 48,
+          "inboundFlowIdx": 57
+        },
+        {
+          "month": "2025-06",
+          "popIndex": 88,
+          "econIndex": 46,
+          "vitalityIndex": 57,
+          "nightEconomyIdx": 82,
+          "consumeIdx": 83,
+          "trafficReachIdx": 47,
+          "inboundFlowIdx": 49
+        },
+        {
+          "month": "2025-07",
+          "popIndex": 91,
+          "econIndex": 54,
+          "vitalityIndex": 65,
+          "nightEconomyIdx": 88,
+          "consumeIdx": 92,
+          "trafficReachIdx": 47,
+          "inboundFlowIdx": 61
+        },
+        {
+          "month": "2025-08",
+          "popIndex": 95,
+          "econIndex": 47,
+          "vitalityIndex": 61,
+          "nightEconomyIdx": 85,
+          "consumeIdx": 87,
+          "trafficReachIdx": 53,
+          "inboundFlowIdx": 64
+        },
+        {
+          "month": "2025-09",
+          "popIndex": 100,
+          "econIndex": 49,
+          "vitalityIndex": 64,
+          "nightEconomyIdx": 89,
+          "consumeIdx": 89,
+          "trafficReachIdx": 49,
+          "inboundFlowIdx": 57
+        },
+        {
+          "month": "2025-10",
+          "popIndex": 100,
+          "econIndex": 61,
+          "vitalityIndex": 70,
+          "nightEconomyIdx": 98,
+          "consumeIdx": 90,
+          "trafficReachIdx": 54,
+          "inboundFlowIdx": 66
+        },
+        {
+          "month": "2025-11",
+          "popIndex": 100,
+          "econIndex": 57,
+          "vitalityIndex": 63,
+          "nightEconomyIdx": 90,
+          "consumeIdx": 100,
+          "trafficReachIdx": 52,
+          "inboundFlowIdx": 68
+        },
+        {
+          "month": "2025-12",
+          "popIndex": 99,
+          "econIndex": 57,
+          "vitalityIndex": 74,
+          "nightEconomyIdx": 92,
+          "consumeIdx": 100,
+          "trafficReachIdx": 58,
+          "inboundFlowIdx": 64
+        },
+        {
+          "month": "2026-01",
+          "popIndex": 97,
+          "econIndex": 56,
+          "vitalityIndex": 73,
+          "nightEconomyIdx": 100,
+          "consumeIdx": 95,
+          "trafficReachIdx": 54,
+          "inboundFlowIdx": 54
+        },
+        {
+          "month": "2026-02",
+          "popIndex": 92,
+          "econIndex": 65,
+          "vitalityIndex": 72,
+          "nightEconomyIdx": 99,
+          "consumeIdx": 98,
+          "trafficReachIdx": 59,
+          "inboundFlowIdx": 51
+        },
+        {
+          "month": "2026-03",
+          "popIndex": 92,
+          "econIndex": 56,
+          "vitalityIndex": 68,
+          "nightEconomyIdx": 91,
+          "consumeIdx": 100,
+          "trafficReachIdx": 55,
+          "inboundFlowIdx": 60
+        },
+        {
+          "month": "2026-04",
+          "popIndex": 89,
+          "econIndex": 59,
+          "vitalityIndex": 69,
+          "nightEconomyIdx": 91,
+          "consumeIdx": 96,
+          "trafficReachIdx": 53,
+          "inboundFlowIdx": 50
+        }
+      ]
+    },
+    {
+      "id": "420800",
+      "name": "荆门市",
+      "tier": 3,
+      "monthly": [
+        {
+          "month": "2024-05",
+          "popIndex": 73,
+          "econIndex": 74,
+          "vitalityIndex": 53,
+          "nightEconomyIdx": 62,
+          "consumeIdx": 47,
+          "trafficReachIdx": 91,
+          "inboundFlowIdx": 49
+        },
+        {
+          "month": "2024-06",
+          "popIndex": 77,
+          "econIndex": 76,
+          "vitalityIndex": 55,
+          "nightEconomyIdx": 60,
+          "consumeIdx": 52,
+          "trafficReachIdx": 96,
+          "inboundFlowIdx": 58
+        },
+        {
+          "month": "2024-07",
+          "popIndex": 85,
+          "econIndex": 69,
+          "vitalityIndex": 64,
+          "nightEconomyIdx": 65,
+          "consumeIdx": 55,
+          "trafficReachIdx": 100,
+          "inboundFlowIdx": 64
+        },
+        {
+          "month": "2024-08",
+          "popIndex": 87,
+          "econIndex": 77,
+          "vitalityIndex": 60,
+          "nightEconomyIdx": 71,
+          "consumeIdx": 55,
+          "trafficReachIdx": 97,
+          "inboundFlowIdx": 56
+        },
+        {
+          "month": "2024-09",
+          "popIndex": 88,
+          "econIndex": 71,
+          "vitalityIndex": 68,
+          "nightEconomyIdx": 66,
+          "consumeIdx": 55,
+          "trafficReachIdx": 98,
+          "inboundFlowIdx": 62
+        },
+        {
+          "month": "2024-10",
+          "popIndex": 79,
+          "econIndex": 72,
+          "vitalityIndex": 67,
+          "nightEconomyIdx": 62,
+          "consumeIdx": 54,
+          "trafficReachIdx": 100,
+          "inboundFlowIdx": 55
+        },
+        {
+          "month": "2024-11",
+          "popIndex": 82,
+          "econIndex": 79,
+          "vitalityIndex": 63,
+          "nightEconomyIdx": 60,
+          "consumeIdx": 56,
+          "trafficReachIdx": 95,
+          "inboundFlowIdx": 56
+        },
+        {
+          "month": "2024-12",
+          "popIndex": 78,
+          "econIndex": 69,
+          "vitalityIndex": 57,
+          "nightEconomyIdx": 63,
+          "consumeIdx": 49,
+          "trafficReachIdx": 98,
+          "inboundFlowIdx": 54
+        },
+        {
+          "month": "2025-01",
+          "popIndex": 69,
+          "econIndex": 75,
+          "vitalityIndex": 56,
+          "nightEconomyIdx": 58,
+          "consumeIdx": 50,
+          "trafficReachIdx": 94,
+          "inboundFlowIdx": 43
+        },
+        {
+          "month": "2025-02",
+          "popIndex": 62,
+          "econIndex": 67,
+          "vitalityIndex": 61,
+          "nightEconomyIdx": 59,
+          "consumeIdx": 43,
+          "trafficReachIdx": 95,
+          "inboundFlowIdx": 56
+        },
+        {
+          "month": "2025-03",
+          "popIndex": 64,
+          "econIndex": 64,
+          "vitalityIndex": 54,
+          "nightEconomyIdx": 54,
+          "consumeIdx": 48,
+          "trafficReachIdx": 90,
+          "inboundFlowIdx": 54
+        },
+        {
+          "month": "2025-04",
+          "popIndex": 67,
+          "econIndex": 69,
+          "vitalityIndex": 58,
+          "nightEconomyIdx": 52,
+          "consumeIdx": 40,
+          "trafficReachIdx": 88,
+          "inboundFlowIdx": 56
+        },
+        {
+          "month": "2025-05",
+          "popIndex": 71,
+          "econIndex": 68,
+          "vitalityIndex": 57,
+          "nightEconomyIdx": 60,
+          "consumeIdx": 45,
+          "trafficReachIdx": 88,
+          "inboundFlowIdx": 49
+        },
+        {
+          "month": "2025-06",
+          "popIndex": 69,
+          "econIndex": 66,
+          "vitalityIndex": 50,
+          "nightEconomyIdx": 52,
+          "consumeIdx": 46,
+          "trafficReachIdx": 89,
+          "inboundFlowIdx": 58
+        },
+        {
+          "month": "2025-07",
+          "popIndex": 76,
+          "econIndex": 69,
+          "vitalityIndex": 51,
+          "nightEconomyIdx": 53,
+          "consumeIdx": 46,
+          "trafficReachIdx": 94,
+          "inboundFlowIdx": 57
+        },
+        {
+          "month": "2025-08",
+          "popIndex": 74,
+          "econIndex": 66,
+          "vitalityIndex": 59,
+          "nightEconomyIdx": 61,
+          "consumeIdx": 50,
+          "trafficReachIdx": 93,
+          "inboundFlowIdx": 58
+        },
+        {
+          "month": "2025-09",
+          "popIndex": 84,
+          "econIndex": 72,
+          "vitalityIndex": 65,
+          "nightEconomyIdx": 67,
+          "consumeIdx": 47,
+          "trafficReachIdx": 99,
+          "inboundFlowIdx": 54
+        },
+        {
+          "month": "2025-10",
+          "popIndex": 79,
+          "econIndex": 77,
+          "vitalityIndex": 59,
+          "nightEconomyIdx": 66,
+          "consumeIdx": 55,
+          "trafficReachIdx": 97,
+          "inboundFlowIdx": 50
+        },
+        {
+          "month": "2025-11",
+          "popIndex": 80,
+          "econIndex": 75,
+          "vitalityIndex": 68,
+          "nightEconomyIdx": 70,
+          "consumeIdx": 57,
+          "trafficReachIdx": 98,
+          "inboundFlowIdx": 49
+        },
+        {
+          "month": "2025-12",
+          "popIndex": 82,
+          "econIndex": 72,
+          "vitalityIndex": 65,
+          "nightEconomyIdx": 69,
+          "consumeIdx": 58,
+          "trafficReachIdx": 100,
+          "inboundFlowIdx": 46
+        },
+        {
+          "month": "2026-01",
+          "popIndex": 76,
+          "econIndex": 80,
+          "vitalityIndex": 65,
+          "nightEconomyIdx": 68,
+          "consumeIdx": 58,
+          "trafficReachIdx": 100,
+          "inboundFlowIdx": 44
+        },
+        {
+          "month": "2026-02",
+          "popIndex": 80,
+          "econIndex": 76,
+          "vitalityIndex": 65,
+          "nightEconomyIdx": 71,
+          "consumeIdx": 52,
+          "trafficReachIdx": 99,
+          "inboundFlowIdx": 56
+        },
+        {
+          "month": "2026-03",
+          "popIndex": 77,
+          "econIndex": 72,
+          "vitalityIndex": 59,
+          "nightEconomyIdx": 68,
+          "consumeIdx": 49,
+          "trafficReachIdx": 97,
+          "inboundFlowIdx": 49
+        },
+        {
+          "month": "2026-04",
+          "popIndex": 76,
+          "econIndex": 70,
+          "vitalityIndex": 66,
+          "nightEconomyIdx": 61,
+          "consumeIdx": 51,
+          "trafficReachIdx": 96,
+          "inboundFlowIdx": 55
+        }
+      ]
+    },
+    {
+      "id": "420900",
+      "name": "孝感市",
+      "tier": 3,
+      "monthly": [
+        {
+          "month": "2024-05",
+          "popIndex": 95,
+          "econIndex": 84,
+          "vitalityIndex": 77,
+          "nightEconomyIdx": 42,
+          "consumeIdx": 65,
+          "trafficReachIdx": 71,
+          "inboundFlowIdx": 80
+        },
+        {
+          "month": "2024-06",
+          "popIndex": 97,
+          "econIndex": 87,
+          "vitalityIndex": 76,
+          "nightEconomyIdx": 54,
+          "consumeIdx": 61,
+          "trafficReachIdx": 72,
+          "inboundFlowIdx": 75
+        },
+        {
+          "month": "2024-07",
+          "popIndex": 100,
+          "econIndex": 88,
+          "vitalityIndex": 83,
+          "nightEconomyIdx": 49,
+          "consumeIdx": 65,
+          "trafficReachIdx": 73,
+          "inboundFlowIdx": 67
+        },
+        {
+          "month": "2024-08",
+          "popIndex": 99,
+          "econIndex": 91,
+          "vitalityIndex": 76,
+          "nightEconomyIdx": 57,
+          "consumeIdx": 63,
+          "trafficReachIdx": 77,
+          "inboundFlowIdx": 77
+        },
+        {
+          "month": "2024-09",
+          "popIndex": 95,
+          "econIndex": 81,
+          "vitalityIndex": 80,
+          "nightEconomyIdx": 57,
+          "consumeIdx": 64,
+          "trafficReachIdx": 75,
+          "inboundFlowIdx": 76
+        },
+        {
+          "month": "2024-10",
+          "popIndex": 93,
+          "econIndex": 87,
+          "vitalityIndex": 82,
+          "nightEconomyIdx": 50,
+          "consumeIdx": 67,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 60
+        },
+        {
+          "month": "2024-11",
+          "popIndex": 93,
+          "econIndex": 81,
+          "vitalityIndex": 75,
+          "nightEconomyIdx": 56,
+          "consumeIdx": 70,
+          "trafficReachIdx": 79,
+          "inboundFlowIdx": 71
+        },
+        {
+          "month": "2024-12",
+          "popIndex": 86,
+          "econIndex": 80,
+          "vitalityIndex": 79,
+          "nightEconomyIdx": 45,
+          "consumeIdx": 63,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 61
+        },
+        {
+          "month": "2025-01",
+          "popIndex": 83,
+          "econIndex": 78,
+          "vitalityIndex": 80,
+          "nightEconomyIdx": 50,
+          "consumeIdx": 61,
+          "trafficReachIdx": 77,
+          "inboundFlowIdx": 69
+        },
+        {
+          "month": "2025-02",
+          "popIndex": 81,
+          "econIndex": 85,
+          "vitalityIndex": 71,
+          "nightEconomyIdx": 49,
+          "consumeIdx": 57,
+          "trafficReachIdx": 71,
+          "inboundFlowIdx": 71
+        },
+        {
+          "month": "2025-03",
+          "popIndex": 90,
+          "econIndex": 75,
+          "vitalityIndex": 76,
+          "nightEconomyIdx": 48,
+          "consumeIdx": 55,
+          "trafficReachIdx": 73,
+          "inboundFlowIdx": 73
+        },
+        {
+          "month": "2025-04",
+          "popIndex": 86,
+          "econIndex": 80,
+          "vitalityIndex": 72,
+          "nightEconomyIdx": 42,
+          "consumeIdx": 57,
+          "trafficReachIdx": 71,
+          "inboundFlowIdx": 66
+        },
+        {
+          "month": "2025-05",
+          "popIndex": 89,
+          "econIndex": 75,
+          "vitalityIndex": 67,
+          "nightEconomyIdx": 43,
+          "consumeIdx": 58,
+          "trafficReachIdx": 73,
+          "inboundFlowIdx": 76
+        },
+        {
+          "month": "2025-06",
+          "popIndex": 90,
+          "econIndex": 73,
+          "vitalityIndex": 73,
+          "nightEconomyIdx": 42,
+          "consumeIdx": 58,
+          "trafficReachIdx": 70,
+          "inboundFlowIdx": 72
+        },
+        {
+          "month": "2025-07",
+          "popIndex": 95,
+          "econIndex": 74,
+          "vitalityIndex": 70,
+          "nightEconomyIdx": 46,
+          "consumeIdx": 62,
+          "trafficReachIdx": 72,
+          "inboundFlowIdx": 77
+        },
+        {
+          "month": "2025-08",
+          "popIndex": 94,
+          "econIndex": 81,
+          "vitalityIndex": 68,
+          "nightEconomyIdx": 50,
+          "consumeIdx": 63,
+          "trafficReachIdx": 70,
+          "inboundFlowIdx": 77
+        },
+        {
+          "month": "2025-09",
+          "popIndex": 91,
+          "econIndex": 81,
+          "vitalityIndex": 74,
+          "nightEconomyIdx": 52,
+          "consumeIdx": 66,
+          "trafficReachIdx": 75,
+          "inboundFlowIdx": 72
+        },
+        {
+          "month": "2025-10",
+          "popIndex": 90,
+          "econIndex": 85,
+          "vitalityIndex": 75,
+          "nightEconomyIdx": 56,
+          "consumeIdx": 62,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 72
+        },
+        {
+          "month": "2025-11",
+          "popIndex": 94,
+          "econIndex": 83,
+          "vitalityIndex": 76,
+          "nightEconomyIdx": 49,
+          "consumeIdx": 67,
+          "trafficReachIdx": 81,
+          "inboundFlowIdx": 68
+        },
+        {
+          "month": "2025-12",
+          "popIndex": 95,
+          "econIndex": 91,
+          "vitalityIndex": 84,
+          "nightEconomyIdx": 60,
+          "consumeIdx": 73,
+          "trafficReachIdx": 82,
+          "inboundFlowIdx": 69
+        },
+        {
+          "month": "2026-01",
+          "popIndex": 91,
+          "econIndex": 93,
+          "vitalityIndex": 84,
+          "nightEconomyIdx": 53,
+          "consumeIdx": 72,
+          "trafficReachIdx": 78,
+          "inboundFlowIdx": 64
+        },
+        {
+          "month": "2026-02",
+          "popIndex": 93,
+          "econIndex": 85,
+          "vitalityIndex": 87,
+          "nightEconomyIdx": 60,
+          "consumeIdx": 67,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 66
+        },
+        {
+          "month": "2026-03",
+          "popIndex": 92,
+          "econIndex": 91,
+          "vitalityIndex": 83,
+          "nightEconomyIdx": 50,
+          "consumeIdx": 72,
+          "trafficReachIdx": 77,
+          "inboundFlowIdx": 68
+        },
+        {
+          "month": "2026-04",
+          "popIndex": 99,
+          "econIndex": 84,
+          "vitalityIndex": 79,
+          "nightEconomyIdx": 56,
+          "consumeIdx": 70,
+          "trafficReachIdx": 78,
+          "inboundFlowIdx": 70
+        }
+      ]
+    },
+    {
+      "id": "421000",
+      "name": "荆州市",
+      "tier": 3,
+      "monthly": [
+        {
+          "month": "2024-05",
+          "popIndex": 71,
+          "econIndex": 75,
+          "vitalityIndex": 61,
+          "nightEconomyIdx": 95,
+          "consumeIdx": 81,
+          "trafficReachIdx": 61,
+          "inboundFlowIdx": 62
+        },
+        {
+          "month": "2024-06",
+          "popIndex": 80,
+          "econIndex": 79,
+          "vitalityIndex": 61,
+          "nightEconomyIdx": 89,
+          "consumeIdx": 79,
+          "trafficReachIdx": 61,
+          "inboundFlowIdx": 60
+        },
+        {
+          "month": "2024-07",
+          "popIndex": 75,
+          "econIndex": 79,
+          "vitalityIndex": 66,
+          "nightEconomyIdx": 96,
+          "consumeIdx": 84,
+          "trafficReachIdx": 61,
+          "inboundFlowIdx": 63
+        },
+        {
+          "month": "2024-08",
+          "popIndex": 73,
+          "econIndex": 76,
+          "vitalityIndex": 64,
+          "nightEconomyIdx": 93,
+          "consumeIdx": 84,
+          "trafficReachIdx": 66,
+          "inboundFlowIdx": 53
+        },
+        {
+          "month": "2024-09",
+          "popIndex": 73,
+          "econIndex": 78,
+          "vitalityIndex": 68,
+          "nightEconomyIdx": 97,
+          "consumeIdx": 80,
+          "trafficReachIdx": 65,
+          "inboundFlowIdx": 59
+        },
+        {
+          "month": "2024-10",
+          "popIndex": 71,
+          "econIndex": 78,
+          "vitalityIndex": 68,
+          "nightEconomyIdx": 96,
+          "consumeIdx": 81,
+          "trafficReachIdx": 62,
+          "inboundFlowIdx": 56
+        },
+        {
+          "month": "2024-11",
+          "popIndex": 69,
+          "econIndex": 83,
+          "vitalityIndex": 67,
+          "nightEconomyIdx": 92,
+          "consumeIdx": 86,
+          "trafficReachIdx": 66,
+          "inboundFlowIdx": 53
+        },
+        {
+          "month": "2024-12",
+          "popIndex": 70,
+          "econIndex": 82,
+          "vitalityIndex": 68,
+          "nightEconomyIdx": 99,
+          "consumeIdx": 81,
+          "trafficReachIdx": 60,
+          "inboundFlowIdx": 55
+        },
+        {
+          "month": "2025-01",
+          "popIndex": 75,
+          "econIndex": 78,
+          "vitalityIndex": 67,
+          "nightEconomyIdx": 92,
+          "consumeIdx": 83,
+          "trafficReachIdx": 61,
+          "inboundFlowIdx": 55
+        },
+        {
+          "month": "2025-02",
+          "popIndex": 75,
+          "econIndex": 77,
+          "vitalityIndex": 60,
+          "nightEconomyIdx": 93,
+          "consumeIdx": 74,
+          "trafficReachIdx": 62,
+          "inboundFlowIdx": 57
+        },
+        {
+          "month": "2025-03",
+          "popIndex": 74,
+          "econIndex": 72,
+          "vitalityIndex": 54,
+          "nightEconomyIdx": 82,
+          "consumeIdx": 73,
+          "trafficReachIdx": 59,
+          "inboundFlowIdx": 66
+        },
+        {
+          "month": "2025-04",
+          "popIndex": 74,
+          "econIndex": 70,
+          "vitalityIndex": 53,
+          "nightEconomyIdx": 88,
+          "consumeIdx": 74,
+          "trafficReachIdx": 57,
+          "inboundFlowIdx": 60
+        },
+        {
+          "month": "2025-05",
+          "popIndex": 74,
+          "econIndex": 76,
+          "vitalityIndex": 57,
+          "nightEconomyIdx": 84,
+          "consumeIdx": 72,
+          "trafficReachIdx": 60,
+          "inboundFlowIdx": 63
+        },
+        {
+          "month": "2025-06",
+          "popIndex": 67,
+          "econIndex": 79,
+          "vitalityIndex": 61,
+          "nightEconomyIdx": 86,
+          "consumeIdx": 77,
+          "trafficReachIdx": 60,
+          "inboundFlowIdx": 54
+        },
+        {
+          "month": "2025-07",
+          "popIndex": 65,
+          "econIndex": 70,
+          "vitalityIndex": 57,
+          "nightEconomyIdx": 83,
+          "consumeIdx": 72,
+          "trafficReachIdx": 60,
+          "inboundFlowIdx": 63
+        },
+        {
+          "month": "2025-08",
+          "popIndex": 72,
+          "econIndex": 72,
+          "vitalityIndex": 59,
+          "nightEconomyIdx": 88,
+          "consumeIdx": 74,
+          "trafficReachIdx": 61,
+          "inboundFlowIdx": 50
+        },
+        {
+          "month": "2025-09",
+          "popIndex": 67,
+          "econIndex": 82,
+          "vitalityIndex": 60,
+          "nightEconomyIdx": 88,
+          "consumeIdx": 77,
+          "trafficReachIdx": 65,
+          "inboundFlowIdx": 50
+        },
+        {
+          "month": "2025-10",
+          "popIndex": 69,
+          "econIndex": 85,
+          "vitalityIndex": 63,
+          "nightEconomyIdx": 96,
+          "consumeIdx": 82,
+          "trafficReachIdx": 65,
+          "inboundFlowIdx": 53
+        },
+        {
+          "month": "2025-11",
+          "popIndex": 70,
+          "econIndex": 77,
+          "vitalityIndex": 69,
+          "nightEconomyIdx": 94,
+          "consumeIdx": 80,
+          "trafficReachIdx": 63,
+          "inboundFlowIdx": 58
+        },
+        {
+          "month": "2025-12",
+          "popIndex": 76,
+          "econIndex": 83,
+          "vitalityIndex": 74,
+          "nightEconomyIdx": 93,
+          "consumeIdx": 88,
+          "trafficReachIdx": 67,
+          "inboundFlowIdx": 49
+        },
+        {
+          "month": "2026-01",
+          "popIndex": 84,
+          "econIndex": 89,
+          "vitalityIndex": 65,
+          "nightEconomyIdx": 99,
+          "consumeIdx": 89,
+          "trafficReachIdx": 63,
+          "inboundFlowIdx": 60
+        },
+        {
+          "month": "2026-02",
+          "popIndex": 86,
+          "econIndex": 88,
+          "vitalityIndex": 64,
+          "nightEconomyIdx": 97,
+          "consumeIdx": 87,
+          "trafficReachIdx": 70,
+          "inboundFlowIdx": 60
+        },
+        {
+          "month": "2026-03",
+          "popIndex": 78,
+          "econIndex": 78,
+          "vitalityIndex": 67,
+          "nightEconomyIdx": 100,
+          "consumeIdx": 85,
+          "trafficReachIdx": 67,
+          "inboundFlowIdx": 56
+        },
+        {
+          "month": "2026-04",
+          "popIndex": 84,
+          "econIndex": 78,
+          "vitalityIndex": 66,
+          "nightEconomyIdx": 94,
+          "consumeIdx": 85,
+          "trafficReachIdx": 67,
+          "inboundFlowIdx": 66
+        }
+      ]
+    },
+    {
+      "id": "421100",
+      "name": "黄冈市",
+      "tier": 3,
+      "monthly": [
+        {
+          "month": "2024-05",
+          "popIndex": 85,
+          "econIndex": 58,
+          "vitalityIndex": 97,
+          "nightEconomyIdx": 72,
+          "consumeIdx": 80,
+          "trafficReachIdx": 57,
+          "inboundFlowIdx": 95
+        },
+        {
+          "month": "2024-06",
+          "popIndex": 84,
+          "econIndex": 57,
+          "vitalityIndex": 100,
+          "nightEconomyIdx": 69,
+          "consumeIdx": 86,
+          "trafficReachIdx": 62,
+          "inboundFlowIdx": 81
+        },
+        {
+          "month": "2024-07",
+          "popIndex": 87,
+          "econIndex": 60,
+          "vitalityIndex": 100,
+          "nightEconomyIdx": 68,
+          "consumeIdx": 81,
+          "trafficReachIdx": 57,
+          "inboundFlowIdx": 80
+        },
+        {
+          "month": "2024-08",
+          "popIndex": 81,
+          "econIndex": 60,
+          "vitalityIndex": 100,
+          "nightEconomyIdx": 72,
+          "consumeIdx": 84,
+          "trafficReachIdx": 63,
+          "inboundFlowIdx": 78
+        },
+        {
+          "month": "2024-09",
+          "popIndex": 87,
+          "econIndex": 58,
+          "vitalityIndex": 100,
+          "nightEconomyIdx": 68,
+          "consumeIdx": 88,
+          "trafficReachIdx": 62,
+          "inboundFlowIdx": 85
+        },
+        {
+          "month": "2024-10",
+          "popIndex": 91,
+          "econIndex": 58,
+          "vitalityIndex": 100,
+          "nightEconomyIdx": 72,
+          "consumeIdx": 85,
+          "trafficReachIdx": 65,
+          "inboundFlowIdx": 92
+        },
+        {
+          "month": "2024-11",
+          "popIndex": 89,
+          "econIndex": 57,
+          "vitalityIndex": 100,
+          "nightEconomyIdx": 75,
+          "consumeIdx": 83,
+          "trafficReachIdx": 59,
+          "inboundFlowIdx": 95
+        },
+        {
+          "month": "2024-12",
+          "popIndex": 88,
+          "econIndex": 62,
+          "vitalityIndex": 100,
+          "nightEconomyIdx": 75,
+          "consumeIdx": 84,
+          "trafficReachIdx": 58,
+          "inboundFlowIdx": 99
+        },
+        {
+          "month": "2025-01",
+          "popIndex": 87,
+          "econIndex": 57,
+          "vitalityIndex": 96,
+          "nightEconomyIdx": 71,
+          "consumeIdx": 86,
+          "trafficReachIdx": 61,
+          "inboundFlowIdx": 91
+        },
+        {
+          "month": "2025-02",
+          "popIndex": 91,
+          "econIndex": 61,
+          "vitalityIndex": 89,
+          "nightEconomyIdx": 61,
+          "consumeIdx": 80,
+          "trafficReachIdx": 53,
+          "inboundFlowIdx": 100
+        },
+        {
+          "month": "2025-03",
+          "popIndex": 82,
+          "econIndex": 54,
+          "vitalityIndex": 87,
+          "nightEconomyIdx": 62,
+          "consumeIdx": 81,
+          "trafficReachIdx": 56,
+          "inboundFlowIdx": 98
+        },
+        {
+          "month": "2025-04",
+          "popIndex": 81,
+          "econIndex": 54,
+          "vitalityIndex": 92,
+          "nightEconomyIdx": 60,
+          "consumeIdx": 79,
+          "trafficReachIdx": 55,
+          "inboundFlowIdx": 92
+        },
+        {
+          "month": "2025-05",
+          "popIndex": 82,
+          "econIndex": 50,
+          "vitalityIndex": 88,
+          "nightEconomyIdx": 66,
+          "consumeIdx": 77,
+          "trafficReachIdx": 56,
+          "inboundFlowIdx": 85
+        },
+        {
+          "month": "2025-06",
+          "popIndex": 77,
+          "econIndex": 51,
+          "vitalityIndex": 88,
+          "nightEconomyIdx": 58,
+          "consumeIdx": 77,
+          "trafficReachIdx": 54,
+          "inboundFlowIdx": 82
+        },
+        {
+          "month": "2025-07",
+          "popIndex": 73,
+          "econIndex": 50,
+          "vitalityIndex": 91,
+          "nightEconomyIdx": 65,
+          "consumeIdx": 78,
+          "trafficReachIdx": 55,
+          "inboundFlowIdx": 87
+        },
+        {
+          "month": "2025-08",
+          "popIndex": 77,
+          "econIndex": 51,
+          "vitalityIndex": 99,
+          "nightEconomyIdx": 63,
+          "consumeIdx": 85,
+          "trafficReachIdx": 60,
+          "inboundFlowIdx": 82
+        },
+        {
+          "month": "2025-09",
+          "popIndex": 82,
+          "econIndex": 63,
+          "vitalityIndex": 99,
+          "nightEconomyIdx": 71,
+          "consumeIdx": 83,
+          "trafficReachIdx": 57,
+          "inboundFlowIdx": 86
+        },
+        {
+          "month": "2025-10",
+          "popIndex": 82,
+          "econIndex": 55,
+          "vitalityIndex": 97,
+          "nightEconomyIdx": 71,
+          "consumeIdx": 87,
+          "trafficReachIdx": 62,
+          "inboundFlowIdx": 91
+        },
+        {
+          "month": "2025-11",
+          "popIndex": 91,
+          "econIndex": 64,
+          "vitalityIndex": 97,
+          "nightEconomyIdx": 70,
+          "consumeIdx": 91,
+          "trafficReachIdx": 59,
+          "inboundFlowIdx": 85
+        },
+        {
+          "month": "2025-12",
+          "popIndex": 89,
+          "econIndex": 67,
+          "vitalityIndex": 100,
+          "nightEconomyIdx": 71,
+          "consumeIdx": 92,
+          "trafficReachIdx": 61,
+          "inboundFlowIdx": 86
+        },
+        {
+          "month": "2026-01",
+          "popIndex": 100,
+          "econIndex": 59,
+          "vitalityIndex": 100,
+          "nightEconomyIdx": 76,
+          "consumeIdx": 91,
+          "trafficReachIdx": 66,
+          "inboundFlowIdx": 90
+        },
+        {
+          "month": "2026-02",
+          "popIndex": 93,
+          "econIndex": 68,
+          "vitalityIndex": 99,
+          "nightEconomyIdx": 75,
+          "consumeIdx": 87,
+          "trafficReachIdx": 65,
+          "inboundFlowIdx": 93
+        },
+        {
+          "month": "2026-03",
+          "popIndex": 96,
+          "econIndex": 61,
+          "vitalityIndex": 97,
+          "nightEconomyIdx": 77,
+          "consumeIdx": 87,
+          "trafficReachIdx": 63,
+          "inboundFlowIdx": 89
+        },
+        {
+          "month": "2026-04",
+          "popIndex": 90,
+          "econIndex": 63,
+          "vitalityIndex": 95,
+          "nightEconomyIdx": 66,
+          "consumeIdx": 89,
+          "trafficReachIdx": 58,
+          "inboundFlowIdx": 86
+        }
+      ]
+    },
+    {
+      "id": "421200",
+      "name": "咸宁市",
+      "tier": 3,
+      "monthly": [
+        {
+          "month": "2024-05",
+          "popIndex": 46,
+          "econIndex": 83,
+          "vitalityIndex": 90,
+          "nightEconomyIdx": 64,
+          "consumeIdx": 83,
+          "trafficReachIdx": 70,
+          "inboundFlowIdx": 75
+        },
+        {
+          "month": "2024-06",
+          "popIndex": 47,
+          "econIndex": 89,
+          "vitalityIndex": 88,
+          "nightEconomyIdx": 64,
+          "consumeIdx": 86,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 74
+        },
+        {
+          "month": "2024-07",
+          "popIndex": 54,
+          "econIndex": 88,
+          "vitalityIndex": 87,
+          "nightEconomyIdx": 73,
+          "consumeIdx": 79,
+          "trafficReachIdx": 77,
+          "inboundFlowIdx": 72
+        },
+        {
+          "month": "2024-08",
+          "popIndex": 61,
+          "econIndex": 92,
+          "vitalityIndex": 94,
+          "nightEconomyIdx": 65,
+          "consumeIdx": 87,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 70
+        },
+        {
+          "month": "2024-09",
+          "popIndex": 55,
+          "econIndex": 94,
+          "vitalityIndex": 87,
+          "nightEconomyIdx": 72,
+          "consumeIdx": 81,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 75
+        },
+        {
+          "month": "2024-10",
+          "popIndex": 58,
+          "econIndex": 88,
+          "vitalityIndex": 94,
+          "nightEconomyIdx": 73,
+          "consumeIdx": 84,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 77
+        },
+        {
+          "month": "2024-11",
+          "popIndex": 58,
+          "econIndex": 88,
+          "vitalityIndex": 93,
+          "nightEconomyIdx": 69,
+          "consumeIdx": 80,
+          "trafficReachIdx": 72,
+          "inboundFlowIdx": 79
+        },
+        {
+          "month": "2024-12",
+          "popIndex": 63,
+          "econIndex": 92,
+          "vitalityIndex": 88,
+          "nightEconomyIdx": 68,
+          "consumeIdx": 85,
+          "trafficReachIdx": 77,
+          "inboundFlowIdx": 81
+        },
+        {
+          "month": "2025-01",
+          "popIndex": 54,
+          "econIndex": 86,
+          "vitalityIndex": 90,
+          "nightEconomyIdx": 61,
+          "consumeIdx": 81,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 85
+        },
+        {
+          "month": "2025-02",
+          "popIndex": 58,
+          "econIndex": 78,
+          "vitalityIndex": 85,
+          "nightEconomyIdx": 60,
+          "consumeIdx": 79,
+          "trafficReachIdx": 73,
+          "inboundFlowIdx": 83
+        },
+        {
+          "month": "2025-03",
+          "popIndex": 53,
+          "econIndex": 77,
+          "vitalityIndex": 76,
+          "nightEconomyIdx": 67,
+          "consumeIdx": 80,
+          "trafficReachIdx": 66,
+          "inboundFlowIdx": 77
+        },
+        {
+          "month": "2025-04",
+          "popIndex": 41,
+          "econIndex": 85,
+          "vitalityIndex": 76,
+          "nightEconomyIdx": 63,
+          "consumeIdx": 78,
+          "trafficReachIdx": 71,
+          "inboundFlowIdx": 81
+        },
+        {
+          "month": "2025-05",
+          "popIndex": 40,
+          "econIndex": 84,
+          "vitalityIndex": 86,
+          "nightEconomyIdx": 58,
+          "consumeIdx": 75,
+          "trafficReachIdx": 69,
+          "inboundFlowIdx": 73
+        },
+        {
+          "month": "2025-06",
+          "popIndex": 41,
+          "econIndex": 83,
+          "vitalityIndex": 77,
+          "nightEconomyIdx": 55,
+          "consumeIdx": 77,
+          "trafficReachIdx": 69,
+          "inboundFlowIdx": 75
+        },
+        {
+          "month": "2025-07",
+          "popIndex": 49,
+          "econIndex": 85,
+          "vitalityIndex": 82,
+          "nightEconomyIdx": 68,
+          "consumeIdx": 80,
+          "trafficReachIdx": 69,
+          "inboundFlowIdx": 72
+        },
+        {
+          "month": "2025-08",
+          "popIndex": 53,
+          "econIndex": 83,
+          "vitalityIndex": 89,
+          "nightEconomyIdx": 64,
+          "consumeIdx": 81,
+          "trafficReachIdx": 69,
+          "inboundFlowIdx": 74
+        },
+        {
+          "month": "2025-09",
+          "popIndex": 57,
+          "econIndex": 88,
+          "vitalityIndex": 89,
+          "nightEconomyIdx": 62,
+          "consumeIdx": 79,
+          "trafficReachIdx": 75,
+          "inboundFlowIdx": 75
+        },
+        {
+          "month": "2025-10",
+          "popIndex": 57,
+          "econIndex": 88,
+          "vitalityIndex": 93,
+          "nightEconomyIdx": 64,
+          "consumeIdx": 84,
+          "trafficReachIdx": 75,
+          "inboundFlowIdx": 88
+        },
+        {
+          "month": "2025-11",
+          "popIndex": 58,
+          "econIndex": 85,
+          "vitalityIndex": 92,
+          "nightEconomyIdx": 76,
+          "consumeIdx": 81,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 91
+        },
+        {
+          "month": "2025-12",
+          "popIndex": 69,
+          "econIndex": 86,
+          "vitalityIndex": 92,
+          "nightEconomyIdx": 67,
+          "consumeIdx": 87,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 91
+        },
+        {
+          "month": "2026-01",
+          "popIndex": 67,
+          "econIndex": 88,
+          "vitalityIndex": 89,
+          "nightEconomyIdx": 67,
+          "consumeIdx": 85,
+          "trafficReachIdx": 78,
+          "inboundFlowIdx": 87
+        },
+        {
+          "month": "2026-02",
+          "popIndex": 64,
+          "econIndex": 92,
+          "vitalityIndex": 99,
+          "nightEconomyIdx": 67,
+          "consumeIdx": 86,
+          "trafficReachIdx": 80,
+          "inboundFlowIdx": 84
+        },
+        {
+          "month": "2026-03",
+          "popIndex": 64,
+          "econIndex": 89,
+          "vitalityIndex": 91,
+          "nightEconomyIdx": 73,
+          "consumeIdx": 85,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 80
+        },
+        {
+          "month": "2026-04",
+          "popIndex": 53,
+          "econIndex": 89,
+          "vitalityIndex": 93,
+          "nightEconomyIdx": 67,
+          "consumeIdx": 87,
+          "trafficReachIdx": 72,
+          "inboundFlowIdx": 73
+        }
+      ]
+    },
+    {
+      "id": "421300",
+      "name": "随州市",
+      "tier": 4,
+      "monthly": [
+        {
+          "month": "2024-05",
+          "popIndex": 45,
+          "econIndex": 82,
+          "vitalityIndex": 78,
+          "nightEconomyIdx": 53,
+          "consumeIdx": 84,
+          "trafficReachIdx": 95,
+          "inboundFlowIdx": 69
+        },
+        {
+          "month": "2024-06",
+          "popIndex": 50,
+          "econIndex": 79,
+          "vitalityIndex": 73,
+          "nightEconomyIdx": 62,
+          "consumeIdx": 80,
+          "trafficReachIdx": 96,
+          "inboundFlowIdx": 69
+        },
+        {
+          "month": "2024-07",
+          "popIndex": 55,
+          "econIndex": 86,
+          "vitalityIndex": 78,
+          "nightEconomyIdx": 65,
+          "consumeIdx": 86,
+          "trafficReachIdx": 97,
+          "inboundFlowIdx": 64
+        },
+        {
+          "month": "2024-08",
+          "popIndex": 58,
+          "econIndex": 83,
+          "vitalityIndex": 84,
+          "nightEconomyIdx": 59,
+          "consumeIdx": 87,
+          "trafficReachIdx": 95,
+          "inboundFlowIdx": 68
+        },
+        {
+          "month": "2024-09",
+          "popIndex": 58,
+          "econIndex": 89,
+          "vitalityIndex": 75,
+          "nightEconomyIdx": 68,
+          "consumeIdx": 91,
+          "trafficReachIdx": 100,
+          "inboundFlowIdx": 70
+        },
+        {
+          "month": "2024-10",
+          "popIndex": 58,
+          "econIndex": 86,
+          "vitalityIndex": 78,
+          "nightEconomyIdx": 62,
+          "consumeIdx": 90,
+          "trafficReachIdx": 93,
+          "inboundFlowIdx": 68
+        },
+        {
+          "month": "2024-11",
+          "popIndex": 51,
+          "econIndex": 81,
+          "vitalityIndex": 78,
+          "nightEconomyIdx": 63,
+          "consumeIdx": 82,
+          "trafficReachIdx": 97,
+          "inboundFlowIdx": 70
+        },
+        {
+          "month": "2024-12",
+          "popIndex": 54,
+          "econIndex": 80,
+          "vitalityIndex": 81,
+          "nightEconomyIdx": 59,
+          "consumeIdx": 85,
+          "trafficReachIdx": 97,
+          "inboundFlowIdx": 67
+        },
+        {
+          "month": "2025-01",
+          "popIndex": 46,
+          "econIndex": 86,
+          "vitalityIndex": 73,
+          "nightEconomyIdx": 57,
+          "consumeIdx": 79,
+          "trafficReachIdx": 96,
+          "inboundFlowIdx": 65
+        },
+        {
+          "month": "2025-02",
+          "popIndex": 40,
+          "econIndex": 83,
+          "vitalityIndex": 70,
+          "nightEconomyIdx": 61,
+          "consumeIdx": 79,
+          "trafficReachIdx": 89,
+          "inboundFlowIdx": 61
+        },
+        {
+          "month": "2025-03",
+          "popIndex": 36,
+          "econIndex": 82,
+          "vitalityIndex": 66,
+          "nightEconomyIdx": 59,
+          "consumeIdx": 78,
+          "trafficReachIdx": 87,
+          "inboundFlowIdx": 71
+        },
+        {
+          "month": "2025-04",
+          "popIndex": 41,
+          "econIndex": 74,
+          "vitalityIndex": 75,
+          "nightEconomyIdx": 50,
+          "consumeIdx": 80,
+          "trafficReachIdx": 87,
+          "inboundFlowIdx": 63
+        },
+        {
+          "month": "2025-05",
+          "popIndex": 36,
+          "econIndex": 80,
+          "vitalityIndex": 69,
+          "nightEconomyIdx": 51,
+          "consumeIdx": 79,
+          "trafficReachIdx": 90,
+          "inboundFlowIdx": 63
+        },
+        {
+          "month": "2025-06",
+          "popIndex": 40,
+          "econIndex": 74,
+          "vitalityIndex": 74,
+          "nightEconomyIdx": 55,
+          "consumeIdx": 77,
+          "trafficReachIdx": 93,
+          "inboundFlowIdx": 59
+        },
+        {
+          "month": "2025-07",
+          "popIndex": 39,
+          "econIndex": 84,
+          "vitalityIndex": 75,
+          "nightEconomyIdx": 50,
+          "consumeIdx": 76,
+          "trafficReachIdx": 92,
+          "inboundFlowIdx": 65
+        },
+        {
+          "month": "2025-08",
+          "popIndex": 48,
+          "econIndex": 84,
+          "vitalityIndex": 69,
+          "nightEconomyIdx": 58,
+          "consumeIdx": 83,
+          "trafficReachIdx": 89,
+          "inboundFlowIdx": 75
+        },
+        {
+          "month": "2025-09",
+          "popIndex": 54,
+          "econIndex": 81,
+          "vitalityIndex": 70,
+          "nightEconomyIdx": 62,
+          "consumeIdx": 80,
+          "trafficReachIdx": 93,
+          "inboundFlowIdx": 74
+        },
+        {
+          "month": "2025-10",
+          "popIndex": 59,
+          "econIndex": 88,
+          "vitalityIndex": 73,
+          "nightEconomyIdx": 58,
+          "consumeIdx": 89,
+          "trafficReachIdx": 95,
+          "inboundFlowIdx": 81
+        },
+        {
+          "month": "2025-11",
+          "popIndex": 55,
+          "econIndex": 90,
+          "vitalityIndex": 79,
+          "nightEconomyIdx": 68,
+          "consumeIdx": 84,
+          "trafficReachIdx": 94,
+          "inboundFlowIdx": 68
+        },
+        {
+          "month": "2025-12",
+          "popIndex": 57,
+          "econIndex": 91,
+          "vitalityIndex": 77,
+          "nightEconomyIdx": 65,
+          "consumeIdx": 90,
+          "trafficReachIdx": 99,
+          "inboundFlowIdx": 74
+        },
+        {
+          "month": "2026-01",
+          "popIndex": 52,
+          "econIndex": 93,
+          "vitalityIndex": 87,
+          "nightEconomyIdx": 60,
+          "consumeIdx": 92,
+          "trafficReachIdx": 99,
+          "inboundFlowIdx": 67
+        },
+        {
+          "month": "2026-02",
+          "popIndex": 51,
+          "econIndex": 86,
+          "vitalityIndex": 86,
+          "nightEconomyIdx": 62,
+          "consumeIdx": 90,
+          "trafficReachIdx": 95,
+          "inboundFlowIdx": 65
+        },
+        {
+          "month": "2026-03",
+          "popIndex": 51,
+          "econIndex": 89,
+          "vitalityIndex": 76,
+          "nightEconomyIdx": 62,
+          "consumeIdx": 88,
+          "trafficReachIdx": 97,
+          "inboundFlowIdx": 69
+        },
+        {
+          "month": "2026-04",
+          "popIndex": 42,
+          "econIndex": 89,
+          "vitalityIndex": 83,
+          "nightEconomyIdx": 67,
+          "consumeIdx": 83,
+          "trafficReachIdx": 96,
+          "inboundFlowIdx": 62
+        }
+      ]
+    },
+    {
+      "id": "422800",
+      "name": "恩施土家族苗族自治州",
+      "tier": 3,
+      "monthly": [
+        {
+          "month": "2024-05",
+          "popIndex": 92,
+          "econIndex": 94,
+          "vitalityIndex": 69,
+          "nightEconomyIdx": 50,
+          "consumeIdx": 83,
+          "trafficReachIdx": 81,
+          "inboundFlowIdx": 64
+        },
+        {
+          "month": "2024-06",
+          "popIndex": 100,
+          "econIndex": 95,
+          "vitalityIndex": 67,
+          "nightEconomyIdx": 52,
+          "consumeIdx": 80,
+          "trafficReachIdx": 79,
+          "inboundFlowIdx": 63
+        },
+        {
+          "month": "2024-07",
+          "popIndex": 100,
+          "econIndex": 100,
+          "vitalityIndex": 65,
+          "nightEconomyIdx": 60,
+          "consumeIdx": 85,
+          "trafficReachIdx": 84,
+          "inboundFlowIdx": 66
+        },
+        {
+          "month": "2024-08",
+          "popIndex": 100,
+          "econIndex": 94,
+          "vitalityIndex": 70,
+          "nightEconomyIdx": 64,
+          "consumeIdx": 83,
+          "trafficReachIdx": 82,
+          "inboundFlowIdx": 65
+        },
+        {
+          "month": "2024-09",
+          "popIndex": 100,
+          "econIndex": 91,
+          "vitalityIndex": 69,
+          "nightEconomyIdx": 60,
+          "consumeIdx": 83,
+          "trafficReachIdx": 87,
+          "inboundFlowIdx": 70
+        },
+        {
+          "month": "2024-10",
+          "popIndex": 100,
+          "econIndex": 90,
+          "vitalityIndex": 70,
+          "nightEconomyIdx": 62,
+          "consumeIdx": 84,
+          "trafficReachIdx": 84,
+          "inboundFlowIdx": 56
+        },
+        {
+          "month": "2024-11",
+          "popIndex": 100,
+          "econIndex": 96,
+          "vitalityIndex": 73,
+          "nightEconomyIdx": 61,
+          "consumeIdx": 83,
+          "trafficReachIdx": 83,
+          "inboundFlowIdx": 60
+        },
+        {
+          "month": "2024-12",
+          "popIndex": 98,
+          "econIndex": 98,
+          "vitalityIndex": 64,
+          "nightEconomyIdx": 57,
+          "consumeIdx": 85,
+          "trafficReachIdx": 84,
+          "inboundFlowIdx": 53
+        },
+        {
+          "month": "2025-01",
+          "popIndex": 98,
+          "econIndex": 88,
+          "vitalityIndex": 65,
+          "nightEconomyIdx": 53,
+          "consumeIdx": 86,
+          "trafficReachIdx": 81,
+          "inboundFlowIdx": 48
+        },
+        {
+          "month": "2025-02",
+          "popIndex": 89,
+          "econIndex": 85,
+          "vitalityIndex": 63,
+          "nightEconomyIdx": 54,
+          "consumeIdx": 76,
+          "trafficReachIdx": 80,
+          "inboundFlowIdx": 54
+        },
+        {
+          "month": "2025-03",
+          "popIndex": 90,
+          "econIndex": 92,
+          "vitalityIndex": 65,
+          "nightEconomyIdx": 54,
+          "consumeIdx": 82,
+          "trafficReachIdx": 81,
+          "inboundFlowIdx": 57
+        },
+        {
+          "month": "2025-04",
+          "popIndex": 85,
+          "econIndex": 85,
+          "vitalityIndex": 63,
+          "nightEconomyIdx": 51,
+          "consumeIdx": 79,
+          "trafficReachIdx": 75,
+          "inboundFlowIdx": 51
+        },
+        {
+          "month": "2025-05",
+          "popIndex": 88,
+          "econIndex": 91,
+          "vitalityIndex": 63,
+          "nightEconomyIdx": 54,
+          "consumeIdx": 73,
+          "trafficReachIdx": 75,
+          "inboundFlowIdx": 65
+        },
+        {
+          "month": "2025-06",
+          "popIndex": 99,
+          "econIndex": 84,
+          "vitalityIndex": 63,
+          "nightEconomyIdx": 55,
+          "consumeIdx": 81,
+          "trafficReachIdx": 75,
+          "inboundFlowIdx": 59
+        },
+        {
+          "month": "2025-07",
+          "popIndex": 94,
+          "econIndex": 88,
+          "vitalityIndex": 61,
+          "nightEconomyIdx": 48,
+          "consumeIdx": 83,
+          "trafficReachIdx": 78,
+          "inboundFlowIdx": 64
+        },
+        {
+          "month": "2025-08",
+          "popIndex": 100,
+          "econIndex": 86,
+          "vitalityIndex": 63,
+          "nightEconomyIdx": 49,
+          "consumeIdx": 82,
+          "trafficReachIdx": 83,
+          "inboundFlowIdx": 64
+        },
+        {
+          "month": "2025-09",
+          "popIndex": 100,
+          "econIndex": 90,
+          "vitalityIndex": 68,
+          "nightEconomyIdx": 58,
+          "consumeIdx": 80,
+          "trafficReachIdx": 81,
+          "inboundFlowIdx": 62
+        },
+        {
+          "month": "2025-10",
+          "popIndex": 99,
+          "econIndex": 91,
+          "vitalityIndex": 68,
+          "nightEconomyIdx": 53,
+          "consumeIdx": 83,
+          "trafficReachIdx": 86,
+          "inboundFlowIdx": 62
+        },
+        {
+          "month": "2025-11",
+          "popIndex": 98,
+          "econIndex": 91,
+          "vitalityIndex": 70,
+          "nightEconomyIdx": 58,
+          "consumeIdx": 86,
+          "trafficReachIdx": 84,
+          "inboundFlowIdx": 60
+        },
+        {
+          "month": "2025-12",
+          "popIndex": 100,
+          "econIndex": 97,
+          "vitalityIndex": 76,
+          "nightEconomyIdx": 66,
+          "consumeIdx": 87,
+          "trafficReachIdx": 83,
+          "inboundFlowIdx": 52
+        },
+        {
+          "month": "2026-01",
+          "popIndex": 100,
+          "econIndex": 95,
+          "vitalityIndex": 70,
+          "nightEconomyIdx": 57,
+          "consumeIdx": 88,
+          "trafficReachIdx": 87,
+          "inboundFlowIdx": 52
+        },
+        {
+          "month": "2026-02",
+          "popIndex": 95,
+          "econIndex": 92,
+          "vitalityIndex": 69,
+          "nightEconomyIdx": 59,
+          "consumeIdx": 87,
+          "trafficReachIdx": 86,
+          "inboundFlowIdx": 53
+        },
+        {
+          "month": "2026-03",
+          "popIndex": 97,
+          "econIndex": 97,
+          "vitalityIndex": 65,
+          "nightEconomyIdx": 55,
+          "consumeIdx": 86,
+          "trafficReachIdx": 81,
+          "inboundFlowIdx": 56
+        },
+        {
+          "month": "2026-04",
+          "popIndex": 100,
+          "econIndex": 96,
+          "vitalityIndex": 64,
+          "nightEconomyIdx": 64,
+          "consumeIdx": 85,
+          "trafficReachIdx": 81,
+          "inboundFlowIdx": 51
+        }
+      ]
+    },
+    {
+      "id": "429004",
+      "name": "仙桃市",
+      "tier": 4,
+      "monthly": [
+        {
+          "month": "2024-05",
+          "popIndex": 68,
+          "econIndex": 57,
+          "vitalityIndex": 83,
+          "nightEconomyIdx": 63,
+          "consumeIdx": 66,
+          "trafficReachIdx": 71,
+          "inboundFlowIdx": 80
+        },
+        {
+          "month": "2024-06",
+          "popIndex": 74,
+          "econIndex": 66,
+          "vitalityIndex": 88,
+          "nightEconomyIdx": 57,
+          "consumeIdx": 67,
+          "trafficReachIdx": 70,
+          "inboundFlowIdx": 93
+        },
+        {
+          "month": "2024-07",
+          "popIndex": 81,
+          "econIndex": 65,
+          "vitalityIndex": 92,
+          "nightEconomyIdx": 65,
+          "consumeIdx": 75,
+          "trafficReachIdx": 69,
+          "inboundFlowIdx": 80
+        },
+        {
+          "month": "2024-08",
+          "popIndex": 73,
+          "econIndex": 62,
+          "vitalityIndex": 95,
+          "nightEconomyIdx": 65,
+          "consumeIdx": 71,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 90
+        },
+        {
+          "month": "2024-09",
+          "popIndex": 74,
+          "econIndex": 68,
+          "vitalityIndex": 92,
+          "nightEconomyIdx": 67,
+          "consumeIdx": 72,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 84
+        },
+        {
+          "month": "2024-10",
+          "popIndex": 74,
+          "econIndex": 73,
+          "vitalityIndex": 92,
+          "nightEconomyIdx": 69,
+          "consumeIdx": 72,
+          "trafficReachIdx": 72,
+          "inboundFlowIdx": 85
+        },
+        {
+          "month": "2024-11",
+          "popIndex": 73,
+          "econIndex": 61,
+          "vitalityIndex": 90,
+          "nightEconomyIdx": 66,
+          "consumeIdx": 72,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 78
+        },
+        {
+          "month": "2024-12",
+          "popIndex": 64,
+          "econIndex": 66,
+          "vitalityIndex": 92,
+          "nightEconomyIdx": 61,
+          "consumeIdx": 73,
+          "trafficReachIdx": 71,
+          "inboundFlowIdx": 81
+        },
+        {
+          "month": "2025-01",
+          "popIndex": 66,
+          "econIndex": 65,
+          "vitalityIndex": 85,
+          "nightEconomyIdx": 59,
+          "consumeIdx": 70,
+          "trafficReachIdx": 67,
+          "inboundFlowIdx": 83
+        },
+        {
+          "month": "2025-02",
+          "popIndex": 68,
+          "econIndex": 57,
+          "vitalityIndex": 88,
+          "nightEconomyIdx": 55,
+          "consumeIdx": 64,
+          "trafficReachIdx": 65,
+          "inboundFlowIdx": 74
+        },
+        {
+          "month": "2025-03",
+          "popIndex": 69,
+          "econIndex": 55,
+          "vitalityIndex": 85,
+          "nightEconomyIdx": 58,
+          "consumeIdx": 64,
+          "trafficReachIdx": 68,
+          "inboundFlowIdx": 84
+        },
+        {
+          "month": "2025-04",
+          "popIndex": 61,
+          "econIndex": 58,
+          "vitalityIndex": 83,
+          "nightEconomyIdx": 58,
+          "consumeIdx": 59,
+          "trafficReachIdx": 66,
+          "inboundFlowIdx": 79
+        },
+        {
+          "month": "2025-05",
+          "popIndex": 63,
+          "econIndex": 56,
+          "vitalityIndex": 88,
+          "nightEconomyIdx": 51,
+          "consumeIdx": 61,
+          "trafficReachIdx": 61,
+          "inboundFlowIdx": 89
+        },
+        {
+          "month": "2025-06",
+          "popIndex": 66,
+          "econIndex": 61,
+          "vitalityIndex": 80,
+          "nightEconomyIdx": 51,
+          "consumeIdx": 59,
+          "trafficReachIdx": 63,
+          "inboundFlowIdx": 87
+        },
+        {
+          "month": "2025-07",
+          "popIndex": 71,
+          "econIndex": 62,
+          "vitalityIndex": 87,
+          "nightEconomyIdx": 54,
+          "consumeIdx": 66,
+          "trafficReachIdx": 69,
+          "inboundFlowIdx": 92
+        },
+        {
+          "month": "2025-08",
+          "popIndex": 67,
+          "econIndex": 67,
+          "vitalityIndex": 83,
+          "nightEconomyIdx": 55,
+          "consumeIdx": 66,
+          "trafficReachIdx": 65,
+          "inboundFlowIdx": 88
+        },
+        {
+          "month": "2025-09",
+          "popIndex": 69,
+          "econIndex": 63,
+          "vitalityIndex": 85,
+          "nightEconomyIdx": 57,
+          "consumeIdx": 67,
+          "trafficReachIdx": 70,
+          "inboundFlowIdx": 87
+        },
+        {
+          "month": "2025-10",
+          "popIndex": 68,
+          "econIndex": 63,
+          "vitalityIndex": 90,
+          "nightEconomyIdx": 64,
+          "consumeIdx": 74,
+          "trafficReachIdx": 69,
+          "inboundFlowIdx": 74
+        },
+        {
+          "month": "2025-11",
+          "popIndex": 67,
+          "econIndex": 68,
+          "vitalityIndex": 93,
+          "nightEconomyIdx": 59,
+          "consumeIdx": 70,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 81
+        },
+        {
+          "month": "2025-12",
+          "popIndex": 73,
+          "econIndex": 65,
+          "vitalityIndex": 100,
+          "nightEconomyIdx": 65,
+          "consumeIdx": 71,
+          "trafficReachIdx": 73,
+          "inboundFlowIdx": 77
+        },
+        {
+          "month": "2026-01",
+          "popIndex": 69,
+          "econIndex": 67,
+          "vitalityIndex": 98,
+          "nightEconomyIdx": 70,
+          "consumeIdx": 72,
+          "trafficReachIdx": 71,
+          "inboundFlowIdx": 72
+        },
+        {
+          "month": "2026-02",
+          "popIndex": 77,
+          "econIndex": 69,
+          "vitalityIndex": 92,
+          "nightEconomyIdx": 69,
+          "consumeIdx": 74,
+          "trafficReachIdx": 76,
+          "inboundFlowIdx": 76
+        },
+        {
+          "month": "2026-03",
+          "popIndex": 73,
+          "econIndex": 68,
+          "vitalityIndex": 96,
+          "nightEconomyIdx": 66,
+          "consumeIdx": 77,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 78
+        },
+        {
+          "month": "2026-04",
+          "popIndex": 72,
+          "econIndex": 72,
+          "vitalityIndex": 93,
+          "nightEconomyIdx": 64,
+          "consumeIdx": 68,
+          "trafficReachIdx": 70,
+          "inboundFlowIdx": 91
+        }
+      ]
+    },
+    {
+      "id": "429005",
+      "name": "潜江市",
+      "tier": 4,
+      "monthly": [
+        {
+          "month": "2024-05",
+          "popIndex": 98,
+          "econIndex": 68,
+          "vitalityIndex": 80,
+          "nightEconomyIdx": 76,
+          "consumeIdx": 70,
+          "trafficReachIdx": 59,
+          "inboundFlowIdx": 80
+        },
+        {
+          "month": "2024-06",
+          "popIndex": 99,
+          "econIndex": 78,
+          "vitalityIndex": 85,
+          "nightEconomyIdx": 78,
+          "consumeIdx": 66,
+          "trafficReachIdx": 58,
+          "inboundFlowIdx": 77
+        },
+        {
+          "month": "2024-07",
+          "popIndex": 99,
+          "econIndex": 72,
+          "vitalityIndex": 94,
+          "nightEconomyIdx": 84,
+          "consumeIdx": 70,
+          "trafficReachIdx": 63,
+          "inboundFlowIdx": 81
+        },
+        {
+          "month": "2024-08",
+          "popIndex": 100,
+          "econIndex": 82,
+          "vitalityIndex": 95,
+          "nightEconomyIdx": 80,
+          "consumeIdx": 73,
+          "trafficReachIdx": 57,
+          "inboundFlowIdx": 74
+        },
+        {
+          "month": "2024-09",
+          "popIndex": 95,
+          "econIndex": 83,
+          "vitalityIndex": 94,
+          "nightEconomyIdx": 82,
+          "consumeIdx": 77,
+          "trafficReachIdx": 61,
+          "inboundFlowIdx": 79
+        },
+        {
+          "month": "2024-10",
+          "popIndex": 93,
+          "econIndex": 75,
+          "vitalityIndex": 85,
+          "nightEconomyIdx": 84,
+          "consumeIdx": 72,
+          "trafficReachIdx": 62,
+          "inboundFlowIdx": 77
+        },
+        {
+          "month": "2024-11",
+          "popIndex": 91,
+          "econIndex": 81,
+          "vitalityIndex": 86,
+          "nightEconomyIdx": 79,
+          "consumeIdx": 71,
+          "trafficReachIdx": 58,
+          "inboundFlowIdx": 77
+        },
+        {
+          "month": "2024-12",
+          "popIndex": 99,
+          "econIndex": 80,
+          "vitalityIndex": 81,
+          "nightEconomyIdx": 75,
+          "consumeIdx": 68,
+          "trafficReachIdx": 55,
+          "inboundFlowIdx": 76
+        },
+        {
+          "month": "2025-01",
+          "popIndex": 99,
+          "econIndex": 73,
+          "vitalityIndex": 86,
+          "nightEconomyIdx": 76,
+          "consumeIdx": 65,
+          "trafficReachIdx": 58,
+          "inboundFlowIdx": 84
+        },
+        {
+          "month": "2025-02",
+          "popIndex": 97,
+          "econIndex": 75,
+          "vitalityIndex": 83,
+          "nightEconomyIdx": 71,
+          "consumeIdx": 63,
+          "trafficReachIdx": 52,
+          "inboundFlowIdx": 81
+        },
+        {
+          "month": "2025-03",
+          "popIndex": 92,
+          "econIndex": 70,
+          "vitalityIndex": 85,
+          "nightEconomyIdx": 76,
+          "consumeIdx": 66,
+          "trafficReachIdx": 51,
+          "inboundFlowIdx": 88
+        },
+        {
+          "month": "2025-04",
+          "popIndex": 99,
+          "econIndex": 65,
+          "vitalityIndex": 73,
+          "nightEconomyIdx": 67,
+          "consumeIdx": 66,
+          "trafficReachIdx": 51,
+          "inboundFlowIdx": 90
+        },
+        {
+          "month": "2025-05",
+          "popIndex": 98,
+          "econIndex": 65,
+          "vitalityIndex": 74,
+          "nightEconomyIdx": 69,
+          "consumeIdx": 66,
+          "trafficReachIdx": 50,
+          "inboundFlowIdx": 82
+        },
+        {
+          "month": "2025-06",
+          "popIndex": 92,
+          "econIndex": 65,
+          "vitalityIndex": 76,
+          "nightEconomyIdx": 70,
+          "consumeIdx": 62,
+          "trafficReachIdx": 53,
+          "inboundFlowIdx": 77
+        },
+        {
+          "month": "2025-07",
+          "popIndex": 97,
+          "econIndex": 65,
+          "vitalityIndex": 79,
+          "nightEconomyIdx": 71,
+          "consumeIdx": 63,
+          "trafficReachIdx": 52,
+          "inboundFlowIdx": 72
+        },
+        {
+          "month": "2025-08",
+          "popIndex": 91,
+          "econIndex": 77,
+          "vitalityIndex": 87,
+          "nightEconomyIdx": 71,
+          "consumeIdx": 65,
+          "trafficReachIdx": 59,
+          "inboundFlowIdx": 75
+        },
+        {
+          "month": "2025-09",
+          "popIndex": 95,
+          "econIndex": 70,
+          "vitalityIndex": 86,
+          "nightEconomyIdx": 75,
+          "consumeIdx": 72,
+          "trafficReachIdx": 55,
+          "inboundFlowIdx": 76
+        },
+        {
+          "month": "2025-10",
+          "popIndex": 100,
+          "econIndex": 73,
+          "vitalityIndex": 86,
+          "nightEconomyIdx": 85,
+          "consumeIdx": 73,
+          "trafficReachIdx": 61,
+          "inboundFlowIdx": 69
+        },
+        {
+          "month": "2025-11",
+          "popIndex": 100,
+          "econIndex": 78,
+          "vitalityIndex": 96,
+          "nightEconomyIdx": 85,
+          "consumeIdx": 75,
+          "trafficReachIdx": 58,
+          "inboundFlowIdx": 75
+        },
+        {
+          "month": "2025-12",
+          "popIndex": 96,
+          "econIndex": 82,
+          "vitalityIndex": 87,
+          "nightEconomyIdx": 87,
+          "consumeIdx": 79,
+          "trafficReachIdx": 60,
+          "inboundFlowIdx": 76
+        },
+        {
+          "month": "2026-01",
+          "popIndex": 100,
+          "econIndex": 79,
+          "vitalityIndex": 91,
+          "nightEconomyIdx": 88,
+          "consumeIdx": 79,
+          "trafficReachIdx": 64,
+          "inboundFlowIdx": 73
+        },
+        {
+          "month": "2026-02",
+          "popIndex": 100,
+          "econIndex": 82,
+          "vitalityIndex": 91,
+          "nightEconomyIdx": 89,
+          "consumeIdx": 79,
+          "trafficReachIdx": 58,
+          "inboundFlowIdx": 76
+        },
+        {
+          "month": "2026-03",
+          "popIndex": 100,
+          "econIndex": 76,
+          "vitalityIndex": 86,
+          "nightEconomyIdx": 77,
+          "consumeIdx": 72,
+          "trafficReachIdx": 64,
+          "inboundFlowIdx": 88
+        },
+        {
+          "month": "2026-04",
+          "popIndex": 100,
+          "econIndex": 79,
+          "vitalityIndex": 89,
+          "nightEconomyIdx": 78,
+          "consumeIdx": 69,
+          "trafficReachIdx": 63,
+          "inboundFlowIdx": 80
+        }
+      ]
+    },
+    {
+      "id": "429006",
+      "name": "天门市",
+      "tier": 4,
+      "monthly": [
+        {
+          "month": "2024-05",
+          "popIndex": 58,
+          "econIndex": 89,
+          "vitalityIndex": 67,
+          "nightEconomyIdx": 53,
+          "consumeIdx": 80,
+          "trafficReachIdx": 73,
+          "inboundFlowIdx": 53
+        },
+        {
+          "month": "2024-06",
+          "popIndex": 66,
+          "econIndex": 90,
+          "vitalityIndex": 68,
+          "nightEconomyIdx": 56,
+          "consumeIdx": 85,
+          "trafficReachIdx": 73,
+          "inboundFlowIdx": 50
+        },
+        {
+          "month": "2024-07",
+          "popIndex": 63,
+          "econIndex": 86,
+          "vitalityIndex": 69,
+          "nightEconomyIdx": 53,
+          "consumeIdx": 86,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 53
+        },
+        {
+          "month": "2024-08",
+          "popIndex": 65,
+          "econIndex": 86,
+          "vitalityIndex": 73,
+          "nightEconomyIdx": 58,
+          "consumeIdx": 88,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 57
+        },
+        {
+          "month": "2024-09",
+          "popIndex": 68,
+          "econIndex": 96,
+          "vitalityIndex": 70,
+          "nightEconomyIdx": 58,
+          "consumeIdx": 86,
+          "trafficReachIdx": 73,
+          "inboundFlowIdx": 49
+        },
+        {
+          "month": "2024-10",
+          "popIndex": 62,
+          "econIndex": 88,
+          "vitalityIndex": 71,
+          "nightEconomyIdx": 56,
+          "consumeIdx": 86,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 59
+        },
+        {
+          "month": "2024-11",
+          "popIndex": 65,
+          "econIndex": 90,
+          "vitalityIndex": 65,
+          "nightEconomyIdx": 59,
+          "consumeIdx": 87,
+          "trafficReachIdx": 72,
+          "inboundFlowIdx": 62
+        },
+        {
+          "month": "2024-12",
+          "popIndex": 63,
+          "econIndex": 94,
+          "vitalityIndex": 68,
+          "nightEconomyIdx": 62,
+          "consumeIdx": 86,
+          "trafficReachIdx": 67,
+          "inboundFlowIdx": 62
+        },
+        {
+          "month": "2025-01",
+          "popIndex": 64,
+          "econIndex": 86,
+          "vitalityIndex": 67,
+          "nightEconomyIdx": 52,
+          "consumeIdx": 82,
+          "trafficReachIdx": 71,
+          "inboundFlowIdx": 64
+        },
+        {
+          "month": "2025-02",
+          "popIndex": 61,
+          "econIndex": 83,
+          "vitalityIndex": 56,
+          "nightEconomyIdx": 55,
+          "consumeIdx": 75,
+          "trafficReachIdx": 71,
+          "inboundFlowIdx": 63
+        },
+        {
+          "month": "2025-03",
+          "popIndex": 60,
+          "econIndex": 85,
+          "vitalityIndex": 59,
+          "nightEconomyIdx": 53,
+          "consumeIdx": 78,
+          "trafficReachIdx": 69,
+          "inboundFlowIdx": 62
+        },
+        {
+          "month": "2025-04",
+          "popIndex": 59,
+          "econIndex": 84,
+          "vitalityIndex": 58,
+          "nightEconomyIdx": 50,
+          "consumeIdx": 78,
+          "trafficReachIdx": 65,
+          "inboundFlowIdx": 67
+        },
+        {
+          "month": "2025-05",
+          "popIndex": 61,
+          "econIndex": 79,
+          "vitalityIndex": 56,
+          "nightEconomyIdx": 52,
+          "consumeIdx": 73,
+          "trafficReachIdx": 63,
+          "inboundFlowIdx": 54
+        },
+        {
+          "month": "2025-06",
+          "popIndex": 60,
+          "econIndex": 83,
+          "vitalityIndex": 58,
+          "nightEconomyIdx": 50,
+          "consumeIdx": 77,
+          "trafficReachIdx": 67,
+          "inboundFlowIdx": 56
+        },
+        {
+          "month": "2025-07",
+          "popIndex": 53,
+          "econIndex": 81,
+          "vitalityIndex": 65,
+          "nightEconomyIdx": 54,
+          "consumeIdx": 81,
+          "trafficReachIdx": 64,
+          "inboundFlowIdx": 49
+        },
+        {
+          "month": "2025-08",
+          "popIndex": 56,
+          "econIndex": 89,
+          "vitalityIndex": 66,
+          "nightEconomyIdx": 52,
+          "consumeIdx": 82,
+          "trafficReachIdx": 72,
+          "inboundFlowIdx": 56
+        },
+        {
+          "month": "2025-09",
+          "popIndex": 60,
+          "econIndex": 90,
+          "vitalityIndex": 62,
+          "nightEconomyIdx": 58,
+          "consumeIdx": 80,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 55
+        },
+        {
+          "month": "2025-10",
+          "popIndex": 65,
+          "econIndex": 86,
+          "vitalityIndex": 64,
+          "nightEconomyIdx": 56,
+          "consumeIdx": 87,
+          "trafficReachIdx": 74,
+          "inboundFlowIdx": 58
+        },
+        {
+          "month": "2025-11",
+          "popIndex": 72,
+          "econIndex": 89,
+          "vitalityIndex": 65,
+          "nightEconomyIdx": 63,
+          "consumeIdx": 82,
+          "trafficReachIdx": 73,
+          "inboundFlowIdx": 62
+        },
+        {
+          "month": "2025-12",
+          "popIndex": 72,
+          "econIndex": 93,
+          "vitalityIndex": 68,
+          "nightEconomyIdx": 56,
+          "consumeIdx": 87,
+          "trafficReachIdx": 75,
+          "inboundFlowIdx": 56
+        },
+        {
+          "month": "2026-01",
+          "popIndex": 78,
+          "econIndex": 97,
+          "vitalityIndex": 73,
+          "nightEconomyIdx": 61,
+          "consumeIdx": 89,
+          "trafficReachIdx": 72,
+          "inboundFlowIdx": 58
+        },
+        {
+          "month": "2026-02",
+          "popIndex": 78,
+          "econIndex": 91,
+          "vitalityIndex": 67,
+          "nightEconomyIdx": 63,
+          "consumeIdx": 89,
+          "trafficReachIdx": 73,
+          "inboundFlowIdx": 60
+        },
+        {
+          "month": "2026-03",
+          "popIndex": 69,
+          "econIndex": 88,
+          "vitalityIndex": 75,
+          "nightEconomyIdx": 57,
+          "consumeIdx": 87,
+          "trafficReachIdx": 73,
+          "inboundFlowIdx": 64
+        },
+        {
+          "month": "2026-04",
+          "popIndex": 71,
+          "econIndex": 90,
+          "vitalityIndex": 63,
+          "nightEconomyIdx": 58,
+          "consumeIdx": 83,
+          "trafficReachIdx": 69,
+          "inboundFlowIdx": 66
+        }
+      ]
+    },
+    {
+      "id": "429021",
+      "name": "神农架林区",
+      "tier": 4,
+      "monthly": [
+        {
+          "month": "2024-05",
+          "popIndex": 79,
+          "econIndex": 53,
+          "vitalityIndex": 88,
+          "nightEconomyIdx": 66,
+          "consumeIdx": 86,
+          "trafficReachIdx": 60,
+          "inboundFlowIdx": 79
+        },
+        {
+          "month": "2024-06",
+          "popIndex": 80,
+          "econIndex": 51,
+          "vitalityIndex": 100,
+          "nightEconomyIdx": 66,
+          "consumeIdx": 94,
+          "trafficReachIdx": 63,
+          "inboundFlowIdx": 86
+        },
+        {
+          "month": "2024-07",
+          "popIndex": 82,
+          "econIndex": 51,
+          "vitalityIndex": 100,
+          "nightEconomyIdx": 67,
+          "consumeIdx": 97,
+          "trafficReachIdx": 59,
+          "inboundFlowIdx": 82
+        },
+        {
+          "month": "2024-08",
+          "popIndex": 87,
+          "econIndex": 59,
+          "vitalityIndex": 97,
+          "nightEconomyIdx": 76,
+          "consumeIdx": 97,
+          "trafficReachIdx": 65,
+          "inboundFlowIdx": 81
+        },
+        {
+          "month": "2024-09",
+          "popIndex": 97,
+          "econIndex": 56,
+          "vitalityIndex": 100,
+          "nightEconomyIdx": 77,
+          "consumeIdx": 98,
+          "trafficReachIdx": 67,
+          "inboundFlowIdx": 88
+        },
+        {
+          "month": "2024-10",
+          "popIndex": 96,
+          "econIndex": 51,
+          "vitalityIndex": 100,
+          "nightEconomyIdx": 78,
+          "consumeIdx": 99,
+          "trafficReachIdx": 59,
+          "inboundFlowIdx": 85
+        },
+        {
+          "month": "2024-11",
+          "popIndex": 93,
+          "econIndex": 50,
+          "vitalityIndex": 95,
+          "nightEconomyIdx": 73,
+          "consumeIdx": 98,
+          "trafficReachIdx": 64,
+          "inboundFlowIdx": 89
+        },
+        {
+          "month": "2024-12",
+          "popIndex": 94,
+          "econIndex": 54,
+          "vitalityIndex": 100,
+          "nightEconomyIdx": 73,
+          "consumeIdx": 94,
+          "trafficReachIdx": 60,
+          "inboundFlowIdx": 94
+        },
+        {
+          "month": "2025-01",
+          "popIndex": 89,
+          "econIndex": 50,
+          "vitalityIndex": 95,
+          "nightEconomyIdx": 64,
+          "consumeIdx": 92,
+          "trafficReachIdx": 63,
+          "inboundFlowIdx": 90
+        },
+        {
+          "month": "2025-02",
+          "popIndex": 87,
+          "econIndex": 47,
+          "vitalityIndex": 90,
+          "nightEconomyIdx": 61,
+          "consumeIdx": 88,
+          "trafficReachIdx": 56,
+          "inboundFlowIdx": 85
+        },
+        {
+          "month": "2025-03",
+          "popIndex": 83,
+          "econIndex": 48,
+          "vitalityIndex": 92,
+          "nightEconomyIdx": 65,
+          "consumeIdx": 91,
+          "trafficReachIdx": 53,
+          "inboundFlowIdx": 81
+        },
+        {
+          "month": "2025-04",
+          "popIndex": 79,
+          "econIndex": 50,
+          "vitalityIndex": 85,
+          "nightEconomyIdx": 66,
+          "consumeIdx": 83,
+          "trafficReachIdx": 55,
+          "inboundFlowIdx": 81
+        },
+        {
+          "month": "2025-05",
+          "popIndex": 83,
+          "econIndex": 52,
+          "vitalityIndex": 86,
+          "nightEconomyIdx": 67,
+          "consumeIdx": 82,
+          "trafficReachIdx": 54,
+          "inboundFlowIdx": 81
+        },
+        {
+          "month": "2025-06",
+          "popIndex": 74,
+          "econIndex": 53,
+          "vitalityIndex": 86,
+          "nightEconomyIdx": 65,
+          "consumeIdx": 86,
+          "trafficReachIdx": 53,
+          "inboundFlowIdx": 89
+        },
+        {
+          "month": "2025-07",
+          "popIndex": 80,
+          "econIndex": 48,
+          "vitalityIndex": 93,
+          "nightEconomyIdx": 65,
+          "consumeIdx": 84,
+          "trafficReachIdx": 58,
+          "inboundFlowIdx": 79
+        },
+        {
+          "month": "2025-08",
+          "popIndex": 81,
+          "econIndex": 50,
+          "vitalityIndex": 99,
+          "nightEconomyIdx": 64,
+          "consumeIdx": 88,
+          "trafficReachIdx": 59,
+          "inboundFlowIdx": 91
+        },
+        {
+          "month": "2025-09",
+          "popIndex": 93,
+          "econIndex": 52,
+          "vitalityIndex": 94,
+          "nightEconomyIdx": 75,
+          "consumeIdx": 90,
+          "trafficReachIdx": 60,
+          "inboundFlowIdx": 92
+        },
+        {
+          "month": "2025-10",
+          "popIndex": 97,
+          "econIndex": 54,
+          "vitalityIndex": 95,
+          "nightEconomyIdx": 72,
+          "consumeIdx": 96,
+          "trafficReachIdx": 59,
+          "inboundFlowIdx": 84
+        },
+        {
+          "month": "2025-11",
+          "popIndex": 94,
+          "econIndex": 59,
+          "vitalityIndex": 100,
+          "nightEconomyIdx": 69,
+          "consumeIdx": 97,
+          "trafficReachIdx": 60,
+          "inboundFlowIdx": 95
+        },
+        {
+          "month": "2025-12",
+          "popIndex": 100,
+          "econIndex": 57,
+          "vitalityIndex": 97,
+          "nightEconomyIdx": 78,
+          "consumeIdx": 100,
+          "trafficReachIdx": 66,
+          "inboundFlowIdx": 91
+        },
+        {
+          "month": "2026-01",
+          "popIndex": 100,
+          "econIndex": 62,
+          "vitalityIndex": 97,
+          "nightEconomyIdx": 70,
+          "consumeIdx": 99,
+          "trafficReachIdx": 66,
+          "inboundFlowIdx": 96
+        },
+        {
+          "month": "2026-02",
+          "popIndex": 99,
+          "econIndex": 55,
+          "vitalityIndex": 100,
+          "nightEconomyIdx": 80,
+          "consumeIdx": 100,
+          "trafficReachIdx": 68,
+          "inboundFlowIdx": 88
+        },
+        {
+          "month": "2026-03",
+          "popIndex": 93,
+          "econIndex": 52,
+          "vitalityIndex": 100,
+          "nightEconomyIdx": 74,
+          "consumeIdx": 95,
+          "trafficReachIdx": 62,
+          "inboundFlowIdx": 87
+        },
+        {
+          "month": "2026-04",
+          "popIndex": 85,
+          "econIndex": 51,
+          "vitalityIndex": 97,
+          "nightEconomyIdx": 72,
+          "consumeIdx": 90,
+          "trafficReachIdx": 62,
+          "inboundFlowIdx": 91
+        }
+      ]
+    }
+  ]
+}

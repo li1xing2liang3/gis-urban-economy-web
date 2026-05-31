@@ -1,24 +1,29 @@
 :root {
-  --bg-deep: #0d1b2a;
-  --bg-panel: #1b2838;
-  --bg-panel-hover: #243447;
-  --border: #2d3d52;
+  --bg-void: #030712;
+  --bg-deep: #0a1628;
+  --bg-panel: rgba(17, 28, 44, 0.92);
+  --bg-panel-hover: rgba(30, 46, 68, 0.95);
+  --border: rgba(71, 96, 124, 0.55);
+  --border-glow: rgba(56, 189, 248, 0.35);
   --text: #e8eef4;
   --text-muted: #8fa3b8;
-  --accent: #3d9cf5;
-  --accent-hot: #f5a623;
-  --danger: #e85d5d;
-  --success: #3dd68c;
-  --radius: 8px;
-  --header-h: 52px;
-  --footer-h: 28px;
-  --sidebar-w: 240px;
-  --sidebar-w-collapsed: 56px;
-  font-family: 'Segoe UI', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei',
+  --accent: #38bdf8;
+  --accent-dim: rgba(56, 189, 248, 0.65);
+  --accent-secondary: #818cf8;
+  --accent-hot: #fbbf24;
+  --danger: #f87171;
+  --success: #34d399;
+  --radius: 10px;
+  --header-h: 56px;
+  --footer-h: 32px;
+  --sidebar-w: 248px;
+  --sidebar-w-collapsed: 58px;
+  --font-display: 'Segoe UI', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei',
     sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Mono', 'SF Mono', Consolas, monospace;
+  font-family: var(--font-display);
   line-height: 1.45;
   color: var(--text);
-  background: var(--bg-deep);
 }
 
 *,
@@ -30,7 +35,11 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--bg-deep);
+  background-color: var(--bg-void);
+  background-image:
+    radial-gradient(ellipse 100% 60% at 50% -15%, rgba(56, 189, 248, 0.14), transparent 52%),
+    radial-gradient(ellipse 55% 45% at 95% 45%, rgba(129, 140, 248, 0.09), transparent 48%),
+    radial-gradient(ellipse 40% 35% at 5% 70%, rgba(52, 211, 153, 0.05), transparent 45%);
 }
 
 #app {
@@ -56,6 +65,9 @@ select {
   background: var(--bg-panel);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .btn {
@@ -75,9 +87,10 @@ select {
 }
 
 .btn-primary {
-  background: linear-gradient(180deg, #2a7cc9, #1f5f9a);
-  border-color: #3d9cf5;
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  border-color: rgba(56, 189, 248, 0.65);
   color: #fff;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
 }
 
 .btn-primary:disabled {
@@ -98,4 +111,23 @@ select {
 /* Leaflet z-index below modals */
 .leaflet-container {
   font-family: inherit;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-content-wrapper.gis-city-popup {
+  background: rgba(15, 23, 42, 0.96);
+  color: var(--text);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.leaflet-popup-tip {
+  background: rgba(15, 23, 42, 0.96);
+  border: 1px solid var(--border);
+}
+
+.leaflet-popup-content {
+  margin: 10px 12px;
+  line-height: 1.45;
 }

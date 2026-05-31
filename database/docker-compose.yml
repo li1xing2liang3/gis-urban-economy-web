@@ -1,0 +1,25 @@
+# PostGIS 开发库（课堂/本地演示）
+# 需本机已安装 Docker Desktop；若无 Docker，请用 scripts/setup.ps1 + 本机 PostgreSQL
+
+services:
+  postgis:
+    image: postgis/postgis:16-3.4
+    container_name: gis-economy-postgis
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: gis_economy
+    volumes:
+      - gis_pgdata:/var/lib/postgresql/data
+      - ./sql:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  gis_pgdata:

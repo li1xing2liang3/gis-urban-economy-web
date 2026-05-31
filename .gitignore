@@ -5,3 +5,20 @@ __pycache__/
 *.pyd
 *.log
 .DS_Store
+
+# 前端构建与依赖
+web/node_modules/
+web/dist/
+
+# 本地环境（保留 .env.example 模板）
+.env
+.env.local
+.env.*.local
+*.local
+database/.env
+!**/.env.example
+database/node_modules/
+
+# Word 解压临时目录
+docs/_extract_city/
+docs/_temp_city.zip
