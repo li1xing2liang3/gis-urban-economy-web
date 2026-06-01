@@ -43,7 +43,7 @@
         </p>
         <LayerTreePanel :layers="layers" />
         <div v-if="poiLayerVisible" class="poi-legend panel">
-          <div class="poi-legend-title">POI 业态颜色</div>
+          <div class="poi-legend-title">POI 点 · 圆形影响区</div>
           <div class="poi-legend-grid">
             <span v-for="item in POI_CATEGORY_LEGEND" :key="item.key" class="poi-legend-item">
               <i class="poi-dot" :style="{ background: poiCategoryColor(item.key) }" />
@@ -66,7 +66,14 @@ import { useLeafletMap } from '@/composables/useLeafletMap';
 import { WUHAN_CENTER } from '@/utils/mapConstants';
 import { overviewLayerCatalog } from '@/config/layerCatalog';
 import type { LayerItem } from '@/types/layer';
-import { mockHubeiDataPrefix, vitalityFillColor, poiCategoryColor, POI_CATEGORY_LEGEND } from '@/utils/mockHubeiDataset';
+import {
+  mockHubeiDataPrefix,
+  vitalityFillColor,
+  poiCategoryColor,
+  POI_CATEGORY_LEGEND,
+  poiInfluenceRadiusM,
+  type PoiPointProperties,
+} from '@/utils/mockHubeiDataset';
 import { gis, regionKpis, setRegionPoint, setRegionBox } from '@/stores/gisState';
 import { addBookmark, downloadMapPng, downloadTextReport, loadBookmarks } from '@/utils/exportAndBookmark';
 import type { FeatureCollection } from 'geojson';
@@ -96,11 +103,21 @@ let isDrawing = false;
 let startLL: L.LatLng | null = null;
 let handlers: { off: () => void } | null = null;
 
+function releaseMapDrag() {
+  const map = mapInstance.value;
+  if (!map) return;
+  isDrawing = false;
+  startLL = null;
+  map.dragging.enable();
+  map.touchZoom.enable();
+}
+
 function removeDrawHandlers() {
   if (handlers) {
     handlers.off();
     handlers = null;
   }
+  releaseMapDrag();
 }
 
 function syncRegionOverlays() {
@@ -133,7 +150,9 @@ function attachBoxDraw() {
   const map = mapInstance.value;
   if (!map) return;
   removeDrawHandlers();
-  if (gis.region.mode !== 'box') return;
+  if (gis.region.mode !== 'box') {
+    return;
+  }
   const onDown = (e: L.LeafletMouseEvent) => {
     if (gis.region.mode !== 'box') return;
     isDrawing = true;
@@ -168,14 +187,26 @@ function attachBoxDraw() {
     }
     syncRegionOverlays();
   };
+  const onLeave = () => {
+    if (!isDrawing) return;
+    isDrawing = false;
+    startLL = null;
+    releaseMapDrag();
+    if (drawRect) {
+      map.removeLayer(drawRect);
+      drawRect = null;
+    }
+  };
   map.on('mousedown', onDown);
   map.on('mousemove', onMove);
   map.on('mouseup', onUp);
+  map.on('mouseout', onLeave);
   handlers = {
     off: () => {
       map.off('mousedown', onDown);
       map.off('mousemove', onMove);
       map.off('mouseup', onUp);
+      map.off('mouseout', onLeave);
     },
   };
 }
@@ -225,27 +256,44 @@ watch(
       const res = await fetch(`${mockHubeiDataPrefix()}poi-sample.geojson`);
       if (!res.ok) return;
       const fc = (await res.json()) as FeatureCollection;
-      poiMockLayer = L.geoJSON(fc, {
-        pointToLayer: (feat, latlng) => {
-          const p = feat.properties as { categoryKey?: string; importance?: number };
-          const k = p.categoryKey ?? '';
-          const col = poiCategoryColor(k);
-          const r = 3 + Math.round((p.importance ?? 0.55) * 6);
-          return L.circleMarker(latlng, {
-            radius: r,
-            color: col,
-            fillColor: col,
-            fillOpacity: 0.88 * (po.opacity ?? 1),
-            weight: 1,
-          });
-        },
-        onEachFeature: (feat, lay) => {
-          const p = feat.properties as Record<string, string | number | undefined>;
-          lay.bindPopup(
-            `<div style="font-size:12px;"><strong>${p.name ?? ''}</strong><br/><span style="opacity:.85">${p.category ?? ''}</span> · ${p.cityName ?? ''}</div>`,
-          );
-        },
-      }).addTo(map);
+      const g = L.layerGroup();
+      const poiRenderer = L.canvas({ padding: 0.5 });
+      const op = po.opacity ?? 1;
+      for (const feat of fc.features) {
+        if (feat.geometry?.type !== 'Point') continue;
+        const coords = feat.geometry.coordinates as [number, number];
+        const latlng = L.latLng(coords[1], coords[0]);
+        const p = (feat.properties ?? {}) as PoiPointProperties;
+        const k = p.categoryKey ?? '';
+        const col = poiCategoryColor(k);
+        const inflM = poiInfluenceRadiusM(p);
+        const basis = p.influenceBasis;
+        const popupHtml = `<div style="font-size:12px;"><strong>${p.name ?? ''}</strong><br/><span style="opacity:.85">${p.category ?? ''}</span> · ${p.cityName ?? ''}<br/>主商圈半径：${inflM < 1000 ? `${inflM} m` : `${(inflM / 1000).toFixed(2)} km`}${basis ? `<br/><span style="opacity:.75">${basis}</span>` : ''}</div>`;
+        L.circle(latlng, {
+          radius: inflM,
+          renderer: poiRenderer,
+          color: col,
+          weight: 1,
+          fillColor: col,
+          fillOpacity: 0.1 * op,
+          opacity: 0.55 * op,
+        })
+          .bindPopup(popupHtml)
+          .addTo(g);
+        const markerR = 3 + Math.round((p.importance ?? 0.55) * 6);
+        L.circleMarker(latlng, {
+          radius: markerR,
+          renderer: poiRenderer,
+          color: col,
+          fillColor: col,
+          fillOpacity: 0.88 * op,
+          weight: 1,
+        })
+          .bindPopup(popupHtml)
+          .addTo(g);
+      }
+      g.addTo(map);
+      poiMockLayer = g;
     } catch {
       /* 忽略：保持无 POI 叠加 */
     }

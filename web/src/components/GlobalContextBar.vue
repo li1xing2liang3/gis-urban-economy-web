@@ -139,15 +139,10 @@ const regionHint = computed(() => {
 
 
 function onRegionMode() {
-
   if (gis.region.mode === 'all') setRegionAll();
-
-  if (gis.region.mode === 'admin' && gis.region.adminName) {
-
-    setRegionAdmin(gis.region.adminName);
-
-  }
-
+  else if (gis.region.mode === 'admin' && gis.region.adminName) setRegionAdmin(gis.region.adminName);
+  else if (gis.region.mode === 'point') gis.region.label = '点选 1 km（请在总览地图点击）';
+  else if (gis.region.mode === 'box') gis.region.label = '框选（总览地图拖拽矩形）';
 }
 
 

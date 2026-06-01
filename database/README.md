@@ -66,21 +66,33 @@ npm run verify
 | `data_sources` / `layer_catalog` | 数据源与图层元数据 |
 | `admin_boundaries` | 湖北省界 |
 | `city_units` | 市州单元面 + 合成指标 |
-| `poi_points` | POI 点 |
+| `poi_points` | POI 点（含 `poi_id`、`influence_radius_m`） |
+| `poi_influence` | POI 主商圈影响圆（Polygon） |
 | `timeseries_province` | 全省月度时序 |
 | `timeseries_cities` | 各市州月度时序 |
 | `analysis_tasks` | 分析任务（后端 API 持久化） |
 
-## 当前数据量（验证通过）
+## 当前数据量（`npm run seed` 后预期）
 
-| 表 | 行数 |
+| 表 | 行数（约） |
 |----|------|
-| admin_boundaries | 1 |
-| city_units | 17 |
-| poi_points | 272 |
-| timeseries_province | 24 |
-| timeseries_cities | 408 |
+| admin_boundaries | 1（GADM 省界） |
+| city_units | 17（阶段 3 因果链指标） |
+| poi_points | 1031（含影响半径，中位约 305 m） |
+| poi_influence | 1031（影响圆面） |
+| timeseries_province | 24 月 |
+| timeseries_cities | 408（17 市 × 24 月） |
 | layer_catalog | 9 |
+
+更新 mock 后请重新执行：
+
+```powershell
+cd web
+npm run generate:mock-hubei
+cd ../database
+npm run seed
+npm run verify
+```
 
 ## 常用命令
 

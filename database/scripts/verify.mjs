@@ -19,6 +19,11 @@ const checks = [
   ['PostGIS', "SELECT PostGIS_Version() AS v"],
   ['city_units', 'SELECT COUNT(*)::int AS n FROM gis.city_units'],
   ['poi_points', 'SELECT COUNT(*)::int AS n FROM gis.poi_points'],
+  ['poi_influence', "SELECT COUNT(*)::int AS n FROM gis.poi_influence"],
+  [
+    'poi_radius_m',
+    'SELECT MIN(influence_radius_m)::int AS min_m, PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY influence_radius_m)::int AS med_m, MAX(influence_radius_m)::int AS max_m FROM gis.poi_points',
+  ],
   ['timeseries_province', 'SELECT COUNT(*)::int AS n FROM gis.timeseries_province'],
   ['admin_boundaries', 'SELECT COUNT(*)::int AS n FROM gis.admin_boundaries'],
   ['timeseries_cities', 'SELECT COUNT(*)::int AS n FROM gis.timeseries_cities'],

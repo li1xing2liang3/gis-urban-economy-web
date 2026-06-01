@@ -88,7 +88,7 @@ if (-not $SkipSeed) {
     npm install --silent
   }
   $env:DATABASE_URL = "postgresql://${AppUser}:${AppPassword}@${Host}:${Port}/${DbName}"
-  node "scripts\seed-from-mock.mjs"
+  npm run seed
   Pop-Location
 }
 

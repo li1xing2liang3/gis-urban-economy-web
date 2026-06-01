@@ -18,7 +18,10 @@ export function useLeafletMap(container: Ref<HTMLElement | null>) {
   onMounted(() => {
     const el = container.value;
     if (!el) return;
-    const map = L.map(el, { zoomControl: true }).setView(WUHAN_CENTER, DEFAULT_ZOOM);
+    const map = L.map(el, {
+      zoomControl: true,
+      preferCanvas: true,
+    }).setView(WUHAN_CENTER, DEFAULT_ZOOM);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; OpenStreetMap',

@@ -50,6 +50,25 @@ export function poiCategoryColor(categoryKey: string): string {
   return POI_PALETTE[categoryKey] ?? '#f5a623';
 }
 
+export type PoiPointProperties = {
+  poiId?: string;
+  name?: string;
+  categoryKey?: string;
+  category?: string;
+  cityName?: string;
+  importance?: number;
+  influenceRadiusKm?: number;
+  influenceRadiusM?: number;
+  influenceBasis?: string;
+  influenceRing?: string;
+};
+
+export function poiInfluenceRadiusM(props: PoiPointProperties): number {
+  if (props.influenceRadiusM != null && props.influenceRadiusM > 0) return props.influenceRadiusM;
+  const km = props.influenceRadiusKm ?? 0.4;
+  return Math.round(km * 1000);
+}
+
 export const POI_CATEGORY_LEGEND: { key: string; label: string }[] = [
   { key: 'retail', label: '零售' },
   { key: 'food', label: '餐饮' },

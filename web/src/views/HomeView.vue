@@ -76,7 +76,8 @@ import { RouterLink } from 'vue-router';
 <style scoped>
 .home-page {
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   color: #eef7ff;
   background:
     linear-gradient(115deg, rgba(2, 5, 9, 0.98) 0 38%, rgba(4, 21, 34, 0.92) 58%, rgba(1, 8, 18, 0.98) 100%),
@@ -177,6 +178,18 @@ import { RouterLink } from 'vue-router';
   grid-template-columns: minmax(360px, 0.95fr) minmax(420px, 1.05fr);
   align-items: center;
   padding: 30px clamp(28px, 8vw, 120px) 78px;
+}
+
+.theme-visual,
+.city-board,
+.scan-line,
+.hubei-outline,
+.orbit-lines,
+.flight-path,
+.uav-node,
+.heat,
+.skyline {
+  pointer-events: none;
 }
 
 .star-field,

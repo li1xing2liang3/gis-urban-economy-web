@@ -46,6 +46,45 @@ const POI_CATS = [
   { key: 'finance', name: '金融网点', weight: 0.55 },
 ];
 
+/**
+ * 影响半径（米）· 参照零售「主商圈 Primary trade area」步行/驾车可达的简化圆近似
+ * 行业常见：便利店/QSR 主商圈约 5–15 分钟车程或 10–15 分钟步行（Geod、RadiusMapper 等零售区位分析资料）；
+ * 城市步行约 4–5 km/h → 10 分钟 ≈ 650–850 m；便利店社区级主商圈多小于 500 m。
+ * 本演示对单点 POI 取保守的「核心服务半径」，非完整次级/边缘商圈。
+ * @see https://www.geod.app/blog/trade-area-analysis
+ */
+const INFLUENCE_M_BY_CAT = {
+  finance: { min: 60, max: 180, label: '网点步行圈' },
+  food: { min: 100, max: 280, label: '餐饮社区圈' },
+  life: { min: 90, max: 220, label: '生活服务圈' },
+  retail: { min: 150, max: 380, anchorMin: 600, anchorMax: 1200, label: '零售社区圈/商场主圈' },
+  culture: { min: 180, max: 450, label: '文体休闲圈' },
+  office: { min: 200, max: 500, label: '商务办公圈' },
+  hotel: { min: 250, max: 650, label: '住宿接待圈' },
+};
+
+function influenceRadiusKm(categoryKey, importance, tier) {
+  const spec = INFLUENCE_M_BY_CAT[categoryKey] ?? { min: 100, max: 300 };
+  let radiusM;
+  if (categoryKey === 'retail' && importance >= 0.8 && spec.anchorMax) {
+    const t = (importance - 0.8) / 0.2;
+    radiusM = spec.anchorMin + (spec.anchorMax - spec.anchorMin) * Math.min(1, Math.max(0, t));
+  } else {
+    radiusM = spec.min + (spec.max - spec.min) * importance;
+  }
+  const tierScale = { 1: 1.04, 2: 1.02, 3: 1.0, 4: 0.96 }[tier] ?? 1;
+  radiusM = Math.min(radiusM * tierScale, categoryKey === 'retail' && importance >= 0.8 ? 1300 : 550);
+  return Number((radiusM / 1000).toFixed(3));
+}
+
+/** 按城市层级分配 POI 数量，全省目标约 1000+ */
+function poiCountForUnit(unit, rng) {
+  const tierBase = { 1: 185, 2: 92, 3: 58, 4: 36 };
+  const base = tierBase[unit.tier] ?? 48;
+  const jitter = Math.floor(rng() * 21) - 10;
+  return Math.max(22, base + jitter);
+}
+
 const R_EARTH_KM = 6371;
 
 function destinationPoint(lat, lng, bearingDeg, distKm) {
@@ -84,6 +123,313 @@ function mulberry32(a) {
 
 function pick(rng, min, max) {
   return min + rng() * (max - min);
+}
+
+function clampIndex(x) {
+  return Math.round(Math.min(100, Math.max(28, x)));
+}
+
+/** 城市圆面示意面积（km²） */
+function unitAreaKm2(unit) {
+  return Math.PI * unit.radiusKm * unit.radiusKm;
+}
+
+/**
+ * 阶段 3：因果链（演示假设，非统计因果识别）
+ * 结构层：人口基数、交通可达、POI 空间集聚（由已生成 POI 聚合）
+ * 月度层：季节/节假日冲击 → 人流 → 活力/夜经济/消费 → 人口与经济指数
+ */
+const CAUSAL_WEIGHTS = {
+  footFromPop: 0.26,
+  footFromPoi: 0.34,
+  footFromTraffic: 0.28,
+  activityFromFoot: 0.52,
+  activityFromPoi: 0.28,
+  activityFromTraffic: 0.2,
+  vitalityFromActivity: 0.48,
+  vitalityFromPoi: 0.22,
+  vitalityFromTraffic: 0.18,
+  vitalityFromPop: 0.12,
+  nightFromActivity: 0.42,
+  nightFromPoi: 0.28,
+  nightHoliday: 4.2,
+  consumeFromActivity: 0.38,
+  consumeFromVitality: 0.42,
+  consumeFromPoi: 0.2,
+  popFromBase: 0.58,
+  popFromActivity: 0.32,
+  econFromVitality: 0.36,
+  econFromConsume: 0.28,
+  econFromTraffic: 0.22,
+  econFromPop: 0.14,
+  inboundFromActivity: 0.48,
+  inboundFromVitality: 0.32,
+};
+
+function aggregatePoiByCity(poiFeatures) {
+  const byCity = Object.fromEntries(
+    UNITS.map((u) => [
+      u.id,
+      { count: 0, importanceSum: 0, influenceAreaKm2: 0, catWeightSum: 0 },
+    ]),
+  );
+  const catW = Object.fromEntries(POI_CATS.map((c) => [c.key, c.weight]));
+  for (const f of poiFeatures) {
+    const p = f.properties;
+    const bucket = byCity[p.cityId];
+    if (!bucket) continue;
+    bucket.count += 1;
+    const imp = p.importance ?? 0.5;
+    bucket.importanceSum += imp;
+    const r = p.influenceRadiusKm ?? 0.4;
+    bucket.influenceAreaKm2 += Math.PI * r * r;
+    bucket.catWeightSum += (catW[p.categoryKey] ?? 1) * imp;
+  }
+  return byCity;
+}
+
+function poiStructuralScore(bucket, unit) {
+  const area = unitAreaKm2(unit);
+  const densityPerKm2 = bucket.count / Math.max(area, 0.01);
+  const densityScore = Math.min(100, densityPerKm2 * 95);
+  const coverScore = Math.min(100, (bucket.influenceAreaKm2 / Math.max(area, 0.01)) * 12);
+  const qualityScore = bucket.count ? (bucket.importanceSum / bucket.count) * 100 : 42;
+  const mixScore = bucket.count ? Math.min(100, (bucket.catWeightSum / bucket.count) * 55) : 40;
+  return clampIndex(0.38 * densityScore + 0.28 * coverScore + 0.2 * qualityScore + 0.14 * mixScore);
+}
+
+function buildCitySeriesCausal(months, poiByCity, rng) {
+  return UNITS.map((u, cityIdx) => {
+    const tierBoost = (5 - u.tier) * 4;
+    const popBase = pick(rng, 48, 82) + tierBoost * 0.55;
+    const accessBase = pick(rng, 50, 88) + tierBoost * 0.45;
+    const poiBase = poiStructuralScore(poiByCity[u.id], u);
+    const bucket = poiByCity[u.id];
+    const area = unitAreaKm2(u);
+
+    const popGrowthPct = Number((pick(rng, -0.4, 2.8) + (5 - u.tier) * 0.15).toFixed(1));
+    const manufacturingShare = Number((pick(rng, 18, 42) - (u.tier <= 2 ? 5 : 0)).toFixed(1));
+    const serviceShare = Number((Math.min(72, 92 - manufacturingShare - pick(rng, 5, 15))).toFixed(1));
+
+    const monthly = months.map((month, idx) => {
+      const cn = new Date(month + '-01').getMonth();
+      const season = Math.sin(((idx + cityIdx * 2) / 6) * Math.PI) * 5;
+      const wave = Math.sin((idx / 8) * Math.PI) * 4;
+      const holidayBump = cn === 0 || cn === 9 ? 3.8 : cn >= 4 && cn <= 9 ? 1.6 : 0;
+      const shock = pick(rng, -2.5, 2.5);
+      const drift = idx * 0.08;
+
+      const trafficReachIdx = clampIndex(
+        accessBase + season * 0.45 + wave * 0.35 + shock * 0.6 + drift * 0.5,
+      );
+      const poiActivityIdx = clampIndex(
+        poiBase + season * 0.35 + holidayBump * 0.85 + wave * 0.25 + shock * 0.4,
+      );
+
+      const footTrafficIdx = clampIndex(
+        CAUSAL_WEIGHTS.footFromPop * popBase +
+          CAUSAL_WEIGHTS.footFromPoi * poiActivityIdx +
+          CAUSAL_WEIGHTS.footFromTraffic * trafficReachIdx +
+          season +
+          shock,
+      );
+
+      const activityIdx = clampIndex(
+        CAUSAL_WEIGHTS.activityFromFoot * footTrafficIdx +
+          CAUSAL_WEIGHTS.activityFromPoi * poiActivityIdx +
+          CAUSAL_WEIGHTS.activityFromTraffic * trafficReachIdx +
+          wave * 0.4,
+      );
+
+      const vitalityIndex = clampIndex(
+        CAUSAL_WEIGHTS.vitalityFromActivity * activityIdx +
+          CAUSAL_WEIGHTS.vitalityFromPoi * poiActivityIdx +
+          CAUSAL_WEIGHTS.vitalityFromTraffic * trafficReachIdx +
+          CAUSAL_WEIGHTS.vitalityFromPop * popBase +
+          shock * 0.35,
+      );
+
+      const nightEconomyIdx = clampIndex(
+        CAUSAL_WEIGHTS.nightFromActivity * activityIdx +
+          CAUSAL_WEIGHTS.nightFromPoi * poiActivityIdx +
+          CAUSAL_WEIGHTS.nightHoliday * holidayBump +
+          season * 0.55 +
+          (cn >= 5 && cn <= 8 ? 1.2 : 0),
+      );
+
+      const consumeIdx = clampIndex(
+        CAUSAL_WEIGHTS.consumeFromActivity * activityIdx +
+          CAUSAL_WEIGHTS.consumeFromVitality * vitalityIndex +
+          CAUSAL_WEIGHTS.consumeFromPoi * poiActivityIdx,
+      );
+
+      const popIndex = clampIndex(
+        CAUSAL_WEIGHTS.popFromBase * popBase + CAUSAL_WEIGHTS.popFromActivity * activityIdx + drift * 0.35,
+      );
+
+      const econIndex = clampIndex(
+        CAUSAL_WEIGHTS.econFromVitality * vitalityIndex +
+          CAUSAL_WEIGHTS.econFromConsume * consumeIdx +
+          CAUSAL_WEIGHTS.econFromTraffic * trafficReachIdx +
+          CAUSAL_WEIGHTS.econFromPop * popIndex +
+          (serviceShare > 55 ? 2 : 0),
+      );
+
+      const inboundFlowIdx = clampIndex(
+        CAUSAL_WEIGHTS.inboundFromActivity * activityIdx +
+          CAUSAL_WEIGHTS.inboundFromVitality * vitalityIndex +
+          (u.tier <= 2 ? 5 : u.tier === 3 ? 2 : 0) +
+          season * 0.4,
+      );
+
+      return {
+        month,
+        popIndex,
+        econIndex,
+        vitalityIndex,
+        nightEconomyIdx,
+        consumeIdx,
+        trafficReachIdx,
+        inboundFlowIdx,
+        footTrafficIdx,
+        poiActivityIdx,
+        activityIdx,
+      };
+    });
+
+    const last = monthly[monthly.length - 1];
+    const poiPerKm2 = Number((bucket.count / Math.max(area, 0.01)).toFixed(3));
+    const popDensity = Number((180 + popBase * 58 + bucket.count * 2.2).toFixed(1));
+
+    return {
+      id: u.id,
+      name: u.name,
+      tier: u.tier,
+      monthly,
+      causal: { popBase, accessBase, poiBase },
+      latest: {
+        month: last.month,
+        popDensity,
+        poiPerKm2,
+        poiCountEstimate: bucket.count,
+        poiInfluenceKm2: Number(bucket.influenceAreaKm2.toFixed(2)),
+        vitalityIdx: last.vitalityIndex,
+        econIdx: last.econIndex,
+        popIdx: last.popIndex,
+        nightEconomyIdx: last.nightEconomyIdx,
+        consumePotential: last.consumeIdx,
+        trafficReachIdx: last.trafficReachIdx,
+        inboundFlowIdx: last.inboundFlowIdx,
+        footTrafficIdx: last.footTrafficIdx,
+        poiActivityIdx: last.poiActivityIdx,
+        activityIdx: last.activityIdx,
+        gdpProxyIdx: clampIndex(last.econIndex * 0.85 + last.vitalityIndex * 0.15),
+        popGrowthPct,
+        manufacturingShare,
+        serviceShare,
+        structureNote:
+          serviceShare > 58 ? '服务业占比偏高，消费型特征明显' : '二三产并重，制造与配套并存',
+      },
+    };
+  });
+}
+
+function generatePoiFeatures(rng, provinceFc, provinceBBox) {
+  const poiFeatures = [];
+  const influenceFeatures = [];
+  let poiRejected = 0;
+  let poiSeq = 0;
+
+  for (let i = 0; i < UNITS.length; i++) {
+    const u = UNITS[i];
+    const nPoi = poiCountForUnit(u, rng);
+    for (let k = 0; k < nPoi; k++) {
+      const cat = POI_CATS[Math.floor(rng() * POI_CATS.length)];
+      const importance = Number((0.35 + rng() * 0.65).toFixed(2));
+      let lo;
+      let la;
+      let assigned = u;
+
+      let placed = false;
+      for (let attempt = 0; attempt < 60; attempt++) {
+        const bear = rng() * 360;
+        const shrink = Math.max(0.1, 0.88 - attempt * 0.013);
+        const dist = rng() * u.radiusKm * shrink;
+        const [lat, lng] = destinationPoint(u.lat, u.lng, bear, dist);
+        if (pointInProvince(lng, lat, provinceFc)) {
+          lo = lng;
+          la = lat;
+          placed = true;
+          break;
+        }
+      }
+
+      if (!placed) {
+        const rp = randomPointInProvince(rng, provinceFc, provinceBBox, 100);
+        if (rp) {
+          lo = rp.lng;
+          la = rp.lat;
+          assigned = nearestUnit(la, lo);
+          placed = true;
+        }
+      }
+
+      if (!placed) {
+        poiRejected++;
+        continue;
+      }
+
+      poiSeq += 1;
+      const poiId = `poi-${assigned.id}-${String(poiSeq).padStart(4, '0')}`;
+      const radiusKm = influenceRadiusKm(cat.key, importance, assigned.tier);
+      const radiusM = Math.round(radiusKm * 1000);
+      const infSpec = INFLUENCE_M_BY_CAT[cat.key];
+      const isAnchorRetail = cat.key === 'retail' && importance >= 0.8;
+      const cityShort = assigned.name.replace(/市|州|林区|土家族苗族自治州/g, '');
+      const displayName = isAnchorRetail
+        ? `${cityShort}${cat.name.slice(0, 2)}商圈${k + 1}`
+        : `${cityShort}${cat.name.slice(0, 2)}样点${k + 1}`;
+
+      poiFeatures.push({
+        type: 'Feature',
+        properties: {
+          poiId,
+          name: displayName,
+          cityId: assigned.id,
+          cityName: assigned.name,
+          category: cat.name,
+          categoryKey: cat.key,
+          importance,
+          influenceRadiusKm: radiusKm,
+          influenceRadiusM: radiusM,
+          influenceType: 'circle',
+          influenceRing: isAnchorRetail ? 'primary-anchor' : 'primary',
+          influenceBasis: infSpec?.label ?? '主商圈示意',
+        },
+        geometry: { type: 'Point', coordinates: [lo, la] },
+      });
+
+      influenceFeatures.push({
+        type: 'Feature',
+        properties: {
+          poiId,
+          name: displayName,
+          cityId: assigned.id,
+          cityName: assigned.name,
+          categoryKey: cat.key,
+          importance,
+          influenceRadiusKm: radiusKm,
+          influenceRadiusM: radiusM,
+        },
+        geometry: {
+          type: 'Polygon',
+          coordinates: circlePolygon(la, lo, radiusKm, 32),
+        },
+      });
+    }
+  }
+
+  return { poiFeatures, influenceFeatures, poiRejected };
 }
 
 /** GeoJSON [lng,lat] 射线法：点在环内（不含边界数值稳定性处理） */
@@ -220,87 +566,9 @@ async function main() {
     }
   }
 
-  const citySeries = UNITS.map((u, cityIdx) => {
-    const tierBoost = (5 - u.tier) * 4;
-    const basePop = pick(rng, 42, 94) + tierBoost * 0.35;
-    const baseEcon = pick(rng, 48, 96) + tierBoost * 0.4;
-    const baseVit = pick(rng, 44, 94) + tierBoost * 0.45;
-    const baseNight = pick(rng, 40, 92) + (u.tier <= 2 ? 8 : 0);
-    const baseConsume = pick(rng, 45, 95) + (u.tier <= 2 ? 6 : 0);
-    const baseTraffic = pick(rng, 46, 94) + tierBoost * 0.25;
-
-    const monthly = months.map((month, idx) => {
-      const season = Math.sin(((idx + cityIdx * 2) / 6) * Math.PI) * 5;
-      const wave = Math.sin((idx / 8) * Math.PI) * 6;
-      const drift = idx * 0.12;
-      const cn = new Date(month + '-01').getMonth();
-      const holidayBump = cn === 0 || cn === 9 ? 3 : cn >= 4 && cn <= 9 ? 1.5 : 0;
-
-      const popIndex = Math.round(
-        Math.min(100, Math.max(32, basePop + wave + season + pick(rng, -5, 5) + drift + holidayBump * 0.3)),
-      );
-      const econIndex = Math.round(
-        Math.min(100, Math.max(35, baseEcon + wave * 0.85 + pick(rng, -5, 6) + drift * 0.95)),
-      );
-      const vitalityIndex = Math.round(
-        Math.min(100, Math.max(34, baseVit + wave * 1.05 + pick(rng, -6, 6) + drift * 0.88)),
-      );
-      const nightEconomyIdx = Math.round(
-        Math.min(100, Math.max(33, baseNight + wave * 0.95 + pick(rng, -5, 7) + drift * 0.8)),
-      );
-      const consumeIdx = Math.round(
-        Math.min(100, Math.max(36, baseConsume + wave * 0.9 + pick(rng, -4, 5) + drift * 0.85)),
-      );
-      const trafficReachIdx = Math.round(
-        Math.min(100, Math.max(38, baseTraffic + wave * 0.75 + pick(rng, -4, 4) + drift * 0.7)),
-      );
-      const inboundFlowIdx = Math.round(
-        Math.min(100, Math.max(30, baseVit * 0.92 + season + pick(rng, -6, 8) + (u.tier <= 2 ? 6 : 0))),
-      );
-
-      return {
-        month,
-        popIndex,
-        econIndex,
-        vitalityIndex,
-        nightEconomyIdx,
-        consumeIdx,
-        trafficReachIdx,
-        inboundFlowIdx,
-      };
-    });
-
-    const last = monthly[monthly.length - 1];
-    const popGrowthPct = Number((pick(rng, -0.4, 2.8) + (5 - u.tier) * 0.15).toFixed(1));
-    const manufacturingShare = Number((pick(rng, 18, 42) - (u.tier <= 2 ? 5 : 0)).toFixed(1));
-    const serviceShare = Number((Math.min(72, 92 - manufacturingShare - pick(rng, 5, 15))).toFixed(1));
-
-    return {
-      id: u.id,
-      name: u.name,
-      tier: u.tier,
-      monthly,
-      latest: {
-        month: last.month,
-        popDensity: Number(pick(rng, 180, 6200).toFixed(1)),
-        poiPerKm2: Number(pick(rng, 4, 220).toFixed(2)),
-        poiCountEstimate: Math.round(pick(rng, 800, 420000)),
-        vitalityIdx: last.vitalityIndex,
-        econIdx: last.econIndex,
-        popIdx: last.popIndex,
-        nightEconomyIdx: last.nightEconomyIdx,
-        consumePotential: last.consumeIdx,
-        trafficReachIdx: last.trafficReachIdx,
-        inboundFlowIdx: last.inboundFlowIdx,
-        gdpProxyIdx: Math.round(pick(rng, 52, 98) + (5 - u.tier) * 3),
-        popGrowthPct,
-        manufacturingShare,
-        serviceShare,
-        structureNote:
-          serviceShare > 58 ? '服务业占比偏高，消费型特征明显' : '二三产并重，制造与配套并存',
-      },
-    };
-  });
+  const { poiFeatures, influenceFeatures, poiRejected } = generatePoiFeatures(rng, provinceFc, provinceBBox);
+  const poiByCity = aggregatePoiByCity(poiFeatures);
+  const citySeries = buildCitySeriesCausal(months, poiByCity, rng);
 
   const provinceMonthly = months.map((month) => {
     let p = 0;
@@ -354,12 +622,15 @@ async function main() {
         consumePotential: pr.consumePotential,
         trafficReachIdx: pr.trafficReachIdx,
         inboundFlowIdx: pr.inboundFlowIdx,
+        footTrafficIdx: pr.footTrafficIdx,
+        poiActivityIdx: pr.poiActivityIdx,
+        activityIdx: pr.activityIdx,
         gdpProxyIdx: pr.gdpProxyIdx,
         popGrowthPct: pr.popGrowthPct,
         manufacturingShare: pr.manufacturingShare,
         serviceShare: pr.serviceShare,
         structureNote: pr.structureNote,
-        note: '示意边界（球面圆），指标为模拟合成',
+        note: '示意边界（球面圆）；活力等指标由 POI/交通/人流因果链推导（阶段3）',
       },
       geometry: {
         type: 'Polygon',
@@ -367,63 +638,6 @@ async function main() {
       },
     };
   });
-
-  const poiFeatures = [];
-  let poiRejected = 0;
-
-  for (let i = 0; i < UNITS.length; i++) {
-    const u = UNITS[i];
-    const nPoi = 12 + Math.floor(rng() * 11);
-    for (let k = 0; k < nPoi; k++) {
-      const cat = POI_CATS[Math.floor(rng() * POI_CATS.length)];
-      const importance = Number((0.35 + rng() * 0.65).toFixed(2));
-      let lo;
-      let la;
-      let assigned = u;
-
-      let placed = false;
-      for (let attempt = 0; attempt < 60; attempt++) {
-        const bear = rng() * 360;
-        const shrink = Math.max(0.1, 0.88 - attempt * 0.013);
-        const dist = rng() * u.radiusKm * shrink;
-        const [lat, lng] = destinationPoint(u.lat, u.lng, bear, dist);
-        if (pointInProvince(lng, lat, provinceFc)) {
-          lo = lng;
-          la = lat;
-          placed = true;
-          break;
-        }
-      }
-
-      if (!placed) {
-        const rp = randomPointInProvince(rng, provinceFc, provinceBBox, 100);
-        if (rp) {
-          lo = rp.lng;
-          la = rp.lat;
-          assigned = nearestUnit(la, lo);
-          placed = true;
-        }
-      }
-
-      if (!placed) {
-        poiRejected++;
-        continue;
-      }
-
-      poiFeatures.push({
-        type: 'Feature',
-        properties: {
-          name: `${assigned.name.replace(/市|州|林区|土家族苗族自治州/g, '')}${cat.name.slice(0, 2)}样点${k + 1}`,
-          cityId: assigned.id,
-          cityName: assigned.name,
-          category: cat.name,
-          categoryKey: cat.key,
-          importance,
-        },
-        geometry: { type: 'Point', coordinates: [lo, la] },
-      });
-    }
-  }
 
   const fcUnits = {
     type: 'FeatureCollection',
@@ -439,7 +653,9 @@ async function main() {
         'popDensity 人口密度示意',
         'tier / tierLabel 城市层级（演示）',
       ],
-      disclaimer: '湖北省各地单元为示意几何与随机指标，仅供界面演示。',
+      causalModel:
+        'POI集聚→poiActivity→人流footTraffic→activity→活力/夜经济/消费；交通可达→人流与活力；人口基数→人流与人口指数',
+      disclaimer: '市州面为示意几何；指标由阶段3因果链与 POI 聚合一致生成。',
     },
     features: cityFeatures,
   };
@@ -453,9 +669,25 @@ async function main() {
       seed,
       provinceBoundary: 'web/public/geo/hubei/hubei.shp（POI 已约束在省界内）',
       categoryKeys: POI_CATS.map((c) => c.key),
-      disclaimer: 'POI 为随机撒点；坐标已与湖北省界求交过滤。',
+      influenceModel:
+        '主商圈圆近似：金融/餐饮/生活约 60–380 m，一般零售/办公/文体约 150–650 m，高重要度商场类零售约 600–1200 m（参考零售 trade area 步行/驾车主圈文献）',
+      disclaimer: 'POI 随机撒点 + 主商圈圆；半径为演示级简化，非道路网等时圈。',
     },
     features: poiFeatures,
+  };
+
+  const fcInfluence = {
+    type: 'FeatureCollection',
+    name: 'hubei-poi-influence-mock',
+    meta: {
+      crs: 'EPSG:4326',
+      generated: new Date().toISOString(),
+      seed,
+      geometryType: 'Polygon（圆近似）',
+      pairedWith: 'poi-sample.geojson',
+      disclaimer: '与 POI 点一一对应的圆形影响区，半径见 influenceRadiusKm。',
+    },
+    features: influenceFeatures,
   };
 
   const tsCities = {
@@ -472,8 +704,13 @@ async function main() {
         'consumeIdx',
         'trafficReachIdx',
         'inboundFlowIdx',
+        'footTrafficIdx',
+        'poiActivityIdx',
+        'activityIdx',
       ],
-      disclaimer: '各地月度指数为模拟合成，非官方统计。',
+      causalModel:
+        '月度序列：交通可达→poiActivity(含POI结构+季节/节假)→人流→activity→活力/夜经济/消费/人口/经济',
+      disclaimer: '阶段3因果链模拟；非官方统计。',
     },
     cities: citySeries.map((c) => ({
       id: c.id,
@@ -489,18 +726,40 @@ async function main() {
       unit: '合成指数（0–100）',
       seed,
       indicators: ['popIndex', 'econIndex', 'vitalityIndex', 'nightEconomyIndex', 'consumeIndex', 'trafficIndex'],
-      disclaimer: '全省序列由各地模拟指数平均得到，用于趋势图演示。',
+      causalModel: '全省序列为各地因果链结果的算术平均',
+      disclaimer: '阶段3：全省序列由各地因果链指数平均得到。',
     },
     monthly: provinceMonthly,
   };
 
   fs.writeFileSync(path.join(outDir, 'city-units.geojson'), JSON.stringify(fcUnits), 'utf8');
   fs.writeFileSync(path.join(outDir, 'poi-sample.geojson'), JSON.stringify(fcPoi), 'utf8');
+  fs.writeFileSync(path.join(outDir, 'poi-influence.geojson'), JSON.stringify(fcInfluence), 'utf8');
   fs.writeFileSync(path.join(outDir, 'timeseries-cities.json'), JSON.stringify(tsCities, null, 2), 'utf8');
   fs.writeFileSync(path.join(outDir, 'timeseries-province.json'), JSON.stringify(tsProvince, null, 2), 'utf8');
 
   console.log('已写入', outDir);
-  console.log('  features:', cityFeatures.length, '市州面,', poiFeatures.length, '个 POI 点（均在湖北省界内）');
+  const radii = poiFeatures.map((f) => f.properties.influenceRadiusM).sort((a, b) => a - b);
+  const rMin = radii[0];
+  const rMax = radii[radii.length - 1];
+  const rMed = radii[Math.floor(radii.length / 2)];
+  console.log(
+    '  features:',
+    cityFeatures.length,
+    '市州面,',
+    poiFeatures.length,
+    '个 POI 点,',
+    influenceFeatures.length,
+    '个影响圆（均在湖北省界内）',
+  );
+  console.log(`  影响半径(m): min=${rMin} med=${rMed} max=${rMax}`);
+  const wuhan = citySeries.find((c) => c.id === '420100');
+  const enshi = citySeries.find((c) => c.id === '422800');
+  if (wuhan && enshi) {
+    const w = wuhan.latest.vitalityIdx;
+    const e = enshi.latest.vitalityIdx;
+    console.log(`  阶段3校验：武汉活力 ${w} vs 恩施 ${e}（POI结构 ${wuhan.causal.poiBase} vs ${enshi.causal.poiBase}）`);
+  }
   if (poiRejected) console.log('  未放置候选:', poiRejected, '（理论上应为 0）');
 }
 

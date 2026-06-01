@@ -16,7 +16,10 @@
 │   └── package.json
 ├── docs/                   # 设计说明、启动教程、数据需求等 Markdown / Word
 ├── data/                   # 原始空间数据（权威源；不直接给 Vite 引用路径）
-│   └── geospatial/boundaries/hubei-province/   # 湖北省 shapefile（湖北省.*）
+│   └── geospatial/boundaries/
+│       ├── china-gadm41/       # GADM 中国行政区原始 shp（0–3 级）
+│       ├── hubei-province/     # 湖北省界（由 GADM 提取 → 湖北省.*）
+│       └── hubei-cities/       # 湖北市州界 GeoJSON（由 GADM 提取）
 ├── scripts/                # 小工具脚本（如省界同步到 public）
 └── README.md               # 本文件
 ```
@@ -44,7 +47,7 @@
 
 更细的图文步骤、常见问题与数据清单见 **[docs/GIS平台启动与数据需求说明.md](./docs/GIS平台启动与数据需求说明.md)**。各页按钮、滑条、地图等交互说明见 **[docs/交互功能说明.md](./docs/交互功能说明.md)**。产品目标、全局三态、URL 键与实现矩阵见 **[docs/PRD-城市经济空间平台.md](./docs/PRD-城市经济空间平台.md)**。关于「武汉智眼」**不可公开获取**与**开放/模拟数据**定位、展示所需**最低数据**清单见 **[docs/数据与智眼说明.md](./docs/数据与智眼说明.md)**。
 
-更新 **`data/geospatial/boundaries/hubei-province/`** 下的 `湖北省.*` 后，请再次执行 **`node scripts/sync-hubei-to-web-public.mjs`**（或在 `web` 下执行 **`npm run sync:geo`**），再刷新页面。
+更新省界：从 [GADM](https://www.gadm.org/) 下载中国数据放入 `data/geospatial/boundaries/china-gadm41/`，在 `database/` 执行 **`npm run process:gadm`**，再执行 **`node scripts/sync-hubei-to-web-public.mjs`**（或在 `web` 下 **`npm run sync:geo`**），然后刷新页面。
 
 ---
 

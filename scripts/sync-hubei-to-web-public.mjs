@@ -19,15 +19,27 @@ function main() {
     process.exit(1);
   }
   fs.mkdirSync(destDir, { recursive: true });
-  const files = fs.readdirSync(srcDir);
+  const REQUIRED_EXTS = ['shp', 'shx', 'dbf', 'prj', 'cpg'];
   let n = 0;
-  for (const name of files) {
-    if (!name.startsWith(`${SRC_PREFIX}.`)) continue;
-    const ext = name.slice(SRC_PREFIX.length + 1);
+  for (const ext of REQUIRED_EXTS) {
+    const srcName = `${SRC_PREFIX}.${ext}`;
+    const srcPath = path.join(srcDir, srcName);
+    if (!fs.existsSync(srcPath)) {
+      if (ext === 'cpg') continue;
+      console.error('缺少源文件:', srcPath);
+      process.exit(1);
+    }
     const destName = `hubei.${ext}`;
-    fs.copyFileSync(path.join(srcDir, name), path.join(destDir, destName));
+    fs.copyFileSync(srcPath, path.join(destDir, destName));
     console.log('→', destName);
     n++;
+  }
+  for (const stale of ['sbn', 'sbx']) {
+    const stalePath = path.join(destDir, `hubei.${stale}`);
+    if (fs.existsSync(stalePath)) {
+      fs.unlinkSync(stalePath);
+      console.log('× 已移除过时索引', `hubei.${stale}`);
+    }
   }
   if (n === 0) {
     console.error('未在', srcDir, '下找到', SRC_PREFIX + '.* 文件');
