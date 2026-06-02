@@ -25,6 +25,8 @@ export type AnalysisTask = {
   page: string;
   status: AnalysisTaskStatus;
   message?: string;
+  errorCode?: string;
+  retryCount?: number;
   startedAt?: string;
   finishedAt?: string;
   saved?: boolean;
@@ -39,6 +41,14 @@ export type VitalityResult = {
 };
 
 export type DistrictSummary = { id: string; name: string; conf: number; flow: string; level: string; poiStr?: string };
+
+export type UavRouteSummary = {
+  id: string;
+  name: string;
+  quality: number;
+  district: string;
+  zhiyanSync: boolean;
+};
 
 export type AppBookmark = {
   id: string;

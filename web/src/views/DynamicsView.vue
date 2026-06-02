@@ -67,18 +67,22 @@
       <strong>变化原因（演示文案）</strong>
       <p>{{ changeExplain }}</p>
     </div>
+    <LayerTreePanel :layers="layers" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed, onUnmounted, ref, watch } from 'vue';
 import L from 'leaflet';
+import LayerTreePanel from '@/components/LayerTreePanel.vue';
 import { useLeafletMap } from '@/composables/useLeafletMap';
 import { WUHAN_CENTER } from '@/utils/mapConstants';
 import { gis } from '@/stores/gisState';
+import { dynamicsLayerCatalog } from '@/config/layerCatalog';
 
 const mapEl = ref<HTMLElement | null>(null);
 const mapInstance = useLeafletMap(mapEl);
+const layers = ref(JSON.parse(JSON.stringify(dynamicsLayerCatalog)));
 
 const modes = [
   { id: 'daynight', name: '昼夜对比' },

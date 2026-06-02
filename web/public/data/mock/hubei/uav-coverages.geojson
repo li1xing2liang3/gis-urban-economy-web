@@ -1,0 +1,120 @@
+{
+  "type": "FeatureCollection",
+  "name": "wuhan-uav-coverages",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "route-jianghan-night-coverage",
+      "properties": {
+        "routeId": "route-jianghan-night",
+        "routeName": "江汉路夜间商圈航拍巡检",
+        "district": "江汉路-循礼门",
+        "quality": 90,
+        "source": "武汉无人机航拍模拟覆盖"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.2692,
+              30.6086
+            ],
+            [
+              114.31479999999999,
+              30.6086
+            ],
+            [
+              114.31479999999999,
+              30.5782
+            ],
+            [
+              114.2692,
+              30.5782
+            ],
+            [
+              114.2692,
+              30.6086
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "route-optics-valley-coverage",
+      "properties": {
+        "routeId": "route-optics-valley",
+        "routeName": "光谷-武汉东站低空建模航线",
+        "district": "光谷",
+        "quality": 76,
+        "source": "武汉无人机航拍模拟覆盖"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.3942,
+              30.5405
+            ],
+            [
+              114.44,
+              30.5405
+            ],
+            [
+              114.44,
+              30.5042
+            ],
+            [
+              114.3942,
+              30.5042
+            ],
+            [
+              114.3942,
+              30.5405
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "route-river-crossing-coverage",
+      "properties": {
+        "routeId": "route-river-crossing",
+        "routeName": "两江四岸通勤航拍观测",
+        "district": "长江大桥-武昌滨江",
+        "quality": 82,
+        "source": "武汉无人机航拍模拟覆盖"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.247,
+              30.581
+            ],
+            [
+              114.368,
+              30.581
+            ],
+            [
+              114.368,
+              30.552
+            ],
+            [
+              114.247,
+              30.552
+            ],
+            [
+              114.247,
+              30.581
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

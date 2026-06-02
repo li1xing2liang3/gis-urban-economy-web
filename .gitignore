@@ -19,6 +19,9 @@ database/.env
 !**/.env.example
 database/node_modules/
 
+# 共创版源码包（已合并后可删除）
+gis-urban-economy-web-main/
+
 # Word 解压临时目录
 docs/_extract_city/
 docs/_temp_city.zip

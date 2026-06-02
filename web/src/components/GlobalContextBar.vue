@@ -80,13 +80,12 @@
 
       <select v-model="gis.dataSource" class="sel">
 
-        <option value="v2026Q1">智眼型 v2026Q1（模拟）</option>
+        <option v-for="source in selectableSources" :key="source.id" :value="source.id">{{ source.label }}</option>
 
-        <option value="v2025Q4">智眼型 v2025Q4（模拟）</option>
-
-        <option value="demo-mix">混编·演示</option>
+        <option v-if="!selectableSources.length" value="v2026Q1">智眼型 v2026Q1（模拟）</option>
 
       </select>
+      <span class="hint source-note">{{ selectedSourceNote }}</span>
 
     </div>
 
@@ -106,9 +105,11 @@
 
 <script setup lang="ts">
 
-import { computed, watch } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 
 import { gis, setRegionAll, setRegionAdmin, useGisRouterSync, adminDistrictOptions } from '@/stores/gisState';
+
+import { gisDataService, type DataSourceMeta } from '@/services/gisDataService';
 
 import { useRoute } from 'vue-router';
 
@@ -117,6 +118,7 @@ import { useRoute } from 'vue-router';
 useGisRouterSync();
 
 const route = useRoute();
+const dataSources = ref<DataSourceMeta[]>([]);
 
 const syncNote = computed(
 
@@ -134,6 +136,32 @@ const regionHint = computed(() => {
 
   return '—';
 
+});
+
+const fallbackSources: DataSourceMeta[] = [
+  { id: 'v2026Q1', label: '智眼型 v2026Q1（模拟）', isActive: true },
+  { id: 'v2025Q4', label: '智眼型 v2025Q4（模拟）', isActive: true },
+  { id: 'demo-mix', label: '混编·演示', isActive: true },
+];
+
+const selectableSources = computed(() => {
+  const remote = dataSources.value.filter((source) => source.isActive !== false);
+  return remote.length ? remote : fallbackSources;
+});
+
+const selectedSourceNote = computed(() => {
+  const item = selectableSources.value.find((source) => source.id === gis.dataSource);
+  return item?.description ?? '后端元数据未连接时使用本地演示源';
+});
+
+onMounted(async () => {
+  try {
+    const list = await gisDataService.getDataSources();
+    dataSources.value = list.filter((source) => source.id === 'v2026Q1' || source.id === 'v2025Q4' || source.id === 'demo-mix');
+    if (!dataSources.value.length) dataSources.value = list;
+  } catch {
+    dataSources.value = fallbackSources;
+  }
 });
 
 

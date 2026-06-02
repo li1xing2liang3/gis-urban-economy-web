@@ -1,0 +1,150 @@
+{
+  "type": "FeatureCollection",
+  "name": "wuhan-uav-routes",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "route-jianghan-night",
+        "name": "江汉路夜间商圈航拍巡检",
+        "district": "江汉路-循礼门",
+        "scene": "夜间经济 / 商圈客流复核",
+        "status": "已入库",
+        "time": "2026-04-08 19:30",
+        "altitude": 120,
+        "speed": 8,
+        "resolution": "5 cm",
+        "quality": 90,
+        "zhiyanSync": true,
+        "participatesModel": true,
+        "overlay": true,
+        "imageUrl": "/data/uav-images/wuhan-night-aerial.jpg",
+        "imageTitle": "武汉城市夜景航拍",
+        "imageCredit": "Wikimedia Commons",
+        "imageLicense": "Commons 许可，项目演示引用",
+        "imageSource": "https://commons.wikimedia.org/wiki/File:20231209_Aerial_night_view_of_Wuhan.jpg"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.2772,
+            30.6026
+          ],
+          [
+            114.2886,
+            30.6008
+          ],
+          [
+            114.2995,
+            30.5964
+          ],
+          [
+            114.3068,
+            30.5905
+          ],
+          [
+            114.3012,
+            30.5842
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "route-optics-valley",
+        "name": "光谷-武汉东站低空建模航线",
+        "district": "光谷",
+        "scene": "三维建模 / 站城融合",
+        "status": "待复核",
+        "time": "2026-04-09 15:10",
+        "altitude": 150,
+        "speed": 7,
+        "resolution": "LOD2",
+        "quality": 76,
+        "zhiyanSync": true,
+        "participatesModel": true,
+        "overlay": true,
+        "imageUrl": "/data/uav-images/wuhan-east-station-preview.jpg",
+        "imageTitle": "武汉东站片区俯瞰航拍",
+        "imageCredit": "Wikimedia Commons",
+        "imageLicense": "Commons 许可，项目演示引用",
+        "imageSource": "https://commons.wikimedia.org/wiki/File:%E6%AD%A6%E6%B1%89%E4%B8%9C%E7%AB%99%E4%B8%9C%E5%B9%BF%E5%9C%BA.png"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.4022,
+            30.5102
+          ],
+          [
+            114.4188,
+            30.5164
+          ],
+          [
+            114.432,
+            30.5248
+          ],
+          [
+            114.424,
+            30.5345
+          ],
+          [
+            114.406,
+            30.529
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "route-river-crossing",
+        "name": "两江四岸通勤航拍观测",
+        "district": "长江大桥-武昌滨江",
+        "scene": "通勤流 / 江滩客流",
+        "status": "已入库",
+        "time": "2026-04-10 08:00",
+        "altitude": 100,
+        "speed": 9,
+        "resolution": "8 cm",
+        "quality": 82,
+        "zhiyanSync": true,
+        "participatesModel": true,
+        "overlay": true,
+        "imageUrl": "/data/uav-images/wuhan-yangtze-bridge-preview.jpg",
+        "imageTitle": "武汉长江大桥俯瞰航拍",
+        "imageCredit": "Wikimedia Commons",
+        "imageLicense": "Commons 许可，项目演示引用",
+        "imageSource": "https://commons.wikimedia.org/wiki/File:%E5%A4%8F%E5%AD%A3%E7%9A%84%E6%AD%A6%E6%B1%89%E9%95%BF%E6%B1%9F%E5%A4%A7%E6%A1%A5.png"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.255,
+            30.575
+          ],
+          [
+            114.279,
+            30.572
+          ],
+          [
+            114.305,
+            30.568
+          ],
+          [
+            114.332,
+            30.562
+          ],
+          [
+            114.36,
+            30.558
+          ]
+        ]
+      }
+    }
+  ]
+}

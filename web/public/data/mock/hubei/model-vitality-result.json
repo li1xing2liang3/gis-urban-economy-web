@@ -1,0 +1,47 @@
+{
+  "id": "vitality-wuhan-2026q1",
+  "taskType": "vitality_assessment",
+  "status": "success",
+  "result": {
+    "indexMean": 82,
+    "topZones": [
+      {
+        "name": "江汉路-循礼门商圈",
+        "score": 92,
+        "uavBoost": 0.08
+      },
+      {
+        "name": "武昌滨江-黄鹤楼片区",
+        "score": 88,
+        "uavBoost": 0.08
+      },
+      {
+        "name": "汉阳钟家村-王家湾",
+        "score": 79,
+        "uavBoost": 0.08
+      },
+      {
+        "name": "光谷广场-武汉东站",
+        "score": 90,
+        "uavBoost": 0.08
+      },
+      {
+        "name": "徐东-岳家嘴商务圈",
+        "score": 82,
+        "uavBoost": 0.08
+      },
+      {
+        "name": "青山滨江-工业更新带",
+        "score": 72,
+        "uavBoost": 0.03
+      }
+    ],
+    "explanation": "武汉核心商圈、两江四岸与光谷片区活力较高；无人机航拍覆盖用于校核热点范围。"
+  },
+  "params": {
+    "scope": "wuhan",
+    "dataSource": "v2026Q1"
+  },
+  "createdAt": "2026-04-08T10:00:00.000Z",
+  "finishedAt": "2026-04-08T10:00:01.000Z"
+}

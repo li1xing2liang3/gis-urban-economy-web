@@ -84,3 +84,105 @@ export const overviewLayerCatalog: LayerItem[] = [
     unit: '0~100 分',
   },
 ];
+
+export const vitalityLayerCatalog: LayerItem[] = [
+  {
+    id: 'vitality-model',
+    name: '活力评估结果',
+    dataSource: '模型',
+    visible: true,
+    opacity: 0.7,
+    metric: '人流、POI、交通与低空观测加权结果',
+    rule: '0~100 分按市州/热点分级设色',
+    unit: '综合指数',
+  },
+  {
+    id: 'uav-factor',
+    name: '低空观测因子',
+    dataSource: '无人机',
+    visible: true,
+    opacity: 0.55,
+    metric: '无人机影像覆盖质量与精细尺度观测',
+    rule: '参与模型时作为精度加成项',
+    unit: '质量百分比',
+  },
+];
+
+export const districtLayerCatalog: LayerItem[] = [
+  {
+    id: 'district-cluster',
+    name: '商圈识别面',
+    dataSource: '模型',
+    visible: true,
+    opacity: 0.65,
+    metric: 'POI 聚类、置信度、人流等级',
+    rule: '阈值 + 最小 POI 数约束',
+    unit: '置信度',
+  },
+  {
+    id: 'district-poi',
+    name: '商圈 POI 样点',
+    dataSource: 'POI',
+    visible: true,
+    opacity: 1,
+    metric: '零售、餐饮、服务等业态点位',
+    rule: '按勾选业态过滤',
+    unit: '个',
+  },
+];
+
+export const dynamicsLayerCatalog: LayerItem[] = [
+  {
+    id: 'dynamic-heat',
+    name: '动态人车热力',
+    dataSource: '演示',
+    visible: true,
+    opacity: 0.75,
+    metric: '人流/车流融合热度随时间槽变化',
+    rule: '时间槽归一化后径向热力',
+    unit: '归一化指数',
+  },
+  {
+    id: 'ab-diff',
+    name: 'A/B 差异指数',
+    dataSource: '模型',
+    visible: false,
+    opacity: 0.65,
+    metric: '两个日期切片的合成差异',
+    rule: 'A、B 日期差值归一化',
+    unit: '指数差',
+  },
+];
+
+export const lowAltitudeLayerCatalog: LayerItem[] = [
+  {
+    id: 'uav-route',
+    name: '无人机航线',
+    dataSource: '无人机',
+    visible: true,
+    opacity: 0.95,
+    metric: '航点、航线、飞行高度与速度',
+    rule: '按任务状态与路径质量高亮',
+    unit: '米 / m/s',
+  },
+  {
+    id: 'uav-coverage',
+    name: '影像覆盖范围',
+    dataSource: '无人机',
+    visible: true,
+    opacity: 0.45,
+    metric: '由航点外扩形成的覆盖面',
+    rule: '覆盖质量 >= 70 进入模型候选',
+    unit: '覆盖质量 %',
+  },
+  {
+    id: 'zhiyan-trigger',
+    name: '智眼热力触发',
+    dataSource: '智眼',
+    visible: false,
+    opacity: 0.7,
+    metric: '人流、车流异常热点触发低空复核',
+    rule: '智眼型热力阈值 + 航线覆盖比对',
+    unit: '归一化指数',
+  },
+];

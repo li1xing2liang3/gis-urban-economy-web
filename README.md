@@ -1,6 +1,6 @@
 # gis-urban-economy-web
 
-城市经济空间 **WebGIS** 演示前端（Vue 3 + Vite + Leaflet + Cesium），与《GIS 工程初步文档》及前端设计说明对齐。
+城市经济空间 **WebGIS** 演示前端（Vue 3 + Vite + Leaflet + Cesium），与《GIS 工程初步文档》及前端设计说明对齐。整合共创版能力：统一数据服务层、本地 mock API、低空航线仿真与三维 UAV 演示。
 
 **在线仓库：** [https://github.com/li1xing2liang3/gis-urban-economy-web](https://github.com/li1xing2liang3/gis-urban-economy-web)
 
@@ -11,16 +11,25 @@
 ```
 仓库根目录/
 ├── web/                    # 前端工程（npm 命令在此或经 --prefix 调用）
-│   ├── src/                # Vue 源码、路由、页面
-│   ├── public/geo/hubei/   # 浏览器可访问的省界副本（hubei.*，由脚本从 data 同步）
+│   ├── src/
+│   │   ├── services/       # gisDataService：API + 静态 mock 兜底
+│   │   ├── views/          # 页面（含 HomeView 首页、Overview 总览等）
+│   │   └── ...
+│   ├── public/
+│   │   ├── geo/hubei/      # 浏览器可访问的省界副本（hubei.*，由脚本从 data 同步）
+│   │   ├── data/mock/hubei/  # 湖北专题 mock（17 市州、POI、UAV 航线等）
+│   │   └── data/uav-images/  # 低空页航拍预览图
 │   └── package.json
-├── docs/                   # 设计说明、启动教程、数据需求等 Markdown / Word
-├── data/                   # 原始空间数据（权威源；不直接给 Vite 引用路径）
+├── database/               # PostgreSQL + PostGIS 数据层（可选）
+│   ├── sql/                # 建库脚本
+│   └── scripts/            # seed、mock-api、GADM 处理等
+├── docs/                   # 设计说明、启动教程、API 文档等
+├── data/                   # 原始空间数据（权威源）
 │   └── geospatial/boundaries/
 │       ├── china-gadm41/       # GADM 中国行政区原始 shp（0–3 级）
 │       ├── hubei-province/     # 湖北省界（由 GADM 提取 → 湖北省.*）
 │       └── hubei-cities/       # 湖北市州界 GeoJSON（由 GADM 提取）
-├── scripts/                # 小工具脚本（如省界同步到 public）
+├── scripts/                # 小工具（省界同步、后端仿真数据生成等）
 └── README.md               # 本文件
 ```
 
@@ -45,9 +54,52 @@
 
 4. 浏览器打开 **http://localhost:5173/**
 
-更细的图文步骤、常见问题与数据清单见 **[docs/GIS平台启动与数据需求说明.md](./docs/GIS平台启动与数据需求说明.md)**。各页按钮、滑条、地图等交互说明见 **[docs/交互功能说明.md](./docs/交互功能说明.md)**。产品目标、全局三态、URL 键与实现矩阵见 **[docs/PRD-城市经济空间平台.md](./docs/PRD-城市经济空间平台.md)**。关于「武汉智眼」**不可公开获取**与**开放/模拟数据**定位、展示所需**最低数据**清单见 **[docs/数据与智眼说明.md](./docs/数据与智眼说明.md)**。
+### 可选：本地 mock API（前后端联调演示）
+
+另开终端：
+
+```bash
+cd database
+npm install
+npm run mock-api
+```
+
+前端 Vite 已将 `/api` 代理到 `http://127.0.0.1:8787`。详见 **[docs/前后端API连接设计.md](./docs/前后端API连接设计.md)**。
+
+### 可选：PostgreSQL + PostGIS
+
+见 **[database/README.md](./database/README.md)**。更新 mock 后：
+
+```bash
+cd web && npm run generate:mock-hubei
+cd ../database && npm run seed && npm run verify
+```
+
+---
+
+## 文档索引
+
+| 文档 | 说明 |
+|------|------|
+| [docs/GIS平台启动与数据需求说明.md](./docs/GIS平台启动与数据需求说明.md) | 零基础启动、数据清单 |
+| [docs/交互功能说明.md](./docs/交互功能说明.md) | 各页按钮、滑条、地图交互 |
+| [docs/PRD-城市经济空间平台.md](./docs/PRD-城市经济空间平台.md) | 产品目标、全局三态、URL 键 |
+| [docs/数据与智眼说明.md](./docs/数据与智眼说明.md) | 智眼数据定位与最低数据清单 |
+| [docs/前后端API连接设计.md](./docs/前后端API连接设计.md) | mock-api 与 Vite 代理 |
+| [docs/数据字段与前端接口.md](./docs/数据字段与前端接口.md) | `gisDataService` 接口约定 |
+
+---
+
+## 数据维护
 
 更新省界：从 [GADM](https://www.gadm.org/) 下载中国数据放入 `data/geospatial/boundaries/china-gadm41/`，在 `database/` 执行 **`npm run process:gadm`**，再执行 **`node scripts/sync-hubei-to-web-public.mjs`**（或在 `web` 下 **`npm run sync:geo`**），然后刷新页面。
+
+重新生成湖北 mock：
+
+```bash
+cd web
+npm run generate:mock-hubei
+```
 
 ---
 
@@ -114,6 +166,8 @@ git push origin main
 ## 忽略规则说明
 
 根目录 **`.gitignore`** 已忽略 **`web/node_modules/`** 与 **`web/dist/`**，请勿把依赖和构建产物提交到仓库。省界数据在 **`data/`** 与 **`web/public/geo/`** 的副本可提交，便于克隆后开箱即用；若数据涉密，请改为私有仓库或仅从内部源同步。
+
+整合完成后可删除临时目录 **`gis-urban-economy-web-main/`**（共创版源码包，内容已合并入主仓库）。
 
 ---
 

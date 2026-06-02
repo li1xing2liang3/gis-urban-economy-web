@@ -1,0 +1,20 @@
+[
+  {
+    "id": "v2026Q1",
+    "label": "智眼型 v2026Q1（模拟）",
+    "description": "湖北省 17 市州城市感知指标体系模拟切片，非政务生产数据。",
+    "isActive": true
+  },
+  {
+    "id": "uav-sim-2026q1",
+    "label": "武汉低空航拍 v2026Q1",
+    "description": "武汉商圈、两江四岸、光谷等区域的无人机航线与航拍预览（演示）。",
+    "isActive": true
+  },
+  {
+    "id": "poi-open-mock",
+    "label": "湖北开放 POI 样例",
+    "description": "湖北省范围内按零售、餐饮、办公、文旅等业态生成的空间样点。",
+    "isActive": true
+  }
+]

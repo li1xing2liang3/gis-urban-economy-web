@@ -12,11 +12,11 @@
           <div class="field-label">专题图层</div>
           <label class="check">
             <input v-model="showPop" type="checkbox" @change="sync" />
-            人口密度（市州分级）
+            人口密度（武汉片区分级）
           </label>
           <label class="check">
             <input v-model="showPot" type="checkbox" @change="sync" />
-            消费潜力（市州分级）
+            消费潜力（武汉片区分级）
           </label>
           <label class="check">
             <input v-model="showRef" type="checkbox" @change="sync" />
@@ -46,7 +46,7 @@
     </div>
     <div class="chart panel" @click="bumpFromChart">
       <div class="chart-head">
-        <span class="chart-title">全省合成指数 · 近 6 期（点击柱条切换扰动）</span>
+        <span class="chart-title">武汉合成指数 · 近 6 期（点击柱条切换扰动）</span>
         <div class="chart-legend">
           <span class="lg pop"><i />人口</span>
           <span class="lg econ"><i />经济</span>
@@ -78,11 +78,11 @@ import L from 'leaflet';
 import { useLeafletMap } from '@/composables/useLeafletMap';
 import { WUHAN_CENTER } from '@/utils/mapConstants';
 import {
-  mockHubeiDataPrefix,
   type ProvinceTimeseriesFile,
   popDensityFillColor,
   consumePotentialFillColor,
 } from '@/utils/mockHubeiDataset';
+import { gisDataService } from '@/services/gisDataService';
 import { gis } from '@/stores/gisState';
 import { timeFactorFromPeriod } from '@/stores/gisState';
 import type { FeatureCollection } from 'geojson';
@@ -313,21 +313,17 @@ onMounted(async () => {
     timeMonth.value = gis.timeSingle.slice(0, 7);
   }
   try {
-    const res = await fetch(`${mockHubeiDataPrefix()}timeseries-province.json`);
-    if (res.ok) provinceTs.value = await res.json();
+    provinceTs.value = await gisDataService.getProvinceTimeseries();
   } catch {
     /* 保留内置 trend */
   }
   try {
-    const rc = await fetch(`${mockHubeiDataPrefix()}city-units.geojson`);
-    if (rc.ok) {
-      const gj = (await rc.json()) as FeatureCollection;
-      cityFc.value = gj;
-      const vals = gj.features.map((f) => Number((f.properties as { popDensity?: number })?.popDensity ?? 0));
-      densityRange.value = { lo: Math.min(...vals), hi: Math.max(...vals) };
-    }
+    const gj = await gisDataService.getCityUnits();
+    cityFc.value = gj;
+    const vals = gj.features.map((f) => Number((f.properties as { popDensity?: number })?.popDensity ?? 0));
+    densityRange.value = { lo: Math.min(...vals), hi: Math.max(...vals) };
   } catch {
-    /* 无市州面则退回圆形演示 */
+    /* 无武汉片区面则退回圆形演示 */
   }
 });
 </script>

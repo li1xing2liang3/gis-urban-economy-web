@@ -6,7 +6,8 @@
     "setup": "powershell -ExecutionPolicy Bypass -File scripts/setup.ps1",
     "seed": "node scripts/seed.mjs",
     "verify": "node scripts/verify.mjs",
-    "process:gadm": "node scripts/process-gadm-china.mjs"
+    "process:gadm": "node scripts/process-gadm-china.mjs",
+    "mock-api": "node scripts/mock-api.mjs"
   },
   "dependencies": {
     "dotenv": "^16.4.7",

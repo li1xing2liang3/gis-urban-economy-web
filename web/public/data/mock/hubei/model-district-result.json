@@ -1,0 +1,53 @@
+{
+  "id": "district-wuhan-2026q1",
+  "taskType": "business_district_detection",
+  "status": "success",
+  "districts": [
+    {
+      "id": "1",
+      "name": "江汉路-循礼门商圈",
+      "confidence": 0.93,
+      "dominantCategories": [
+        "零售",
+        "餐饮",
+        "金融"
+      ],
+      "flowLevel": "高",
+      "vitalityLevel": "核心",
+      "uavEvidence": "夜景航拍覆盖"
+    },
+    {
+      "id": "2",
+      "name": "光谷-武汉东站商圈",
+      "confidence": 0.9,
+      "dominantCategories": [
+        "办公",
+        "餐饮",
+        "生活服务"
+      ],
+      "flowLevel": "高",
+      "vitalityLevel": "核心",
+      "uavEvidence": "低空建模航线"
+    },
+    {
+      "id": "3",
+      "name": "武昌滨江文旅商圈",
+      "confidence": 0.86,
+      "dominantCategories": [
+        "文旅",
+        "餐饮",
+        "住宿"
+      ],
+      "flowLevel": "中高",
+      "vitalityLevel": "次核心",
+      "uavEvidence": "两江四岸航拍"
+    }
+  ],
+  "params": {
+    "scope": "wuhan",
+    "minPoi": 12,
+    "threshold": 8
+  },
+  "createdAt": "2026-04-08T10:05:00.000Z",
+  "finishedAt": "2026-04-08T10:05:01.000Z"
+}

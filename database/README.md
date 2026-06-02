@@ -94,6 +94,17 @@ npm run seed
 npm run verify
 ```
 
+## Mock API（前后端联调演示）
+
+无需 PostgreSQL 即可启动本地 HTTP 服务，供前端 `/api` 代理调用：
+
+```powershell
+cd database
+npm run mock-api
+```
+
+默认监听 `http://127.0.0.1:8787`，数据来自 `web/public/data/mock/hubei/`。详见 `docs/前后端API连接设计.md`。
+
 ## 常用命令
 
 ```powershell

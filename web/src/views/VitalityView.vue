@@ -47,9 +47,11 @@
         <button v-if="lastId" type="button" class="btn btn-ghost" @click="run">同参重算</button>
       </div>
       <p v-if="jobMessage" :class="['job', jobError ? 'err' : 'ok']">{{ jobMessage }}</p>
+      <LayerTreePanel :layers="layers" />
       <div v-if="explain" class="exp panel small">
         <h4>解释与拆解</h4>
         <p>指标来源：按「智眼型」城市感知框架归类；实际为开放/模拟/低空占位数据，非政务智眼生产库。专题：「{{ resultTopic }}」。</p>
+        <p v-if="gis.uavRoute">低空路径：{{ gis.uavRoute.name }}（{{ gis.uavRoute.district }}，质量 {{ gis.uavRoute.quality }}%）已作为精细尺度观测项参与解释。</p>
         <p>主因：{{ explain.main }}；次因：{{ explain.sub }}。</p>
       </div>
     </aside>
@@ -72,7 +74,7 @@
         </div>
         <span class="num">{{ c.pct }}%</span>
       </div>
-      <h4 class="h4">市州排名（模拟 TOP6）</h4>
+      <h4 class="h4">武汉片区排名 TOP6</h4>
       <div v-for="(b, idx) in topZones" :key="b.name" class="bar-row rank-row">
         <span class="rank">{{ idx + 1 }}</span>
         <span class="name" :title="b.name">{{ b.shortName }}</span>
@@ -89,9 +91,12 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue';
 import L from 'leaflet';
+import LayerTreePanel from '@/components/LayerTreePanel.vue';
 import { useLeafletMap } from '@/composables/useLeafletMap';
 import { WUHAN_CENTER } from '@/utils/mapConstants';
-import { mockHubeiDataPrefix, vitalityFillColor } from '@/utils/mockHubeiDataset';
+import { vitalityFillColor } from '@/utils/mockHubeiDataset';
+import { gisDataService } from '@/services/gisDataService';
+import { vitalityLayerCatalog } from '@/config/layerCatalog';
 import {
   gis,
   pushTask,
@@ -105,8 +110,9 @@ import type { FeatureCollection } from 'geojson';
 
 const mapEl = ref<HTMLElement | null>(null);
 const mapInstance = useLeafletMap(mapEl);
+const layers = ref(JSON.parse(JSON.stringify(vitalityLayerCatalog)));
 
-/** 湖北省内地级单元示意面 + 模拟 vitalityIdx（来自 public/data/mock/hubei） */
+/** 湖北市州面 + 模拟 vitalityIdx（来自 public/data/mock/hubei） */
 const cityUnitsFc = ref<FeatureCollection | null>(null);
 
 const wRef = ref({
@@ -212,38 +218,72 @@ function run() {
   jobError.value = false;
   const id = pushTask({ name: '经济活力', page: 'vitality' });
   lastId.value = id;
-  setTimeout(() => {
-    updateTask(id, { status: 'success', message: '完成，结果已写全局。', finishedAt: new Date().toISOString() });
-    running.value = false;
-    runCount.value += 1;
-    resultTopic.value = runCount.value % 2 === 0 ? '集聚程度' : '商业分布密度';
-    jobMessage.value = '分析完成。全局状态已更新。';
-    const res: VitalityResult = {
-      updatedAt: new Date().toISOString(),
-      topic: resultTopic.value,
-      topZones: topZones.value.map(({ name, score, pct }) => ({ name, score, pct })),
-      indexMean: topZones.value[0]!.score,
-      weights: {
-        foot: wRef.value.foot,
-        poi: wRef.value.poi,
-        acc: wRef.value.acc,
-        uav: wRef.value.uav,
-        useUav: gis.uavInVitalityModel,
-      },
-    };
-    setVitalityResult(res);
-    drawResult();
-  }, 900);
+  const weights = {
+    flow: wRef.value.foot,
+    poi: wRef.value.poi,
+    traffic: wRef.value.acc,
+    uav: gis.uavInVitalityModel ? wRef.value.uav : 0,
+  };
+  gisDataService
+    .runVitalityModel({
+      dataSource: gis.dataSource,
+      time: gis.timeSingle,
+      region: gis.region.label,
+      weights,
+      uavRoutes: gis.uavRoute ? [gis.uavRoute.id] : [],
+    })
+    .then((model) => {
+      updateTask(id, { status: 'success', message: '后端模型完成，结果已写全局。', finishedAt: new Date().toISOString() });
+      runCount.value += 1;
+      resultTopic.value = model.taskType === 'vitality_assessment' ? '后端活力模型' : runCount.value % 2 === 0 ? '集聚程度' : '商业分布密度';
+      const modelTop = model.result?.topZones
+        ?.filter((zone) => zone.name && Number.isFinite(Number(zone.score)))
+        .slice(0, 6)
+        .map((zone) => ({
+          name: String(zone.name),
+          score: Math.round(Number(zone.score)),
+          pct: Math.round((Number(zone.score) / Math.max(Number(model.result?.topZones?.[0]?.score ?? 100), 1)) * 100),
+        }));
+      jobMessage.value = model.result?.explanation ?? '分析完成。全局状态已更新。';
+      const fallbackTop = topZones.value.map(({ name, score, pct }) => ({ name, score, pct }));
+      const res: VitalityResult = {
+        updatedAt: model.finishedAt ?? new Date().toISOString(),
+        topic: resultTopic.value,
+        topZones: modelTop?.length ? modelTop : fallbackTop,
+        indexMean: Math.round(Number(model.result?.indexMean ?? topZones.value[0]?.score ?? 0)),
+        weights: {
+          foot: wRef.value.foot,
+          poi: wRef.value.poi,
+          acc: wRef.value.acc,
+          uav: wRef.value.uav,
+          useUav: gis.uavInVitalityModel,
+        },
+      };
+      setVitalityResult(res);
+      drawResult();
+    })
+    .catch((e) => {
+      jobError.value = true;
+      jobMessage.value = '后端模型调用失败，已保留本地热力结果。';
+      updateTask(id, {
+        status: 'error',
+        message: e instanceof Error ? e.message : '模型接口失败',
+        errorCode: 'MODEL_API_FAILED',
+        finishedAt: new Date().toISOString(),
+      });
+    })
+    .finally(() => {
+      running.value = false;
+    });
 }
 
 let resultLayer: L.LayerGroup | null = null;
 
 onMounted(async () => {
   try {
-    const res = await fetch(`${mockHubeiDataPrefix()}city-units.geojson`);
-    if (res.ok) cityUnitsFc.value = (await res.json()) as FeatureCollection;
+    cityUnitsFc.value = await gisDataService.getCityUnits();
   } catch (e) {
-    console.warn('[GIS] 未加载市州模拟面数据', e);
+    console.warn('[GIS] 未加载武汉片区模拟面数据', e);
   }
 });
 

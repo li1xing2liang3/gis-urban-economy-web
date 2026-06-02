@@ -1,0 +1,46 @@
+[
+  {
+    "id": "wuhan-boundary",
+    "name": "武汉市边界",
+    "dataSource": "基础地理",
+    "tableName": "wuhan_boundary",
+    "geomType": "Polygon",
+    "metric": "市域展示范围",
+    "ruleText": "仅武汉市范围",
+    "unit": "—",
+    "sortOrder": 5
+  },
+  {
+    "id": "wuhan-functional-units",
+    "name": "武汉功能片区",
+    "dataSource": "模型",
+    "tableName": "city_units",
+    "geomType": "Polygon",
+    "metric": "活力、消费、人口密度",
+    "ruleText": "0~100 分级",
+    "unit": "指数",
+    "sortOrder": 10
+  },
+  {
+    "id": "uav-routes",
+    "name": "武汉无人机航线",
+    "dataSource": "无人机",
+    "tableName": "uav_routes",
+    "geomType": "LineString",
+    "metric": "航线、高度、质量、影像",
+    "ruleText": "质量 >= 70 进入模型候选",
+    "unit": "米 / m/s",
+    "sortOrder": 20
+  },
+  {
+    "id": "zhiyan-flow-heat",
+    "name": "武汉智眼型热力触发",
+    "dataSource": "演示",
+    "tableName": "zhiyan_observations",
+    "geomType": "Point",
+    "metric": "人流、车流与异常得分",
+    "ruleText": "70 以上触发低空复核",
+    "unit": "指数",
+    "sortOrder": 30
+  }
+]

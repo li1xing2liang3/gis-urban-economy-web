@@ -1,0 +1,80 @@
+{
+  "monthly": [
+    {
+      "month": "2025-11",
+      "popIndex": 63,
+      "econIndex": 66,
+      "vitalityIndex": 64,
+      "nightEconomyIndex": 60,
+      "consumeIndex": 62,
+      "trafficIndex": 65
+    },
+    {
+      "month": "2025-12",
+      "popIndex": 68,
+      "econIndex": 70,
+      "vitalityIndex": 69,
+      "nightEconomyIndex": 72,
+      "consumeIndex": 67,
+      "trafficIndex": 69
+    },
+    {
+      "month": "2026-01",
+      "popIndex": 72,
+      "econIndex": 73,
+      "vitalityIndex": 74,
+      "nightEconomyIndex": 78,
+      "consumeIndex": 71,
+      "trafficIndex": 70
+    },
+    {
+      "month": "2026-02",
+      "popIndex": 65,
+      "econIndex": 66,
+      "vitalityIndex": 67,
+      "nightEconomyIndex": 62,
+      "consumeIndex": 64,
+      "trafficIndex": 66
+    },
+    {
+      "month": "2026-03",
+      "popIndex": 77,
+      "econIndex": 79,
+      "vitalityIndex": 80,
+      "nightEconomyIndex": 82,
+      "consumeIndex": 78,
+      "trafficIndex": 81
+    },
+    {
+      "month": "2026-04",
+      "popIndex": 83,
+      "econIndex": 86,
+      "vitalityIndex": 85,
+      "nightEconomyIndex": 88,
+      "consumeIndex": 84,
+      "trafficIndex": 87
+    },
+    {
+      "month": "2026-05",
+      "popIndex": 86,
+      "econIndex": 88,
+      "vitalityIndex": 87,
+      "nightEconomyIndex": 90,
+      "consumeIndex": 86,
+      "trafficIndex": 89
+    },
+    {
+      "month": "2026-06",
+      "popIndex": 88,
+      "econIndex": 90,
+      "vitalityIndex": 89,
+      "nightEconomyIndex": 92,
+      "consumeIndex": 88,
+      "trafficIndex": 91
+    }
+  ],
+  "meta": {
+    "scope": "武汉市",
+    "unit": "index"
+  }
+}

@@ -8,6 +8,7 @@ import type {
   TimeUiMode,
   VitalityResult,
   DistrictSummary,
+  UavRouteSummary,
 } from '@/types/gis';
 
 /** 由 gis 写入 URL 的键；合并 query 时须先剔除此类旧值，避免无法清除 `did` 等 */
@@ -25,6 +26,7 @@ export const GIS_QUERY_KEYS = new Set([
   'did',
   'pops',
   'tm',
+  'uav',
 ]);
 import { WUHAN_CENTER } from '@/utils/mapConstants';
 
@@ -68,6 +70,8 @@ export const gis = reactive({
   uavInVitalityModel: true,
   /** 低空对活力模型的“精度”加成 0~0.2 */
   uavQualityBoost: 0.12,
+  selectedUavRouteId: 'route-jianghan-night',
+  uavRoute: null as UavRouteSummary | null,
   // 共享结果
   vitality: null as VitalityResult | null,
   districts: [] as DistrictSummary[],
@@ -142,6 +146,7 @@ function applyQueryToGis(q: LocationQuery) {
   if (q.cmp === '1') gis.dynamicsCompareOn = true;
   if (q.cmp === '0') gis.dynamicsCompareOn = false;
   if (q.pops && typeof q.pops === 'string') gis.uavInVitalityModel = q.pops === '1';
+  if (q.uav && typeof q.uav === 'string') gis.selectedUavRouteId = q.uav;
   if (q.popA && typeof q.popA === 'string') gis.popCompareA = q.popA;
   if (q.popB && typeof q.popB === 'string') gis.popCompareB = q.popB;
   if (q.did && typeof q.did === 'string') gis.selectedDistrictId = q.did;
@@ -166,6 +171,7 @@ export function gisToQuery(partial: Record<string, string | null | undefined> = 
     popB: gis.popCompareB,
     did: gis.selectedDistrictId != null ? String(gis.selectedDistrictId) : undefined,
     pops: gis.uavInVitalityModel ? '1' : '0',
+    uav: gis.selectedUavRouteId,
     ...partial,
   };
 }
@@ -220,6 +226,7 @@ export function useGisRouterSync() {
         gis.selectedDistrictId,
         regionToQuery(gis.region),
         gis.uavInVitalityModel,
+        gis.selectedUavRouteId,
       ].join('|'),
     () => replaceUrl(),
   );
@@ -276,6 +283,8 @@ export function pushTask(task: Omit<AnalysisTask, 'id' | 'status'> & { status?: 
     name: task.name,
     page: task.page,
     message: task.message,
+    errorCode: task.errorCode,
+    retryCount: task.retryCount ?? 0,
     startedAt: new Date().toISOString(),
   };
   gis.tasks.unshift(t);
@@ -285,14 +294,37 @@ export function pushTask(task: Omit<AnalysisTask, 'id' | 'status'> & { status?: 
 
 export function updateTask(
   id: string,
-  patch: Partial<Pick<AnalysisTask, 'status' | 'message' | 'finishedAt' | 'saved'>>,
+  patch: Partial<Pick<AnalysisTask, 'status' | 'message' | 'errorCode' | 'retryCount' | 'finishedAt' | 'saved'>>,
 ) {
   const x = gis.tasks.find((x) => x.id === id);
   if (x) Object.assign(x, patch);
 }
 
+export function retryTask(id: string) {
+  const x = gis.tasks.find((x) => x.id === id);
+  if (!x) return;
+  x.status = 'running';
+  x.retryCount = (x.retryCount ?? 0) + 1;
+  x.errorCode = undefined;
+  x.message = `重试中（第 ${x.retryCount} 次）`;
+  x.startedAt = new Date().toISOString();
+  x.finishedAt = undefined;
+  setTimeout(() => {
+    updateTask(id, {
+      status: 'success',
+      message: '重试完成，结果已恢复',
+      finishedAt: new Date().toISOString(),
+    });
+  }, 700);
+}
+
 export function setDistrictSummaries(list: DistrictSummary[]) {
   gis.districts = list;
+}
+
+export function setUavRouteSummary(route: UavRouteSummary | null) {
+  gis.uavRoute = route;
+  if (route) gis.selectedUavRouteId = route.id;
 }
 
 /**

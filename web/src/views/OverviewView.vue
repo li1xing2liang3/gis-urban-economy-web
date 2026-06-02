@@ -67,13 +67,13 @@ import { WUHAN_CENTER } from '@/utils/mapConstants';
 import { overviewLayerCatalog } from '@/config/layerCatalog';
 import type { LayerItem } from '@/types/layer';
 import {
-  mockHubeiDataPrefix,
   vitalityFillColor,
   poiCategoryColor,
   POI_CATEGORY_LEGEND,
   poiInfluenceRadiusM,
   type PoiPointProperties,
 } from '@/utils/mockHubeiDataset';
+import { gisDataService } from '@/services/gisDataService';
 import { gis, regionKpis, setRegionPoint, setRegionBox } from '@/stores/gisState';
 import { addBookmark, downloadMapPng, downloadTextReport, loadBookmarks } from '@/utils/exportAndBookmark';
 import type { FeatureCollection } from 'geojson';
@@ -253,9 +253,7 @@ watch(
     const po = layers.find((l) => l.id === 'poi');
     if (!po?.visible) return;
     try {
-      const res = await fetch(`${mockHubeiDataPrefix()}poi-sample.geojson`);
-      if (!res.ok) return;
-      const fc = (await res.json()) as FeatureCollection;
+      const fc = (await gisDataService.getPoiSample()) as FeatureCollection;
       const g = L.layerGroup();
       const poiRenderer = L.canvas({ padding: 0.5 });
       const op = po.opacity ?? 1;
@@ -323,9 +321,7 @@ watch(
     const layerItem = layers.find((l) => l.id === 'vitality');
     if (!layerItem?.visible) return;
     try {
-      const res = await fetch(`${mockHubeiDataPrefix()}city-units.geojson`);
-      if (!res.ok) throw new Error('missing city-units');
-      const fc = (await res.json()) as FeatureCollection;
+      const fc = (await gisDataService.getCityUnits()) as FeatureCollection;
       const op = layerItem.opacity ?? 0.35;
       vitalityChoroLayer = L.geoJSON(fc, {
         style: (feat) => {

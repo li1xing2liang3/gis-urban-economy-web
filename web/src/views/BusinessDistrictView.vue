@@ -40,6 +40,7 @@
         带区域前往人口与消费 →
       </RouterLink>
       <button type="button" class="btn btn-ghost" @click="exportSvg">导出结构图</button>
+      <LayerTreePanel :layers="layers" />
     </aside>
     <aside class="list-panel panel">
       <h3 class="title">商圈排名</h3>
@@ -75,23 +76,31 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 import { RouterLink } from 'vue-router';
 import L from 'leaflet';
+import LayerTreePanel from '@/components/LayerTreePanel.vue';
 import { useLeafletMap } from '@/composables/useLeafletMap';
 import { WUHAN_CENTER } from '@/utils/mapConstants';
 import { gis, gisToQuery, setDistrictSummaries, type DistrictSummary } from '@/stores/gisState';
 import { pushTask, updateTask } from '@/stores/gisState';
+import { districtLayerCatalog } from '@/config/layerCatalog';
+import { gisDataService, type DistrictModelResult } from '@/services/gisDataService';
+import { poiCategoryColor } from '@/utils/mockHubeiDataset';
+import type { FeatureCollection, Point, Polygon } from 'geojson';
 
 const mapEl = ref<HTMLElement | null>(null);
 const mapInstance = useLeafletMap(mapEl);
+const layers = ref(JSON.parse(JSON.stringify(districtLayerCatalog)));
 
 const threshold = ref(8);
 const minPoi = ref(12);
 const poiCats = ref([
   { id: 'retail', name: '零售', on: true },
   { id: 'food', name: '餐饮', on: true },
-  { id: 'svc', name: '服务', on: false },
+  { id: 'office', name: '办公', on: true },
+  { id: 'life', name: '生活', on: false },
+  { id: 'culture', name: '文体', on: false },
 ]);
 const running = ref(false);
 const history = ref('—');
@@ -111,8 +120,12 @@ const baseZones: DistrictSummary[] = [
   { id: '3', name: '街道口副核', conf: 0.76, flow: '中', level: '次核' },
 ];
 const zoneList = ref([...baseZones]);
+const poiSampleFc = ref<FeatureCollection<Point> | null>(null);
+const poiInfluenceFc = ref<FeatureCollection<Polygon> | null>(null);
+const latestModel = ref<DistrictModelResult | null>(null);
 let districtLayer: L.LayerGroup | null = null;
 let poiLayer: L.LayerGroup | null = null;
+let influenceLayer: L.Layer | null = null;
 
 const activeOn = computed(() => poiCats.value.filter((c) => c.on).length);
 
@@ -134,7 +147,9 @@ function onPoiFilter() {
 
 function recomputeFromPoi() {
   const k = 0.02 * activeOn.value;
-  zoneList.value = baseZones.map((z) => ({
+  const modelZones = modelDistrictsToSummaries(latestModel.value);
+  const sourceZones = modelZones.length ? modelZones : baseZones;
+  zoneList.value = sourceZones.map((z) => ({
     ...z,
     conf: Math.min(0.99, z.conf + (z.name.includes('江') ? k : k * 0.8)),
   }));
@@ -145,13 +160,29 @@ function recomputeFromPoi() {
 function run() {
   running.value = true;
   const j = pushTask({ name: '商圈识别', page: 'districts' });
-  setTimeout(() => {
-    const ok = new Date().toLocaleTimeString('zh-CN');
-    updateTask(j, { status: 'success', message: '聚类已刷新', finishedAt: new Date().toISOString() });
-    history.value = `POI 激活 ${activeOn.value} 类 / 最小 ${minPoi.value} / 阈 ${threshold.value} · ${ok}`;
-    recomputeFromPoi();
-    running.value = false;
-  }, 700);
+  gisDataService
+    .runDistrictModel({
+      minPoi: minPoi.value,
+      threshold: threshold.value,
+      categories: poiCats.value.filter((cat) => cat.on).map((cat) => cat.id),
+      uavRouteId: gis.selectedUavRouteId,
+    })
+    .then((result) => {
+      latestModel.value = result;
+      const rows = modelDistrictsToSummaries(result);
+      if (rows.length) zoneList.value = rows;
+      setDistrictSummaries([...zoneList.value]);
+      drawDistricts();
+    })
+    .catch(() => {
+      recomputeFromPoi();
+    })
+    .finally(() => {
+      const ok = new Date().toLocaleTimeString('zh-CN');
+      updateTask(j, { status: 'success', message: '后端聚类结果已刷新', finishedAt: new Date().toISOString() });
+      history.value = `POI 激活 ${activeOn.value} 类 / 最小 ${minPoi.value} / 阈 ${threshold.value} · ${ok}`;
+      running.value = false;
+    });
 }
 
 function drawDistricts() {
@@ -206,23 +237,69 @@ function drawPoi() {
   const map = mapInstance.value;
   if (!map) return;
   if (poiLayer) map.removeLayer(poiLayer);
+  if (influenceLayer) {
+    map.removeLayer(influenceLayer);
+    influenceLayer = null;
+  }
   if (activeOn.value < 1) {
     poiLayer = null;
     return;
   }
-  const n = 3 + activeOn.value;
+  const activeKeys = new Set(poiCats.value.filter((c) => c.on).map((c) => c.id));
   const g = L.layerGroup();
-  const pts: [number, number][] = [
-    [30.598, 114.295],
-    [30.592, 114.308],
-    [30.588, 114.298],
-    [30.582, 114.318],
-    [30.605, 114.312],
-    [30.59, 114.31],
-  ].slice(0, n);
-  pts.forEach(([la, lo]) => {
-    L.circleMarker([la, lo], { radius: 4 + activeOn.value, color: '#f5a623', fillOpacity: 0.9 }).addTo(g);
+  const poiFeatures = poiSampleFc.value?.features ?? [];
+  const filtered = poiFeatures
+    .filter((feature) => activeKeys.has(String(feature.properties?.categoryKey ?? '')))
+    .slice(0, 120);
+  const filteredPoiIds = new Set(filtered.map((feature) => String(feature.properties?.poiId ?? '')));
+  filtered.forEach((feature) => {
+    const [lng, lat] = feature.geometry.coordinates;
+    const p = feature.properties as Record<string, unknown>;
+    const color = poiCategoryColor(String(p.categoryKey ?? ''));
+    L.circleMarker([lat, lng], {
+      radius: 3 + Math.round(Number(p.importance ?? 0.5) * 4),
+      color,
+      fillColor: color,
+      fillOpacity: 0.9,
+      weight: 1,
+    })
+      .bindTooltip(`${p.name ?? 'POI'} · ${p.category ?? ''}`)
+      .addTo(g);
   });
+  const infl = poiInfluenceFc.value;
+  if (infl?.features?.length) {
+    const influenceSubset: FeatureCollection<Polygon> = {
+      ...infl,
+      features: infl.features
+        .filter((feature) => {
+          const p = feature.properties as Record<string, unknown> | null;
+          return activeKeys.has(String(p?.categoryKey ?? '')) && filteredPoiIds.has(String(p?.poiId ?? ''));
+        })
+        .slice(0, 120),
+    };
+    influenceLayer = L.geoJSON(influenceSubset, {
+      style: (feature) => {
+        const color = poiCategoryColor(String(feature?.properties?.categoryKey ?? ''));
+        return {
+          color,
+          weight: 0.8,
+          fillColor: color,
+          fillOpacity: 0.055,
+          opacity: 0.35,
+        };
+      },
+    }).addTo(map);
+  }
+  if (!filtered.length) {
+    const pts: [number, number][] = [
+      [30.598, 114.295],
+      [30.592, 114.308],
+      [30.588, 114.298],
+    ];
+    pts.forEach(([la, lo]) => {
+      L.circleMarker([la, lo], { radius: 4 + activeOn.value, color: '#f5a623', fillOpacity: 0.9 }).addTo(g);
+    });
+  }
   g.addTo(map);
   poiLayer = g;
 }
@@ -247,6 +324,40 @@ function highlightZone(idx: number) {
 function exportSvg() {
   window.alert('演示：导出结构矢量可接后端。当前全局商圈结果已供动态分析等页复用。');
 }
+
+function modelDistrictsToSummaries(result: DistrictModelResult | null): DistrictSummary[] {
+  return (
+    result?.districts?.map((district, idx) => ({
+      id: district.id ?? String(idx + 1),
+      name: district.name ?? `商圈 ${idx + 1}`,
+      conf: Number(district.confidence ?? 0.75),
+      flow: district.flowLevel ?? '中',
+      level: district.vitalityLevel ?? '识别',
+      poiStr: district.dominantCategories?.join('、'),
+    })) ?? []
+  );
+}
+
+async function loadBackendData() {
+  try {
+    const [model, poi, influence] = await Promise.all([
+      gisDataService.getLatestDistrictModel(),
+      gisDataService.getPoiSample(),
+      gisDataService.getPoiInfluence(),
+    ]);
+    latestModel.value = model;
+    poiSampleFc.value = poi as FeatureCollection<Point>;
+    poiInfluenceFc.value = influence as FeatureCollection<Polygon>;
+    recomputeFromPoi();
+    drawPoi();
+  } catch (e) {
+    console.warn('[GIS] 商圈后端数据未完全加载，保留本地演示', e);
+  }
+}
+
+onMounted(() => {
+  void loadBackendData();
+});
 
 watch(
   mapInstance,
