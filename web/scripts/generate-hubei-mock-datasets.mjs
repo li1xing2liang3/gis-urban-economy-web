@@ -1,40 +1,37 @@
 /**
- * 生成湖北省模拟数据（演示用）。
- * POI 必须经过湖北省界多边形校验（与 public/geo/hubei/hubei.* 一致）。
+ * 生成武汉市区模拟数据（演示用）。
+ * POI 约束在武汉市域多边形内（GADM cities.geojson），按行政区聚合活力指标。
  * 用法（在 web 目录）：npm run generate:mock-hubei
  * 或：node scripts/generate-hubei-mock-datasets.mjs
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import shp from 'shpjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const webRoot = path.resolve(__dirname, '..');
+const repoRoot = path.resolve(webRoot, '..');
 const outDir = path.join(webRoot, 'public', 'data', 'mock', 'hubei');
-const hubeiShapeBase = path.join(webRoot, 'public', 'geo', 'hubei', 'hubei');
+const wuhanCitiesGeojson = path.join(repoRoot, 'data/geospatial/boundaries/hubei-cities/cities.geojson');
 
+/** 武汉市区主要行政区（与 GlobalContextBar 区划选项一致） */
 const UNITS = [
-  { id: '420100', name: '武汉市', lat: 30.5928, lng: 114.3055, radiusKm: 42, tier: 1 },
-  { id: '420200', name: '黄石市', lat: 30.2, lng: 115.0389, radiusKm: 22, tier: 3 },
-  { id: '420300', name: '十堰市', lat: 32.6294, lng: 110.7989, radiusKm: 33, tier: 3 },
-  { id: '420500', name: '宜昌市', lat: 30.6919, lng: 111.2869, radiusKm: 36, tier: 2 },
-  { id: '420600', name: '襄阳市', lat: 32.0424, lng: 112.1441, radiusKm: 38, tier: 2 },
-  { id: '420700', name: '鄂州市', lat: 30.3919, lng: 114.8949, radiusKm: 16, tier: 4 },
-  { id: '420800', name: '荆门市', lat: 31.0354, lng: 112.1993, radiusKm: 28, tier: 3 },
-  { id: '420900', name: '孝感市', lat: 30.9246, lng: 113.9169, radiusKm: 30, tier: 3 },
-  { id: '421000', name: '荆州市', lat: 30.3325, lng: 112.2381, radiusKm: 34, tier: 3 },
-  { id: '421100', name: '黄冈市', lat: 30.4539, lng: 114.8723, radiusKm: 36, tier: 3 },
-  { id: '421200', name: '咸宁市', lat: 29.8413, lng: 114.3225, radiusKm: 28, tier: 3 },
-  { id: '421300', name: '随州市', lat: 31.6901, lng: 113.3825, radiusKm: 25, tier: 4 },
-  { id: '422800', name: '恩施土家族苗族自治州', lat: 30.272, lng: 109.4885, radiusKm: 42, tier: 3 },
-  { id: '429004', name: '仙桃市', lat: 30.3625, lng: 113.454, radiusKm: 14, tier: 4 },
-  { id: '429005', name: '潜江市', lat: 30.4019, lng: 112.8993, radiusKm: 14, tier: 4 },
-  { id: '429006', name: '天门市', lat: 30.6633, lng: 113.1669, radiusKm: 17, tier: 4 },
-  { id: '429021', name: '神农架林区', lat: 31.7449, lng: 110.6759, radiusKm: 28, tier: 4 },
+  { id: '420102', name: '江岸区', lat: 30.656, lng: 114.308, radiusKm: 7.5, tier: 1 },
+  { id: '420103', name: '江汉区', lat: 30.601, lng: 114.27, radiusKm: 6.2, tier: 1 },
+  { id: '420104', name: '硚口区', lat: 30.582, lng: 114.214, radiusKm: 7.0, tier: 2 },
+  { id: '420105', name: '汉阳区', lat: 30.553, lng: 114.218, radiusKm: 9.0, tier: 2 },
+  { id: '420106', name: '武昌区', lat: 30.554, lng: 114.316, radiusKm: 12.0, tier: 1 },
+  { id: '420107', name: '青山区', lat: 30.639, lng: 114.385, radiusKm: 8.0, tier: 3 },
+  { id: '420111', name: '洪山区', lat: 30.504, lng: 114.4, radiusKm: 11.5, tier: 1 },
+  { id: '420112', name: '东西湖区', lat: 30.619, lng: 114.137, radiusKm: 10.0, tier: 3 },
+  { id: '420114', name: '蔡甸区', lat: 30.534, lng: 114.029, radiusKm: 10.5, tier: 4 },
+  { id: '420115', name: '江夏区', lat: 30.375, lng: 114.321, radiusKm: 14.0, tier: 3 },
 ];
 
-const TIER_LABEL = { 1: '核心城市', 2: '区域中心', 3: '地级市', 4: '中小城市 / 省直管' };
+const WUHAN_CITY_ID = '420100';
+const WUHAN_CITY_NAME = '武汉市';
+
+const TIER_LABEL = { 1: '核心城区', 2: '副中心', 3: '一般城区', 4: '远郊拓展' };
 
 const POI_CATS = [
   { key: 'retail', name: '零售购物', weight: 1 },
@@ -77,12 +74,12 @@ function influenceRadiusKm(categoryKey, importance, tier) {
   return Number((radiusM / 1000).toFixed(3));
 }
 
-/** 按城市层级分配 POI 数量，全省目标约 1000+ */
+/** 按行政区层级分配 POI，全市目标约 1000+ */
 function poiCountForUnit(unit, rng) {
-  const tierBase = { 1: 185, 2: 92, 3: 58, 4: 36 };
-  const base = tierBase[unit.tier] ?? 48;
-  const jitter = Math.floor(rng() * 21) - 10;
-  return Math.max(22, base + jitter);
+  const tierBase = { 1: 135, 2: 95, 3: 75, 4: 55 };
+  const base = tierBase[unit.tier] ?? 60;
+  const jitter = Math.floor(rng() * 17) - 8;
+  return Math.max(40, base + jitter);
 }
 
 const R_EARTH_KM = 6371;
@@ -176,7 +173,7 @@ function aggregatePoiByCity(poiFeatures) {
   const catW = Object.fromEntries(POI_CATS.map((c) => [c.key, c.weight]));
   for (const f of poiFeatures) {
     const p = f.properties;
-    const bucket = byCity[p.cityId];
+    const bucket = byCity[p.districtId ?? p.cityId];
     if (!bucket) continue;
     bucket.count += 1;
     const imp = p.importance ?? 0.5;
@@ -334,7 +331,7 @@ function buildCitySeriesCausal(months, poiByCity, rng) {
   });
 }
 
-function generatePoiFeatures(rng, provinceFc, provinceBBox) {
+function generatePoiFeatures(rng, wuhanFc, wuhanBBox) {
   const poiFeatures = [];
   const influenceFeatures = [];
   let poiRejected = 0;
@@ -353,19 +350,20 @@ function generatePoiFeatures(rng, provinceFc, provinceBBox) {
       let placed = false;
       for (let attempt = 0; attempt < 60; attempt++) {
         const bear = rng() * 360;
-        const shrink = Math.max(0.1, 0.88 - attempt * 0.013);
+        const shrink = Math.max(0.12, 0.9 - attempt * 0.012);
         const dist = rng() * u.radiusKm * shrink;
         const [lat, lng] = destinationPoint(u.lat, u.lng, bear, dist);
-        if (pointInProvince(lng, lat, provinceFc)) {
+        if (pointInRegion(lng, lat, wuhanFc)) {
           lo = lng;
           la = lat;
+          assigned = nearestUnit(lat, lng);
           placed = true;
           break;
         }
       }
 
       if (!placed) {
-        const rp = randomPointInProvince(rng, provinceFc, provinceBBox, 100);
+        const rp = randomPointInRegion(rng, wuhanFc, wuhanBBox, 120);
         if (rp) {
           lo = rp.lng;
           la = rp.lat;
@@ -385,18 +383,20 @@ function generatePoiFeatures(rng, provinceFc, provinceBBox) {
       const radiusM = Math.round(radiusKm * 1000);
       const infSpec = INFLUENCE_M_BY_CAT[cat.key];
       const isAnchorRetail = cat.key === 'retail' && importance >= 0.8;
-      const cityShort = assigned.name.replace(/市|州|林区|土家族苗族自治州/g, '');
+      const districtShort = assigned.name.replace(/区/g, '');
       const displayName = isAnchorRetail
-        ? `${cityShort}${cat.name.slice(0, 2)}商圈${k + 1}`
-        : `${cityShort}${cat.name.slice(0, 2)}样点${k + 1}`;
+        ? `${districtShort}${cat.name.slice(0, 2)}商圈${k + 1}`
+        : `${districtShort}${cat.name.slice(0, 2)}样点${k + 1}`;
 
       poiFeatures.push({
         type: 'Feature',
         properties: {
           poiId,
           name: displayName,
-          cityId: assigned.id,
-          cityName: assigned.name,
+          cityId: WUHAN_CITY_ID,
+          cityName: WUHAN_CITY_NAME,
+          districtId: assigned.id,
+          districtName: assigned.name,
           category: cat.name,
           categoryKey: cat.key,
           importance,
@@ -414,8 +414,10 @@ function generatePoiFeatures(rng, provinceFc, provinceBBox) {
         properties: {
           poiId,
           name: displayName,
-          cityId: assigned.id,
-          cityName: assigned.name,
+          cityId: WUHAN_CITY_ID,
+          cityName: WUHAN_CITY_NAME,
+          districtId: assigned.id,
+          districtName: assigned.name,
           categoryKey: cat.key,
           importance,
           influenceRadiusKm: radiusKm,
@@ -475,7 +477,7 @@ function pointInPolygonGeom(lng, lat, geom) {
   return false;
 }
 
-function pointInProvince(lng, lat, fc) {
+function pointInRegion(lng, lat, fc) {
   for (const feat of fc.features) {
     if (feat.geometry && pointInPolygonGeom(lng, lat, feat.geometry)) return true;
   }
@@ -509,11 +511,11 @@ function bboxFromFc(fc) {
   return { minLng, maxLng, minLat, maxLat };
 }
 
-function randomPointInProvince(rng, fc, bbox, maxTry = 160) {
+function randomPointInRegion(rng, fc, bbox, maxTry = 160) {
   for (let i = 0; i < maxTry; i++) {
     const lng = bbox.minLng + rng() * (bbox.maxLng - bbox.minLng);
     const lat = bbox.minLat + rng() * (bbox.maxLat - bbox.minLat);
-    if (pointInProvince(lng, lat, fc)) return { lng, lat };
+    if (pointInRegion(lng, lat, fc)) return { lng, lat };
   }
   return null;
 }
@@ -531,15 +533,397 @@ function nearestUnit(lat, lng) {
   return best;
 }
 
-async function loadProvinceFc() {
-  const obj = {
-    shp: fs.readFileSync(hubeiShapeBase + '.shp'),
-    dbf: fs.readFileSync(hubeiShapeBase + '.dbf'),
+/** ~750 m 格网（纬度方向约 0.00675°） */
+const GRID_CELL_LAT = 0.00675;
+const GRID_CELL_LNG = 0.00715;
+const GRID_REF_MONTH = '2026-04';
+
+/** 武汉核心商圈/节点热点（高斯叠加，坐标为演示锚点） */
+const VITALITY_HOTSPOTS = [
+  { name: '江汉路-循礼门', lat: 30.582, lng: 114.285, amp: 22, sigmaKm: 0.62, nightAmp: 9, districtId: '420103' },
+  { name: '武广-武展', lat: 30.586, lng: 114.268, amp: 16, sigmaKm: 0.52, nightAmp: 5, districtId: '420103' },
+  { name: '楚河汉街', lat: 30.553, lng: 114.332, amp: 18, sigmaKm: 0.58, nightAmp: 8, districtId: '420106' },
+  { name: '司门口-黄鹤楼', lat: 30.548, lng: 114.297, amp: 14, sigmaKm: 0.68, nightAmp: 6, districtId: '420106' },
+  { name: '街道口-广埠屯', lat: 30.528, lng: 114.352, amp: 15, sigmaKm: 0.72, nightAmp: 5, districtId: '420111' },
+  { name: '光谷广场', lat: 30.507, lng: 114.399, amp: 21, sigmaKm: 0.88, nightAmp: 4, districtId: '420111' },
+  { name: '武汉东站', lat: 30.488, lng: 114.424, amp: 12, sigmaKm: 0.78, nightAmp: 3, districtId: '420111' },
+  { name: '徐东-岳家嘴', lat: 30.592, lng: 114.348, amp: 14, sigmaKm: 0.62, nightAmp: 5, districtId: '420106' },
+  { name: '钟家村', lat: 30.549, lng: 114.254, amp: 11, sigmaKm: 0.54, nightAmp: 4, districtId: '420105' },
+  { name: '王家湾', lat: 30.561, lng: 114.206, amp: 13, sigmaKm: 0.58, nightAmp: 4, districtId: '420105' },
+  { name: '江滩-黎黄陂', lat: 30.592, lng: 114.298, amp: 10, sigmaKm: 0.48, nightAmp: 7, districtId: '420102' },
+  { name: '青山滨江', lat: 30.655, lng: 114.392, amp: 8, sigmaKm: 0.82, nightAmp: 2, districtId: '420107' },
+];
+
+/** 轨道交通/快速路廊道示意（提升 trafficReach） */
+const TRANSIT_CORRIDORS = [
+  { weight: 1.0, line: [[114.205, 30.592], [114.285, 30.578], [114.355, 30.548], [114.42, 30.505]] },
+  { weight: 0.88, line: [[114.218, 30.633], [114.27, 30.601], [114.316, 30.554], [114.4, 30.504]] },
+  { weight: 0.72, line: [[114.137, 30.619], [114.214, 30.582], [114.316, 30.554]] },
+  { weight: 0.65, line: [[114.385, 30.639], [114.348, 30.592], [114.316, 30.554]] },
+];
+
+const POI_CAT_WEIGHT = Object.fromEntries(POI_CATS.map((c) => [c.key, c.weight]));
+
+function haversineKm(lat1, lng1, lat2, lng2) {
+  const φ1 = (lat1 * Math.PI) / 180;
+  const φ2 = (lat2 * Math.PI) / 180;
+  const Δφ = ((lat2 - lat1) * Math.PI) / 180;
+  const Δλ = ((lng2 - lng1) * Math.PI) / 180;
+  const a = Math.sin(Δφ / 2) ** 2 + Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) ** 2;
+  return 2 * R_EARTH_KM * Math.asin(Math.sqrt(a));
+}
+
+function distanceToSegmentKm(lat, lng, latA, lngA, latB, lngB) {
+  const x = (lng - lngA) * 96 * Math.cos((lat * Math.PI) / 180);
+  const y = (lat - latA) * 111;
+  const x2 = (lngB - lngA) * 96 * Math.cos((lat * Math.PI) / 180);
+  const y2 = (latB - latA) * 111;
+  const len2 = x2 * x2 + y2 * y2;
+  if (len2 < 1e-8) return Math.hypot(x, y);
+  const t = Math.max(0, Math.min(1, (x * x2 + y * y2) / len2));
+  return Math.hypot(x - t * x2, y - t * y2);
+}
+
+function poiKernelAt(lat, lng, poiFeatures) {
+  let sum = 0;
+  for (const f of poiFeatures) {
+    const [lo, la] = f.geometry.coordinates;
+    const d = haversineKm(lat, lng, la, lo);
+    const r = (f.properties.influenceRadiusKm ?? 0.4) * 1.15;
+    if (d > r * 2.8) continue;
+    const imp = f.properties.importance ?? 0.5;
+    const cw = POI_CAT_WEIGHT[f.properties.categoryKey] ?? 1;
+    sum += imp * cw * Math.exp(-(d * d) / (2 * (r * 0.62) ** 2));
+  }
+  return sum;
+}
+
+function hotspotAt(lat, lng) {
+  let poiAmp = 0;
+  let nightAmp = 0;
+  let label = null;
+  let minDist = Infinity;
+  for (const h of VITALITY_HOTSPOTS) {
+    const d = haversineKm(lat, lng, h.lat, h.lng);
+    const g = h.amp * Math.exp(-(d * d) / (2 * h.sigmaKm ** 2));
+    if (g > poiAmp) poiAmp = g;
+    nightAmp = Math.max(nightAmp, h.nightAmp * Math.exp(-(d * d) / (2 * (h.sigmaKm * 1.1) ** 2)));
+    if (d < minDist) {
+      minDist = d;
+      if (d <= h.sigmaKm * 1.05) label = h.name;
+    }
+  }
+  return { poiAmp, nightAmp, label, minDistKm: minDist };
+}
+
+function corridorScoreAt(lat, lng) {
+  let best = 0;
+  for (const c of TRANSIT_CORRIDORS) {
+    const line = c.line;
+    for (let i = 0; i < line.length - 1; i++) {
+      const [lngA, latA] = line[i];
+      const [lngB, latB] = line[i + 1];
+      const d = distanceToSegmentKm(lat, lng, latA, lngA, latB, lngB);
+      const s = Math.exp(-(d * d) / (2 * 1.8 ** 2)) * 100 * c.weight;
+      if (s > best) best = s;
+    }
+  }
+  return best;
+}
+
+function flowLevelFromIdx(v) {
+  if (v >= 78) return '极高';
+  if (v >= 65) return '高';
+  if (v >= 52) return '中';
+  return '低';
+}
+
+function vitalityClassFromIdx(v) {
+  if (v >= 82) return 5;
+  if (v >= 70) return 4;
+  if (v >= 58) return 3;
+  if (v >= 46) return 2;
+  return 1;
+}
+
+function urbanCoreBBox(paddingDeg = 0.018) {
+  let minLat = Infinity;
+  let maxLat = -Infinity;
+  let minLng = Infinity;
+  let maxLng = -Infinity;
+  for (const u of UNITS) {
+    const latPad = u.radiusKm / 111;
+    const lngPad = u.radiusKm / (111 * Math.cos((u.lat * Math.PI) / 180));
+    minLat = Math.min(minLat, u.lat - latPad);
+    maxLat = Math.max(maxLat, u.lat + latPad);
+    minLng = Math.min(minLng, u.lng - lngPad);
+    maxLng = Math.max(maxLng, u.lng + lngPad);
+  }
+  return {
+    minLat: minLat - paddingDeg,
+    maxLat: maxLat + paddingDeg,
+    minLng: minLng - paddingDeg,
+    maxLng: maxLng + paddingDeg,
   };
-  if (fs.existsSync(hubeiShapeBase + '.prj')) obj.prj = fs.readFileSync(hubeiShapeBase + '.prj');
-  if (fs.existsSync(hubeiShapeBase + '.cpg')) obj.cpg = fs.readFileSync(hubeiShapeBase + '.cpg');
-  const parsed = await shp(obj);
-  return Array.isArray(parsed) ? parsed[0] : parsed;
+}
+
+function inUrbanUnit(lat, lng) {
+  for (const u of UNITS) {
+    const d = haversineKm(lat, lng, u.lat, u.lng);
+    if (d <= u.radiusKm * 1.05) return true;
+  }
+  return false;
+}
+
+function cellSquarePolygon(lat, lng, halfLat, halfLng) {
+  return [
+    [
+      [lng - halfLng, lat - halfLat],
+      [lng + halfLng, lat - halfLat],
+      [lng + halfLng, lat + halfLat],
+      [lng - halfLng, lat + halfLat],
+      [lng - halfLng, lat - halfLat],
+    ],
+  ];
+}
+
+function smoothGridCells(cells, passes = 2) {
+  const byKey = new Map(cells.map((c) => [`${c.row},${c.col}`, c]));
+  const keys = ['vitalityIdx', 'footTrafficIdx', 'poiActivityIdx', 'trafficReachIdx', 'nightEconomyIdx'];
+  for (let p = 0; p < passes; p++) {
+    const next = new Map();
+    for (const c of cells) {
+      const patch = { ...c };
+      for (const k of keys) {
+        let sum = c[k] * 4;
+        let n = 4;
+        for (const [dr, dc, w] of [
+          [-1, 0, 1],
+          [1, 0, 1],
+          [0, -1, 1],
+          [0, 1, 1],
+          [-1, -1, 0.5],
+          [-1, 1, 0.5],
+          [1, -1, 0.5],
+          [1, 1, 0.5],
+        ]) {
+          const nb = byKey.get(`${c.row + dr},${c.col + dc}`);
+          if (nb) {
+            sum += nb[k] * w;
+            n += w;
+          }
+        }
+        patch[k] = Math.round(sum / n);
+      }
+      next.set(`${c.row},${c.col}`, patch);
+    }
+    for (const c of cells) {
+      const u = next.get(`${c.row},${c.col}`);
+      if (u) Object.assign(c, u);
+    }
+  }
+}
+
+/**
+ * 生成 750m 级活力格网：POI 核密度 + 商圈热点 + 交通廊道 + 区级因果链基线，并做空间平滑。
+ */
+function generateVitalityGrid(wuhanFc, _wuhanBBox, poiFeatures, citySeries, rng) {
+  const halfLat = GRID_CELL_LAT / 2;
+  const halfLng = GRID_CELL_LNG / 2;
+  const gridBBox = urbanCoreBBox();
+  const districtById = Object.fromEntries(citySeries.map((c) => [c.id, c]));
+  const cells = [];
+
+  for (let row = 0, lat = gridBBox.minLat + halfLat; lat <= gridBBox.maxLat + 1e-9; lat += GRID_CELL_LAT, row++) {
+    for (let col = 0, lng = gridBBox.minLng + halfLng; lng <= gridBBox.maxLng + 1e-9; lng += GRID_CELL_LNG, col++) {
+      if (!pointInRegion(lng, lat, wuhanFc) || !inUrbanUnit(lat, lng)) continue;
+
+      const unit = nearestUnit(lat, lng);
+      const ds = districtById[unit.id];
+      if (!ds) continue;
+      const base = ds.latest;
+      const causal = ds.causal;
+
+      const poiK = poiKernelAt(lat, lng, poiFeatures);
+      const hs = hotspotAt(lat, lng);
+      const corridor = corridorScoreAt(lat, lng);
+      const microNoise = pick(rng, -2.8, 2.8);
+      const tierLift = (5 - unit.tier) * 1.8;
+
+      const poiActivityIdx = clampIndex(
+        causal.poiBase * 0.22 + poiK * 13.5 + hs.poiAmp * 1.05 + tierLift + microNoise * 0.35,
+      );
+      const trafficReachIdx = clampIndex(
+        base.trafficReachIdx * 0.32 + corridor * 0.48 + causal.accessBase * 0.18 + tierLift * 0.6 + microNoise * 0.2,
+      );
+      const footTrafficIdx = clampIndex(
+        CAUSAL_WEIGHTS.footFromPop * causal.popBase +
+          CAUSAL_WEIGHTS.footFromPoi * poiActivityIdx +
+          CAUSAL_WEIGHTS.footFromTraffic * trafficReachIdx +
+          hs.poiAmp * 0.75 +
+          microNoise,
+      );
+      const activityIdx = clampIndex(
+        CAUSAL_WEIGHTS.activityFromFoot * footTrafficIdx +
+          CAUSAL_WEIGHTS.activityFromPoi * poiActivityIdx +
+          CAUSAL_WEIGHTS.activityFromTraffic * trafficReachIdx +
+          hs.poiAmp * 0.15,
+      );
+      let vitalityIdx = clampIndex(
+        CAUSAL_WEIGHTS.vitalityFromActivity * activityIdx +
+          CAUSAL_WEIGHTS.vitalityFromPoi * poiActivityIdx +
+          CAUSAL_WEIGHTS.vitalityFromTraffic * trafficReachIdx +
+          CAUSAL_WEIGHTS.vitalityFromPop * causal.popBase +
+          hs.poiAmp * 1.35 +
+          tierLift * 0.8,
+      );
+      const nightEconomyIdx = clampIndex(
+        CAUSAL_WEIGHTS.nightFromActivity * activityIdx +
+          CAUSAL_WEIGHTS.nightFromPoi * poiActivityIdx +
+          hs.nightAmp * 1.05 +
+          (unit.tier <= 2 ? 3 : 0),
+      );
+      const consumePotential = clampIndex(
+        CAUSAL_WEIGHTS.consumeFromActivity * activityIdx +
+          CAUSAL_WEIGHTS.consumeFromVitality * vitalityIdx +
+          CAUSAL_WEIGHTS.consumeFromPoi * poiActivityIdx,
+      );
+      const inboundFlowIdx = clampIndex(
+        CAUSAL_WEIGHTS.inboundFromActivity * activityIdx +
+          CAUSAL_WEIGHTS.inboundFromVitality * vitalityIdx +
+          (hs.label ? 6 : 0) +
+          tierLift * 0.4,
+      );
+
+      const districtBaseVit = Math.max(base.vitalityIdx, 1);
+      const localRatio = Number((vitalityIdx / districtBaseVit).toFixed(4));
+      const poiDensityNorm = Number(Math.min(1, poiK / 10).toFixed(3));
+
+      cells.push({
+        row,
+        col,
+        lat,
+        lng,
+        gridId: `G-${String(row).padStart(3, '0')}-${String(col).padStart(3, '0')}`,
+        districtId: unit.id,
+        districtName: unit.name,
+        tier: unit.tier,
+        tierLabel: TIER_LABEL[unit.tier] ?? '—',
+        vitalityIdx,
+        footTrafficIdx,
+        poiActivityIdx,
+        trafficReachIdx,
+        nightEconomyIdx,
+        consumePotential,
+        activityIdx,
+        inboundFlowIdx,
+        localRatio,
+        poiDensityNorm,
+        hotspotLabel: hs.label,
+        flowLevel: flowLevelFromIdx(footTrafficIdx),
+        vitalityClass: vitalityClassFromIdx(vitalityIdx),
+        refMonth: GRID_REF_MONTH,
+      });
+    }
+  }
+
+  smoothGridCells(cells, 1);
+
+  for (const c of cells) {
+    c.flowLevel = flowLevelFromIdx(c.footTrafficIdx);
+    c.vitalityClass = vitalityClassFromIdx(c.vitalityIdx);
+    const ds = districtById[c.districtId];
+    if (ds) c.localRatio = Number((c.vitalityIdx / Math.max(ds.latest.vitalityIdx, 1)).toFixed(4));
+  }
+
+  const vitalityValues = cells.map((c) => c.vitalityIdx).sort((a, b) => a - b);
+  const quantile = (q) => vitalityValues[Math.floor((vitalityValues.length - 1) * q)] ?? 0;
+
+  const features = cells.map((c) => ({
+    type: 'Feature',
+    properties: {
+      gridId: c.gridId,
+      row: c.row,
+      col: c.col,
+      districtId: c.districtId,
+      districtName: c.districtName,
+      tier: c.tier,
+      tierLabel: c.tierLabel,
+      vitalityIdx: c.vitalityIdx,
+      footTrafficIdx: c.footTrafficIdx,
+      poiActivityIdx: c.poiActivityIdx,
+      trafficReachIdx: c.trafficReachIdx,
+      nightEconomyIdx: c.nightEconomyIdx,
+      consumePotential: c.consumePotential,
+      activityIdx: c.activityIdx,
+      inboundFlowIdx: c.inboundFlowIdx,
+      localRatio: c.localRatio,
+      poiDensityNorm: c.poiDensityNorm,
+      hotspotLabel: c.hotspotLabel,
+      flowLevel: c.flowLevel,
+      vitalityClass: c.vitalityClass,
+      refMonth: c.refMonth,
+    },
+    geometry: {
+      type: 'Polygon',
+      coordinates: cellSquarePolygon(c.lat, c.lng, halfLat, halfLng),
+    },
+  }));
+
+  return {
+    type: 'FeatureCollection',
+    name: 'wuhan-vitality-grid-mock',
+    meta: {
+      crs: 'EPSG:4326',
+      generated: new Date().toISOString(),
+      scope: '武汉市区',
+      cellSizeM: {
+        lat: Math.round(GRID_CELL_LAT * 111000),
+        lng: Math.round(GRID_CELL_LNG * 111000 * Math.cos((30.52 * Math.PI) / 180)),
+      },
+      referenceMonth: GRID_REF_MONTH,
+      cellCount: features.length,
+      quantiles: {
+        p20: quantile(0.2),
+        p40: quantile(0.4),
+        p60: quantile(0.6),
+        p80: quantile(0.8),
+      },
+      methodology: [
+        'POI 核密度（业态权重 × 重要度 × 高斯衰减）',
+        '12 个核心商圈/节点热点高斯叠加',
+        '轨道交通/快速路廊道可达性',
+        '区级因果链基线（与 city-units / timeseries 一致）',
+        '3×3 邻域空间平滑',
+      ],
+      fields: [
+        'vitalityIdx 综合活力',
+        'footTrafficIdx / poiActivityIdx / trafficReachIdx 分项',
+        'localRatio 相对所属区基期活力比（用于时序缩放）',
+        'hotspotLabel 热点名称（格心落入主圈时）',
+        'vitalityClass 1–5 级',
+      ],
+      disclaimer: '750m 示意格网，非官方统计格网；与行政区因果链及 POI 样点一致生成。',
+    },
+    features,
+  };
+}
+
+function loadWuhanFc() {
+  if (!fs.existsSync(wuhanCitiesGeojson)) {
+    throw new Error(`缺少武汉市界 GeoJSON: ${wuhanCitiesGeojson}`);
+  }
+  const fc = JSON.parse(fs.readFileSync(wuhanCitiesGeojson, 'utf8'));
+  const features = fc.features.filter((f) => {
+    const p = f.properties ?? {};
+    const id = String(p.id ?? p.adcode ?? '');
+    const name = String(p.name ?? p.NAME ?? p.NL_NAME_2 ?? '');
+    return id === WUHAN_CITY_ID || /武汉|Wuhan/i.test(name);
+  });
+  if (!features.length) {
+    throw new Error('在 cities.geojson 中未找到武汉市要素');
+  }
+  return { type: 'FeatureCollection', features };
 }
 
 async function main() {
@@ -548,14 +932,14 @@ async function main() {
 
   fs.mkdirSync(outDir, { recursive: true });
 
-  let provinceFc;
+  let wuhanFc;
   try {
-    provinceFc = await loadProvinceFc();
+    wuhanFc = loadWuhanFc();
   } catch (e) {
-    console.error('无法读取省界 shapefile:', hubeiShapeBase, e);
+    console.error(e.message);
     process.exit(1);
   }
-  const provinceBBox = bboxFromFc(provinceFc);
+  const wuhanBBox = bboxFromFc(wuhanFc);
 
   const months = [];
   for (let y = 2024; y <= 2026; y++) {
@@ -566,7 +950,7 @@ async function main() {
     }
   }
 
-  const { poiFeatures, influenceFeatures, poiRejected } = generatePoiFeatures(rng, provinceFc, provinceBBox);
+  const { poiFeatures, influenceFeatures, poiRejected } = generatePoiFeatures(rng, wuhanFc, wuhanBBox);
   const poiByCity = aggregatePoiByCity(poiFeatures);
   const citySeries = buildCitySeriesCausal(months, poiByCity, rng);
 
@@ -610,6 +994,8 @@ async function main() {
       properties: {
         id: u.id,
         name: u.name,
+        parentCityId: WUHAN_CITY_ID,
+        parentCityName: WUHAN_CITY_NAME,
         tier: u.tier,
         tierLabel: TIER_LABEL[u.tier] ?? '—',
         popDensity: pr.popDensity,
@@ -630,7 +1016,7 @@ async function main() {
         manufacturingShare: pr.manufacturingShare,
         serviceShare: pr.serviceShare,
         structureNote: pr.structureNote,
-        note: '示意边界（球面圆）；活力等指标由 POI/交通/人流因果链推导（阶段3）',
+        note: '武汉市区示意边界（球面圆）；活力由区内 POI/交通/人流因果链推导',
       },
       geometry: {
         type: 'Polygon',
@@ -641,44 +1027,46 @@ async function main() {
 
   const fcUnits = {
     type: 'FeatureCollection',
-    name: 'hubei-city-units-mock',
+    name: 'wuhan-district-units-mock',
     meta: {
       crs: 'EPSG:4326',
       generated: new Date().toISOString(),
       seed,
+      scope: '武汉市区 10 个行政区',
       fields: [
-        'vitalityIdx 综合活力',
+        'vitalityIdx 综合活力（区际对比）',
         'nightEconomyIdx 夜经济',
         'consumePotential 消费潜力',
         'popDensity 人口密度示意',
-        'tier / tierLabel 城市层级（演示）',
+        'tier / tierLabel 城区层级（演示）',
       ],
       causalModel:
         'POI集聚→poiActivity→人流footTraffic→activity→活力/夜经济/消费；交通可达→人流与活力；人口基数→人流与人口指数',
-      disclaimer: '市州面为示意几何；指标由阶段3因果链与 POI 聚合一致生成。',
+      disclaimer: '区面为示意几何；指标由区内 POI 聚合与因果链一致生成，用于区际活力对比。',
     },
     features: cityFeatures,
   };
 
   const fcPoi = {
     type: 'FeatureCollection',
-    name: 'hubei-poi-sample-mock',
+    name: 'wuhan-poi-sample-mock',
     meta: {
       crs: 'EPSG:4326',
       generated: new Date().toISOString(),
       seed,
-      provinceBoundary: 'web/public/geo/hubei/hubei.shp（POI 已约束在省界内）',
+      scope: '武汉市区',
+      cityBoundary: 'data/geospatial/boundaries/hubei-cities/cities.geojson（武汉市域）',
       categoryKeys: POI_CATS.map((c) => c.key),
       influenceModel:
-        '主商圈圆近似：金融/餐饮/生活约 60–380 m，一般零售/办公/文体约 150–650 m，高重要度商场类零售约 600–1200 m（参考零售 trade area 步行/驾车主圈文献）',
-      disclaimer: 'POI 随机撒点 + 主商圈圆；半径为演示级简化，非道路网等时圈。',
+        '主商圈圆近似：金融/餐饮/生活约 60–380 m，一般零售/办公/文体约 150–650 m，高重要度商场类零售约 600–1200 m',
+      disclaimer: 'POI 随机撒点于武汉市区并按最近行政区归属；半径为演示级简化。',
     },
     features: poiFeatures,
   };
 
   const fcInfluence = {
     type: 'FeatureCollection',
-    name: 'hubei-poi-influence-mock',
+    name: 'wuhan-poi-influence-mock',
     meta: {
       crs: 'EPSG:4326',
       generated: new Date().toISOString(),
@@ -692,7 +1080,7 @@ async function main() {
 
   const tsCities = {
     meta: {
-      region: '湖北省',
+      region: '武汉市区',
       unit: '合成指数（0–100）',
       monthlyRange: { start: months[0], end: months[months.length - 1] },
       seed,
@@ -710,7 +1098,7 @@ async function main() {
       ],
       causalModel:
         '月度序列：交通可达→poiActivity(含POI结构+季节/节假)→人流→activity→活力/夜经济/消费/人口/经济',
-      disclaimer: '阶段3因果链模拟；非官方统计。',
+      disclaimer: '阶段3因果链模拟；按行政区对比，非官方统计。',
     },
     cities: citySeries.map((c) => ({
       id: c.id,
@@ -722,12 +1110,12 @@ async function main() {
 
   const tsProvince = {
     meta: {
-      region: '湖北省（各地平均合成）',
+      region: '武汉市区（各区平均合成）',
       unit: '合成指数（0–100）',
       seed,
       indicators: ['popIndex', 'econIndex', 'vitalityIndex', 'nightEconomyIndex', 'consumeIndex', 'trafficIndex'],
-      causalModel: '全省序列为各地因果链结果的算术平均',
-      disclaimer: '阶段3：全省序列由各地因果链指数平均得到。',
+      causalModel: '全市序列为各行政区因果链结果的算术平均',
+      disclaimer: '阶段3：武汉市区序列由各区因果链指数平均得到。',
     },
     monthly: provinceMonthly,
   };
@@ -738,6 +1126,85 @@ async function main() {
   fs.writeFileSync(path.join(outDir, 'timeseries-cities.json'), JSON.stringify(tsCities, null, 2), 'utf8');
   fs.writeFileSync(path.join(outDir, 'timeseries-province.json'), JSON.stringify(tsProvince, null, 2), 'utf8');
 
+  const fcGrid = generateVitalityGrid(wuhanFc, wuhanBBox, poiFeatures, citySeries, rng);
+  fs.writeFileSync(path.join(outDir, 'vitality-grid.geojson'), JSON.stringify(fcGrid), 'utf8');
+  fs.writeFileSync(
+    path.join(outDir, 'vitality-grid-meta.json'),
+    JSON.stringify(
+      {
+        ...fcGrid.meta,
+        file: 'vitality-grid.geojson',
+        pairedWith: ['poi-sample.geojson', 'city-units.geojson', 'timeseries-cities.json'],
+      },
+      null,
+      2,
+    ),
+    'utf8',
+  );
+
+  const wuhanGeoDir = path.join(webRoot, 'public', 'geo', 'wuhan');
+  fs.mkdirSync(wuhanGeoDir, { recursive: true });
+  fs.writeFileSync(path.join(wuhanGeoDir, 'wuhan-boundary.geojson'), JSON.stringify(wuhanFc), 'utf8');
+
+  const layerCatalog = [
+    {
+      id: 'wuhan-boundary',
+      name: '武汉市区边界',
+      dataSource: '基础地理',
+      tableName: 'wuhan_boundary',
+      geomType: 'Polygon',
+      metric: '演示范围',
+      ruleText: '仅武汉市区仿真数据覆盖范围',
+      unit: '—',
+      sortOrder: 5,
+    },
+    {
+      id: 'wuhan-district-units',
+      name: '武汉行政区',
+      dataSource: '模型',
+      tableName: 'city_units',
+      geomType: 'Polygon',
+      metric: '活力、消费、人口密度',
+      ruleText: '0~100 按区设色',
+      unit: '指数',
+      sortOrder: 10,
+    },
+    {
+      id: 'wuhan-vitality-grid',
+      name: '武汉活力评估格网',
+      dataSource: '模型',
+      tableName: 'vitality_grid',
+      geomType: 'Polygon',
+      metric: '750m 格网综合活力与分项指数',
+      ruleText: 'POI核密度+热点+廊道；localRatio 支持时序缩放',
+      unit: '0~100 分',
+      sortOrder: 12,
+    },
+    {
+      id: 'uav-routes',
+      name: '武汉无人机航线',
+      dataSource: '无人机',
+      tableName: 'uav_routes',
+      geomType: 'LineString',
+      metric: '航线、高度、质量、影像',
+      ruleText: '质量 >= 70 进入模型候选',
+      unit: '米 / m/s',
+      sortOrder: 20,
+    },
+    {
+      id: 'zhiyan-flow-heat',
+      name: '武汉智眼型热力触发',
+      dataSource: '演示',
+      tableName: 'zhiyan_observations',
+      geomType: 'Point',
+      metric: '人流、车流与异常得分',
+      ruleText: '70 以上触发低空复核',
+      unit: '指数',
+      sortOrder: 30,
+    },
+  ];
+  fs.writeFileSync(path.join(outDir, 'layer-catalog.json'), JSON.stringify(layerCatalog, null, 2), 'utf8');
+
   console.log('已写入', outDir);
   const radii = poiFeatures.map((f) => f.properties.influenceRadiusM).sort((a, b) => a - b);
   const rMin = radii[0];
@@ -746,21 +1213,27 @@ async function main() {
   console.log(
     '  features:',
     cityFeatures.length,
-    '市州面,',
+    '个行政区面,',
     poiFeatures.length,
     '个 POI 点,',
     influenceFeatures.length,
-    '个影响圆（均在湖北省界内）',
+    '个影响圆,',
+    fcGrid.features.length,
+    '个活力格网（均在武汉市区界内）',
+  );
+  console.log(
+    `  格网：~${fcGrid.meta.cellSizeM.lat}m 单元，参考月 ${GRID_REF_MONTH}，活力分位 p80=${fcGrid.meta.quantiles.p80}`,
   );
   console.log(`  影响半径(m): min=${rMin} med=${rMed} max=${rMax}`);
-  const wuhan = citySeries.find((c) => c.id === '420100');
-  const enshi = citySeries.find((c) => c.id === '422800');
-  if (wuhan && enshi) {
-    const w = wuhan.latest.vitalityIdx;
-    const e = enshi.latest.vitalityIdx;
-    console.log(`  阶段3校验：武汉活力 ${w} vs 恩施 ${e}（POI结构 ${wuhan.causal.poiBase} vs ${enshi.causal.poiBase}）`);
+  const jianghan = citySeries.find((c) => c.id === '420103');
+  const caidian = citySeries.find((c) => c.id === '420114');
+  if (jianghan && caidian) {
+    console.log(
+      `  区际校验：江汉活力 ${jianghan.latest.vitalityIdx} vs 蔡甸 ${caidian.latest.vitalityIdx}（POI结构 ${jianghan.causal.poiBase} vs ${caidian.causal.poiBase}）`,
+    );
   }
   if (poiRejected) console.log('  未放置候选:', poiRejected, '（理论上应为 0）');
+  console.log('  边界副本 → web/public/geo/wuhan/wuhan-boundary.geojson');
 }
 
 main().catch((e) => {

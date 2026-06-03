@@ -35,7 +35,7 @@ export type AnalysisTask = {
 export type VitalityResult = {
   updatedAt: string;
   topic: string;
-  topZones: { name: string; score: number; pct: number }[];
+  topZones: { name: string; score: number; pct: number; uavBoost?: number; districtName?: string; hotspot?: string }[];
   indexMean: number;
   weights: { foot: number; poi: number; acc: number; uav: number; useUav: boolean };
 };

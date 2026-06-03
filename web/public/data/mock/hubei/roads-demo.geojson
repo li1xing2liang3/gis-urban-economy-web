@@ -1,0 +1,57 @@
+{
+  "type": "FeatureCollection",
+  "name": "wuhan-roads-demo",
+  "meta": {
+    "disclaimer": "武汉市区主要道路示意线，演示用非 OSM 全量路网"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "解放大道", "level": "primary" },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [[114.258, 30.61], [114.285, 30.605], [114.31, 30.598], [114.335, 30.592]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "中山大道", "level": "primary" },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [[114.265, 30.592], [114.292, 30.588], [114.318, 30.584]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "珞喻路", "level": "primary" },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [[114.352, 30.505], [114.368, 30.512], [114.385, 30.518], [114.402, 30.522]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "中北路", "level": "secondary" },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [[114.328, 30.545], [114.335, 30.558], [114.342, 30.572]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "鹦鹉大道", "level": "secondary" },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [[114.218, 30.545], [114.235, 30.552], [114.252, 30.558]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "长江主轴", "level": "waterfront" },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [[114.248, 30.575], [114.275, 30.568], [114.302, 30.562], [114.328, 30.555]]
+      }
+    }
+  ]
+}

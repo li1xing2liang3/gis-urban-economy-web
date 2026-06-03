@@ -61,7 +61,7 @@ export type VitalityModelResult = ModelRunResult & {
   status?: string;
   result?: {
     indexMean?: number;
-    topZones?: Array<{ name?: string; score?: number; uavBoost?: number }>;
+    topZones?: Array<{ name?: string; districtName?: string; hotspot?: string; score?: number; uavBoost?: number }>;
     explanation?: string;
   };
   createdAt?: string;
@@ -289,6 +289,12 @@ export const gisDataService = {
   getCityUnits(): Promise<FeatureCollection> {
     return fetchApi<FeatureCollection>('/api/v1/hubei/geo/city-units?ds=v2026Q1', () =>
       fetchMock<FeatureCollection>('city-units.geojson'),
+    );
+  },
+
+  getVitalityGrid(): Promise<FeatureCollection> {
+    return fetchApi<FeatureCollection>('/api/v1/hubei/geo/vitality-grid?ds=v2026Q1', () =>
+      fetchMock<FeatureCollection>('vitality-grid.geojson'),
     );
   },
 

@@ -2,17 +2,38 @@
   <div class="card panel">
     <h4>区域统计 <span class="tag">{{ gis.region.label }}</span></h4>
     <ul>
-      <li><em>活力值</em> {{ stats.v }}</li>
-      <li><em>人流</em> {{ stats.foot }}</li>
-      <li><em>商业密度</em> {{ stats.comm }}</li>
+      <li><em>活力值</em> {{ display.v }}</li>
+      <li><em>人流</em> {{ display.foot }}</li>
+      <li><em>商业密度</em> {{ display.comm }}</li>
+      <li v-if="display.poiCount != null"><em>POI 数</em> {{ display.poiCount }}</li>
     </ul>
-    <p v-if="gis.uavInVitalityModel" class="uav">低速空域数据参与模型，指标含小幅修正。</p>
+    <p v-if="gis.uavInVitalityModel" class="uav">低空数据参与模型，指标含小幅修正。</p>
+    <p v-if="display.inRegion === false && display.poiCount === 0" class="hint">当前范围内无 POI，显示为估算值。</p>
   </div>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import { gis, regionKpis } from '@/stores/gisState';
-const stats = regionKpis;
+import type { OverviewRegionKpis } from '@/utils/overviewRegionStats';
+
+const props = defineProps<{
+  stats?: OverviewRegionKpis | null;
+}>();
+
+const display = computed(() => {
+  if (props.stats) {
+    return {
+      v: props.stats.v,
+      foot: props.stats.foot,
+      comm: props.stats.comm,
+      poiCount: props.stats.poiCount,
+      inRegion: props.stats.inRegion,
+    };
+  }
+  const r = regionKpis.value;
+  return { v: r.v, foot: r.foot, comm: r.comm, poiCount: null as number | null, inRegion: undefined };
+});
 </script>
 
 <style scoped>
@@ -45,10 +66,14 @@ em {
   font-style: normal;
   margin-right: 4px;
 }
-.uav {
+.uav,
+.hint {
   font-size: 10px;
   color: var(--text-muted);
   margin: 8px 0 0;
   line-height: 1.3;
+}
+.hint {
+  color: var(--accent-hot);
 }
 </style>

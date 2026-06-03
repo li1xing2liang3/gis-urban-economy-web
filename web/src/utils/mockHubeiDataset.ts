@@ -1,4 +1,6 @@
-/** 与 `web/public/data/mock/hubei/` 下静态文件对应（由 scripts/generate-hubei-mock-datasets.mjs 生成） */
+/** 与 `web/public/data/mock/hubei/` 下静态文件对应（武汉市区仿真，由 generate-hubei-mock-datasets.mjs 生成；含 vitality-grid.geojson 750m 格网） */
+
+export const DEMO_SCOPE = '武汉市区';
 
 export function mockHubeiDataPrefix(): string {
   const base = import.meta.env.BASE_URL || '/';
@@ -56,6 +58,8 @@ export type PoiPointProperties = {
   categoryKey?: string;
   category?: string;
   cityName?: string;
+  districtId?: string;
+  districtName?: string;
   importance?: number;
   influenceRadiusKm?: number;
   influenceRadiusM?: number;

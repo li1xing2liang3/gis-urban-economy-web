@@ -1,6 +1,6 @@
 {
   "meta": {
-    "region": "湖北省（各地平均合成）",
+    "region": "武汉市区（各区平均合成）",
     "unit": "合成指数（0–100）",
     "seed": 20260408,
     "indicators": [
@@ -11,225 +11,225 @@
       "consumeIndex",
       "trafficIndex"
     ],
-    "causalModel": "全省序列为各地因果链结果的算术平均",
-    "disclaimer": "阶段3：全省序列由各地因果链指数平均得到。"
+    "causalModel": "全市序列为各行政区因果链结果的算术平均",
+    "disclaimer": "阶段3：武汉市区序列由各区因果链指数平均得到。"
   },
   "monthly": [
     {
       "month": "2024-05",
-      "popIndex": 56,
+      "popIndex": 57,
       "econIndex": 57,
-      "vitalityIndex": 51,
-      "nightEconomyIndex": 35,
-      "consumeIndex": 46,
-      "trafficIndex": 73
+      "vitalityIndex": 53,
+      "nightEconomyIndex": 39,
+      "consumeIndex": 49,
+      "trafficIndex": 67
     },
     {
       "month": "2024-06",
-      "popIndex": 57,
+      "popIndex": 58,
       "econIndex": 57,
-      "vitalityIndex": 52,
-      "nightEconomyIndex": 37,
-      "consumeIndex": 47,
-      "trafficIndex": 74
+      "vitalityIndex": 54,
+      "nightEconomyIndex": 40,
+      "consumeIndex": 49,
+      "trafficIndex": 67
     },
     {
       "month": "2024-07",
-      "popIndex": 57,
-      "econIndex": 58,
+      "popIndex": 58,
+      "econIndex": 57,
       "vitalityIndex": 53,
-      "nightEconomyIndex": 38,
-      "consumeIndex": 47,
-      "trafficIndex": 74
+      "nightEconomyIndex": 40,
+      "consumeIndex": 49,
+      "trafficIndex": 67
     },
     {
       "month": "2024-08",
-      "popIndex": 57,
-      "econIndex": 58,
-      "vitalityIndex": 52,
-      "nightEconomyIndex": 37,
-      "consumeIndex": 47,
-      "trafficIndex": 74
+      "popIndex": 58,
+      "econIndex": 57,
+      "vitalityIndex": 53,
+      "nightEconomyIndex": 40,
+      "consumeIndex": 49,
+      "trafficIndex": 67
     },
     {
       "month": "2024-09",
-      "popIndex": 57,
-      "econIndex": 58,
-      "vitalityIndex": 52,
-      "nightEconomyIndex": 37,
-      "consumeIndex": 47,
-      "trafficIndex": 74
+      "popIndex": 58,
+      "econIndex": 57,
+      "vitalityIndex": 53,
+      "nightEconomyIndex": 39,
+      "consumeIndex": 49,
+      "trafficIndex": 67
     },
     {
       "month": "2024-10",
-      "popIndex": 57,
-      "econIndex": 58,
-      "vitalityIndex": 53,
-      "nightEconomyIndex": 46,
-      "consumeIndex": 48,
-      "trafficIndex": 74
+      "popIndex": 58,
+      "econIndex": 57,
+      "vitalityIndex": 54,
+      "nightEconomyIndex": 48,
+      "consumeIndex": 50,
+      "trafficIndex": 67
     },
     {
       "month": "2024-11",
       "popIndex": 57,
-      "econIndex": 57,
+      "econIndex": 56,
       "vitalityIndex": 52,
-      "nightEconomyIndex": 30,
-      "consumeIndex": 46,
-      "trafficIndex": 74
+      "nightEconomyIndex": 31,
+      "consumeIndex": 48,
+      "trafficIndex": 67
     },
     {
       "month": "2024-12",
       "popIndex": 57,
-      "econIndex": 57,
+      "econIndex": 56,
       "vitalityIndex": 52,
-      "nightEconomyIndex": 30,
-      "consumeIndex": 46,
-      "trafficIndex": 74
+      "nightEconomyIndex": 31,
+      "consumeIndex": 48,
+      "trafficIndex": 67
     },
     {
       "month": "2025-01",
-      "popIndex": 57,
+      "popIndex": 58,
       "econIndex": 57,
-      "vitalityIndex": 51,
-      "nightEconomyIndex": 45,
-      "consumeIndex": 46,
-      "trafficIndex": 73
+      "vitalityIndex": 53,
+      "nightEconomyIndex": 48,
+      "consumeIndex": 49,
+      "trafficIndex": 66
     },
     {
       "month": "2025-02",
-      "popIndex": 56,
-      "econIndex": 56,
+      "popIndex": 57,
+      "econIndex": 55,
       "vitalityIndex": 51,
-      "nightEconomyIndex": 30,
-      "consumeIndex": 45,
-      "trafficIndex": 73
+      "nightEconomyIndex": 31,
+      "consumeIndex": 47,
+      "trafficIndex": 66
     },
     {
       "month": "2025-03",
-      "popIndex": 56,
-      "econIndex": 56,
+      "popIndex": 57,
+      "econIndex": 55,
       "vitalityIndex": 51,
-      "nightEconomyIndex": 29,
-      "consumeIndex": 45,
-      "trafficIndex": 73
+      "nightEconomyIndex": 31,
+      "consumeIndex": 47,
+      "trafficIndex": 66
     },
     {
       "month": "2025-04",
-      "popIndex": 56,
-      "econIndex": 55,
+      "popIndex": 57,
+      "econIndex": 54,
       "vitalityIndex": 50,
-      "nightEconomyIndex": 29,
-      "consumeIndex": 44,
-      "trafficIndex": 72
+      "nightEconomyIndex": 31,
+      "consumeIndex": 46,
+      "trafficIndex": 65
     },
     {
       "month": "2025-05",
-      "popIndex": 56,
+      "popIndex": 57,
       "econIndex": 55,
-      "vitalityIndex": 50,
-      "nightEconomyIndex": 34,
-      "consumeIndex": 44,
-      "trafficIndex": 72
+      "vitalityIndex": 52,
+      "nightEconomyIndex": 38,
+      "consumeIndex": 47,
+      "trafficIndex": 66
     },
     {
       "month": "2025-06",
-      "popIndex": 56,
+      "popIndex": 57,
       "econIndex": 55,
-      "vitalityIndex": 50,
-      "nightEconomyIndex": 35,
-      "consumeIndex": 44,
-      "trafficIndex": 72
+      "vitalityIndex": 51,
+      "nightEconomyIndex": 39,
+      "consumeIndex": 47,
+      "trafficIndex": 66
     },
     {
       "month": "2025-07",
-      "popIndex": 56,
-      "econIndex": 56,
-      "vitalityIndex": 50,
-      "nightEconomyIndex": 36,
-      "consumeIndex": 45,
-      "trafficIndex": 73
+      "popIndex": 57,
+      "econIndex": 55,
+      "vitalityIndex": 51,
+      "nightEconomyIndex": 38,
+      "consumeIndex": 46,
+      "trafficIndex": 65
     },
     {
       "month": "2025-08",
-      "popIndex": 56,
+      "popIndex": 57,
       "econIndex": 55,
-      "vitalityIndex": 50,
-      "nightEconomyIndex": 35,
-      "consumeIndex": 45,
-      "trafficIndex": 73
+      "vitalityIndex": 52,
+      "nightEconomyIndex": 39,
+      "consumeIndex": 48,
+      "trafficIndex": 66
     },
     {
       "month": "2025-09",
-      "popIndex": 57,
-      "econIndex": 57,
+      "popIndex": 58,
+      "econIndex": 56,
       "vitalityIndex": 52,
-      "nightEconomyIndex": 36,
-      "consumeIndex": 46,
-      "trafficIndex": 74
+      "nightEconomyIndex": 39,
+      "consumeIndex": 48,
+      "trafficIndex": 66
     },
     {
       "month": "2025-10",
-      "popIndex": 57,
+      "popIndex": 58,
       "econIndex": 58,
-      "vitalityIndex": 53,
-      "nightEconomyIndex": 46,
-      "consumeIndex": 48,
-      "trafficIndex": 74
+      "vitalityIndex": 54,
+      "nightEconomyIndex": 48,
+      "consumeIndex": 50,
+      "trafficIndex": 67
     },
     {
       "month": "2025-11",
       "popIndex": 57,
-      "econIndex": 58,
+      "econIndex": 56,
       "vitalityIndex": 52,
-      "nightEconomyIndex": 30,
+      "nightEconomyIndex": 31,
       "consumeIndex": 47,
-      "trafficIndex": 75
+      "trafficIndex": 66
     },
     {
       "month": "2025-12",
-      "popIndex": 57,
-      "econIndex": 58,
-      "vitalityIndex": 52,
-      "nightEconomyIndex": 30,
-      "consumeIndex": 47,
-      "trafficIndex": 75
+      "popIndex": 58,
+      "econIndex": 57,
+      "vitalityIndex": 53,
+      "nightEconomyIndex": 32,
+      "consumeIndex": 49,
+      "trafficIndex": 68
     },
     {
       "month": "2026-01",
       "popIndex": 58,
-      "econIndex": 59,
+      "econIndex": 58,
       "vitalityIndex": 54,
-      "nightEconomyIndex": 47,
-      "consumeIndex": 49,
-      "trafficIndex": 75
+      "nightEconomyIndex": 49,
+      "consumeIndex": 50,
+      "trafficIndex": 68
     },
     {
       "month": "2026-02",
       "popIndex": 58,
-      "econIndex": 58,
+      "econIndex": 57,
       "vitalityIndex": 53,
-      "nightEconomyIndex": 31,
-      "consumeIndex": 47,
-      "trafficIndex": 75
+      "nightEconomyIndex": 32,
+      "consumeIndex": 49,
+      "trafficIndex": 68
     },
     {
       "month": "2026-03",
       "popIndex": 58,
       "econIndex": 58,
-      "vitalityIndex": 53,
-      "nightEconomyIndex": 31,
-      "consumeIndex": 47,
-      "trafficIndex": 75
+      "vitalityIndex": 54,
+      "nightEconomyIndex": 33,
+      "consumeIndex": 50,
+      "trafficIndex": 68
     },
     {
       "month": "2026-04",
-      "popIndex": 57,
+      "popIndex": 58,
       "econIndex": 57,
-      "vitalityIndex": 52,
-      "nightEconomyIndex": 30,
-      "consumeIndex": 46,
-      "trafficIndex": 74
+      "vitalityIndex": 53,
+      "nightEconomyIndex": 32,
+      "consumeIndex": 49,
+      "trafficIndex": 68
     }
   ]
 }

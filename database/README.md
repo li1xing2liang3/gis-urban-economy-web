@@ -77,8 +77,8 @@ npm run verify
 | 表 | 行数（约） |
 |----|------|
 | admin_boundaries | 1（GADM 省界） |
-| city_units | 17（阶段 3 因果链指标） |
-| poi_points | 1031（含影响半径，中位约 305 m） |
+| city_units | 10（武汉市区行政区，区际活力对比） |
+| poi_points | 1035（含影响半径，约束于武汉市域） |
 | poi_influence | 1031（影响圆面） |
 | timeseries_province | 24 月 |
 | timeseries_cities | 408（17 市 × 24 月） |

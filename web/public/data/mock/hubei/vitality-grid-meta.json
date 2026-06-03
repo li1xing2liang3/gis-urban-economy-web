@@ -1,0 +1,38 @@
+{
+  "crs": "EPSG:4326",
+  "generated": "2026-06-03T06:57:30.107Z",
+  "scope": "武汉市区",
+  "cellSizeM": {
+    "lat": 749,
+    "lng": 684
+  },
+  "referenceMonth": "2026-04",
+  "cellCount": 3908,
+  "quantiles": {
+    "p20": 39,
+    "p40": 40,
+    "p60": 41,
+    "p80": 46
+  },
+  "methodology": [
+    "POI 核密度（业态权重 × 重要度 × 高斯衰减）",
+    "12 个核心商圈/节点热点高斯叠加",
+    "轨道交通/快速路廊道可达性",
+    "区级因果链基线（与 city-units / timeseries 一致）",
+    "3×3 邻域双遍空间平滑"
+  ],
+  "fields": [
+    "vitalityIdx 综合活力",
+    "footTrafficIdx / poiActivityIdx / trafficReachIdx 分项",
+    "localRatio 相对所属区基期活力比（用于时序缩放）",
+    "hotspotLabel 热点名称（格心落入主圈时）",
+    "vitalityClass 1–5 级"
+  ],
+  "disclaimer": "750m 示意格网，非官方统计格网；与行政区因果链及 POI 样点一致生成。",
+  "file": "vitality-grid.geojson",
+  "pairedWith": [
+    "poi-sample.geojson",
+    "city-units.geojson",
+    "timeseries-cities.json"
+  ]
+}

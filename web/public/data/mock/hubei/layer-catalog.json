@@ -1,25 +1,36 @@
 [
   {
     "id": "wuhan-boundary",
-    "name": "武汉市边界",
+    "name": "武汉市区边界",
     "dataSource": "基础地理",
     "tableName": "wuhan_boundary",
     "geomType": "Polygon",
-    "metric": "市域展示范围",
-    "ruleText": "仅武汉市范围",
+    "metric": "演示范围",
+    "ruleText": "仅武汉市区仿真数据覆盖范围",
     "unit": "—",
     "sortOrder": 5
   },
   {
-    "id": "wuhan-functional-units",
-    "name": "武汉功能片区",
+    "id": "wuhan-district-units",
+    "name": "武汉行政区",
     "dataSource": "模型",
     "tableName": "city_units",
     "geomType": "Polygon",
     "metric": "活力、消费、人口密度",
-    "ruleText": "0~100 分级",
+    "ruleText": "0~100 按区设色",
     "unit": "指数",
     "sortOrder": 10
+  },
+  {
+    "id": "wuhan-vitality-grid",
+    "name": "武汉活力评估格网",
+    "dataSource": "模型",
+    "tableName": "vitality_grid",
+    "geomType": "Polygon",
+    "metric": "750m 格网综合活力与分项指数",
+    "ruleText": "POI核密度+热点+廊道；localRatio 支持时序缩放",
+    "unit": "0~100 分",
+    "sortOrder": 12
   },
   {
     "id": "uav-routes",

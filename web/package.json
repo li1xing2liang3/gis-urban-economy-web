@@ -8,7 +8,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "sync:geo": "node ../scripts/sync-hubei-to-web-public.mjs",
-    "generate:mock-hubei": "node scripts/generate-hubei-mock-datasets.mjs"
+    "generate:mock-hubei": "node scripts/generate-hubei-mock-datasets.mjs",
+    "prepare:wuhan-dem": "node scripts/prepare-wuhan-dem.mjs",
+    "prepare:wuhan-buildings": "py -3.10 ../scripts/prepare-wuhan-building-web-tiles.py"
   },
   "dependencies": {
     "cesium": "^1.115.0",
@@ -22,6 +24,8 @@
     "@types/geojson": "^7946.0.16",
     "@types/leaflet": "^1.9.15",
     "@vitejs/plugin-vue": "^5.2.1",
+    "geotiff": "^3.0.5",
+    "pngjs": "^7.0.0",
     "typescript": "~5.7.2",
     "vite": "^5.4.11",
     "vite-plugin-cesium": "^1.2.23"

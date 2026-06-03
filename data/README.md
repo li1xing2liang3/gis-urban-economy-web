@@ -7,6 +7,7 @@
 | `geospatial/boundaries/china-gadm41/` | [GADM](https://www.gadm.org/) 中国行政区原始 **Shapefile**（0–3 级，`gadm41_CHN_*`） |
 | `geospatial/boundaries/hubei-province/` | 湖北省界 **Shapefile**（`湖北省.*`，由 GADM 1 级提取）。更新后请运行 `node scripts/sync-hubei-to-web-public.mjs` 同步到 `web/public/geo/hubei/` |
 | `geospatial/boundaries/hubei-cities/` | 湖北省市州界 **GeoJSON**（`cities.geojson`，由 GADM 2 级提取） |
+| `geospatial/WuHanDEM/` | 武汉 DEM 与山体阴影 **GeoTIFF**（`HillShadeWH.tif` 等）。前端使用前在 `web/` 执行 `npm run prepare:wuhan-dem`，输出至 `web/public/geo/wuhan/hillshade.png` |
 
 从 GADM 更新省界：在 `database/` 目录执行 `npm run process:gadm`，再执行上述同步命令。
 

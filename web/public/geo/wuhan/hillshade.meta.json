@@ -1,0 +1,17 @@
+{
+  "source": "data\\geospatial\\WuHanDEM\\HillShadeWH.tif",
+  "width": 1668,
+  "height": 1675,
+  "bounds": [
+    [
+      29.96791664244219,
+      113.69291715094431
+    ],
+    [
+      31.36374997577553,
+      115.08291715094431
+    ]
+  ],
+  "crs": "EPSG:4326",
+  "generatedAt": "2026-06-02T08:22:20.766Z"
+}
