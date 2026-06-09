@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "scope": "武汉市",
+    "version": "uav-fleet-sim-2026q1",
+    "generatedAt": "2026-06-06T14:05:55.216Z",
+    "source": "仿真：多机空域冲突检测与消解记录"
+  },
+  "scenarios": [
+    {
+      "scenarioId": "scenario-jianghan-optics-dual",
+      "conflicts": [
+        {
+          "id": "c-dual-1",
+          "simSec": 32,
+          "droneIds": [
+            "WH-UAV-M30T-006",
+            "WH-UAV-P4RTK-011"
+          ],
+          "conflictType": "corridor",
+          "minSeparationM": 26,
+          "resolvedBy": "r-corridor",
+          "resolution": "航廊互斥：江汉段与光谷东向段错峰进入，垂直间隔同步生效"
+        },
+        {
+          "id": "c-dual-2",
+          "simSec": 48,
+          "droneIds": [
+            "WH-UAV-M30T-006",
+            "WH-UAV-P4RTK-011"
+          ],
+          "conflictType": "altitude",
+          "minSeparationM": 30,
+          "resolvedBy": "r-alt",
+          "resolution": "高度分层：120m / 150m，满足 ≥30m 垂直间隔"
+        }
+      ]
+    },
+    {
+      "scenarioId": "scenario-river-triple",
+      "conflicts": [
+        {
+          "id": "c-triple-1",
+          "simSec": 42,
+          "droneIds": [
+            "WH-UAV-M3E-018",
+            "WH-UAV-M30T-006"
+          ],
+          "conflictType": "time",
+          "minSeparationM": 18,
+          "resolvedBy": "r-hold",
+          "resolution": "M30T 在交汇点悬停 16s，江北机优先通过"
+        },
+        {
+          "id": "c-triple-2",
+          "simSec": 58,
+          "droneIds": [
+            "WH-UAV-M30T-006",
+            "WH-UAV-P4RTK-011"
+          ],
+          "conflictType": "corridor",
+          "minSeparationM": 22,
+          "resolvedBy": "r-handoff",
+          "resolution": "桥梁风险提示覆盖由协调机交接至江南补采机"
+        },
+        {
+          "id": "c-triple-3",
+          "simSec": 36,
+          "droneIds": [
+            "WH-UAV-M3E-018",
+            "WH-UAV-P4RTK-011"
+          ],
+          "conflictType": "altitude",
+          "minSeparationM": 32,
+          "resolvedBy": "r-zone",
+          "resolution": "分区空域：江北 100m / 江南 110m，中枢 130m"
+        },
+        {
+          "id": "c-triple-4",
+          "simSec": 64,
+          "droneIds": [
+            "WH-UAV-M3E-018",
+            "WH-UAV-P4RTK-011"
+          ],
+          "conflictType": "time",
+          "minSeparationM": 24,
+          "resolvedBy": "r-zone",
+          "resolution": "江南机延迟 24s 起飞，避免跨江段同时占用"
+        }
+      ]
+    },
+    {
+      "scenarioId": "scenario-vitality-sync",
+      "conflicts": [
+        {
+          "id": "c-vit-1",
+          "simSec": 28,
+          "droneIds": [
+            "WH-UAV-M30T-006",
+            "WH-UAV-M3E-018"
+          ],
+          "conflictType": "time",
+          "minSeparationM": 20,
+          "resolvedBy": "r-priority",
+          "resolution": "P1 江汉优先，P2 两江延迟 12s 进入"
+        },
+        {
+          "id": "c-vit-2",
+          "simSec": 44,
+          "droneIds": [
+            "WH-UAV-P4RTK-011",
+            "WH-UAV-M3E-019"
+          ],
+          "conflictType": "altitude",
+          "minSeparationM": 28,
+          "resolvedBy": "r-alt",
+          "resolution": "P3 150m / P4 140m 分层，避免同域交叉"
+        },
+        {
+          "id": "c-vit-3",
+          "simSec": 50,
+          "droneIds": [
+            "WH-UAV-M30T-006",
+            "WH-UAV-M3E-019"
+          ],
+          "conflictType": "corridor",
+          "minSeparationM": 24,
+          "resolvedBy": "r-quality",
+          "resolution": "P1 质量 90% 达标后触发模型回写，P4 补位进入"
+        }
+      ]
+    }
+  ]
+}

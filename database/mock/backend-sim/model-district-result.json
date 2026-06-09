@@ -1,0 +1,42 @@
+{
+  "id": "district-run-20260408-poi-uav",
+  "taskType": "district_clustering",
+  "status": "success",
+  "params": {
+    "minPoi": 12,
+    "threshold": 8,
+    "categories": [
+      "retail",
+      "food",
+      "office"
+    ],
+    "uavRouteId": "route-jianghan-night"
+  },
+  "districts": [
+    {
+      "id": "bd-jianghan-road",
+      "name": "江汉路商圈",
+      "confidence": 0.95,
+      "dominantCategories": [
+        "零售",
+        "餐饮"
+      ],
+      "flowLevel": "高",
+      "vitalityLevel": "核心",
+      "uavEvidence": "route-jianghan-night"
+    },
+    {
+      "id": "bd-optics-valley",
+      "name": "光谷商圈",
+      "confidence": 0.91,
+      "dominantCategories": [
+        "办公",
+        "餐饮",
+        "生活"
+      ],
+      "flowLevel": "高",
+      "vitalityLevel": "核心",
+      "uavEvidence": "route-optics-valley"
+    }
+  ]
+}

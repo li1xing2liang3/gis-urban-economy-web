@@ -1,5 +1,6 @@
 import type { Feature, FeatureCollection, LineString } from 'geojson';
 import type { ProvinceTimeseriesFile } from '@/utils/mockHubeiDataset';
+import type { FleetConflictsFile, FleetDispatchPlanFile, FleetRegistryFile, FleetTelemetryFile } from '@/types/uavFleet';
 
 export type ApiHealth = {
   ok: boolean;
@@ -152,6 +153,11 @@ const hubeiMockBase = () => {
   return `${base.endsWith('/') ? base : `${base}/`}data/mock/hubei/`;
 };
 
+const wuhanMockBase = () => {
+  const base = import.meta.env.BASE_URL || '/';
+  return `${base.endsWith('/') ? base : `${base}/`}data/mock/wuhan/`;
+};
+
 const apiBase = () => {
   const raw = import.meta.env.VITE_API_BASE_URL as string | undefined;
   if (!raw) return '/api';
@@ -168,6 +174,10 @@ async function fetchJson<T>(url: string, init?: RequestInit): Promise<T> {
 
 async function fetchMock<T>(path: string): Promise<T> {
   return fetchJson<T>(`${hubeiMockBase()}${path}`);
+}
+
+async function fetchWuhanMock<T>(path: string): Promise<T> {
+  return fetchJson<T>(`${wuhanMockBase()}${path}`);
 }
 
 async function fetchApi<T>(path: string, fallback: () => Promise<T>, init?: RequestInit): Promise<T> {
@@ -330,6 +340,34 @@ export const gisDataService = {
   async getUavRoutes(): Promise<UavRoutesFile> {
     const value = await fetchApi<unknown>('/api/v1/hubei/uav/routes?ds=v2026Q1', fallbackUavRoutes);
     return normalizeUavRoutes(value);
+  },
+
+  async getFleetDispatchPlans(): Promise<FleetDispatchPlanFile> {
+    return fetchApi<FleetDispatchPlanFile>(
+      '/api/v1/wuhan/uav/fleet-dispatch-plans?ds=v2026Q1',
+      () => fetchWuhanMock<FleetDispatchPlanFile>('uav-fleet-dispatch-plan.json'),
+    );
+  },
+
+  getFleetRegistry(): Promise<FleetRegistryFile> {
+    return fetchApi<FleetRegistryFile>(
+      '/api/v1/wuhan/uav/fleet-registry?ds=v2026Q1',
+      () => fetchWuhanMock<FleetRegistryFile>('uav-fleet-registry.json'),
+    );
+  },
+
+  getFleetTelemetry(): Promise<FleetTelemetryFile> {
+    return fetchApi<FleetTelemetryFile>(
+      '/api/v1/wuhan/uav/fleet-telemetry?ds=v2026Q1',
+      () => fetchWuhanMock<FleetTelemetryFile>('uav-fleet-telemetry.json'),
+    );
+  },
+
+  getFleetConflicts(): Promise<FleetConflictsFile> {
+    return fetchApi<FleetConflictsFile>(
+      '/api/v1/wuhan/uav/fleet-conflicts?ds=v2026Q1',
+      () => fetchWuhanMock<FleetConflictsFile>('uav-fleet-conflicts.json'),
+    );
   },
 
   getUavCoverages(): Promise<FeatureCollection> {

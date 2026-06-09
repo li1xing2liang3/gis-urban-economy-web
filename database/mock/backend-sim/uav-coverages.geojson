@@ -1,0 +1,124 @@
+{
+  "type": "FeatureCollection",
+  "name": "backend-uav-coverages-sim",
+  "meta": {
+    "crs": "EPSG:4326",
+    "generatedAt": "2026-06-01T14:05:21.475Z"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "route-jianghan-night-coverage",
+        "routeId": "route-jianghan-night",
+        "routeName": "江汉路夜间商圈航拍巡检",
+        "quality": 90,
+        "status": "qualified",
+        "areaKm2Estimate": 3.68
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.279,
+              30.58
+            ],
+            [
+              114.298,
+              30.58
+            ],
+            [
+              114.298,
+              30.601
+            ],
+            [
+              114.279,
+              30.601
+            ],
+            [
+              114.279,
+              30.58
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "route-optics-valley-coverage",
+        "routeId": "route-optics-valley",
+        "routeName": "光谷-武汉东站低空建模航线",
+        "quality": 76,
+        "status": "qualified",
+        "areaKm2Estimate": 15.78
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.394,
+              30.483
+            ],
+            [
+              114.443,
+              30.483
+            ],
+            [
+              114.443,
+              30.516
+            ],
+            [
+              114.394,
+              30.516
+            ],
+            [
+              114.394,
+              30.483
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "route-river-crossing-coverage",
+        "routeId": "route-river-crossing",
+        "routeName": "两江四岸通勤航拍观测",
+        "quality": 82,
+        "status": "qualified",
+        "areaKm2Estimate": 7.26
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.275,
+              30.546
+            ],
+            [
+              114.315,
+              30.546
+            ],
+            [
+              114.315,
+              30.563
+            ],
+            [
+              114.275,
+              30.563
+            ],
+            [
+              114.275,
+              30.546
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,931 @@
+{
+  "type": "FeatureCollection",
+  "name": "backend-zhiyan-observations-sim",
+  "meta": {
+    "crs": "EPSG:4326",
+    "generatedAt": "2026-06-01T14:05:21.474Z",
+    "disclaimer": "智眼型数据为指标体系仿真，不代表真实政务系统数据。"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-jianghan-8",
+        "cityId": "wuhan-jianghan",
+        "cityName": "江汉路-循礼门商圈",
+        "observedAt": "2026-04-08T08:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 92,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.282571,
+          30.596714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-jianghan-12",
+        "cityId": "wuhan-jianghan",
+        "cityName": "江汉路-循礼门商圈",
+        "observedAt": "2026-04-08T12:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 92,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.282571,
+          30.596714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-jianghan-18",
+        "cityId": "wuhan-jianghan",
+        "cityName": "江汉路-循礼门商圈",
+        "observedAt": "2026-04-08T18:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 92,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.282571,
+          30.596714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-jianghan-21",
+        "cityId": "wuhan-jianghan",
+        "cityName": "江汉路-循礼门商圈",
+        "observedAt": "2026-04-08T21:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 92,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.282571,
+          30.596714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-wuchang-riverside-8",
+        "cityId": "wuhan-wuchang-riverside",
+        "cityName": "武昌滨江-黄鹤楼片区",
+        "observedAt": "2026-04-08T08:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 88,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.302571,
+          30.551714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-wuchang-riverside-12",
+        "cityId": "wuhan-wuchang-riverside",
+        "cityName": "武昌滨江-黄鹤楼片区",
+        "observedAt": "2026-04-08T12:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 88,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.302571,
+          30.551714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-wuchang-riverside-18",
+        "cityId": "wuhan-wuchang-riverside",
+        "cityName": "武昌滨江-黄鹤楼片区",
+        "observedAt": "2026-04-08T18:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 88,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.302571,
+          30.551714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-wuchang-riverside-21",
+        "cityId": "wuhan-wuchang-riverside",
+        "cityName": "武昌滨江-黄鹤楼片区",
+        "observedAt": "2026-04-08T21:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 88,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.302571,
+          30.551714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-hanyang-8",
+        "cityId": "wuhan-hanyang",
+        "cityName": "汉阳钟家村-王家湾",
+        "observedAt": "2026-04-08T08:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 79,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.222857,
+          30.55
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-hanyang-12",
+        "cityId": "wuhan-hanyang",
+        "cityName": "汉阳钟家村-王家湾",
+        "observedAt": "2026-04-08T12:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 79,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.222857,
+          30.55
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-hanyang-18",
+        "cityId": "wuhan-hanyang",
+        "cityName": "汉阳钟家村-王家湾",
+        "observedAt": "2026-04-08T18:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 79,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.222857,
+          30.55
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-hanyang-21",
+        "cityId": "wuhan-hanyang",
+        "cityName": "汉阳钟家村-王家湾",
+        "observedAt": "2026-04-08T21:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 79,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.222857,
+          30.55
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-optics-valley-8",
+        "cityId": "wuhan-optics-valley",
+        "cityName": "光谷广场-武汉东站",
+        "observedAt": "2026-04-08T08:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 90,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.408714,
+          30.525286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-optics-valley-12",
+        "cityId": "wuhan-optics-valley",
+        "cityName": "光谷广场-武汉东站",
+        "observedAt": "2026-04-08T12:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 90,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.408714,
+          30.525286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-optics-valley-18",
+        "cityId": "wuhan-optics-valley",
+        "cityName": "光谷广场-武汉东站",
+        "observedAt": "2026-04-08T18:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 90,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.408714,
+          30.525286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-optics-valley-21",
+        "cityId": "wuhan-optics-valley",
+        "cityName": "光谷广场-武汉东站",
+        "observedAt": "2026-04-08T21:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 90,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.408714,
+          30.525286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-xudong-8",
+        "cityId": "wuhan-xudong",
+        "cityName": "徐东-岳家嘴商务圈",
+        "observedAt": "2026-04-08T08:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 82,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.349143,
+          30.601429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-xudong-12",
+        "cityId": "wuhan-xudong",
+        "cityName": "徐东-岳家嘴商务圈",
+        "observedAt": "2026-04-08T12:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 82,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.349143,
+          30.601429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-xudong-18",
+        "cityId": "wuhan-xudong",
+        "cityName": "徐东-岳家嘴商务圈",
+        "observedAt": "2026-04-08T18:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 82,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.349143,
+          30.601429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-xudong-21",
+        "cityId": "wuhan-xudong",
+        "cityName": "徐东-岳家嘴商务圈",
+        "observedAt": "2026-04-08T21:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 82,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.349143,
+          30.601429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-qingshan-8",
+        "cityId": "wuhan-qingshan",
+        "cityName": "青山滨江-工业更新带",
+        "observedAt": "2026-04-08T08:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 72,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.428,
+          30.636429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-qingshan-12",
+        "cityId": "wuhan-qingshan",
+        "cityName": "青山滨江-工业更新带",
+        "observedAt": "2026-04-08T12:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 72,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.428,
+          30.636429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-qingshan-18",
+        "cityId": "wuhan-qingshan",
+        "cityName": "青山滨江-工业更新带",
+        "observedAt": "2026-04-08T18:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 72,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.428,
+          30.636429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-qingshan-21",
+        "cityId": "wuhan-qingshan",
+        "cityName": "青山滨江-工业更新带",
+        "observedAt": "2026-04-08T21:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 72,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.428,
+          30.636429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-nanhu-8",
+        "cityId": "wuhan-nanhu",
+        "cityName": "南湖-街道口生活圈",
+        "observedAt": "2026-04-08T08:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 80,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.327857,
+          30.503571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-nanhu-12",
+        "cityId": "wuhan-nanhu",
+        "cityName": "南湖-街道口生活圈",
+        "observedAt": "2026-04-08T12:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 80,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.327857,
+          30.503571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-nanhu-18",
+        "cityId": "wuhan-nanhu",
+        "cityName": "南湖-街道口生活圈",
+        "observedAt": "2026-04-08T18:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 80,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.327857,
+          30.503571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-nanhu-21",
+        "cityId": "wuhan-nanhu",
+        "cityName": "南湖-街道口生活圈",
+        "observedAt": "2026-04-08T21:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 80,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.327857,
+          30.503571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-airport-8",
+        "cityId": "wuhan-airport",
+        "cityName": "天河机场-临空枢纽",
+        "observedAt": "2026-04-08T08:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 68,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.180714,
+          30.776429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-airport-12",
+        "cityId": "wuhan-airport",
+        "cityName": "天河机场-临空枢纽",
+        "observedAt": "2026-04-08T12:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 68,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.180714,
+          30.776429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-airport-18",
+        "cityId": "wuhan-airport",
+        "cityName": "天河机场-临空枢纽",
+        "observedAt": "2026-04-08T18:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 68,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.180714,
+          30.776429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-airport-21",
+        "cityId": "wuhan-airport",
+        "cityName": "天河机场-临空枢纽",
+        "observedAt": "2026-04-08T21:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 68,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.180714,
+          30.776429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-jinkou-8",
+        "cityId": "wuhan-jinkou",
+        "cityName": "江夏金口-南部港产区",
+        "observedAt": "2026-04-08T08:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 61,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.200714,
+          30.294286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-jinkou-12",
+        "cityId": "wuhan-jinkou",
+        "cityName": "江夏金口-南部港产区",
+        "observedAt": "2026-04-08T12:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 61,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.200714,
+          30.294286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-jinkou-18",
+        "cityId": "wuhan-jinkou",
+        "cityName": "江夏金口-南部港产区",
+        "observedAt": "2026-04-08T18:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 61,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.200714,
+          30.294286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-jinkou-21",
+        "cityId": "wuhan-jinkou",
+        "cityName": "江夏金口-南部港产区",
+        "observedAt": "2026-04-08T21:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 61,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.200714,
+          30.294286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-caidian-8",
+        "cityId": "wuhan-caidian",
+        "cityName": "蔡甸后官湖-车谷联动区",
+        "observedAt": "2026-04-08T08:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 66,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.987857,
+          30.511429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-caidian-12",
+        "cityId": "wuhan-caidian",
+        "cityName": "蔡甸后官湖-车谷联动区",
+        "observedAt": "2026-04-08T12:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 66,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.987857,
+          30.511429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-caidian-18",
+        "cityId": "wuhan-caidian",
+        "cityName": "蔡甸后官湖-车谷联动区",
+        "observedAt": "2026-04-08T18:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 66,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.987857,
+          30.511429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "obs-wuhan-caidian-21",
+        "cityId": "wuhan-caidian",
+        "cityName": "蔡甸后官湖-车谷联动区",
+        "observedAt": "2026-04-08T21:00:00+08:00",
+        "source": "zhiyan-framework-sim",
+        "flowIndex": null,
+        "vehicleIndex": null,
+        "congestionIndex": null,
+        "vitalityIndex": 66,
+        "anomalyScore": null,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.987857,
+          30.511429
+        ]
+      }
+    }
+  ]
+}

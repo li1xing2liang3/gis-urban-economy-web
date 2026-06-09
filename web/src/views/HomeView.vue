@@ -12,6 +12,7 @@
         <RouterLink to="/scene3d">三维城市</RouterLink>
         <RouterLink to="/vitality">经济活力</RouterLink>
         <RouterLink to="/lowaltitude">低空经济</RouterLink>
+        <RouterLink to="/fleet-dispatch">协同调度应用</RouterLink>
       </nav>
       <div class="account">
         <span class="avatar" aria-hidden="true"></span>
@@ -33,6 +34,7 @@
         <div class="hero-actions">
           <RouterLink class="primary-link" to="/overview">进入平台</RouterLink>
           <RouterLink class="secondary-link" to="/scene3d">查看三维场景</RouterLink>
+          <RouterLink class="secondary-link" to="/fleet-dispatch">协同调度应用</RouterLink>
         </div>
       </div>
 

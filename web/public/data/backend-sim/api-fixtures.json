@@ -1,0 +1,2037 @@
+{
+  "endpoints": {
+    "GET /api/v1/metadata/data-sources": [
+      {
+        "id": "v2026Q1",
+        "label": "智眼型 v2026Q1（模拟）",
+        "description": "面向项目演示的城市感知指标体系模拟切片，非政务生产数据。",
+        "isActive": true
+      },
+      {
+        "id": "uav-sim-2026q1",
+        "label": "低空无人机仿真 v2026Q1",
+        "description": "包含无人机航线、覆盖范围、质检指标和模型参与状态。",
+        "isActive": true
+      },
+      {
+        "id": "poi-open-mock",
+        "label": "开放 POI 样例",
+        "description": "按零售、餐饮、办公、生活等业态生成的空间样点。",
+        "isActive": true
+      }
+    ],
+    "GET /api/v1/metadata/layers": [
+      {
+        "id": "zhiyan-flow-heat",
+        "name": "智眼型人车融合热力",
+        "dataSource": "智眼",
+        "tableName": "zhiyan_observations",
+        "geomType": "Point",
+        "metric": "人流、车流、拥堵、活力合成指数",
+        "ruleText": "0~100 分级，70 以上触发重点复核",
+        "unit": "指数",
+        "sortOrder": 10
+      },
+      {
+        "id": "uav-routes",
+        "name": "无人机航线",
+        "dataSource": "无人机",
+        "tableName": "uav_routes",
+        "geomType": "LineString",
+        "metric": "航点、飞行高度、速度、路径质量",
+        "ruleText": "质量 >= 70 可进入模型候选",
+        "unit": "米 / m/s",
+        "sortOrder": 20
+      },
+      {
+        "id": "uav-coverage",
+        "name": "无人机覆盖面",
+        "dataSource": "无人机",
+        "tableName": "uav_coverages",
+        "geomType": "Polygon",
+        "metric": "航线外扩形成的影像覆盖范围",
+        "ruleText": "按覆盖质量与面积估算分级",
+        "unit": "km²",
+        "sortOrder": 21
+      },
+      {
+        "id": "model-vitality-result",
+        "name": "经济活力模型结果",
+        "dataSource": "模型",
+        "tableName": "model_vitality_results",
+        "geomType": "Polygon",
+        "metric": "人流、POI、交通、低空观测融合得分",
+        "ruleText": "0~100 分，按高/中/低风险或活力分级",
+        "unit": "分",
+        "sortOrder": 30
+      }
+    ],
+    "GET /api/v1/sensing/zhiyan-observations?ds=v2026Q1&date=2026-04-08": {
+      "type": "FeatureCollection",
+      "name": "backend-zhiyan-observations-sim",
+      "meta": {
+        "crs": "EPSG:4326",
+        "generatedAt": "2026-06-01T07:09:50.541Z",
+        "disclaimer": "智眼型数据为指标体系仿真，不代表真实政务系统数据。"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420100-8",
+            "cityId": "420100",
+            "cityName": "武汉市",
+            "observedAt": "2026-04-08T08:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 77,
+            "vehicleIndex": 83,
+            "congestionIndex": 78,
+            "vitalityIndex": 80,
+            "anomalyScore": 80,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              114.3055,
+              30.60265
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420100-12",
+            "cityId": "420100",
+            "cityName": "武汉市",
+            "observedAt": "2026-04-08T12:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 65,
+            "vehicleIndex": 73,
+            "congestionIndex": 70,
+            "vitalityIndex": 80,
+            "anomalyScore": 73,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              114.3055,
+              30.60265
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420100-18",
+            "cityId": "420100",
+            "cityName": "武汉市",
+            "observedAt": "2026-04-08T18:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 81,
+            "vehicleIndex": 86,
+            "congestionIndex": 81,
+            "vitalityIndex": 80,
+            "anomalyScore": 82,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              114.3055,
+              30.60265
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420100-21",
+            "cityId": "420100",
+            "cityName": "武汉市",
+            "observedAt": "2026-04-08T21:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 80,
+            "vehicleIndex": 73,
+            "congestionIndex": 70,
+            "vitalityIndex": 80,
+            "anomalyScore": 84,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              114.3055,
+              30.60265
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420200-8",
+            "cityId": "420200",
+            "cityName": "黄石市",
+            "observedAt": "2026-04-08T08:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 85,
+            "vehicleIndex": 64,
+            "congestionIndex": 53,
+            "vitalityIndex": 86,
+            "anomalyScore": 78,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              115.0389,
+              30.205251
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420200-12",
+            "cityId": "420200",
+            "cityName": "黄石市",
+            "observedAt": "2026-04-08T12:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 73,
+            "vehicleIndex": 54,
+            "congestionIndex": 45,
+            "vitalityIndex": 86,
+            "anomalyScore": 71,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              115.0389,
+              30.205251
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420200-18",
+            "cityId": "420200",
+            "cityName": "黄石市",
+            "observedAt": "2026-04-08T18:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 89,
+            "vehicleIndex": 67,
+            "congestionIndex": 56,
+            "vitalityIndex": 86,
+            "anomalyScore": 81,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              115.0389,
+              30.205251
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420200-21",
+            "cityId": "420200",
+            "cityName": "黄石市",
+            "observedAt": "2026-04-08T21:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 87,
+            "vehicleIndex": 54,
+            "congestionIndex": 45,
+            "vitalityIndex": 86,
+            "anomalyScore": 82,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              115.0389,
+              30.205251
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420300-8",
+            "cityId": "420300",
+            "cityName": "十堰市",
+            "observedAt": "2026-04-08T08:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 59,
+            "vehicleIndex": 67,
+            "congestionIndex": 55,
+            "vitalityIndex": 62,
+            "anomalyScore": 63,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              110.7989,
+              32.637182
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420300-12",
+            "cityId": "420300",
+            "cityName": "十堰市",
+            "observedAt": "2026-04-08T12:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 47,
+            "vehicleIndex": 58,
+            "congestionIndex": 47,
+            "vitalityIndex": 62,
+            "anomalyScore": 56,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              110.7989,
+              32.637182
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420300-18",
+            "cityId": "420300",
+            "cityName": "十堰市",
+            "observedAt": "2026-04-08T18:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 63,
+            "vehicleIndex": 71,
+            "congestionIndex": 58,
+            "vitalityIndex": 62,
+            "anomalyScore": 65,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              110.7989,
+              32.637182
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420300-21",
+            "cityId": "420300",
+            "cityName": "十堰市",
+            "observedAt": "2026-04-08T21:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 55,
+            "vehicleIndex": 58,
+            "congestionIndex": 47,
+            "vitalityIndex": 62,
+            "anomalyScore": 64,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              110.7989,
+              32.637182
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420500-8",
+            "cityId": "420500",
+            "cityName": "宜昌市",
+            "observedAt": "2026-04-08T08:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 73,
+            "vehicleIndex": 71,
+            "congestionIndex": 68,
+            "vitalityIndex": 70,
+            "anomalyScore": 71,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              111.2869,
+              30.700386
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420500-12",
+            "cityId": "420500",
+            "cityName": "宜昌市",
+            "observedAt": "2026-04-08T12:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 61,
+            "vehicleIndex": 61,
+            "congestionIndex": 60,
+            "vitalityIndex": 70,
+            "anomalyScore": 64,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              111.2869,
+              30.700386
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420500-18",
+            "cityId": "420500",
+            "cityName": "宜昌市",
+            "observedAt": "2026-04-08T18:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 77,
+            "vehicleIndex": 74,
+            "congestionIndex": 70,
+            "vitalityIndex": 70,
+            "anomalyScore": 74,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              111.2869,
+              30.700386
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420500-21",
+            "cityId": "420500",
+            "cityName": "宜昌市",
+            "observedAt": "2026-04-08T21:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 70,
+            "vehicleIndex": 61,
+            "congestionIndex": 60,
+            "vitalityIndex": 70,
+            "anomalyScore": 73,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              111.2869,
+              30.700386
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420600-8",
+            "cityId": "420600",
+            "cityName": "襄阳市",
+            "observedAt": "2026-04-08T08:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 88,
+            "vehicleIndex": 70,
+            "congestionIndex": 64,
+            "vitalityIndex": 96,
+            "anomalyScore": 85,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              112.1441,
+              32.051326
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420600-12",
+            "cityId": "420600",
+            "cityName": "襄阳市",
+            "observedAt": "2026-04-08T12:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 76,
+            "vehicleIndex": 60,
+            "congestionIndex": 56,
+            "vitalityIndex": 96,
+            "anomalyScore": 77,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              112.1441,
+              32.051326
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420600-18",
+            "cityId": "420600",
+            "cityName": "襄阳市",
+            "observedAt": "2026-04-08T18:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 92,
+            "vehicleIndex": 73,
+            "congestionIndex": 66,
+            "vitalityIndex": 96,
+            "anomalyScore": 87,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              112.1441,
+              32.051326
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420600-21",
+            "cityId": "420600",
+            "cityName": "襄阳市",
+            "observedAt": "2026-04-08T21:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 91,
+            "vehicleIndex": 60,
+            "congestionIndex": 56,
+            "vitalityIndex": 96,
+            "anomalyScore": 88,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              112.1441,
+              32.051326
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420700-8",
+            "cityId": "420700",
+            "cityName": "鄂州市",
+            "observedAt": "2026-04-08T08:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 67,
+            "vehicleIndex": 51,
+            "congestionIndex": 46,
+            "vitalityIndex": 69,
+            "anomalyScore": 62,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              114.8949,
+              30.395737
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420700-12",
+            "cityId": "420700",
+            "cityName": "鄂州市",
+            "observedAt": "2026-04-08T12:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 55,
+            "vehicleIndex": 41,
+            "congestionIndex": 38,
+            "vitalityIndex": 69,
+            "anomalyScore": 55,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              114.8949,
+              30.395737
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420700-18",
+            "cityId": "420700",
+            "cityName": "鄂州市",
+            "observedAt": "2026-04-08T18:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 71,
+            "vehicleIndex": 54,
+            "congestionIndex": 48,
+            "vitalityIndex": 69,
+            "anomalyScore": 65,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              114.8949,
+              30.395737
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420700-21",
+            "cityId": "420700",
+            "cityName": "鄂州市",
+            "observedAt": "2026-04-08T21:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 70,
+            "vehicleIndex": 41,
+            "congestionIndex": 38,
+            "vitalityIndex": 69,
+            "anomalyScore": 66,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              114.8949,
+              30.395737
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420800-8",
+            "cityId": "420800",
+            "cityName": "荆门市",
+            "observedAt": "2026-04-08T08:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 67,
+            "vehicleIndex": 87,
+            "congestionIndex": 81,
+            "vitalityIndex": 66,
+            "anomalyScore": 73,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              112.1993,
+              31.042044
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420800-12",
+            "cityId": "420800",
+            "cityName": "荆门市",
+            "observedAt": "2026-04-08T12:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 55,
+            "vehicleIndex": 77,
+            "congestionIndex": 73,
+            "vitalityIndex": 66,
+            "anomalyScore": 66,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              112.1993,
+              31.042044
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420800-18",
+            "cityId": "420800",
+            "cityName": "荆门市",
+            "observedAt": "2026-04-08T18:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 71,
+            "vehicleIndex": 90,
+            "congestionIndex": 83,
+            "vitalityIndex": 66,
+            "anomalyScore": 76,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              112.1993,
+              31.042044
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420800-21",
+            "cityId": "420800",
+            "cityName": "荆门市",
+            "observedAt": "2026-04-08T21:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 65,
+            "vehicleIndex": 77,
+            "congestionIndex": 73,
+            "vitalityIndex": 66,
+            "anomalyScore": 75,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              112.1993,
+              31.042044
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420900-8",
+            "cityId": "420900",
+            "cityName": "孝感市",
+            "observedAt": "2026-04-08T08:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 82,
+            "vehicleIndex": 74,
+            "congestionIndex": 62,
+            "vitalityIndex": 79,
+            "anomalyScore": 78,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.9169,
+              30.931707
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420900-12",
+            "cityId": "420900",
+            "cityName": "孝感市",
+            "observedAt": "2026-04-08T12:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 70,
+            "vehicleIndex": 64,
+            "congestionIndex": 54,
+            "vitalityIndex": 79,
+            "anomalyScore": 71,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.9169,
+              30.931707
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420900-18",
+            "cityId": "420900",
+            "cityName": "孝感市",
+            "observedAt": "2026-04-08T18:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 86,
+            "vehicleIndex": 77,
+            "congestionIndex": 65,
+            "vitalityIndex": 79,
+            "anomalyScore": 81,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.9169,
+              30.931707
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-420900-21",
+            "cityId": "420900",
+            "cityName": "孝感市",
+            "observedAt": "2026-04-08T21:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 79,
+            "vehicleIndex": 64,
+            "congestionIndex": 54,
+            "vitalityIndex": 79,
+            "anomalyScore": 80,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.9169,
+              30.931707
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-421000-8",
+            "cityId": "421000",
+            "cityName": "荆州市",
+            "observedAt": "2026-04-08T08:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 76,
+            "vehicleIndex": 64,
+            "congestionIndex": 56,
+            "vitalityIndex": 66,
+            "anomalyScore": 69,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              112.2381,
+              30.340532
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-421000-12",
+            "cityId": "421000",
+            "cityName": "荆州市",
+            "observedAt": "2026-04-08T12:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 64,
+            "vehicleIndex": 54,
+            "congestionIndex": 48,
+            "vitalityIndex": 66,
+            "anomalyScore": 61,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              112.2381,
+              30.340532
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-421000-18",
+            "cityId": "421000",
+            "cityName": "荆州市",
+            "observedAt": "2026-04-08T18:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 80,
+            "vehicleIndex": 67,
+            "congestionIndex": 59,
+            "vitalityIndex": 66,
+            "anomalyScore": 71,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              112.2381,
+              30.340532
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-421000-21",
+            "cityId": "421000",
+            "cityName": "荆州市",
+            "observedAt": "2026-04-08T21:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 79,
+            "vehicleIndex": 54,
+            "congestionIndex": 48,
+            "vitalityIndex": 66,
+            "anomalyScore": 72,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              112.2381,
+              30.340532
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-421100-8",
+            "cityId": "421100",
+            "cityName": "黄冈市",
+            "observedAt": "2026-04-08T08:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 90,
+            "vehicleIndex": 57,
+            "congestionIndex": 48,
+            "vitalityIndex": 95,
+            "anomalyScore": 81,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              114.8723,
+              30.462389
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-421100-12",
+            "cityId": "421100",
+            "cityName": "黄冈市",
+            "observedAt": "2026-04-08T12:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 78,
+            "vehicleIndex": 48,
+            "congestionIndex": 40,
+            "vitalityIndex": 95,
+            "anomalyScore": 74,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              114.8723,
+              30.462389
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-421100-18",
+            "cityId": "421100",
+            "cityName": "黄冈市",
+            "observedAt": "2026-04-08T18:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 94,
+            "vehicleIndex": 61,
+            "congestionIndex": 51,
+            "vitalityIndex": 95,
+            "anomalyScore": 83,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              114.8723,
+              30.462389
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-421100-21",
+            "cityId": "421100",
+            "cityName": "黄冈市",
+            "observedAt": "2026-04-08T21:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 89,
+            "vehicleIndex": 48,
+            "congestionIndex": 40,
+            "vitalityIndex": 95,
+            "anomalyScore": 83,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              114.8723,
+              30.462389
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-421200-8",
+            "cityId": "421200",
+            "cityName": "咸宁市",
+            "observedAt": "2026-04-08T08:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 73,
+            "vehicleIndex": 69,
+            "congestionIndex": 59,
+            "vitalityIndex": 93,
+            "anomalyScore": 78,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              114.3225,
+              29.847951
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-421200-12",
+            "cityId": "421200",
+            "cityName": "咸宁市",
+            "observedAt": "2026-04-08T12:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 61,
+            "vehicleIndex": 60,
+            "congestionIndex": 52,
+            "vitalityIndex": 93,
+            "anomalyScore": 71,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              114.3225,
+              29.847951
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-421200-18",
+            "cityId": "421200",
+            "cityName": "咸宁市",
+            "observedAt": "2026-04-08T18:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 77,
+            "vehicleIndex": 73,
+            "congestionIndex": 62,
+            "vitalityIndex": 93,
+            "anomalyScore": 81,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              114.3225,
+              29.847951
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-421200-21",
+            "cityId": "421200",
+            "cityName": "咸宁市",
+            "observedAt": "2026-04-08T21:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 72,
+            "vehicleIndex": 60,
+            "congestionIndex": 52,
+            "vitalityIndex": 93,
+            "anomalyScore": 81,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              114.3225,
+              29.847951
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-421300-8",
+            "cityId": "421300",
+            "cityName": "随州市",
+            "observedAt": "2026-04-08T08:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 63,
+            "vehicleIndex": 81,
+            "congestionIndex": 65,
+            "vitalityIndex": 83,
+            "anomalyScore": 76,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.3825,
+              31.696044
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-421300-12",
+            "cityId": "421300",
+            "cityName": "随州市",
+            "observedAt": "2026-04-08T12:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 51,
+            "vehicleIndex": 71,
+            "congestionIndex": 57,
+            "vitalityIndex": 83,
+            "anomalyScore": 68,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.3825,
+              31.696044
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-421300-18",
+            "cityId": "421300",
+            "cityName": "随州市",
+            "observedAt": "2026-04-08T18:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 67,
+            "vehicleIndex": 84,
+            "congestionIndex": 67,
+            "vitalityIndex": 83,
+            "anomalyScore": 78,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.3825,
+              31.696044
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-421300-21",
+            "cityId": "421300",
+            "cityName": "随州市",
+            "observedAt": "2026-04-08T21:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 62,
+            "vehicleIndex": 71,
+            "congestionIndex": 57,
+            "vitalityIndex": 83,
+            "anomalyScore": 78,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.3825,
+              31.696044
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-422800-8",
+            "cityId": "422800",
+            "cityName": "恩施土家族苗族自治州",
+            "observedAt": "2026-04-08T08:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 70,
+            "vehicleIndex": 69,
+            "congestionIndex": 60,
+            "vitalityIndex": 64,
+            "anomalyScore": 68,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              109.4885,
+              30.281855
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-422800-12",
+            "cityId": "422800",
+            "cityName": "恩施土家族苗族自治州",
+            "observedAt": "2026-04-08T12:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 58,
+            "vehicleIndex": 59,
+            "congestionIndex": 52,
+            "vitalityIndex": 64,
+            "anomalyScore": 60,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              109.4885,
+              30.281855
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-422800-18",
+            "cityId": "422800",
+            "cityName": "恩施土家族苗族自治州",
+            "observedAt": "2026-04-08T18:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 74,
+            "vehicleIndex": 72,
+            "congestionIndex": 63,
+            "vitalityIndex": 64,
+            "anomalyScore": 70,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              109.4885,
+              30.281855
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-422800-21",
+            "cityId": "422800",
+            "cityName": "恩施土家族苗族自治州",
+            "observedAt": "2026-04-08T21:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 68,
+            "vehicleIndex": 59,
+            "congestionIndex": 52,
+            "vitalityIndex": 64,
+            "anomalyScore": 70,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              109.4885,
+              30.281855
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-429004-8",
+            "cityId": "429004",
+            "cityName": "仙桃市",
+            "observedAt": "2026-04-08T08:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 89,
+            "vehicleIndex": 63,
+            "congestionIndex": 50,
+            "vitalityIndex": 93,
+            "anomalyScore": 82,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.454,
+              30.365863
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-429004-12",
+            "cityId": "429004",
+            "cityName": "仙桃市",
+            "observedAt": "2026-04-08T12:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 77,
+            "vehicleIndex": 53,
+            "congestionIndex": 42,
+            "vitalityIndex": 93,
+            "anomalyScore": 74,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.454,
+              30.365863
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-429004-18",
+            "cityId": "429004",
+            "cityName": "仙桃市",
+            "observedAt": "2026-04-08T18:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 93,
+            "vehicleIndex": 66,
+            "congestionIndex": 53,
+            "vitalityIndex": 93,
+            "anomalyScore": 84,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.454,
+              30.365863
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-429004-21",
+            "cityId": "429004",
+            "cityName": "仙桃市",
+            "observedAt": "2026-04-08T21:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 87,
+            "vehicleIndex": 53,
+            "congestionIndex": 42,
+            "vitalityIndex": 93,
+            "anomalyScore": 84,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.454,
+              30.365863
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-429005-8",
+            "cityId": "429005",
+            "cityName": "潜江市",
+            "observedAt": "2026-04-08T08:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 89,
+            "vehicleIndex": 59,
+            "congestionIndex": 48,
+            "vitalityIndex": 89,
+            "anomalyScore": 79,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              112.8993,
+              30.405263
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-429005-12",
+            "cityId": "429005",
+            "cityName": "潜江市",
+            "observedAt": "2026-04-08T12:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 77,
+            "vehicleIndex": 49,
+            "congestionIndex": 40,
+            "vitalityIndex": 89,
+            "anomalyScore": 72,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              112.8993,
+              30.405263
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-429005-18",
+            "cityId": "429005",
+            "cityName": "潜江市",
+            "observedAt": "2026-04-08T18:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 93,
+            "vehicleIndex": 62,
+            "congestionIndex": 51,
+            "vitalityIndex": 89,
+            "anomalyScore": 81,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              112.8993,
+              30.405263
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-429005-21",
+            "cityId": "429005",
+            "cityName": "潜江市",
+            "observedAt": "2026-04-08T21:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 89,
+            "vehicleIndex": 49,
+            "congestionIndex": 40,
+            "vitalityIndex": 89,
+            "anomalyScore": 82,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              112.8993,
+              30.405263
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-429006-8",
+            "cityId": "429006",
+            "cityName": "天门市",
+            "observedAt": "2026-04-08T08:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 73,
+            "vehicleIndex": 67,
+            "congestionIndex": 56,
+            "vitalityIndex": 63,
+            "anomalyScore": 68,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.1669,
+              30.667373
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-429006-12",
+            "cityId": "429006",
+            "cityName": "天门市",
+            "observedAt": "2026-04-08T12:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 61,
+            "vehicleIndex": 58,
+            "congestionIndex": 48,
+            "vitalityIndex": 63,
+            "anomalyScore": 61,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.1669,
+              30.667373
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-429006-18",
+            "cityId": "429006",
+            "cityName": "天门市",
+            "observedAt": "2026-04-08T18:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 77,
+            "vehicleIndex": 70,
+            "congestionIndex": 58,
+            "vitalityIndex": 63,
+            "anomalyScore": 70,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.1669,
+              30.667373
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-429006-21",
+            "cityId": "429006",
+            "cityName": "天门市",
+            "observedAt": "2026-04-08T21:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 70,
+            "vehicleIndex": 58,
+            "congestionIndex": 48,
+            "vitalityIndex": 63,
+            "anomalyScore": 70,
+            "triggerUav": false
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.1669,
+              30.667373
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-429021-8",
+            "cityId": "429021",
+            "cityName": "神农架林区",
+            "observedAt": "2026-04-08T08:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 92,
+            "vehicleIndex": 57,
+            "congestionIndex": 50,
+            "vitalityIndex": 97,
+            "anomalyScore": 82,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              110.6759,
+              31.751539
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-429021-12",
+            "cityId": "429021",
+            "cityName": "神农架林区",
+            "observedAt": "2026-04-08T12:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 80,
+            "vehicleIndex": 48,
+            "congestionIndex": 42,
+            "vitalityIndex": 97,
+            "anomalyScore": 75,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              110.6759,
+              31.751539
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-429021-18",
+            "cityId": "429021",
+            "cityName": "神农架林区",
+            "observedAt": "2026-04-08T18:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 96,
+            "vehicleIndex": 60,
+            "congestionIndex": 52,
+            "vitalityIndex": 97,
+            "anomalyScore": 84,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              110.6759,
+              31.751539
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "obs-429021-21",
+            "cityId": "429021",
+            "cityName": "神农架林区",
+            "observedAt": "2026-04-08T21:00:00+08:00",
+            "source": "zhiyan-framework-sim",
+            "flowIndex": 92,
+            "vehicleIndex": 48,
+            "congestionIndex": 42,
+            "vitalityIndex": 97,
+            "anomalyScore": 85,
+            "triggerUav": true
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              110.6759,
+              31.751539
+            ]
+          }
+        }
+      ]
+    },
+    "GET /api/v1/uav/routes?ds=v2026Q1": {
+      "type": "FeatureCollection",
+      "name": "backend-uav-routes-sim",
+      "meta": {
+        "crs": "EPSG:4326",
+        "generatedAt": "2026-06-01T07:09:50.542Z",
+        "note": "waypoints in source are [lat,lng], GeoJSON coordinates are [lng,lat]."
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "route-jianghan-night",
+            "name": "江汉路夜间商圈巡航",
+            "district": "江汉路",
+            "scene": "夜间经济 / 客流热点",
+            "status": "已入库",
+            "time": "2026-03-18 19:30",
+            "altitude": 120,
+            "speed": 8,
+            "resolution": "5 cm",
+            "quality": 88,
+            "zhiyanSync": true,
+            "participatesModel": true,
+            "imageUrl": "/data/uav-images/hankou-dazhimen-preview.jpg",
+            "imageTitle": "汉口大智门片区高清航拍",
+            "imageCredit": "Wikimedia Commons 公开共享图像",
+            "imageLicense": "Commons 许可，项目演示引用",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:20240512-%E6%B1%89%E5%8F%A3%E5%A4%A7%E6%99%BA%E9%97%A8%E7%AB%99-%E5%85%A8%E8%A7%88%E4%BF%AF%E7%9E%B0.png"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                114.2772,
+                30.6026
+              ],
+              [
+                114.2886,
+                30.6008
+              ],
+              [
+                114.2995,
+                30.5964
+              ],
+              [
+                114.3068,
+                30.5905
+              ],
+              [
+                114.3012,
+                30.5842
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "route-optics-valley",
+            "name": "光谷低空三维采集",
+            "district": "光谷",
+            "scene": "三维建模 / 产业园区",
+            "status": "待复核",
+            "time": "2026-03-22 15:10",
+            "altitude": 150,
+            "speed": 7,
+            "resolution": "LOD2",
+            "quality": 72,
+            "zhiyanSync": true,
+            "participatesModel": false,
+            "imageUrl": "/data/uav-images/wuhan-east-station-preview.jpg",
+            "imageTitle": "武汉东站片区高清航拍",
+            "imageCredit": "Wikimedia Commons 公开共享图像",
+            "imageLicense": "Commons 许可，项目演示引用",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:%E6%AD%A6%E6%B1%89%E4%B8%9C%E7%AB%99%E4%B8%9C%E5%B9%BF%E5%9C%BA.png"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                114.4022,
+                30.5102
+              ],
+              [
+                114.4188,
+                30.5164
+              ],
+              [
+                114.432,
+                30.5248
+              ],
+              [
+                114.424,
+                30.5345
+              ],
+              [
+                114.406,
+                30.529
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "route-river-crossing",
+            "name": "长江沿线通勤观测",
+            "district": "两江四岸",
+            "scene": "通勤流 / 交通可达性",
+            "status": "规划中",
+            "time": "2026-04-02 08:00",
+            "altitude": 100,
+            "speed": 9,
+            "resolution": "8 cm",
+            "quality": 64,
+            "zhiyanSync": false,
+            "participatesModel": false,
+            "imageUrl": "/data/uav-images/wuhan-yangtze-bridge-preview.jpg",
+            "imageTitle": "武汉长江大桥航拍",
+            "imageCredit": "Wikimedia Commons 公开共享图像",
+            "imageLicense": "Commons 许可，项目演示引用",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:%E5%A4%8F%E5%AD%A3%E7%9A%84%E6%AD%A6%E6%B1%89%E9%95%BF%E6%B1%9F%E5%A4%A7%E6%A1%A5.png"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                114.255,
+                30.575
+              ],
+              [
+                114.279,
+                30.572
+              ],
+              [
+                114.305,
+                30.568
+              ],
+              [
+                114.332,
+                30.562
+              ],
+              [
+                114.36,
+                30.558
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "GET /api/v1/uav/coverages?ds=v2026Q1": {
+      "type": "FeatureCollection",
+      "name": "backend-uav-coverages-sim",
+      "meta": {
+        "crs": "EPSG:4326",
+        "generatedAt": "2026-06-01T07:09:50.542Z"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "route-jianghan-night-coverage",
+            "routeId": "route-jianghan-night",
+            "routeName": "江汉路夜间商圈巡航",
+            "quality": 88,
+            "status": "qualified",
+            "areaKm2Estimate": 13.08
+          },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  114.2692,
+                  30.5782
+                ],
+                [
+                  114.31479999999999,
+                  30.5782
+                ],
+                [
+                  114.31479999999999,
+                  30.6086
+                ],
+                [
+                  114.2692,
+                  30.6086
+                ],
+                [
+                  114.2692,
+                  30.5782
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "route-optics-valley-coverage",
+            "routeId": "route-optics-valley",
+            "routeName": "光谷低空三维采集",
+            "quality": 72,
+            "status": "qualified",
+            "areaKm2Estimate": 15.69
+          },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  114.3942,
+                  30.5042
+                ],
+                [
+                  114.44,
+                  30.5042
+                ],
+                [
+                  114.44,
+                  30.5405
+                ],
+                [
+                  114.3942,
+                  30.5405
+                ],
+                [
+                  114.3942,
+                  30.5042
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "route-river-crossing-coverage",
+            "routeId": "route-river-crossing",
+            "routeName": "长江沿线通勤观测",
+            "quality": 64,
+            "status": "review_required",
+            "areaKm2Estimate": 33.11
+          },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  114.247,
+                  30.552
+                ],
+                [
+                  114.368,
+                  30.552
+                ],
+                [
+                  114.368,
+                  30.581
+                ],
+                [
+                  114.247,
+                  30.581
+                ],
+                [
+                  114.247,
+                  30.552
+                ]
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "GET /api/v1/models/vitality/latest": {
+      "id": "vitality-run-20260408-uav",
+      "taskType": "vitality_assessment",
+      "status": "success",
+      "params": {
+        "dataSource": "v2026Q1",
+        "time": "2026-04-08",
+        "weights": {
+          "flow": 0.35,
+          "poi": 0.3,
+          "traffic": 0.25,
+          "uav": 0.1
+        },
+        "uavRoutes": [
+          "route-jianghan-night"
+        ]
+      },
+      "result": {
+        "indexMean": 79,
+        "topZones": [
+          {
+            "cityId": "420600",
+            "name": "襄阳市",
+            "score": 100,
+            "uavBoost": 0
+          },
+          {
+            "cityId": "429021",
+            "name": "神农架林区",
+            "score": 100,
+            "uavBoost": 0
+          },
+          {
+            "cityId": "421100",
+            "name": "黄冈市",
+            "score": 99,
+            "uavBoost": 0
+          },
+          {
+            "cityId": "429004",
+            "name": "仙桃市",
+            "score": 98,
+            "uavBoost": 0
+          },
+          {
+            "cityId": "421200",
+            "name": "咸宁市",
+            "score": 96,
+            "uavBoost": 0
+          },
+          {
+            "cityId": "429005",
+            "name": "潜江市",
+            "score": 93,
+            "uavBoost": 0
+          },
+          {
+            "cityId": "420200",
+            "name": "黄石市",
+            "score": 90,
+            "uavBoost": 0
+          },
+          {
+            "cityId": "421300",
+            "name": "随州市",
+            "score": 84,
+            "uavBoost": 0
+          }
+        ],
+        "explanation": "人流/车流热力作为宏观触发，无人机路径覆盖作为精细尺度校正项。"
+      },
+      "createdAt": "2026-04-08T09:30:00+08:00",
+      "finishedAt": "2026-04-08T09:30:08+08:00"
+    },
+    "GET /api/v1/models/districts/latest": {
+      "id": "district-run-20260408-poi-uav",
+      "taskType": "district_clustering",
+      "status": "success",
+      "params": {
+        "minPoi": 12,
+        "threshold": 8,
+        "categories": [
+          "retail",
+          "food",
+          "office"
+        ],
+        "uavRouteId": "route-jianghan-night"
+      },
+      "districts": [
+        {
+          "id": "bd-jianghan-road",
+          "name": "江汉路商圈",
+          "confidence": 0.95,
+          "dominantCategories": [
+            "零售",
+            "餐饮"
+          ],
+          "flowLevel": "高",
+          "vitalityLevel": "核心",
+          "uavEvidence": "route-jianghan-night"
+        },
+        {
+          "id": "bd-optics-valley",
+          "name": "光谷商圈",
+          "confidence": 0.91,
+          "dominantCategories": [
+            "办公",
+            "餐饮",
+            "生活"
+          ],
+          "flowLevel": "高",
+          "vitalityLevel": "核心",
+          "uavEvidence": "route-optics-valley"
+        }
+      ]
+    }
+  }
+}

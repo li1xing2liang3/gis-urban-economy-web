@@ -1,0 +1,167 @@
+[
+  {
+    "id": "wuhan-boundary",
+    "name": "武汉市边界",
+    "dataSource": "基础地理",
+    "tableName": "wuhan_boundary",
+    "geomType": "Polygon",
+    "metric": "市域展示范围",
+    "ruleText": "仅武汉市范围",
+    "unit": "—",
+    "sortOrder": 5
+  },
+  {
+    "id": "wuhan-dem-hillshade",
+    "name": "武汉 DEM 地形阴影",
+    "dataSource": "基础地理",
+    "tableName": "dem_hillshade_wh",
+    "geomType": "Raster",
+    "metric": "地形阴影、地貌起伏",
+    "ruleText": "由 HillShadeWH.tif 转为前端 PNG 叠加",
+    "unit": "灰度",
+    "sortOrder": 6
+  },
+  {
+    "id": "wuhan-functional-units",
+    "name": "武汉功能片区",
+    "dataSource": "模型",
+    "tableName": "city_units",
+    "geomType": "Polygon",
+    "metric": "活力、消费、人口密度",
+    "ruleText": "0~100 分级",
+    "unit": "指数",
+    "sortOrder": 10
+  },
+  {
+    "id": "uav-routes",
+    "name": "武汉无人机航线",
+    "dataSource": "无人机",
+    "tableName": "uav_routes",
+    "geomType": "LineString",
+    "metric": "航线、高度、质量、影像",
+    "ruleText": "质量 >= 70 进入模型候选",
+    "unit": "米 / m/s",
+    "sortOrder": 20
+  },
+  {
+    "id": "low-altitude-risk-zones",
+    "name": "武汉低空风险区",
+    "dataSource": "无人机",
+    "tableName": "low_altitude_risk_zones",
+    "geomType": "Polygon",
+    "metric": "风险等级、限高、规则",
+    "ruleText": "高风险与禁飞区优先避让",
+    "unit": "指数 / 米",
+    "sortOrder": 24
+  },
+  {
+    "id": "uav-takeoff-sites",
+    "name": "武汉无人机起降点",
+    "dataSource": "无人机",
+    "tableName": "uav_takeoff_sites",
+    "geomType": "Point",
+    "metric": "容量、就绪度、场景",
+    "ruleText": "就绪度 >= 80 可调度",
+    "unit": "架次 / 分",
+    "sortOrder": 25
+  },
+  {
+    "id": "building-white-models",
+    "name": "武汉三维建筑白模",
+    "dataSource": "模型",
+    "tableName": "building_white_models",
+    "geomType": "Polygon",
+    "metric": "建筑高度、用途",
+    "ruleText": "用于三维展示与航线净空校核",
+    "unit": "米",
+    "sortOrder": 26
+  },
+  {
+    "id": "uav-route-terrain-profiles",
+    "name": "无人机航线地形剖面",
+    "dataSource": "基础地理",
+    "tableName": "uav_route_terrain_profiles",
+    "geomType": "None",
+    "metric": "地面高程、相对净空",
+    "ruleText": "由 WuhanDEM84.tif 对航线采样生成",
+    "unit": "米",
+    "sortOrder": 27
+  },
+  {
+    "id": "uav-fleet-dispatch-plan",
+    "name": "武汉多机协同调度方案",
+    "dataSource": "无人机",
+    "tableName": "uav_fleet_dispatch_plan",
+    "geomType": "None",
+    "metric": "编队、时序、协同规则",
+    "ruleText": "关联航线与起降点生成调度方案",
+    "unit": "套",
+    "sortOrder": 27
+  },
+  {
+    "id": "uav-fleet-registry",
+    "name": "武汉无人机机队注册",
+    "dataSource": "无人机",
+    "tableName": "uav_fleet_registry",
+    "geomType": "None",
+    "metric": "机型、续航、就绪度",
+    "ruleText": "就绪度 >= 85 可编入协同任务",
+    "unit": "架",
+    "sortOrder": 28
+  },
+  {
+    "id": "uav-fleet-telemetry",
+    "name": "武汉多机协同遥测",
+    "dataSource": "无人机",
+    "tableName": "uav_fleet_telemetry",
+    "geomType": "None",
+    "metric": "统一时钟轨迹帧",
+    "ruleText": "simSec 与 schedule 对齐",
+    "unit": "秒",
+    "sortOrder": 29
+  },
+  {
+    "id": "zhiyan-flow-heat",
+    "name": "武汉智眼型热力触发",
+    "dataSource": "演示",
+    "tableName": "zhiyan_observations",
+    "geomType": "Point",
+    "metric": "人流、车流与异常得分",
+    "ruleText": "70 以上触发低空复核",
+    "unit": "指数",
+    "sortOrder": 30
+  },
+  {
+    "id": "uav-fleet-conflicts",
+    "name": "武汉多机冲突消解",
+    "dataSource": "无人机",
+    "tableName": "uav_fleet_conflicts",
+    "geomType": "None",
+    "metric": "冲突类型、间隔、规则",
+    "ruleText": "演示空域冲突检测与消解",
+    "unit": "次",
+    "sortOrder": 30
+  },
+  {
+    "id": "hourly-flow-timeseries",
+    "name": "武汉小时级人车流",
+    "dataSource": "智眼",
+    "tableName": "hourly_flow_timeseries",
+    "geomType": "None",
+    "metric": "人流、车流、异常得分",
+    "ruleText": "异常得分触发无人机复核",
+    "unit": "指数",
+    "sortOrder": 31
+  },
+  {
+    "id": "business-vitality-daily",
+    "name": "武汉商圈日活力",
+    "dataSource": "模型",
+    "tableName": "business_vitality_daily",
+    "geomType": "None",
+    "metric": "活力、消费、夜间经济",
+    "ruleText": "用于趋势展示与模型回放",
+    "unit": "指数",
+    "sortOrder": 32
+  }
+]

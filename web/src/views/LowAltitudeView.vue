@@ -254,6 +254,7 @@
           同位置二维总览
         </RouterLink>
         <RouterLink class="btn btn-ghost" to="/vitality">精细区域 → 经济活力</RouterLink>
+        <RouterLink class="btn btn-ghost" to="/fleet-dispatch">多机协同调度应用 →</RouterLink>
       </div>
     </aside>
   </div>

@@ -1,0 +1,126 @@
+{
+  "type": "FeatureCollection",
+  "name": "wuhan-zhiyan-observations",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "zhiyan-wuhan-1",
+      "properties": {
+        "cityName": "武汉市",
+        "districtName": "江汉路",
+        "name": "江汉路晚高峰客流",
+        "flowIndex": 91,
+        "vehicleIndex": 88,
+        "anomalyScore": 90,
+        "triggerUav": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.292,
+          30.596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "zhiyan-wuhan-2",
+      "properties": {
+        "cityName": "武汉市",
+        "districtName": "光谷",
+        "name": "光谷站城换乘热力",
+        "flowIndex": 84,
+        "vehicleIndex": 79,
+        "anomalyScore": 82,
+        "triggerUav": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.425,
+          30.526
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "zhiyan-wuhan-3",
+      "properties": {
+        "cityName": "武汉市",
+        "districtName": "长江大桥",
+        "name": "长江大桥通勤流",
+        "flowIndex": 78,
+        "vehicleIndex": 82,
+        "anomalyScore": 80,
+        "triggerUav": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.305,
+          30.568
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "zhiyan-wuhan-4",
+      "properties": {
+        "cityName": "武汉市",
+        "districtName": "徐东商务圈",
+        "name": "徐东商务圈午间流",
+        "flowIndex": 72,
+        "vehicleIndex": 65,
+        "anomalyScore": 69,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.356,
+          30.604
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "zhiyan-wuhan-5",
+      "properties": {
+        "cityName": "武汉市",
+        "districtName": "南湖生活圈",
+        "name": "南湖生活圈夜间流",
+        "flowIndex": 69,
+        "vehicleIndex": 62,
+        "anomalyScore": 66,
+        "triggerUav": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.335,
+          30.505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "zhiyan-wuhan-6",
+      "properties": {
+        "cityName": "武汉市",
+        "districtName": "天河机场",
+        "name": "天河机场枢纽流",
+        "flowIndex": 76,
+        "vehicleIndex": 71,
+        "anomalyScore": 74,
+        "triggerUav": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.21,
+          30.784
+        ]
+      }
+    }
+  ]
+}

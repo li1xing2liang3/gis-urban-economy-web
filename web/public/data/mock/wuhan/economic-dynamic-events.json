@@ -1,0 +1,56 @@
+{
+  "events": [
+    {
+      "date": "2026-04-05",
+      "name": "清明假期夜游高峰",
+      "eventType": "holiday",
+      "affectedUnitIds": [
+        "wuhan-jianghan",
+        "wuhan-wuchang-riverside",
+        "wuhan-nanhu"
+      ],
+      "impact": 12,
+      "description": "文旅与夜间餐饮活动叠加，江汉路、武昌滨江和高校生活圈晚间峰值后移。"
+    },
+    {
+      "date": "2026-04-06",
+      "name": "滨江文旅客流回补",
+      "eventType": "holiday",
+      "affectedUnitIds": [
+        "wuhan-wuchang-riverside",
+        "wuhan-jianghan"
+      ],
+      "impact": 10,
+      "description": "黄鹤楼、武昌江滩客流集中，午后与夜间经济活力同步抬升。"
+    },
+    {
+      "date": "2026-04-09",
+      "name": "站城通勤观测日",
+      "eventType": "commute",
+      "affectedUnitIds": [
+        "wuhan-optics-valley",
+        "wuhan-airport"
+      ],
+      "impact": 8,
+      "description": "武汉东站与光谷核心通勤叠加，早晚高峰人车流同时增强。"
+    },
+    {
+      "date": "2026-04-12",
+      "name": "周末生活消费恢复",
+      "eventType": "weekend",
+      "affectedUnitIds": [
+        "wuhan-hanyang",
+        "wuhan-caidian",
+        "wuhan-nanhu"
+      ],
+      "impact": 7,
+      "description": "社区生活圈晚间消费增强，生活服务和餐饮类 POI 周边热度上升。"
+    }
+  ],
+  "meta": {
+    "scope": "武汉市",
+    "version": "v2026Q1",
+    "source": "仿真：经济动态事件标注",
+    "simulated": true
+  }
+}

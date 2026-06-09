@@ -28,5 +28,10 @@ docs/_temp_city.zip
 
 # 武汉建筑全量备份与 Overture 中间产物（>100MB 或可再生；Web 使用 buildings/{low,mid,high} 瓦片）
 web/public/geo/wuhan/buildings.geojson
-web/public/geo/wuhan/_building_tiles/
+web/public/geo/wuhan/_building_tiles/*.part
+web/public/geo/wuhan/_building_tiles/*.part.state
+web/public/geo/wuhan/_building_tiles/*.geojsonseq
+web/public/geo/wuhan/_building_tiles/*.geojsonseq.*
+web/public/geo/wuhan/overture-*.geojson
+web/public/geo/wuhan/wuhan.zip
 merge-log.txt

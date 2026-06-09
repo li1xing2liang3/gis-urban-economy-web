@@ -1,0 +1,250 @@
+{
+  "type": "FeatureCollection",
+  "name": "wuhan-building-white-models",
+  "meta": {
+    "scope": "武汉市",
+    "version": "uav-sim-2026q1"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "building-jianghan-01",
+      "properties": {
+        "name": "江汉路商业综合体白模",
+        "district": "江汉区",
+        "usage": "commercial",
+        "heightM": 96,
+        "floors": 27,
+        "confidence": 0.74,
+        "source": "仿真：三维城市建筑白模"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.290302,
+              30.597461
+            ],
+            [
+              114.294698,
+              30.597461
+            ],
+            [
+              114.294698,
+              30.594939
+            ],
+            [
+              114.290302,
+              30.594939
+            ],
+            [
+              114.290302,
+              30.597461
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "building-jianghan-02",
+      "properties": {
+        "name": "循礼门办公塔楼白模",
+        "district": "江汉区",
+        "usage": "office",
+        "heightM": 118,
+        "floors": 33,
+        "confidence": 0.74,
+        "source": "仿真：三维城市建筑白模"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.284721,
+              30.591881
+            ],
+            [
+              114.288279,
+              30.591881
+            ],
+            [
+              114.288279,
+              30.589719
+            ],
+            [
+              114.284721,
+              30.589719
+            ],
+            [
+              114.284721,
+              30.591881
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "building-optics-01",
+      "properties": {
+        "name": "光谷站城综合体白模",
+        "district": "东湖高新区",
+        "usage": "transport_commerce",
+        "heightM": 86,
+        "floors": 24,
+        "confidence": 0.74,
+        "source": "仿真：三维城市建筑白模"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.420467,
+              30.525532
+            ],
+            [
+              114.426533,
+              30.525532
+            ],
+            [
+              114.426533,
+              30.522468
+            ],
+            [
+              114.420467,
+              30.522468
+            ],
+            [
+              114.420467,
+              30.525532
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "building-optics-02",
+      "properties": {
+        "name": "光谷创新办公楼白模",
+        "district": "东湖高新区",
+        "usage": "office",
+        "heightM": 102,
+        "floors": 28,
+        "confidence": 0.74,
+        "source": "仿真：三维城市建筑白模"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.411699,
+              30.517351
+            ],
+            [
+              114.416301,
+              30.517351
+            ],
+            [
+              114.416301,
+              30.514649
+            ],
+            [
+              114.411699,
+              30.514649
+            ],
+            [
+              114.411699,
+              30.517351
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "building-river-01",
+      "properties": {
+        "name": "武昌滨江文旅设施白模",
+        "district": "武昌区",
+        "usage": "culture",
+        "heightM": 54,
+        "floors": 15,
+        "confidence": 0.74,
+        "source": "仿真：三维城市建筑白模"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.303385,
+              30.558171
+            ],
+            [
+              114.308615,
+              30.558171
+            ],
+            [
+              114.308615,
+              30.555829
+            ],
+            [
+              114.303385,
+              30.555829
+            ],
+            [
+              114.303385,
+              30.558171
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "building-xudong-01",
+      "properties": {
+        "name": "徐东商务楼群白模",
+        "district": "武昌区",
+        "usage": "office",
+        "heightM": 92,
+        "floors": 26,
+        "confidence": 0.74,
+        "source": "仿真：三维城市建筑白模"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.353279,
+              30.605441
+            ],
+            [
+              114.358721,
+              30.605441
+            ],
+            [
+              114.358721,
+              30.602559
+            ],
+            [
+              114.353279,
+              30.602559
+            ],
+            [
+              114.353279,
+              30.605441
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

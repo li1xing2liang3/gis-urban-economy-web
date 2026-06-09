@@ -1,0 +1,76 @@
+{
+  "id": "vitality-run-20260408-uav",
+  "taskType": "vitality_assessment",
+  "status": "success",
+  "params": {
+    "dataSource": "v2026Q1",
+    "time": "2026-04-08",
+    "weights": {
+      "flow": 0.35,
+      "poi": 0.3,
+      "traffic": 0.25,
+      "uav": 0.1
+    },
+    "uavRoutes": [
+      "route-jianghan-night",
+      "route-optics-valley",
+      "route-river-crossing"
+    ]
+  },
+  "result": {
+    "indexMean": 78,
+    "topZones": [
+      {
+        "cityId": "wuhan-jianghan",
+        "name": "江汉路-循礼门商圈",
+        "score": 97,
+        "uavBoost": 8
+      },
+      {
+        "cityId": "wuhan-optics-valley",
+        "name": "光谷广场-武汉东站",
+        "score": 95,
+        "uavBoost": 8
+      },
+      {
+        "cityId": "wuhan-wuchang-riverside",
+        "name": "武昌滨江-黄鹤楼片区",
+        "score": 93,
+        "uavBoost": 0
+      },
+      {
+        "cityId": "wuhan-xudong",
+        "name": "徐东-岳家嘴商务圈",
+        "score": 86,
+        "uavBoost": 0
+      },
+      {
+        "cityId": "wuhan-nanhu",
+        "name": "南湖-街道口生活圈",
+        "score": 84,
+        "uavBoost": 0
+      },
+      {
+        "cityId": "wuhan-hanyang",
+        "name": "汉阳钟家村-王家湾",
+        "score": 82,
+        "uavBoost": 0
+      },
+      {
+        "cityId": "wuhan-qingshan",
+        "name": "青山滨江-工业更新带",
+        "score": 74,
+        "uavBoost": 0
+      },
+      {
+        "cityId": "wuhan-airport",
+        "name": "天河机场-临空枢纽",
+        "score": 71,
+        "uavBoost": 0
+      }
+    ],
+    "explanation": "武汉人流/车流热力作为宏观触发，无人机路径覆盖作为精细尺度校正项。"
+  },
+  "createdAt": "2026-04-08T09:30:00+08:00",
+  "finishedAt": "2026-04-08T09:30:08+08:00"
+}

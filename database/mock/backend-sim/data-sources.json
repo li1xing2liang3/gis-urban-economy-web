@@ -1,0 +1,32 @@
+[
+  {
+    "id": "v2026Q1",
+    "label": "武汉智眼型 v2026Q1（模拟）",
+    "description": "武汉市范围的城市感知指标体系模拟切片，非政务生产数据。",
+    "isActive": true
+  },
+  {
+    "id": "uav-sim-2026q1",
+    "label": "武汉低空航拍 v2026Q1",
+    "description": "武汉商圈、两江四岸、光谷等区域的无人机航线与航拍预览。",
+    "isActive": true
+  },
+  {
+    "id": "poi-open-mock",
+    "label": "武汉开放 POI 样例",
+    "description": "武汉市范围内按零售、餐饮、办公、文旅等业态生成的空间样点。",
+    "isActive": true
+  },
+  {
+    "id": "dem-wuhan-2026",
+    "label": "武汉 DEM 地形数据",
+    "description": "由 data/WuHanDEM 原始 GeoTIFF 转换的地形阴影、DEM 元数据与无人机航线高程采样。",
+    "isActive": true
+  },
+  {
+    "id": "low-altitude-business-sim",
+    "label": "武汉低空业务仿真数据",
+    "description": "起降点、风险区、任务记录、飞行遥测、小时级人车流与商圈日活力的联调数据。",
+    "isActive": true
+  }
+]

@@ -1,0 +1,90 @@
+{
+  "tasks": [
+    {
+      "taskId": "task-20260408-jianghan-night-001",
+      "routeId": "route-jianghan-night",
+      "routeName": "江汉路夜间商圈航拍巡检",
+      "taskType": "night_economy_audit",
+      "district": "江汉区",
+      "startTime": "2026-04-08T19:30:00+08:00",
+      "endTime": "2026-04-08T19:48:00+08:00",
+      "status": "finished",
+      "droneId": "WH-UAV-M30T-006",
+      "pilotMode": "remote-supervised",
+      "takeoffSiteId": "takeoff-jianghan-roof",
+      "imageCount": 286,
+      "videoMinutes": 18,
+      "coverageKm2": 2.36,
+      "distanceKm": 3.21,
+      "avgAltitudeM": 120,
+      "avgSpeedMps": 8.1,
+      "batteryUsedPct": 38,
+      "riskEvents": 1,
+      "outputProducts": [
+        "正射预览",
+        "夜间客流热力校核",
+        "商圈边界修正建议"
+      ],
+      "qualityScore": 90
+    },
+    {
+      "taskId": "task-20260409-optics-model-001",
+      "routeId": "route-optics-valley",
+      "routeName": "光谷-武汉东站低空建模航线",
+      "taskType": "lod2_reconstruction",
+      "district": "东湖高新区",
+      "startTime": "2026-04-09T15:10:00+08:00",
+      "endTime": "2026-04-09T15:36:00+08:00",
+      "status": "reviewing",
+      "droneId": "WH-UAV-P4RTK-011",
+      "pilotMode": "planned-route",
+      "takeoffSiteId": "takeoff-optics-hub",
+      "imageCount": 412,
+      "videoMinutes": 26,
+      "coverageKm2": 3.84,
+      "distanceKm": 5.04,
+      "avgAltitudeM": 150,
+      "avgSpeedMps": 7.2,
+      "batteryUsedPct": 54,
+      "riskEvents": 2,
+      "outputProducts": [
+        "倾斜影像序列",
+        "建筑白模更新",
+        "站城人流核验"
+      ],
+      "qualityScore": 76
+    },
+    {
+      "taskId": "task-20260410-river-commute-001",
+      "routeId": "route-river-crossing",
+      "routeName": "两江四岸通勤航拍观测",
+      "taskType": "commute_flow_review",
+      "district": "两江四岸",
+      "startTime": "2026-04-10T08:00:00+08:00",
+      "endTime": "2026-04-10T08:19:00+08:00",
+      "status": "finished",
+      "droneId": "WH-UAV-M3E-018",
+      "pilotMode": "planned-route",
+      "takeoffSiteId": "takeoff-wuchang-riverfront",
+      "imageCount": 198,
+      "videoMinutes": 19,
+      "coverageKm2": 4.12,
+      "distanceKm": 10.21,
+      "avgAltitudeM": 100,
+      "avgSpeedMps": 9,
+      "batteryUsedPct": 47,
+      "riskEvents": 1,
+      "outputProducts": [
+        "跨江通勤流校核",
+        "江滩客流范围",
+        "桥梁周边风险提示"
+      ],
+      "qualityScore": 82
+    }
+  ],
+  "meta": {
+    "scope": "武汉市",
+    "version": "uav-sim-2026q1",
+    "source": "仿真：低空任务调度与成果管理"
+  }
+}

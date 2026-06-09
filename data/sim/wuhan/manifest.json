@@ -1,0 +1,19 @@
+{
+  "title": "武汉低空经济与城市运行仿真数据",
+  "generatedAt": "2026-06-06T14:05:55.291Z",
+  "scope": "武汉市",
+  "files": [
+    "low-altitude-risk-zones.geojson",
+    "uav-takeoff-sites.geojson",
+    "uav-task-records.json",
+    "uav-fleet-dispatch-plan.json",
+    "uav-fleet-registry.json",
+    "uav-fleet-telemetry.json",
+    "uav-fleet-conflicts.json",
+    "uav-telemetry.json",
+    "hourly-flow-timeseries.json",
+    "business-vitality-daily.json",
+    "building-white-models.geojson"
+  ],
+  "note": "这些数据为前后端联调和项目展示使用，不代表真实政务、飞控或空域管制数据。"
+}

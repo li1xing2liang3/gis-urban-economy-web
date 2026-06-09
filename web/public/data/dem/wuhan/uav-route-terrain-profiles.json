@@ -1,0 +1,480 @@
+{
+  "routes": [
+    {
+      "routeId": "route-jianghan-night",
+      "routeName": "江汉路夜间商圈航拍巡检",
+      "samples": [
+        {
+          "lng": 114.2772,
+          "lat": 30.6026,
+          "progress": 0.0,
+          "groundElevationM": 26.0,
+          "flightAltitudeM": 120.0,
+          "clearanceM": 94.0
+        },
+        {
+          "lng": 114.27968,
+          "lat": 30.602208,
+          "progress": 0.0588,
+          "groundElevationM": 34.0,
+          "flightAltitudeM": 120.0,
+          "clearanceM": 86.0
+        },
+        {
+          "lng": 114.28216,
+          "lat": 30.601817,
+          "progress": 0.1176,
+          "groundElevationM": 25.0,
+          "flightAltitudeM": 120.0,
+          "clearanceM": 95.0
+        },
+        {
+          "lng": 114.284639,
+          "lat": 30.601425,
+          "progress": 0.1765,
+          "groundElevationM": 29.0,
+          "flightAltitudeM": 120.0,
+          "clearanceM": 91.0
+        },
+        {
+          "lng": 114.287119,
+          "lat": 30.601034,
+          "progress": 0.2353,
+          "groundElevationM": 33.0,
+          "flightAltitudeM": 120.0,
+          "clearanceM": 87.0
+        },
+        {
+          "lng": 114.28952,
+          "lat": 30.600429,
+          "progress": 0.2941,
+          "groundElevationM": 28.0,
+          "flightAltitudeM": 120.0,
+          "clearanceM": 92.0
+        },
+        {
+          "lng": 114.291802,
+          "lat": 30.599507,
+          "progress": 0.3529,
+          "groundElevationM": 29.0,
+          "flightAltitudeM": 120.0,
+          "clearanceM": 91.0
+        },
+        {
+          "lng": 114.294085,
+          "lat": 30.598586,
+          "progress": 0.4118,
+          "groundElevationM": 29.0,
+          "flightAltitudeM": 120.0,
+          "clearanceM": 91.0
+        },
+        {
+          "lng": 114.296367,
+          "lat": 30.597665,
+          "progress": 0.4706,
+          "groundElevationM": 29.0,
+          "flightAltitudeM": 120.0,
+          "clearanceM": 91.0
+        },
+        {
+          "lng": 114.29865,
+          "lat": 30.596743,
+          "progress": 0.5294,
+          "groundElevationM": 33.0,
+          "flightAltitudeM": 120.0,
+          "clearanceM": 87.0
+        },
+        {
+          "lng": 114.300653,
+          "lat": 30.595468,
+          "progress": 0.5882,
+          "groundElevationM": 31.0,
+          "flightAltitudeM": 120.0,
+          "clearanceM": 89.0
+        },
+        {
+          "lng": 114.302491,
+          "lat": 30.593982,
+          "progress": 0.6471,
+          "groundElevationM": 26.0,
+          "flightAltitudeM": 120.0,
+          "clearanceM": 94.0
+        },
+        {
+          "lng": 114.304329,
+          "lat": 30.592497,
+          "progress": 0.7059,
+          "groundElevationM": 23.0,
+          "flightAltitudeM": 120.0,
+          "clearanceM": 97.0
+        },
+        {
+          "lng": 114.306167,
+          "lat": 30.591012,
+          "progress": 0.7647,
+          "groundElevationM": 16.0,
+          "flightAltitudeM": 120.0,
+          "clearanceM": 104.0
+        },
+        {
+          "lng": 114.305796,
+          "lat": 30.58937,
+          "progress": 0.8235,
+          "groundElevationM": 16.0,
+          "flightAltitudeM": 120.0,
+          "clearanceM": 104.0
+        },
+        {
+          "lng": 114.304264,
+          "lat": 30.587647,
+          "progress": 0.8824,
+          "groundElevationM": 16.0,
+          "flightAltitudeM": 120.0,
+          "clearanceM": 104.0
+        },
+        {
+          "lng": 114.302732,
+          "lat": 30.585923,
+          "progress": 0.9412,
+          "groundElevationM": 16.0,
+          "flightAltitudeM": 120.0,
+          "clearanceM": 104.0
+        },
+        {
+          "lng": 114.3012,
+          "lat": 30.5842,
+          "progress": 1.0,
+          "groundElevationM": 16.0,
+          "flightAltitudeM": 120.0,
+          "clearanceM": 104.0
+        }
+      ],
+      "summary": {
+        "minGroundM": 16.0,
+        "maxGroundM": 34.0,
+        "avgGroundM": 25.3,
+        "minClearanceM": 86.0,
+        "maxClearanceM": 104.0
+      }
+    },
+    {
+      "routeId": "route-optics-valley",
+      "routeName": "光谷-武汉东站低空建模航线",
+      "samples": [
+        {
+          "lng": 114.4022,
+          "lat": 30.5102,
+          "progress": 0.0,
+          "groundElevationM": 42.0,
+          "flightAltitudeM": 150.0,
+          "clearanceM": 108.0
+        },
+        {
+          "lng": 114.405838,
+          "lat": 30.511559,
+          "progress": 0.0588,
+          "groundElevationM": 43.0,
+          "flightAltitudeM": 150.0,
+          "clearanceM": 107.0
+        },
+        {
+          "lng": 114.409476,
+          "lat": 30.512918,
+          "progress": 0.1176,
+          "groundElevationM": 44.0,
+          "flightAltitudeM": 150.0,
+          "clearanceM": 106.0
+        },
+        {
+          "lng": 114.413114,
+          "lat": 30.514276,
+          "progress": 0.1765,
+          "groundElevationM": 37.0,
+          "flightAltitudeM": 150.0,
+          "clearanceM": 113.0
+        },
+        {
+          "lng": 114.416752,
+          "lat": 30.515635,
+          "progress": 0.2353,
+          "groundElevationM": 39.0,
+          "flightAltitudeM": 150.0,
+          "clearanceM": 111.0
+        },
+        {
+          "lng": 114.420194,
+          "lat": 30.517287,
+          "progress": 0.2941,
+          "groundElevationM": 36.0,
+          "flightAltitudeM": 150.0,
+          "clearanceM": 114.0
+        },
+        {
+          "lng": 114.423384,
+          "lat": 30.519317,
+          "progress": 0.3529,
+          "groundElevationM": 22.0,
+          "flightAltitudeM": 150.0,
+          "clearanceM": 128.0
+        },
+        {
+          "lng": 114.426574,
+          "lat": 30.521347,
+          "progress": 0.4118,
+          "groundElevationM": 20.0,
+          "flightAltitudeM": 150.0,
+          "clearanceM": 130.0
+        },
+        {
+          "lng": 114.429763,
+          "lat": 30.523377,
+          "progress": 0.4706,
+          "groundElevationM": 29.0,
+          "flightAltitudeM": 150.0,
+          "clearanceM": 121.0
+        },
+        {
+          "lng": 114.431314,
+          "lat": 30.525632,
+          "progress": 0.5294,
+          "groundElevationM": 31.0,
+          "flightAltitudeM": 150.0,
+          "clearanceM": 119.0
+        },
+        {
+          "lng": 114.429017,
+          "lat": 30.528417,
+          "progress": 0.5882,
+          "groundElevationM": 41.0,
+          "flightAltitudeM": 150.0,
+          "clearanceM": 109.0
+        },
+        {
+          "lng": 114.42672,
+          "lat": 30.531202,
+          "progress": 0.6471,
+          "groundElevationM": 20.0,
+          "flightAltitudeM": 150.0,
+          "clearanceM": 130.0
+        },
+        {
+          "lng": 114.424423,
+          "lat": 30.533987,
+          "progress": 0.7059,
+          "groundElevationM": 32.0,
+          "flightAltitudeM": 150.0,
+          "clearanceM": 118.0
+        },
+        {
+          "lng": 114.420951,
+          "lat": 30.533568,
+          "progress": 0.7647,
+          "groundElevationM": 56.0,
+          "flightAltitudeM": 150.0,
+          "clearanceM": 94.0
+        },
+        {
+          "lng": 114.417213,
+          "lat": 30.532426,
+          "progress": 0.8235,
+          "groundElevationM": 42.0,
+          "flightAltitudeM": 150.0,
+          "clearanceM": 108.0
+        },
+        {
+          "lng": 114.413476,
+          "lat": 30.531284,
+          "progress": 0.8824,
+          "groundElevationM": 41.0,
+          "flightAltitudeM": 150.0,
+          "clearanceM": 109.0
+        },
+        {
+          "lng": 114.409738,
+          "lat": 30.530142,
+          "progress": 0.9412,
+          "groundElevationM": 38.0,
+          "flightAltitudeM": 150.0,
+          "clearanceM": 112.0
+        },
+        {
+          "lng": 114.406,
+          "lat": 30.529,
+          "progress": 1.0,
+          "groundElevationM": 26.0,
+          "flightAltitudeM": 150.0,
+          "clearanceM": 124.0
+        }
+      ],
+      "summary": {
+        "minGroundM": 20.0,
+        "maxGroundM": 56.0,
+        "avgGroundM": 35.5,
+        "minClearanceM": 94.0,
+        "maxClearanceM": 130.0
+      }
+    },
+    {
+      "routeId": "route-river-crossing",
+      "routeName": "两江四岸通勤航拍观测",
+      "samples": [
+        {
+          "lng": 114.255,
+          "lat": 30.575,
+          "progress": 0.0,
+          "groundElevationM": 34.0,
+          "flightAltitudeM": 100.0,
+          "clearanceM": 66.0
+        },
+        {
+          "lng": 114.261225,
+          "lat": 30.574222,
+          "progress": 0.0588,
+          "groundElevationM": 34.0,
+          "flightAltitudeM": 100.0,
+          "clearanceM": 66.0
+        },
+        {
+          "lng": 114.26745,
+          "lat": 30.573444,
+          "progress": 0.1176,
+          "groundElevationM": 29.0,
+          "flightAltitudeM": 100.0,
+          "clearanceM": 71.0
+        },
+        {
+          "lng": 114.273676,
+          "lat": 30.572666,
+          "progress": 0.1765,
+          "groundElevationM": 38.0,
+          "flightAltitudeM": 100.0,
+          "clearanceM": 62.0
+        },
+        {
+          "lng": 114.279896,
+          "lat": 30.571862,
+          "progress": 0.2353,
+          "groundElevationM": 49.0,
+          "flightAltitudeM": 100.0,
+          "clearanceM": 51.0
+        },
+        {
+          "lng": 114.286088,
+          "lat": 30.570909,
+          "progress": 0.2941,
+          "groundElevationM": 36.0,
+          "flightAltitudeM": 100.0,
+          "clearanceM": 64.0
+        },
+        {
+          "lng": 114.29228,
+          "lat": 30.569957,
+          "progress": 0.3529,
+          "groundElevationM": 16.0,
+          "flightAltitudeM": 100.0,
+          "clearanceM": 84.0
+        },
+        {
+          "lng": 114.298473,
+          "lat": 30.569004,
+          "progress": 0.4118,
+          "groundElevationM": 16.0,
+          "flightAltitudeM": 100.0,
+          "clearanceM": 84.0
+        },
+        {
+          "lng": 114.304665,
+          "lat": 30.568052,
+          "progress": 0.4706,
+          "groundElevationM": 32.0,
+          "flightAltitudeM": 100.0,
+          "clearanceM": 68.0
+        },
+        {
+          "lng": 114.310761,
+          "lat": 30.56672,
+          "progress": 0.5294,
+          "groundElevationM": 25.0,
+          "flightAltitudeM": 100.0,
+          "clearanceM": 75.0
+        },
+        {
+          "lng": 114.316851,
+          "lat": 30.565366,
+          "progress": 0.5882,
+          "groundElevationM": 19.0,
+          "flightAltitudeM": 100.0,
+          "clearanceM": 81.0
+        },
+        {
+          "lng": 114.322941,
+          "lat": 30.564013,
+          "progress": 0.6471,
+          "groundElevationM": 19.0,
+          "flightAltitudeM": 100.0,
+          "clearanceM": 81.0
+        },
+        {
+          "lng": 114.329032,
+          "lat": 30.56266,
+          "progress": 0.7059,
+          "groundElevationM": 19.0,
+          "flightAltitudeM": 100.0,
+          "clearanceM": 81.0
+        },
+        {
+          "lng": 114.335181,
+          "lat": 30.561546,
+          "progress": 0.7647,
+          "groundElevationM": 26.0,
+          "flightAltitudeM": 100.0,
+          "clearanceM": 74.0
+        },
+        {
+          "lng": 114.341386,
+          "lat": 30.560659,
+          "progress": 0.8235,
+          "groundElevationM": 32.0,
+          "flightAltitudeM": 100.0,
+          "clearanceM": 68.0
+        },
+        {
+          "lng": 114.34759,
+          "lat": 30.559773,
+          "progress": 0.8824,
+          "groundElevationM": 34.0,
+          "flightAltitudeM": 100.0,
+          "clearanceM": 66.0
+        },
+        {
+          "lng": 114.353795,
+          "lat": 30.558886,
+          "progress": 0.9412,
+          "groundElevationM": 35.0,
+          "flightAltitudeM": 100.0,
+          "clearanceM": 65.0
+        },
+        {
+          "lng": 114.36,
+          "lat": 30.558,
+          "progress": 1.0,
+          "groundElevationM": 33.0,
+          "flightAltitudeM": 100.0,
+          "clearanceM": 67.0
+        }
+      ],
+      "summary": {
+        "minGroundM": 16.0,
+        "maxGroundM": 49.0,
+        "avgGroundM": 29.2,
+        "minClearanceM": 51.0,
+        "maxClearanceM": 84.0
+      }
+    }
+  ],
+  "meta": {
+    "scope": "武汉市",
+    "source": "data/WuHanDEM/WuhanDEM84.tif",
+    "version": "dem-wuhan-2026"
+  }
+}

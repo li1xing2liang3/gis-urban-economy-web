@@ -1,0 +1,471 @@
+{
+  "days": [
+    {
+      "date": "2026-04-01",
+      "units": [
+        {
+          "unitId": "wuhan-jianghan",
+          "name": "江汉路-循礼门商圈",
+          "vitalityIndex": 86,
+          "consumeIndex": 84,
+          "nightEconomyIndex": 88
+        },
+        {
+          "unitId": "wuhan-optics-valley",
+          "name": "光谷广场-武汉东站",
+          "vitalityIndex": 82,
+          "consumeIndex": 80,
+          "nightEconomyIndex": 75
+        },
+        {
+          "unitId": "wuhan-wuchang-riverside",
+          "name": "武昌滨江-黄鹤楼片区",
+          "vitalityIndex": 78,
+          "consumeIndex": 76,
+          "nightEconomyIndex": 80
+        },
+        {
+          "unitId": "wuhan-xudong",
+          "name": "徐东-岳家嘴商务圈",
+          "vitalityIndex": 73,
+          "consumeIndex": 74,
+          "nightEconomyIndex": 70
+        }
+      ]
+    },
+    {
+      "date": "2026-04-02",
+      "units": [
+        {
+          "unitId": "wuhan-jianghan",
+          "name": "江汉路-循礼门商圈",
+          "vitalityIndex": 87,
+          "consumeIndex": 84,
+          "nightEconomyIndex": 88
+        },
+        {
+          "unitId": "wuhan-optics-valley",
+          "name": "光谷广场-武汉东站",
+          "vitalityIndex": 83,
+          "consumeIndex": 80,
+          "nightEconomyIndex": 75
+        },
+        {
+          "unitId": "wuhan-wuchang-riverside",
+          "name": "武昌滨江-黄鹤楼片区",
+          "vitalityIndex": 79,
+          "consumeIndex": 76,
+          "nightEconomyIndex": 80
+        },
+        {
+          "unitId": "wuhan-xudong",
+          "name": "徐东-岳家嘴商务圈",
+          "vitalityIndex": 73,
+          "consumeIndex": 74,
+          "nightEconomyIndex": 70
+        }
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "units": [
+        {
+          "unitId": "wuhan-jianghan",
+          "name": "江汉路-循礼门商圈",
+          "vitalityIndex": 88,
+          "consumeIndex": 84,
+          "nightEconomyIndex": 88
+        },
+        {
+          "unitId": "wuhan-optics-valley",
+          "name": "光谷广场-武汉东站",
+          "vitalityIndex": 84,
+          "consumeIndex": 80,
+          "nightEconomyIndex": 75
+        },
+        {
+          "unitId": "wuhan-wuchang-riverside",
+          "name": "武昌滨江-黄鹤楼片区",
+          "vitalityIndex": 78,
+          "consumeIndex": 76,
+          "nightEconomyIndex": 80
+        },
+        {
+          "unitId": "wuhan-xudong",
+          "name": "徐东-岳家嘴商务圈",
+          "vitalityIndex": 73,
+          "consumeIndex": 74,
+          "nightEconomyIndex": 70
+        }
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "units": [
+        {
+          "unitId": "wuhan-jianghan",
+          "name": "江汉路-循礼门商圈",
+          "vitalityIndex": 86,
+          "consumeIndex": 84,
+          "nightEconomyIndex": 88
+        },
+        {
+          "unitId": "wuhan-optics-valley",
+          "name": "光谷广场-武汉东站",
+          "vitalityIndex": 85,
+          "consumeIndex": 80,
+          "nightEconomyIndex": 75
+        },
+        {
+          "unitId": "wuhan-wuchang-riverside",
+          "name": "武昌滨江-黄鹤楼片区",
+          "vitalityIndex": 79,
+          "consumeIndex": 76,
+          "nightEconomyIndex": 80
+        },
+        {
+          "unitId": "wuhan-xudong",
+          "name": "徐东-岳家嘴商务圈",
+          "vitalityIndex": 73,
+          "consumeIndex": 74,
+          "nightEconomyIndex": 70
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "units": [
+        {
+          "unitId": "wuhan-jianghan",
+          "name": "江汉路-循礼门商圈",
+          "vitalityIndex": 93,
+          "consumeIndex": 90,
+          "nightEconomyIndex": 94
+        },
+        {
+          "unitId": "wuhan-optics-valley",
+          "name": "光谷广场-武汉东站",
+          "vitalityIndex": 85,
+          "consumeIndex": 83,
+          "nightEconomyIndex": 79
+        },
+        {
+          "unitId": "wuhan-wuchang-riverside",
+          "name": "武昌滨江-黄鹤楼片区",
+          "vitalityIndex": 84,
+          "consumeIndex": 82,
+          "nightEconomyIndex": 86
+        },
+        {
+          "unitId": "wuhan-xudong",
+          "name": "徐东-岳家嘴商务圈",
+          "vitalityIndex": 76,
+          "consumeIndex": 76,
+          "nightEconomyIndex": 73
+        }
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "units": [
+        {
+          "unitId": "wuhan-jianghan",
+          "name": "江汉路-循礼门商圈",
+          "vitalityIndex": 94,
+          "consumeIndex": 90,
+          "nightEconomyIndex": 94
+        },
+        {
+          "unitId": "wuhan-optics-valley",
+          "name": "光谷广场-武汉东站",
+          "vitalityIndex": 86,
+          "consumeIndex": 83,
+          "nightEconomyIndex": 79
+        },
+        {
+          "unitId": "wuhan-wuchang-riverside",
+          "name": "武昌滨江-黄鹤楼片区",
+          "vitalityIndex": 85,
+          "consumeIndex": 82,
+          "nightEconomyIndex": 86
+        },
+        {
+          "unitId": "wuhan-xudong",
+          "name": "徐东-岳家嘴商务圈",
+          "vitalityIndex": 76,
+          "consumeIndex": 76,
+          "nightEconomyIndex": 73
+        }
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "units": [
+        {
+          "unitId": "wuhan-jianghan",
+          "name": "江汉路-循礼门商圈",
+          "vitalityIndex": 92,
+          "consumeIndex": 90,
+          "nightEconomyIndex": 94
+        },
+        {
+          "unitId": "wuhan-optics-valley",
+          "name": "光谷广场-武汉东站",
+          "vitalityIndex": 87,
+          "consumeIndex": 83,
+          "nightEconomyIndex": 79
+        },
+        {
+          "unitId": "wuhan-wuchang-riverside",
+          "name": "武昌滨江-黄鹤楼片区",
+          "vitalityIndex": 84,
+          "consumeIndex": 82,
+          "nightEconomyIndex": 86
+        },
+        {
+          "unitId": "wuhan-xudong",
+          "name": "徐东-岳家嘴商务圈",
+          "vitalityIndex": 76,
+          "consumeIndex": 76,
+          "nightEconomyIndex": 73
+        }
+      ]
+    },
+    {
+      "date": "2026-04-08",
+      "units": [
+        {
+          "unitId": "wuhan-jianghan",
+          "name": "江汉路-循礼门商圈",
+          "vitalityIndex": 87,
+          "consumeIndex": 84,
+          "nightEconomyIndex": 88
+        },
+        {
+          "unitId": "wuhan-optics-valley",
+          "name": "光谷广场-武汉东站",
+          "vitalityIndex": 85,
+          "consumeIndex": 80,
+          "nightEconomyIndex": 75
+        },
+        {
+          "unitId": "wuhan-wuchang-riverside",
+          "name": "武昌滨江-黄鹤楼片区",
+          "vitalityIndex": 79,
+          "consumeIndex": 76,
+          "nightEconomyIndex": 80
+        },
+        {
+          "unitId": "wuhan-xudong",
+          "name": "徐东-岳家嘴商务圈",
+          "vitalityIndex": 73,
+          "consumeIndex": 74,
+          "nightEconomyIndex": 70
+        }
+      ]
+    },
+    {
+      "date": "2026-04-09",
+      "units": [
+        {
+          "unitId": "wuhan-jianghan",
+          "name": "江汉路-循礼门商圈",
+          "vitalityIndex": 88,
+          "consumeIndex": 84,
+          "nightEconomyIndex": 88
+        },
+        {
+          "unitId": "wuhan-optics-valley",
+          "name": "光谷广场-武汉东站",
+          "vitalityIndex": 82,
+          "consumeIndex": 80,
+          "nightEconomyIndex": 75
+        },
+        {
+          "unitId": "wuhan-wuchang-riverside",
+          "name": "武昌滨江-黄鹤楼片区",
+          "vitalityIndex": 78,
+          "consumeIndex": 76,
+          "nightEconomyIndex": 80
+        },
+        {
+          "unitId": "wuhan-xudong",
+          "name": "徐东-岳家嘴商务圈",
+          "vitalityIndex": 73,
+          "consumeIndex": 74,
+          "nightEconomyIndex": 70
+        }
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "units": [
+        {
+          "unitId": "wuhan-jianghan",
+          "name": "江汉路-循礼门商圈",
+          "vitalityIndex": 86,
+          "consumeIndex": 84,
+          "nightEconomyIndex": 88
+        },
+        {
+          "unitId": "wuhan-optics-valley",
+          "name": "光谷广场-武汉东站",
+          "vitalityIndex": 83,
+          "consumeIndex": 80,
+          "nightEconomyIndex": 75
+        },
+        {
+          "unitId": "wuhan-wuchang-riverside",
+          "name": "武昌滨江-黄鹤楼片区",
+          "vitalityIndex": 79,
+          "consumeIndex": 76,
+          "nightEconomyIndex": 80
+        },
+        {
+          "unitId": "wuhan-xudong",
+          "name": "徐东-岳家嘴商务圈",
+          "vitalityIndex": 73,
+          "consumeIndex": 74,
+          "nightEconomyIndex": 70
+        }
+      ]
+    },
+    {
+      "date": "2026-04-11",
+      "units": [
+        {
+          "unitId": "wuhan-jianghan",
+          "name": "江汉路-循礼门商圈",
+          "vitalityIndex": 87,
+          "consumeIndex": 84,
+          "nightEconomyIndex": 88
+        },
+        {
+          "unitId": "wuhan-optics-valley",
+          "name": "光谷广场-武汉东站",
+          "vitalityIndex": 84,
+          "consumeIndex": 80,
+          "nightEconomyIndex": 75
+        },
+        {
+          "unitId": "wuhan-wuchang-riverside",
+          "name": "武昌滨江-黄鹤楼片区",
+          "vitalityIndex": 78,
+          "consumeIndex": 76,
+          "nightEconomyIndex": 80
+        },
+        {
+          "unitId": "wuhan-xudong",
+          "name": "徐东-岳家嘴商务圈",
+          "vitalityIndex": 73,
+          "consumeIndex": 74,
+          "nightEconomyIndex": 70
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "units": [
+        {
+          "unitId": "wuhan-jianghan",
+          "name": "江汉路-循礼门商圈",
+          "vitalityIndex": 94,
+          "consumeIndex": 90,
+          "nightEconomyIndex": 94
+        },
+        {
+          "unitId": "wuhan-optics-valley",
+          "name": "光谷广场-武汉东站",
+          "vitalityIndex": 88,
+          "consumeIndex": 83,
+          "nightEconomyIndex": 79
+        },
+        {
+          "unitId": "wuhan-wuchang-riverside",
+          "name": "武昌滨江-黄鹤楼片区",
+          "vitalityIndex": 85,
+          "consumeIndex": 82,
+          "nightEconomyIndex": 86
+        },
+        {
+          "unitId": "wuhan-xudong",
+          "name": "徐东-岳家嘴商务圈",
+          "vitalityIndex": 76,
+          "consumeIndex": 76,
+          "nightEconomyIndex": 73
+        }
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "units": [
+        {
+          "unitId": "wuhan-jianghan",
+          "name": "江汉路-循礼门商圈",
+          "vitalityIndex": 92,
+          "consumeIndex": 90,
+          "nightEconomyIndex": 94
+        },
+        {
+          "unitId": "wuhan-optics-valley",
+          "name": "光谷广场-武汉东站",
+          "vitalityIndex": 85,
+          "consumeIndex": 83,
+          "nightEconomyIndex": 79
+        },
+        {
+          "unitId": "wuhan-wuchang-riverside",
+          "name": "武昌滨江-黄鹤楼片区",
+          "vitalityIndex": 84,
+          "consumeIndex": 82,
+          "nightEconomyIndex": 86
+        },
+        {
+          "unitId": "wuhan-xudong",
+          "name": "徐东-岳家嘴商务圈",
+          "vitalityIndex": 76,
+          "consumeIndex": 76,
+          "nightEconomyIndex": 73
+        }
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "units": [
+        {
+          "unitId": "wuhan-jianghan",
+          "name": "江汉路-循礼门商圈",
+          "vitalityIndex": 93,
+          "consumeIndex": 90,
+          "nightEconomyIndex": 94
+        },
+        {
+          "unitId": "wuhan-optics-valley",
+          "name": "光谷广场-武汉东站",
+          "vitalityIndex": 86,
+          "consumeIndex": 83,
+          "nightEconomyIndex": 79
+        },
+        {
+          "unitId": "wuhan-wuchang-riverside",
+          "name": "武昌滨江-黄鹤楼片区",
+          "vitalityIndex": 85,
+          "consumeIndex": 82,
+          "nightEconomyIndex": 86
+        },
+        {
+          "unitId": "wuhan-xudong",
+          "name": "徐东-岳家嘴商务圈",
+          "vitalityIndex": 76,
+          "consumeIndex": 76,
+          "nightEconomyIndex": 73
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "scope": "武汉市",
+    "version": "v2026Q1",
+    "source": "仿真：商圈日级活力与消费指数"
+  }
+}

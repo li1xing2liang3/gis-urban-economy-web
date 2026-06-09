@@ -1,0 +1,506 @@
+{
+  "type": "FeatureCollection",
+  "name": "wuhan-functional-units",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "wuhan-jianghan",
+      "properties": {
+        "id": "wuhan-jianghan",
+        "name": "江汉路-循礼门商圈",
+        "tier": 1,
+        "tierLabel": "核心商圈",
+        "vitalityIdx": 92,
+        "nightEconomyIdx": 95,
+        "consumePotential": 91,
+        "inboundFlowIdx": 94,
+        "popDensity": 31500
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.274,
+              30.59
+            ],
+            [
+              114.286,
+              30.585
+            ],
+            [
+              114.298,
+              30.592
+            ],
+            [
+              114.295,
+              30.607
+            ],
+            [
+              114.28,
+              30.611
+            ],
+            [
+              114.271,
+              30.602
+            ],
+            [
+              114.274,
+              30.59
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wuhan-wuchang-riverside",
+      "properties": {
+        "id": "wuhan-wuchang-riverside",
+        "name": "武昌滨江-黄鹤楼片区",
+        "tier": 1,
+        "tierLabel": "文旅消费核心",
+        "vitalityIdx": 88,
+        "nightEconomyIdx": 86,
+        "consumePotential": 87,
+        "inboundFlowIdx": 89,
+        "popDensity": 24200
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.29,
+              30.535
+            ],
+            [
+              114.318,
+              30.538
+            ],
+            [
+              114.329,
+              30.556
+            ],
+            [
+              114.318,
+              30.575
+            ],
+            [
+              114.292,
+              30.571
+            ],
+            [
+              114.281,
+              30.552
+            ],
+            [
+              114.29,
+              30.535
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wuhan-hanyang",
+      "properties": {
+        "id": "wuhan-hanyang",
+        "name": "汉阳钟家村-王家湾",
+        "tier": 2,
+        "tierLabel": "副中心商圈",
+        "vitalityIdx": 79,
+        "nightEconomyIdx": 74,
+        "consumePotential": 81,
+        "inboundFlowIdx": 76,
+        "popDensity": 20500
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.205,
+              30.535
+            ],
+            [
+              114.242,
+              30.526
+            ],
+            [
+              114.261,
+              30.548
+            ],
+            [
+              114.246,
+              30.576
+            ],
+            [
+              114.211,
+              30.575
+            ],
+            [
+              114.19,
+              30.555
+            ],
+            [
+              114.205,
+              30.535
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wuhan-optics-valley",
+      "properties": {
+        "id": "wuhan-optics-valley",
+        "name": "光谷广场-武汉东站",
+        "tier": 1,
+        "tierLabel": "产业创新核心",
+        "vitalityIdx": 90,
+        "nightEconomyIdx": 82,
+        "consumePotential": 89,
+        "inboundFlowIdx": 91,
+        "popDensity": 28600
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.385,
+              30.495
+            ],
+            [
+              114.44,
+              30.5
+            ],
+            [
+              114.462,
+              30.535
+            ],
+            [
+              114.438,
+              30.568
+            ],
+            [
+              114.386,
+              30.559
+            ],
+            [
+              114.365,
+              30.525
+            ],
+            [
+              114.385,
+              30.495
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wuhan-xudong",
+      "properties": {
+        "id": "wuhan-xudong",
+        "name": "徐东-岳家嘴商务圈",
+        "tier": 2,
+        "tierLabel": "滨江商务节点",
+        "vitalityIdx": 82,
+        "nightEconomyIdx": 78,
+        "consumePotential": 83,
+        "inboundFlowIdx": 84,
+        "popDensity": 22800
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.333,
+              30.585
+            ],
+            [
+              114.365,
+              30.578
+            ],
+            [
+              114.385,
+              30.6
+            ],
+            [
+              114.372,
+              30.626
+            ],
+            [
+              114.337,
+              30.629
+            ],
+            [
+              114.319,
+              30.607
+            ],
+            [
+              114.333,
+              30.585
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wuhan-qingshan",
+      "properties": {
+        "id": "wuhan-qingshan",
+        "name": "青山滨江-工业更新带",
+        "tier": 3,
+        "tierLabel": "产业更新片区",
+        "vitalityIdx": 72,
+        "nightEconomyIdx": 65,
+        "consumePotential": 70,
+        "inboundFlowIdx": 69,
+        "popDensity": 17600
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.405,
+              30.608
+            ],
+            [
+              114.465,
+              30.612
+            ],
+            [
+              114.486,
+              30.65
+            ],
+            [
+              114.452,
+              30.681
+            ],
+            [
+              114.398,
+              30.665
+            ],
+            [
+              114.385,
+              30.631
+            ],
+            [
+              114.405,
+              30.608
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wuhan-nanhu",
+      "properties": {
+        "id": "wuhan-nanhu",
+        "name": "南湖-街道口生活圈",
+        "tier": 2,
+        "tierLabel": "高校生活片区",
+        "vitalityIdx": 80,
+        "nightEconomyIdx": 77,
+        "consumePotential": 79,
+        "inboundFlowIdx": 81,
+        "popDensity": 26400
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.31,
+              30.48
+            ],
+            [
+              114.355,
+              30.475
+            ],
+            [
+              114.372,
+              30.51
+            ],
+            [
+              114.351,
+              30.543
+            ],
+            [
+              114.307,
+              30.535
+            ],
+            [
+              114.29,
+              30.502
+            ],
+            [
+              114.31,
+              30.48
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wuhan-airport",
+      "properties": {
+        "id": "wuhan-airport",
+        "name": "天河机场-临空枢纽",
+        "tier": 3,
+        "tierLabel": "交通枢纽片区",
+        "vitalityIdx": 68,
+        "nightEconomyIdx": 56,
+        "consumePotential": 66,
+        "inboundFlowIdx": 78,
+        "popDensity": 9600
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.155,
+              30.735
+            ],
+            [
+              114.23,
+              30.73
+            ],
+            [
+              114.26,
+              30.79
+            ],
+            [
+              114.22,
+              30.845
+            ],
+            [
+              114.135,
+              30.83
+            ],
+            [
+              114.11,
+              30.77
+            ],
+            [
+              114.155,
+              30.735
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wuhan-jinkou",
+      "properties": {
+        "id": "wuhan-jinkou",
+        "name": "江夏金口-南部港产区",
+        "tier": 4,
+        "tierLabel": "南部产业片区",
+        "vitalityIdx": 61,
+        "nightEconomyIdx": 48,
+        "consumePotential": 59,
+        "inboundFlowIdx": 58,
+        "popDensity": 7200
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.165,
+              30.24
+            ],
+            [
+              114.27,
+              30.235
+            ],
+            [
+              114.315,
+              30.32
+            ],
+            [
+              114.245,
+              30.385
+            ],
+            [
+              114.135,
+              30.355
+            ],
+            [
+              114.11,
+              30.285
+            ],
+            [
+              114.165,
+              30.24
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wuhan-caidian",
+      "properties": {
+        "id": "wuhan-caidian",
+        "name": "蔡甸后官湖-车谷联动区",
+        "tier": 3,
+        "tierLabel": "车谷生活片区",
+        "vitalityIdx": 66,
+        "nightEconomyIdx": 55,
+        "consumePotential": 64,
+        "inboundFlowIdx": 62,
+        "popDensity": 11800
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.94,
+              30.45
+            ],
+            [
+              114.06,
+              30.43
+            ],
+            [
+              114.11,
+              30.52
+            ],
+            [
+              114.055,
+              30.61
+            ],
+            [
+              113.93,
+              30.6
+            ],
+            [
+              113.88,
+              30.52
+            ],
+            [
+              113.94,
+              30.45
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

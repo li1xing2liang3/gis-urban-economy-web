@@ -1,0 +1,1686 @@
+{
+  "type": "FeatureCollection",
+  "name": "wuhan-poi-sample",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-01-01",
+      "properties": {
+        "poiId": "poi-wuhan-01-01",
+        "name": "江汉路零售样点",
+        "categoryKey": "retail",
+        "category": "零售",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "江汉路",
+        "importance": 0.9,
+        "influenceRadiusM": 394,
+        "influenceRadiusKm": 0.394,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.284,
+          30.5895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-01-02",
+      "properties": {
+        "poiId": "poi-wuhan-01-02",
+        "name": "江汉路餐饮样点",
+        "categoryKey": "food",
+        "category": "餐饮",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "江汉路",
+        "importance": 0.88,
+        "influenceRadiusM": 424,
+        "influenceRadiusKm": 0.424,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.29,
+          30.5895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-01-03",
+      "properties": {
+        "poiId": "poi-wuhan-01-03",
+        "name": "江汉路办公样点",
+        "categoryKey": "office",
+        "category": "办公",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "江汉路",
+        "importance": 0.78,
+        "influenceRadiusM": 433,
+        "influenceRadiusKm": 0.433,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.296,
+          30.5895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-01-04",
+      "properties": {
+        "poiId": "poi-wuhan-01-04",
+        "name": "江汉路生活服务样点",
+        "categoryKey": "life",
+        "category": "生活服务",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "江汉路",
+        "importance": 0.7,
+        "influenceRadiusM": 342,
+        "influenceRadiusKm": 0.342,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.284,
+          30.5945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-01-05",
+      "properties": {
+        "poiId": "poi-wuhan-01-05",
+        "name": "江汉路文旅样点",
+        "categoryKey": "culture",
+        "category": "文旅",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "江汉路",
+        "importance": 0.74,
+        "influenceRadiusM": 387,
+        "influenceRadiusKm": 0.387,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.29,
+          30.5945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-01-06",
+      "properties": {
+        "poiId": "poi-wuhan-01-06",
+        "name": "江汉路住宿样点",
+        "categoryKey": "hotel",
+        "category": "住宿",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "江汉路",
+        "importance": 0.62,
+        "influenceRadiusM": 391,
+        "influenceRadiusKm": 0.391,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.296,
+          30.5945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-01-07",
+      "properties": {
+        "poiId": "poi-wuhan-01-07",
+        "name": "江汉路金融样点",
+        "categoryKey": "finance",
+        "category": "金融",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "江汉路",
+        "importance": 0.58,
+        "influenceRadiusM": 311,
+        "influenceRadiusKm": 0.311,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.284,
+          30.5995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-02-01",
+      "properties": {
+        "poiId": "poi-wuhan-02-01",
+        "name": "循礼门零售样点",
+        "categoryKey": "retail",
+        "category": "零售",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "循礼门",
+        "importance": 0.92,
+        "influenceRadiusM": 399,
+        "influenceRadiusKm": 0.399,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.281,
+          30.585
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-02-02",
+      "properties": {
+        "poiId": "poi-wuhan-02-02",
+        "name": "循礼门餐饮样点",
+        "categoryKey": "food",
+        "category": "餐饮",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "循礼门",
+        "importance": 0.9,
+        "influenceRadiusM": 429,
+        "influenceRadiusKm": 0.429,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.287,
+          30.585
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-02-03",
+      "properties": {
+        "poiId": "poi-wuhan-02-03",
+        "name": "循礼门办公样点",
+        "categoryKey": "office",
+        "category": "办公",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "循礼门",
+        "importance": 0.8,
+        "influenceRadiusM": 438,
+        "influenceRadiusKm": 0.438,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.293,
+          30.585
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-02-04",
+      "properties": {
+        "poiId": "poi-wuhan-02-04",
+        "name": "循礼门生活服务样点",
+        "categoryKey": "life",
+        "category": "生活服务",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "循礼门",
+        "importance": 0.71,
+        "influenceRadiusM": 345,
+        "influenceRadiusKm": 0.345,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.281,
+          30.59
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-02-05",
+      "properties": {
+        "poiId": "poi-wuhan-02-05",
+        "name": "循礼门文旅样点",
+        "categoryKey": "culture",
+        "category": "文旅",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "循礼门",
+        "importance": 0.76,
+        "influenceRadiusM": 393,
+        "influenceRadiusKm": 0.393,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.287,
+          30.59
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-02-06",
+      "properties": {
+        "poiId": "poi-wuhan-02-06",
+        "name": "循礼门住宿样点",
+        "categoryKey": "hotel",
+        "category": "住宿",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "循礼门",
+        "importance": 0.64,
+        "influenceRadiusM": 396,
+        "influenceRadiusKm": 0.396,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.293,
+          30.59
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-02-07",
+      "properties": {
+        "poiId": "poi-wuhan-02-07",
+        "name": "循礼门金融样点",
+        "categoryKey": "finance",
+        "category": "金融",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "循礼门",
+        "importance": 0.59,
+        "influenceRadiusM": 313,
+        "influenceRadiusKm": 0.313,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.281,
+          30.595
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-03-01",
+      "properties": {
+        "poiId": "poi-wuhan-03-01",
+        "name": "武昌滨江零售样点",
+        "categoryKey": "retail",
+        "category": "零售",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "武昌滨江",
+        "importance": 0.93,
+        "influenceRadiusM": 402,
+        "influenceRadiusKm": 0.402,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.3,
+          30.5525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-03-02",
+      "properties": {
+        "poiId": "poi-wuhan-03-02",
+        "name": "武昌滨江餐饮样点",
+        "categoryKey": "food",
+        "category": "餐饮",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "武昌滨江",
+        "importance": 0.91,
+        "influenceRadiusM": 432,
+        "influenceRadiusKm": 0.432,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.306,
+          30.5525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-03-03",
+      "properties": {
+        "poiId": "poi-wuhan-03-03",
+        "name": "武昌滨江办公样点",
+        "categoryKey": "office",
+        "category": "办公",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "武昌滨江",
+        "importance": 0.81,
+        "influenceRadiusM": 441,
+        "influenceRadiusKm": 0.441,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.312,
+          30.5525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-03-04",
+      "properties": {
+        "poiId": "poi-wuhan-03-04",
+        "name": "武昌滨江生活服务样点",
+        "categoryKey": "life",
+        "category": "生活服务",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "武昌滨江",
+        "importance": 0.73,
+        "influenceRadiusM": 350,
+        "influenceRadiusKm": 0.35,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.3,
+          30.5575
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-03-05",
+      "properties": {
+        "poiId": "poi-wuhan-03-05",
+        "name": "武昌滨江文旅样点",
+        "categoryKey": "culture",
+        "category": "文旅",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "武昌滨江",
+        "importance": 0.77,
+        "influenceRadiusM": 395,
+        "influenceRadiusKm": 0.395,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.306,
+          30.5575
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-03-06",
+      "properties": {
+        "poiId": "poi-wuhan-03-06",
+        "name": "武昌滨江住宿样点",
+        "categoryKey": "hotel",
+        "category": "住宿",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "武昌滨江",
+        "importance": 0.65,
+        "influenceRadiusM": 399,
+        "influenceRadiusKm": 0.399,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.312,
+          30.5575
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-03-07",
+      "properties": {
+        "poiId": "poi-wuhan-03-07",
+        "name": "武昌滨江金融样点",
+        "categoryKey": "finance",
+        "category": "金融",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "武昌滨江",
+        "importance": 0.61,
+        "influenceRadiusM": 319,
+        "influenceRadiusKm": 0.319,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.3,
+          30.5625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-04-01",
+      "properties": {
+        "poiId": "poi-wuhan-04-01",
+        "name": "光谷零售样点",
+        "categoryKey": "retail",
+        "category": "零售",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "光谷",
+        "importance": 0.95,
+        "influenceRadiusM": 407,
+        "influenceRadiusKm": 0.407,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.41,
+          30.5075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-04-02",
+      "properties": {
+        "poiId": "poi-wuhan-04-02",
+        "name": "光谷餐饮样点",
+        "categoryKey": "food",
+        "category": "餐饮",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "光谷",
+        "importance": 0.93,
+        "influenceRadiusM": 437,
+        "influenceRadiusKm": 0.437,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.416,
+          30.5075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-04-03",
+      "properties": {
+        "poiId": "poi-wuhan-04-03",
+        "name": "光谷办公样点",
+        "categoryKey": "office",
+        "category": "办公",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "光谷",
+        "importance": 0.83,
+        "influenceRadiusM": 446,
+        "influenceRadiusKm": 0.446,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.422,
+          30.5075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-04-04",
+      "properties": {
+        "poiId": "poi-wuhan-04-04",
+        "name": "光谷生活服务样点",
+        "categoryKey": "life",
+        "category": "生活服务",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "光谷",
+        "importance": 0.74,
+        "influenceRadiusM": 352,
+        "influenceRadiusKm": 0.352,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.41,
+          30.5125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-04-05",
+      "properties": {
+        "poiId": "poi-wuhan-04-05",
+        "name": "光谷文旅样点",
+        "categoryKey": "culture",
+        "category": "文旅",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "光谷",
+        "importance": 0.79,
+        "influenceRadiusM": 400,
+        "influenceRadiusKm": 0.4,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.416,
+          30.5125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-04-06",
+      "properties": {
+        "poiId": "poi-wuhan-04-06",
+        "name": "光谷住宿样点",
+        "categoryKey": "hotel",
+        "category": "住宿",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "光谷",
+        "importance": 0.67,
+        "influenceRadiusM": 404,
+        "influenceRadiusKm": 0.404,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.422,
+          30.5125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-04-07",
+      "properties": {
+        "poiId": "poi-wuhan-04-07",
+        "name": "光谷金融样点",
+        "categoryKey": "finance",
+        "category": "金融",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "光谷",
+        "importance": 0.63,
+        "influenceRadiusM": 324,
+        "influenceRadiusKm": 0.324,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.41,
+          30.5175
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-05-01",
+      "properties": {
+        "poiId": "poi-wuhan-05-01",
+        "name": "武汉东站零售样点",
+        "categoryKey": "retail",
+        "category": "零售",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "武汉东站",
+        "importance": 0.9,
+        "influenceRadiusM": 394,
+        "influenceRadiusKm": 0.394,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.417,
+          30.521
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-05-02",
+      "properties": {
+        "poiId": "poi-wuhan-05-02",
+        "name": "武汉东站餐饮样点",
+        "categoryKey": "food",
+        "category": "餐饮",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "武汉东站",
+        "importance": 0.88,
+        "influenceRadiusM": 424,
+        "influenceRadiusKm": 0.424,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.423,
+          30.521
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-05-03",
+      "properties": {
+        "poiId": "poi-wuhan-05-03",
+        "name": "武汉东站办公样点",
+        "categoryKey": "office",
+        "category": "办公",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "武汉东站",
+        "importance": 0.78,
+        "influenceRadiusM": 433,
+        "influenceRadiusKm": 0.433,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.429,
+          30.521
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-05-04",
+      "properties": {
+        "poiId": "poi-wuhan-05-04",
+        "name": "武汉东站生活服务样点",
+        "categoryKey": "life",
+        "category": "生活服务",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "武汉东站",
+        "importance": 0.7,
+        "influenceRadiusM": 342,
+        "influenceRadiusKm": 0.342,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.417,
+          30.526
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-05-05",
+      "properties": {
+        "poiId": "poi-wuhan-05-05",
+        "name": "武汉东站文旅样点",
+        "categoryKey": "culture",
+        "category": "文旅",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "武汉东站",
+        "importance": 0.74,
+        "influenceRadiusM": 387,
+        "influenceRadiusKm": 0.387,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.423,
+          30.526
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-05-06",
+      "properties": {
+        "poiId": "poi-wuhan-05-06",
+        "name": "武汉东站住宿样点",
+        "categoryKey": "hotel",
+        "category": "住宿",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "武汉东站",
+        "importance": 0.62,
+        "influenceRadiusM": 391,
+        "influenceRadiusKm": 0.391,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.429,
+          30.526
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-05-07",
+      "properties": {
+        "poiId": "poi-wuhan-05-07",
+        "name": "武汉东站金融样点",
+        "categoryKey": "finance",
+        "category": "金融",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "武汉东站",
+        "importance": 0.58,
+        "influenceRadiusM": 311,
+        "influenceRadiusKm": 0.311,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.417,
+          30.531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-06-01",
+      "properties": {
+        "poiId": "poi-wuhan-06-01",
+        "name": "徐东零售样点",
+        "categoryKey": "retail",
+        "category": "零售",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "徐东",
+        "importance": 0.92,
+        "influenceRadiusM": 399,
+        "influenceRadiusKm": 0.399,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.352,
+          30.6005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-06-02",
+      "properties": {
+        "poiId": "poi-wuhan-06-02",
+        "name": "徐东餐饮样点",
+        "categoryKey": "food",
+        "category": "餐饮",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "徐东",
+        "importance": 0.9,
+        "influenceRadiusM": 429,
+        "influenceRadiusKm": 0.429,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.358,
+          30.6005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-06-03",
+      "properties": {
+        "poiId": "poi-wuhan-06-03",
+        "name": "徐东办公样点",
+        "categoryKey": "office",
+        "category": "办公",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "徐东",
+        "importance": 0.8,
+        "influenceRadiusM": 438,
+        "influenceRadiusKm": 0.438,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.364,
+          30.6005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-06-04",
+      "properties": {
+        "poiId": "poi-wuhan-06-04",
+        "name": "徐东生活服务样点",
+        "categoryKey": "life",
+        "category": "生活服务",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "徐东",
+        "importance": 0.71,
+        "influenceRadiusM": 345,
+        "influenceRadiusKm": 0.345,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.352,
+          30.6055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-06-05",
+      "properties": {
+        "poiId": "poi-wuhan-06-05",
+        "name": "徐东文旅样点",
+        "categoryKey": "culture",
+        "category": "文旅",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "徐东",
+        "importance": 0.76,
+        "influenceRadiusM": 393,
+        "influenceRadiusKm": 0.393,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.358,
+          30.6055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-06-06",
+      "properties": {
+        "poiId": "poi-wuhan-06-06",
+        "name": "徐东住宿样点",
+        "categoryKey": "hotel",
+        "category": "住宿",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "徐东",
+        "importance": 0.64,
+        "influenceRadiusM": 396,
+        "influenceRadiusKm": 0.396,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.364,
+          30.6055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-06-07",
+      "properties": {
+        "poiId": "poi-wuhan-06-07",
+        "name": "徐东金融样点",
+        "categoryKey": "finance",
+        "category": "金融",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "徐东",
+        "importance": 0.59,
+        "influenceRadiusM": 313,
+        "influenceRadiusKm": 0.313,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.352,
+          30.6105
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-07-01",
+      "properties": {
+        "poiId": "poi-wuhan-07-01",
+        "name": "王家湾零售样点",
+        "categoryKey": "retail",
+        "category": "零售",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "王家湾",
+        "importance": 0.93,
+        "influenceRadiusM": 402,
+        "influenceRadiusKm": 0.402,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.207,
+          30.5515
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-07-02",
+      "properties": {
+        "poiId": "poi-wuhan-07-02",
+        "name": "王家湾餐饮样点",
+        "categoryKey": "food",
+        "category": "餐饮",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "王家湾",
+        "importance": 0.91,
+        "influenceRadiusM": 432,
+        "influenceRadiusKm": 0.432,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.213,
+          30.5515
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-07-03",
+      "properties": {
+        "poiId": "poi-wuhan-07-03",
+        "name": "王家湾办公样点",
+        "categoryKey": "office",
+        "category": "办公",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "王家湾",
+        "importance": 0.81,
+        "influenceRadiusM": 441,
+        "influenceRadiusKm": 0.441,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.219,
+          30.5515
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-07-04",
+      "properties": {
+        "poiId": "poi-wuhan-07-04",
+        "name": "王家湾生活服务样点",
+        "categoryKey": "life",
+        "category": "生活服务",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "王家湾",
+        "importance": 0.73,
+        "influenceRadiusM": 350,
+        "influenceRadiusKm": 0.35,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.207,
+          30.5565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-07-05",
+      "properties": {
+        "poiId": "poi-wuhan-07-05",
+        "name": "王家湾文旅样点",
+        "categoryKey": "culture",
+        "category": "文旅",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "王家湾",
+        "importance": 0.77,
+        "influenceRadiusM": 395,
+        "influenceRadiusKm": 0.395,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.213,
+          30.5565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-07-06",
+      "properties": {
+        "poiId": "poi-wuhan-07-06",
+        "name": "王家湾住宿样点",
+        "categoryKey": "hotel",
+        "category": "住宿",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "王家湾",
+        "importance": 0.65,
+        "influenceRadiusM": 399,
+        "influenceRadiusKm": 0.399,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.219,
+          30.5565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-07-07",
+      "properties": {
+        "poiId": "poi-wuhan-07-07",
+        "name": "王家湾金融样点",
+        "categoryKey": "finance",
+        "category": "金融",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "王家湾",
+        "importance": 0.61,
+        "influenceRadiusM": 319,
+        "influenceRadiusKm": 0.319,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.207,
+          30.5615
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-08-01",
+      "properties": {
+        "poiId": "poi-wuhan-08-01",
+        "name": "南湖零售样点",
+        "categoryKey": "retail",
+        "category": "零售",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "南湖",
+        "importance": 0.95,
+        "influenceRadiusM": 407,
+        "influenceRadiusKm": 0.407,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.331,
+          30.5
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-08-02",
+      "properties": {
+        "poiId": "poi-wuhan-08-02",
+        "name": "南湖餐饮样点",
+        "categoryKey": "food",
+        "category": "餐饮",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "南湖",
+        "importance": 0.93,
+        "influenceRadiusM": 437,
+        "influenceRadiusKm": 0.437,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.337,
+          30.5
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-08-03",
+      "properties": {
+        "poiId": "poi-wuhan-08-03",
+        "name": "南湖办公样点",
+        "categoryKey": "office",
+        "category": "办公",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "南湖",
+        "importance": 0.83,
+        "influenceRadiusM": 446,
+        "influenceRadiusKm": 0.446,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.343,
+          30.5
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-08-04",
+      "properties": {
+        "poiId": "poi-wuhan-08-04",
+        "name": "南湖生活服务样点",
+        "categoryKey": "life",
+        "category": "生活服务",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "南湖",
+        "importance": 0.74,
+        "influenceRadiusM": 352,
+        "influenceRadiusKm": 0.352,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.331,
+          30.505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-08-05",
+      "properties": {
+        "poiId": "poi-wuhan-08-05",
+        "name": "南湖文旅样点",
+        "categoryKey": "culture",
+        "category": "文旅",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "南湖",
+        "importance": 0.79,
+        "influenceRadiusM": 400,
+        "influenceRadiusKm": 0.4,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.337,
+          30.505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-08-06",
+      "properties": {
+        "poiId": "poi-wuhan-08-06",
+        "name": "南湖住宿样点",
+        "categoryKey": "hotel",
+        "category": "住宿",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "南湖",
+        "importance": 0.67,
+        "influenceRadiusM": 404,
+        "influenceRadiusKm": 0.404,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.343,
+          30.505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-08-07",
+      "properties": {
+        "poiId": "poi-wuhan-08-07",
+        "name": "南湖金融样点",
+        "categoryKey": "finance",
+        "category": "金融",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "南湖",
+        "importance": 0.63,
+        "influenceRadiusM": 324,
+        "influenceRadiusKm": 0.324,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.331,
+          30.51
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-09-01",
+      "properties": {
+        "poiId": "poi-wuhan-09-01",
+        "name": "青山滨江零售样点",
+        "categoryKey": "retail",
+        "category": "零售",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "青山滨江",
+        "importance": 0.9,
+        "influenceRadiusM": 394,
+        "influenceRadiusKm": 0.394,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.428,
+          30.6325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-09-02",
+      "properties": {
+        "poiId": "poi-wuhan-09-02",
+        "name": "青山滨江餐饮样点",
+        "categoryKey": "food",
+        "category": "餐饮",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "青山滨江",
+        "importance": 0.88,
+        "influenceRadiusM": 424,
+        "influenceRadiusKm": 0.424,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.434,
+          30.6325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-09-03",
+      "properties": {
+        "poiId": "poi-wuhan-09-03",
+        "name": "青山滨江办公样点",
+        "categoryKey": "office",
+        "category": "办公",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "青山滨江",
+        "importance": 0.78,
+        "influenceRadiusM": 433,
+        "influenceRadiusKm": 0.433,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.44,
+          30.6325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-09-04",
+      "properties": {
+        "poiId": "poi-wuhan-09-04",
+        "name": "青山滨江生活服务样点",
+        "categoryKey": "life",
+        "category": "生活服务",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "青山滨江",
+        "importance": 0.7,
+        "influenceRadiusM": 342,
+        "influenceRadiusKm": 0.342,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.428,
+          30.6375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-09-05",
+      "properties": {
+        "poiId": "poi-wuhan-09-05",
+        "name": "青山滨江文旅样点",
+        "categoryKey": "culture",
+        "category": "文旅",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "青山滨江",
+        "importance": 0.74,
+        "influenceRadiusM": 387,
+        "influenceRadiusKm": 0.387,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.434,
+          30.6375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-09-06",
+      "properties": {
+        "poiId": "poi-wuhan-09-06",
+        "name": "青山滨江住宿样点",
+        "categoryKey": "hotel",
+        "category": "住宿",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "青山滨江",
+        "importance": 0.62,
+        "influenceRadiusM": 391,
+        "influenceRadiusKm": 0.391,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.44,
+          30.6375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-09-07",
+      "properties": {
+        "poiId": "poi-wuhan-09-07",
+        "name": "青山滨江金融样点",
+        "categoryKey": "finance",
+        "category": "金融",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "青山滨江",
+        "importance": 0.58,
+        "influenceRadiusM": 311,
+        "influenceRadiusKm": 0.311,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.428,
+          30.6425
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-10-01",
+      "properties": {
+        "poiId": "poi-wuhan-10-01",
+        "name": "天河机场零售样点",
+        "categoryKey": "retail",
+        "category": "零售",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "天河机场",
+        "importance": 0.92,
+        "influenceRadiusM": 399,
+        "influenceRadiusKm": 0.399,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.206,
+          30.7775
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-10-02",
+      "properties": {
+        "poiId": "poi-wuhan-10-02",
+        "name": "天河机场餐饮样点",
+        "categoryKey": "food",
+        "category": "餐饮",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "天河机场",
+        "importance": 0.9,
+        "influenceRadiusM": 429,
+        "influenceRadiusKm": 0.429,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.212,
+          30.7775
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-10-03",
+      "properties": {
+        "poiId": "poi-wuhan-10-03",
+        "name": "天河机场办公样点",
+        "categoryKey": "office",
+        "category": "办公",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "天河机场",
+        "importance": 0.8,
+        "influenceRadiusM": 438,
+        "influenceRadiusKm": 0.438,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.218,
+          30.7775
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-10-04",
+      "properties": {
+        "poiId": "poi-wuhan-10-04",
+        "name": "天河机场生活服务样点",
+        "categoryKey": "life",
+        "category": "生活服务",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "天河机场",
+        "importance": 0.71,
+        "influenceRadiusM": 345,
+        "influenceRadiusKm": 0.345,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.206,
+          30.7825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-10-05",
+      "properties": {
+        "poiId": "poi-wuhan-10-05",
+        "name": "天河机场文旅样点",
+        "categoryKey": "culture",
+        "category": "文旅",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "天河机场",
+        "importance": 0.76,
+        "influenceRadiusM": 393,
+        "influenceRadiusKm": 0.393,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.212,
+          30.7825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-10-06",
+      "properties": {
+        "poiId": "poi-wuhan-10-06",
+        "name": "天河机场住宿样点",
+        "categoryKey": "hotel",
+        "category": "住宿",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "天河机场",
+        "importance": 0.64,
+        "influenceRadiusM": 396,
+        "influenceRadiusKm": 0.396,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.218,
+          30.7825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-wuhan-10-07",
+      "properties": {
+        "poiId": "poi-wuhan-10-07",
+        "name": "天河机场金融样点",
+        "categoryKey": "finance",
+        "category": "金融",
+        "cityId": "420100",
+        "cityName": "武汉市",
+        "districtName": "天河机场",
+        "importance": 0.59,
+        "influenceRadiusM": 313,
+        "influenceRadiusKm": 0.313,
+        "influenceBasis": "武汉核心区 POI 密度与商圈半径模拟"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.206,
+          30.7875
+        ]
+      }
+    }
+  ]
+}

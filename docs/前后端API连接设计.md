@@ -97,6 +97,10 @@ const result = await gisDataService.runVitalityModel({
 | GET | `/api/v1/hubei/sensing/zhiyan-observations?ds=v2026Q1&date=2026-04-08` | 武汉智眼型感知观测点 |
 | GET | `/api/v1/hubei/uav/routes?ds=v2026Q1` | 武汉无人机航线 GeoJSON |
 | GET | `/api/v1/hubei/uav/coverages?ds=v2026Q1` | 武汉无人机覆盖面 GeoJSON |
+| GET | `/api/v1/wuhan/uav/fleet-dispatch-plans?ds=v2026Q1` | 武汉多机协同调度方案 |
+| GET | `/api/v1/wuhan/uav/fleet-registry?ds=v2026Q1` | 武汉无人机机队注册 |
+| GET | `/api/v1/wuhan/uav/fleet-telemetry?ds=v2026Q1` | 武汉多机统一时钟遥测 |
+| GET | `/api/v1/wuhan/uav/fleet-conflicts?ds=v2026Q1` | 武汉多机冲突消解记录 |
 | GET | `/api/v1/hubei/models/vitality/latest` | 最新活力模型结果 |
 | GET | `/api/v1/hubei/models/districts/latest` | 最新商圈识别结果 |
 | POST | `/api/v1/hubei/models/vitality/run` | 触发活力模型 |
@@ -116,6 +120,10 @@ const result = await gisDataService.runVitalityModel({
 | `getZhiyanObservations()` | `GET /api/v1/hubei/sensing/zhiyan-observations?ds=v2026Q1&date=2026-04-08` | 武汉智眼型观测点 |
 | `getUavRoutes()` | `GET /api/v1/hubei/uav/routes?ds=v2026Q1` | 武汉无人机航线，服务层转换为前端 Leaflet 结构 |
 | `getUavCoverages()` | `GET /api/v1/hubei/uav/coverages?ds=v2026Q1` | 武汉无人机覆盖面 |
+| `getFleetDispatchPlans()` | `GET /api/v1/wuhan/uav/fleet-dispatch-plans?ds=v2026Q1` | 编队方案（`/fleet-dispatch`） |
+| `getFleetRegistry()` | `GET /api/v1/wuhan/uav/fleet-registry?ds=v2026Q1` | 机队注册表 |
+| `getFleetTelemetry()` | `GET /api/v1/wuhan/uav/fleet-telemetry?ds=v2026Q1` | 多机遥测与同步帧 |
+| `getFleetConflicts()` | `GET /api/v1/wuhan/uav/fleet-conflicts?ds=v2026Q1` | 冲突消解记录 |
 | `getLatestVitalityModel()` | `GET /api/v1/hubei/models/vitality/latest` | 最新活力模型结果 |
 | `getLatestDistrictModel()` | `GET /api/v1/hubei/models/districts/latest` | 最新商圈模型结果 |
 | `runVitalityModel(payload)` | `POST /api/v1/hubei/models/vitality/run` | 触发活力模型 |

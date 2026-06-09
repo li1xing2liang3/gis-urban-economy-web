@@ -1,0 +1,464 @@
+{
+  "units": [
+    {
+      "id": "wuhan-jianghan",
+      "name": "江汉路-循礼门商圈",
+      "monthly": [
+        {
+          "month": "2025-11",
+          "vitalityIndex": 85,
+          "consumeIndex": 85
+        },
+        {
+          "month": "2025-12",
+          "vitalityIndex": 86,
+          "consumeIndex": 86
+        },
+        {
+          "month": "2026-01",
+          "vitalityIndex": 87,
+          "consumeIndex": 86
+        },
+        {
+          "month": "2026-02",
+          "vitalityIndex": 88,
+          "consumeIndex": 87
+        },
+        {
+          "month": "2026-03",
+          "vitalityIndex": 89,
+          "consumeIndex": 88
+        },
+        {
+          "month": "2026-04",
+          "vitalityIndex": 90,
+          "consumeIndex": 89
+        },
+        {
+          "month": "2026-05",
+          "vitalityIndex": 91,
+          "consumeIndex": 90
+        },
+        {
+          "month": "2026-06",
+          "vitalityIndex": 92,
+          "consumeIndex": 91
+        }
+      ]
+    },
+    {
+      "id": "wuhan-wuchang-riverside",
+      "name": "武昌滨江-黄鹤楼片区",
+      "monthly": [
+        {
+          "month": "2025-11",
+          "vitalityIndex": 82,
+          "consumeIndex": 81
+        },
+        {
+          "month": "2025-12",
+          "vitalityIndex": 84,
+          "consumeIndex": 82
+        },
+        {
+          "month": "2026-01",
+          "vitalityIndex": 85,
+          "consumeIndex": 83
+        },
+        {
+          "month": "2026-02",
+          "vitalityIndex": 86,
+          "consumeIndex": 84
+        },
+        {
+          "month": "2026-03",
+          "vitalityIndex": 87,
+          "consumeIndex": 84
+        },
+        {
+          "month": "2026-04",
+          "vitalityIndex": 88,
+          "consumeIndex": 85
+        },
+        {
+          "month": "2026-05",
+          "vitalityIndex": 89,
+          "consumeIndex": 86
+        },
+        {
+          "month": "2026-06",
+          "vitalityIndex": 90,
+          "consumeIndex": 87
+        }
+      ]
+    },
+    {
+      "id": "wuhan-hanyang",
+      "name": "汉阳钟家村-王家湾",
+      "monthly": [
+        {
+          "month": "2025-11",
+          "vitalityIndex": 76,
+          "consumeIndex": 75
+        },
+        {
+          "month": "2025-12",
+          "vitalityIndex": 77,
+          "consumeIndex": 76
+        },
+        {
+          "month": "2026-01",
+          "vitalityIndex": 78,
+          "consumeIndex": 77
+        },
+        {
+          "month": "2026-02",
+          "vitalityIndex": 79,
+          "consumeIndex": 78
+        },
+        {
+          "month": "2026-03",
+          "vitalityIndex": 79,
+          "consumeIndex": 79
+        },
+        {
+          "month": "2026-04",
+          "vitalityIndex": 80,
+          "consumeIndex": 79
+        },
+        {
+          "month": "2026-05",
+          "vitalityIndex": 81,
+          "consumeIndex": 80
+        },
+        {
+          "month": "2026-06",
+          "vitalityIndex": 82,
+          "consumeIndex": 81
+        }
+      ]
+    },
+    {
+      "id": "wuhan-optics-valley",
+      "name": "光谷广场-武汉东站",
+      "monthly": [
+        {
+          "month": "2025-11",
+          "vitalityIndex": 83,
+          "consumeIndex": 83
+        },
+        {
+          "month": "2025-12",
+          "vitalityIndex": 84,
+          "consumeIndex": 84
+        },
+        {
+          "month": "2026-01",
+          "vitalityIndex": 85,
+          "consumeIndex": 85
+        },
+        {
+          "month": "2026-02",
+          "vitalityIndex": 86,
+          "consumeIndex": 85
+        },
+        {
+          "month": "2026-03",
+          "vitalityIndex": 87,
+          "consumeIndex": 86
+        },
+        {
+          "month": "2026-04",
+          "vitalityIndex": 88,
+          "consumeIndex": 87
+        },
+        {
+          "month": "2026-05",
+          "vitalityIndex": 89,
+          "consumeIndex": 88
+        },
+        {
+          "month": "2026-06",
+          "vitalityIndex": 90,
+          "consumeIndex": 89
+        }
+      ]
+    },
+    {
+      "id": "wuhan-xudong",
+      "name": "徐东-岳家嘴商务圈",
+      "monthly": [
+        {
+          "month": "2025-11",
+          "vitalityIndex": 77,
+          "consumeIndex": 77
+        },
+        {
+          "month": "2025-12",
+          "vitalityIndex": 78,
+          "consumeIndex": 78
+        },
+        {
+          "month": "2026-01",
+          "vitalityIndex": 79,
+          "consumeIndex": 79
+        },
+        {
+          "month": "2026-02",
+          "vitalityIndex": 80,
+          "consumeIndex": 80
+        },
+        {
+          "month": "2026-03",
+          "vitalityIndex": 81,
+          "consumeIndex": 81
+        },
+        {
+          "month": "2026-04",
+          "vitalityIndex": 82,
+          "consumeIndex": 81
+        },
+        {
+          "month": "2026-05",
+          "vitalityIndex": 83,
+          "consumeIndex": 82
+        },
+        {
+          "month": "2026-06",
+          "vitalityIndex": 84,
+          "consumeIndex": 83
+        }
+      ]
+    },
+    {
+      "id": "wuhan-qingshan",
+      "name": "青山滨江-工业更新带",
+      "monthly": [
+        {
+          "month": "2025-11",
+          "vitalityIndex": 69,
+          "consumeIndex": 65
+        },
+        {
+          "month": "2025-12",
+          "vitalityIndex": 70,
+          "consumeIndex": 66
+        },
+        {
+          "month": "2026-01",
+          "vitalityIndex": 71,
+          "consumeIndex": 67
+        },
+        {
+          "month": "2026-02",
+          "vitalityIndex": 72,
+          "consumeIndex": 67
+        },
+        {
+          "month": "2026-03",
+          "vitalityIndex": 73,
+          "consumeIndex": 68
+        },
+        {
+          "month": "2026-04",
+          "vitalityIndex": 74,
+          "consumeIndex": 69
+        },
+        {
+          "month": "2026-05",
+          "vitalityIndex": 74,
+          "consumeIndex": 69
+        },
+        {
+          "month": "2026-06",
+          "vitalityIndex": 75,
+          "consumeIndex": 70
+        }
+      ]
+    },
+    {
+      "id": "wuhan-nanhu",
+      "name": "南湖-街道口生活圈",
+      "monthly": [
+        {
+          "month": "2025-11",
+          "vitalityIndex": 74,
+          "consumeIndex": 73
+        },
+        {
+          "month": "2025-12",
+          "vitalityIndex": 75,
+          "consumeIndex": 74
+        },
+        {
+          "month": "2026-01",
+          "vitalityIndex": 76,
+          "consumeIndex": 75
+        },
+        {
+          "month": "2026-02",
+          "vitalityIndex": 76,
+          "consumeIndex": 76
+        },
+        {
+          "month": "2026-03",
+          "vitalityIndex": 77,
+          "consumeIndex": 77
+        },
+        {
+          "month": "2026-04",
+          "vitalityIndex": 78,
+          "consumeIndex": 77
+        },
+        {
+          "month": "2026-05",
+          "vitalityIndex": 79,
+          "consumeIndex": 78
+        },
+        {
+          "month": "2026-06",
+          "vitalityIndex": 80,
+          "consumeIndex": 79
+        }
+      ]
+    },
+    {
+      "id": "wuhan-airport",
+      "name": "天河机场-临空枢纽",
+      "monthly": [
+        {
+          "month": "2025-11",
+          "vitalityIndex": 64,
+          "consumeIndex": 61
+        },
+        {
+          "month": "2025-12",
+          "vitalityIndex": 65,
+          "consumeIndex": 62
+        },
+        {
+          "month": "2026-01",
+          "vitalityIndex": 66,
+          "consumeIndex": 63
+        },
+        {
+          "month": "2026-02",
+          "vitalityIndex": 67,
+          "consumeIndex": 63
+        },
+        {
+          "month": "2026-03",
+          "vitalityIndex": 67,
+          "consumeIndex": 64
+        },
+        {
+          "month": "2026-04",
+          "vitalityIndex": 68,
+          "consumeIndex": 65
+        },
+        {
+          "month": "2026-05",
+          "vitalityIndex": 69,
+          "consumeIndex": 65
+        },
+        {
+          "month": "2026-06",
+          "vitalityIndex": 70,
+          "consumeIndex": 66
+        }
+      ]
+    },
+    {
+      "id": "wuhan-jinkou",
+      "name": "江夏金口-南部港产区",
+      "monthly": [
+        {
+          "month": "2025-11",
+          "vitalityIndex": 59,
+          "consumeIndex": 55
+        },
+        {
+          "month": "2025-12",
+          "vitalityIndex": 60,
+          "consumeIndex": 55
+        },
+        {
+          "month": "2026-01",
+          "vitalityIndex": 61,
+          "consumeIndex": 56
+        },
+        {
+          "month": "2026-02",
+          "vitalityIndex": 61,
+          "consumeIndex": 57
+        },
+        {
+          "month": "2026-03",
+          "vitalityIndex": 62,
+          "consumeIndex": 57
+        },
+        {
+          "month": "2026-04",
+          "vitalityIndex": 63,
+          "consumeIndex": 58
+        },
+        {
+          "month": "2026-05",
+          "vitalityIndex": 64,
+          "consumeIndex": 58
+        },
+        {
+          "month": "2026-06",
+          "vitalityIndex": 64,
+          "consumeIndex": 59
+        }
+      ]
+    },
+    {
+      "id": "wuhan-caidian",
+      "name": "蔡甸后官湖-车谷联动区",
+      "monthly": [
+        {
+          "month": "2025-11",
+          "vitalityIndex": 61,
+          "consumeIndex": 60
+        },
+        {
+          "month": "2025-12",
+          "vitalityIndex": 62,
+          "consumeIndex": 60
+        },
+        {
+          "month": "2026-01",
+          "vitalityIndex": 62,
+          "consumeIndex": 61
+        },
+        {
+          "month": "2026-02",
+          "vitalityIndex": 63,
+          "consumeIndex": 61
+        },
+        {
+          "month": "2026-03",
+          "vitalityIndex": 64,
+          "consumeIndex": 62
+        },
+        {
+          "month": "2026-04",
+          "vitalityIndex": 65,
+          "consumeIndex": 63
+        },
+        {
+          "month": "2026-05",
+          "vitalityIndex": 65,
+          "consumeIndex": 63
+        },
+        {
+          "month": "2026-06",
+          "vitalityIndex": 66,
+          "consumeIndex": 64
+        }
+      ]
+    }
+  ]
+}

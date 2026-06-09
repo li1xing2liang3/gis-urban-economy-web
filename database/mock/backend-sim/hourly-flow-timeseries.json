@@ -1,0 +1,240 @@
+{
+  "date": "2026-04-08",
+  "records": [
+    {
+      "unitId": "wuhan-jianghan",
+      "name": "江汉路-循礼门商圈",
+      "center": {
+        "lng": 114.292,
+        "lat": 30.596
+      },
+      "hourly": [
+        {
+          "hour": "08:00",
+          "peopleFlowIndex": 64,
+          "vehicleFlowIndex": 59,
+          "anomalyScore": 6
+        },
+        {
+          "hour": "10:00",
+          "peopleFlowIndex": 58,
+          "vehicleFlowIndex": 50,
+          "anomalyScore": 0
+        },
+        {
+          "hour": "14:00",
+          "peopleFlowIndex": 61,
+          "vehicleFlowIndex": 49,
+          "anomalyScore": 0
+        },
+        {
+          "hour": "17:00",
+          "peopleFlowIndex": 69,
+          "vehicleFlowIndex": 67,
+          "anomalyScore": 0
+        },
+        {
+          "hour": "19:00",
+          "peopleFlowIndex": 78,
+          "vehicleFlowIndex": 56,
+          "anomalyScore": 6
+        },
+        {
+          "hour": "21:00",
+          "peopleFlowIndex": 91,
+          "vehicleFlowIndex": 53,
+          "anomalyScore": 17
+        }
+      ]
+    },
+    {
+      "unitId": "wuhan-wuchang-riverside",
+      "name": "武昌滨江-黄鹤楼片区",
+      "center": {
+        "lng": 114.308,
+        "lat": 30.556
+      },
+      "hourly": [
+        {
+          "hour": "08:00",
+          "peopleFlowIndex": 52,
+          "vehicleFlowIndex": 48,
+          "anomalyScore": 0
+        },
+        {
+          "hour": "10:00",
+          "peopleFlowIndex": 55,
+          "vehicleFlowIndex": 47,
+          "anomalyScore": 0
+        },
+        {
+          "hour": "14:00",
+          "peopleFlowIndex": 64,
+          "vehicleFlowIndex": 51,
+          "anomalyScore": 0
+        },
+        {
+          "hour": "17:00",
+          "peopleFlowIndex": 72,
+          "vehicleFlowIndex": 70,
+          "anomalyScore": 2
+        },
+        {
+          "hour": "19:00",
+          "peopleFlowIndex": 80,
+          "vehicleFlowIndex": 58,
+          "anomalyScore": 8
+        },
+        {
+          "hour": "21:00",
+          "peopleFlowIndex": 86,
+          "vehicleFlowIndex": 50,
+          "anomalyScore": 12
+        }
+      ]
+    },
+    {
+      "unitId": "wuhan-optics-valley",
+      "name": "光谷广场-武汉东站",
+      "center": {
+        "lng": 114.421,
+        "lat": 30.523
+      },
+      "hourly": [
+        {
+          "hour": "08:00",
+          "peopleFlowIndex": 59,
+          "vehicleFlowIndex": 54,
+          "anomalyScore": 1
+        },
+        {
+          "hour": "10:00",
+          "peopleFlowIndex": 73,
+          "vehicleFlowIndex": 63,
+          "anomalyScore": 11
+        },
+        {
+          "hour": "14:00",
+          "peopleFlowIndex": 81,
+          "vehicleFlowIndex": 65,
+          "anomalyScore": 13
+        },
+        {
+          "hour": "17:00",
+          "peopleFlowIndex": 84,
+          "vehicleFlowIndex": 81,
+          "anomalyScore": 14
+        },
+        {
+          "hour": "19:00",
+          "peopleFlowIndex": 79,
+          "vehicleFlowIndex": 57,
+          "anomalyScore": 7
+        },
+        {
+          "hour": "21:00",
+          "peopleFlowIndex": 76,
+          "vehicleFlowIndex": 44,
+          "anomalyScore": 2
+        }
+      ]
+    },
+    {
+      "unitId": "wuhan-xudong",
+      "name": "徐东-岳家嘴商务圈",
+      "center": {
+        "lng": 114.356,
+        "lat": 30.604
+      },
+      "hourly": [
+        {
+          "hour": "08:00",
+          "peopleFlowIndex": 46,
+          "vehicleFlowIndex": 42,
+          "anomalyScore": 0
+        },
+        {
+          "hour": "10:00",
+          "peopleFlowIndex": 62,
+          "vehicleFlowIndex": 53,
+          "anomalyScore": 0
+        },
+        {
+          "hour": "14:00",
+          "peopleFlowIndex": 75,
+          "vehicleFlowIndex": 60,
+          "anomalyScore": 7
+        },
+        {
+          "hour": "17:00",
+          "peopleFlowIndex": 72,
+          "vehicleFlowIndex": 70,
+          "anomalyScore": 2
+        },
+        {
+          "hour": "19:00",
+          "peopleFlowIndex": 68,
+          "vehicleFlowIndex": 49,
+          "anomalyScore": 0
+        },
+        {
+          "hour": "21:00",
+          "peopleFlowIndex": 63,
+          "vehicleFlowIndex": 37,
+          "anomalyScore": 0
+        }
+      ]
+    },
+    {
+      "unitId": "wuhan-nanhu",
+      "name": "南湖-街道口生活圈",
+      "center": {
+        "lng": 114.335,
+        "lat": 30.505
+      },
+      "hourly": [
+        {
+          "hour": "08:00",
+          "peopleFlowIndex": 42,
+          "vehicleFlowIndex": 39,
+          "anomalyScore": 0
+        },
+        {
+          "hour": "10:00",
+          "peopleFlowIndex": 55,
+          "vehicleFlowIndex": 47,
+          "anomalyScore": 0
+        },
+        {
+          "hour": "14:00",
+          "peopleFlowIndex": 70,
+          "vehicleFlowIndex": 56,
+          "anomalyScore": 2
+        },
+        {
+          "hour": "17:00",
+          "peopleFlowIndex": 74,
+          "vehicleFlowIndex": 72,
+          "anomalyScore": 4
+        },
+        {
+          "hour": "19:00",
+          "peopleFlowIndex": 76,
+          "vehicleFlowIndex": 55,
+          "anomalyScore": 4
+        },
+        {
+          "hour": "21:00",
+          "peopleFlowIndex": 72,
+          "vehicleFlowIndex": 42,
+          "anomalyScore": 0
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "scope": "武汉市",
+    "version": "v2026Q1",
+    "source": "仿真：智眼小时级人车流"
+  }
+}

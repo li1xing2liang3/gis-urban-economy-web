@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "scope": "武汉市",
+    "version": "uav-fleet-sim-2026q1",
+    "generatedAt": "2026-06-06T14:05:55.210Z",
+    "source": "仿真：低空机队注册与就绪状态"
+  },
+  "drones": [
+    {
+      "droneId": "WH-UAV-M30T-006",
+      "model": "DJI M30T",
+      "vendor": "大疆行业",
+      "maxFlightMin": 41,
+      "maxSpeedMps": 12,
+      "defaultTakeoffSiteId": "takeoff-jianghan-roof",
+      "payloads": [
+        "可见光",
+        "热成像",
+        "激光测距"
+      ],
+      "readinessScore": 92,
+      "status": "available"
+    },
+    {
+      "droneId": "WH-UAV-P4RTK-011",
+      "model": "Phantom 4 RTK",
+      "vendor": "大疆航测",
+      "maxFlightMin": 30,
+      "maxSpeedMps": 10,
+      "defaultTakeoffSiteId": "takeoff-optics-hub",
+      "payloads": [
+        "RTK 正射",
+        "倾斜摄影"
+      ],
+      "readinessScore": 88,
+      "status": "available"
+    },
+    {
+      "droneId": "WH-UAV-M3E-018",
+      "model": "DJI M3E",
+      "vendor": "大疆行业",
+      "maxFlightMin": 45,
+      "maxSpeedMps": 11,
+      "defaultTakeoffSiteId": "takeoff-wuchang-riverfront",
+      "payloads": [
+        "可见光",
+        "快速巡检"
+      ],
+      "readinessScore": 90,
+      "status": "available"
+    },
+    {
+      "droneId": "WH-UAV-M3E-019",
+      "model": "DJI M3E",
+      "vendor": "大疆行业",
+      "maxFlightMin": 45,
+      "maxSpeedMps": 11,
+      "defaultTakeoffSiteId": "takeoff-jianghan-roof",
+      "payloads": [
+        "可见光",
+        "补位复核"
+      ],
+      "readinessScore": 86,
+      "status": "available"
+    }
+  ]
+}

@@ -1,0 +1,559 @@
+{
+  "flights": [
+    {
+      "routeId": "route-jianghan-night",
+      "routeName": "江汉路夜间商圈航拍巡检",
+      "droneId": "WH-UAV-M30T-006",
+      "samples": [
+        {
+          "ts": "2026-04-08T19:10:00+08:00",
+          "lng": 114.2824,
+          "lat": 30.5989,
+          "altitudeM": 120,
+          "speedMps": 8.8,
+          "batteryPct": 96,
+          "signalPct": 96,
+          "headingDeg": 40,
+          "riskScore": 30
+        },
+        {
+          "ts": "2026-04-08T19:12:00+08:00",
+          "lng": 114.283627,
+          "lat": 30.598,
+          "altitudeM": 123,
+          "speedMps": 8.7,
+          "batteryPct": 93,
+          "signalPct": 90,
+          "headingDeg": 54,
+          "riskScore": 39
+        },
+        {
+          "ts": "2026-04-08T19:13:00+08:00",
+          "lng": 114.284854,
+          "lat": 30.5971,
+          "altitudeM": 126,
+          "speedMps": 8.5,
+          "batteryPct": 90,
+          "signalPct": 86,
+          "headingDeg": 68,
+          "riskScore": 46
+        },
+        {
+          "ts": "2026-04-08T19:15:00+08:00",
+          "lng": 114.286081,
+          "lat": 30.596201,
+          "altitudeM": 128,
+          "speedMps": 8.2,
+          "batteryPct": 86,
+          "signalPct": 83,
+          "headingDeg": 82,
+          "riskScore": 51
+        },
+        {
+          "ts": "2026-04-08T19:17:00+08:00",
+          "lng": 114.287271,
+          "lat": 30.595267,
+          "altitudeM": 128,
+          "speedMps": 7.9,
+          "batteryPct": 83,
+          "signalPct": 82,
+          "headingDeg": 96,
+          "riskScore": 52
+        },
+        {
+          "ts": "2026-04-08T19:19:00+08:00",
+          "lng": 114.288386,
+          "lat": 30.594265,
+          "altitudeM": 127,
+          "speedMps": 7.6,
+          "batteryPct": 80,
+          "signalPct": 84,
+          "headingDeg": 110,
+          "riskScore": 49
+        },
+        {
+          "ts": "2026-04-08T19:20:00+08:00",
+          "lng": 114.289502,
+          "lat": 30.593264,
+          "altitudeM": 125,
+          "speedMps": 7.4,
+          "batteryPct": 77,
+          "signalPct": 88,
+          "headingDeg": 124,
+          "riskScore": 43
+        },
+        {
+          "ts": "2026-04-08T19:22:00+08:00",
+          "lng": 114.290617,
+          "lat": 30.592262,
+          "altitudeM": 122,
+          "speedMps": 7.2,
+          "batteryPct": 74,
+          "signalPct": 93,
+          "headingDeg": 138,
+          "riskScore": 35
+        },
+        {
+          "ts": "2026-04-08T19:24:00+08:00",
+          "lng": 114.291733,
+          "lat": 30.59126,
+          "altitudeM": 118,
+          "speedMps": 7.2,
+          "batteryPct": 70,
+          "signalPct": 93,
+          "headingDeg": 152,
+          "riskScore": 35
+        },
+        {
+          "ts": "2026-04-08T19:25:00+08:00",
+          "lng": 114.29244,
+          "lat": 30.590018,
+          "altitudeM": 115,
+          "speedMps": 7.4,
+          "batteryPct": 67,
+          "signalPct": 88,
+          "headingDeg": 166,
+          "riskScore": 43
+        },
+        {
+          "ts": "2026-04-08T19:27:00+08:00",
+          "lng": 114.293121,
+          "lat": 30.588761,
+          "altitudeM": 113,
+          "speedMps": 7.6,
+          "batteryPct": 64,
+          "signalPct": 84,
+          "headingDeg": 180,
+          "riskScore": 49
+        },
+        {
+          "ts": "2026-04-08T19:29:00+08:00",
+          "lng": 114.293802,
+          "lat": 30.587503,
+          "altitudeM": 112,
+          "speedMps": 7.9,
+          "batteryPct": 61,
+          "signalPct": 82,
+          "headingDeg": 194,
+          "riskScore": 52
+        },
+        {
+          "ts": "2026-04-08T19:30:00+08:00",
+          "lng": 114.29429,
+          "lat": 30.586259,
+          "altitudeM": 112,
+          "speedMps": 8.2,
+          "batteryPct": 58,
+          "signalPct": 83,
+          "headingDeg": 208,
+          "riskScore": 51
+        },
+        {
+          "ts": "2026-04-08T19:32:00+08:00",
+          "lng": 114.293393,
+          "lat": 30.585106,
+          "altitudeM": 114,
+          "speedMps": 8.5,
+          "batteryPct": 54,
+          "signalPct": 86,
+          "headingDeg": 222,
+          "riskScore": 46
+        },
+        {
+          "ts": "2026-04-08T19:34:00+08:00",
+          "lng": 114.292497,
+          "lat": 30.583953,
+          "altitudeM": 117,
+          "speedMps": 8.7,
+          "batteryPct": 51,
+          "signalPct": 90,
+          "headingDeg": 236,
+          "riskScore": 39
+        },
+        {
+          "ts": "2026-04-08T19:36:00+08:00",
+          "lng": 114.2916,
+          "lat": 30.5828,
+          "altitudeM": 120,
+          "speedMps": 8.8,
+          "batteryPct": 48,
+          "signalPct": 96,
+          "headingDeg": 250,
+          "riskScore": 30
+        }
+      ]
+    },
+    {
+      "routeId": "route-optics-valley",
+      "routeName": "光谷-武汉东站低空建模航线",
+      "droneId": "WH-UAV-P4RTK-011",
+      "samples": [
+        {
+          "ts": "2026-04-09T15:10:00+08:00",
+          "lng": 114.3974,
+          "lat": 30.5128,
+          "altitudeM": 150,
+          "speedMps": 7.8,
+          "batteryPct": 88,
+          "signalPct": 96,
+          "headingDeg": 40,
+          "riskScore": 42
+        },
+        {
+          "ts": "2026-04-09T15:12:00+08:00",
+          "lng": 114.400282,
+          "lat": 30.511212,
+          "altitudeM": 153,
+          "speedMps": 7.7,
+          "batteryPct": 85,
+          "signalPct": 90,
+          "headingDeg": 54,
+          "riskScore": 51
+        },
+        {
+          "ts": "2026-04-09T15:13:00+08:00",
+          "lng": 114.403165,
+          "lat": 30.509624,
+          "altitudeM": 156,
+          "speedMps": 7.5,
+          "batteryPct": 82,
+          "signalPct": 86,
+          "headingDeg": 68,
+          "riskScore": 58
+        },
+        {
+          "ts": "2026-04-09T15:15:00+08:00",
+          "lng": 114.406047,
+          "lat": 30.508035,
+          "altitudeM": 158,
+          "speedMps": 7.2,
+          "batteryPct": 78,
+          "signalPct": 83,
+          "headingDeg": 82,
+          "riskScore": 63
+        },
+        {
+          "ts": "2026-04-09T15:17:00+08:00",
+          "lng": 114.408923,
+          "lat": 30.506439,
+          "altitudeM": 158,
+          "speedMps": 6.9,
+          "batteryPct": 75,
+          "signalPct": 82,
+          "headingDeg": 96,
+          "riskScore": 64
+        },
+        {
+          "ts": "2026-04-09T15:19:00+08:00",
+          "lng": 114.411795,
+          "lat": 30.504837,
+          "altitudeM": 157,
+          "speedMps": 6.6,
+          "batteryPct": 72,
+          "signalPct": 84,
+          "headingDeg": 110,
+          "riskScore": 61
+        },
+        {
+          "ts": "2026-04-09T15:20:00+08:00",
+          "lng": 114.414668,
+          "lat": 30.503235,
+          "altitudeM": 155,
+          "speedMps": 6.4,
+          "batteryPct": 69,
+          "signalPct": 88,
+          "headingDeg": 124,
+          "riskScore": 55
+        },
+        {
+          "ts": "2026-04-09T15:22:00+08:00",
+          "lng": 114.41754,
+          "lat": 30.501634,
+          "altitudeM": 152,
+          "speedMps": 6.2,
+          "batteryPct": 66,
+          "signalPct": 93,
+          "headingDeg": 138,
+          "riskScore": 47
+        },
+        {
+          "ts": "2026-04-09T15:24:00+08:00",
+          "lng": 114.42015,
+          "lat": 30.49973,
+          "altitudeM": 148,
+          "speedMps": 6.2,
+          "batteryPct": 62,
+          "signalPct": 93,
+          "headingDeg": 152,
+          "riskScore": 47
+        },
+        {
+          "ts": "2026-04-09T15:25:00+08:00",
+          "lng": 114.422756,
+          "lat": 30.497819,
+          "altitudeM": 145,
+          "speedMps": 6.4,
+          "batteryPct": 59,
+          "signalPct": 88,
+          "headingDeg": 166,
+          "riskScore": 55
+        },
+        {
+          "ts": "2026-04-09T15:27:00+08:00",
+          "lng": 114.425361,
+          "lat": 30.495909,
+          "altitudeM": 143,
+          "speedMps": 6.6,
+          "batteryPct": 56,
+          "signalPct": 84,
+          "headingDeg": 180,
+          "riskScore": 61
+        },
+        {
+          "ts": "2026-04-09T15:29:00+08:00",
+          "lng": 114.427966,
+          "lat": 30.493998,
+          "altitudeM": 142,
+          "speedMps": 6.9,
+          "batteryPct": 53,
+          "signalPct": 82,
+          "headingDeg": 194,
+          "riskScore": 64
+        },
+        {
+          "ts": "2026-04-09T15:30:00+08:00",
+          "lng": 114.430617,
+          "lat": 30.492137,
+          "altitudeM": 142,
+          "speedMps": 7.2,
+          "batteryPct": 50,
+          "signalPct": 83,
+          "headingDeg": 208,
+          "riskScore": 63
+        },
+        {
+          "ts": "2026-04-09T15:32:00+08:00",
+          "lng": 114.433345,
+          "lat": 30.490358,
+          "altitudeM": 144,
+          "speedMps": 7.5,
+          "batteryPct": 46,
+          "signalPct": 86,
+          "headingDeg": 222,
+          "riskScore": 58
+        },
+        {
+          "ts": "2026-04-09T15:34:00+08:00",
+          "lng": 114.436072,
+          "lat": 30.488579,
+          "altitudeM": 147,
+          "speedMps": 7.7,
+          "batteryPct": 43,
+          "signalPct": 90,
+          "headingDeg": 236,
+          "riskScore": 51
+        },
+        {
+          "ts": "2026-04-09T15:36:00+08:00",
+          "lng": 114.4388,
+          "lat": 30.4868,
+          "altitudeM": 150,
+          "speedMps": 7.8,
+          "batteryPct": 40,
+          "signalPct": 96,
+          "headingDeg": 250,
+          "riskScore": 42
+        }
+      ]
+    },
+    {
+      "routeId": "route-river-crossing",
+      "routeName": "两江四岸通勤航拍观测",
+      "droneId": "WH-UAV-M3E-018",
+      "samples": [
+        {
+          "ts": "2026-04-10T08:10:00+08:00",
+          "lng": 114.2788,
+          "lat": 30.5598,
+          "altitudeM": 100,
+          "speedMps": 9.8,
+          "batteryPct": 96,
+          "signalPct": 96,
+          "headingDeg": 40,
+          "riskScore": 30
+        },
+        {
+          "ts": "2026-04-10T08:12:00+08:00",
+          "lng": 114.280706,
+          "lat": 30.558275,
+          "altitudeM": 103,
+          "speedMps": 9.7,
+          "batteryPct": 93,
+          "signalPct": 90,
+          "headingDeg": 54,
+          "riskScore": 39
+        },
+        {
+          "ts": "2026-04-10T08:13:00+08:00",
+          "lng": 114.282613,
+          "lat": 30.55675,
+          "altitudeM": 106,
+          "speedMps": 9.5,
+          "batteryPct": 90,
+          "signalPct": 86,
+          "headingDeg": 68,
+          "riskScore": 46
+        },
+        {
+          "ts": "2026-04-10T08:15:00+08:00",
+          "lng": 114.284519,
+          "lat": 30.555225,
+          "altitudeM": 108,
+          "speedMps": 9.2,
+          "batteryPct": 86,
+          "signalPct": 83,
+          "headingDeg": 82,
+          "riskScore": 51
+        },
+        {
+          "ts": "2026-04-10T08:17:00+08:00",
+          "lng": 114.286451,
+          "lat": 30.553725,
+          "altitudeM": 108,
+          "speedMps": 8.9,
+          "batteryPct": 83,
+          "signalPct": 82,
+          "headingDeg": 96,
+          "riskScore": 52
+        },
+        {
+          "ts": "2026-04-10T08:19:00+08:00",
+          "lng": 114.288436,
+          "lat": 30.552276,
+          "altitudeM": 107,
+          "speedMps": 8.6,
+          "batteryPct": 80,
+          "signalPct": 84,
+          "headingDeg": 110,
+          "riskScore": 49
+        },
+        {
+          "ts": "2026-04-10T08:20:00+08:00",
+          "lng": 114.290421,
+          "lat": 30.550828,
+          "altitudeM": 105,
+          "speedMps": 8.4,
+          "batteryPct": 77,
+          "signalPct": 88,
+          "headingDeg": 124,
+          "riskScore": 43
+        },
+        {
+          "ts": "2026-04-10T08:22:00+08:00",
+          "lng": 114.292406,
+          "lat": 30.549379,
+          "altitudeM": 102,
+          "speedMps": 8.2,
+          "batteryPct": 74,
+          "signalPct": 93,
+          "headingDeg": 138,
+          "riskScore": 35
+        },
+        {
+          "ts": "2026-04-10T08:24:00+08:00",
+          "lng": 114.294729,
+          "lat": 30.549071,
+          "altitudeM": 98,
+          "speedMps": 8.2,
+          "batteryPct": 70,
+          "signalPct": 93,
+          "headingDeg": 152,
+          "riskScore": 35
+        },
+        {
+          "ts": "2026-04-10T08:25:00+08:00",
+          "lng": 114.297278,
+          "lat": 30.549522,
+          "altitudeM": 95,
+          "speedMps": 8.4,
+          "batteryPct": 67,
+          "signalPct": 88,
+          "headingDeg": 166,
+          "riskScore": 43
+        },
+        {
+          "ts": "2026-04-10T08:27:00+08:00",
+          "lng": 114.299826,
+          "lat": 30.549973,
+          "altitudeM": 93,
+          "speedMps": 8.6,
+          "batteryPct": 64,
+          "signalPct": 84,
+          "headingDeg": 180,
+          "riskScore": 49
+        },
+        {
+          "ts": "2026-04-10T08:29:00+08:00",
+          "lng": 114.302374,
+          "lat": 30.550425,
+          "altitudeM": 92,
+          "speedMps": 8.9,
+          "batteryPct": 61,
+          "signalPct": 82,
+          "headingDeg": 194,
+          "riskScore": 52
+        },
+        {
+          "ts": "2026-04-10T08:30:00+08:00",
+          "lng": 114.304756,
+          "lat": 30.551304,
+          "altitudeM": 92,
+          "speedMps": 9.2,
+          "batteryPct": 58,
+          "signalPct": 83,
+          "headingDeg": 208,
+          "riskScore": 51
+        },
+        {
+          "ts": "2026-04-10T08:32:00+08:00",
+          "lng": 114.307104,
+          "lat": 30.552269,
+          "altitudeM": 94,
+          "speedMps": 9.5,
+          "batteryPct": 54,
+          "signalPct": 86,
+          "headingDeg": 222,
+          "riskScore": 46
+        },
+        {
+          "ts": "2026-04-10T08:34:00+08:00",
+          "lng": 114.309452,
+          "lat": 30.553235,
+          "altitudeM": 97,
+          "speedMps": 9.7,
+          "batteryPct": 51,
+          "signalPct": 90,
+          "headingDeg": 236,
+          "riskScore": 39
+        },
+        {
+          "ts": "2026-04-10T08:36:00+08:00",
+          "lng": 114.3118,
+          "lat": 30.5542,
+          "altitudeM": 100,
+          "speedMps": 9.8,
+          "batteryPct": 48,
+          "signalPct": 96,
+          "headingDeg": 250,
+          "riskScore": 30
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "scope": "武汉市",
+    "version": "uav-sim-2026q1",
+    "intervalSeconds": 102,
+    "source": "仿真：无人机飞行遥测"
+  }
+}

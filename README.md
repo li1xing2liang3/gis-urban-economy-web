@@ -2,6 +2,8 @@
 
 城市经济空间 **WebGIS** 演示前端（Vue 3 + Vite + Leaflet + Cesium），与《GIS 工程初步文档》及前端设计说明对齐。整合共创版能力：统一数据服务层、本地 mock API、低空航线仿真与三维 UAV 演示。
 
+**产品形态：** 同一仓库内包含 **应用群** —— **主 GIS 平台**（首页 + 七大专题模块）与 **多无人机协同调度应用**（独立子应用 `/fleet-dispatch`），共用 Mock 数据服务与部分全局状态（任务队列、活力模型联动）。
+
 **在线仓库：** [https://github.com/li1xing2liang3/gis-urban-economy-web](https://github.com/li1xing2liang3/gis-urban-economy-web)
 
 ---
@@ -13,7 +15,8 @@
 ├── web/                    # 前端工程（npm 命令在此或经 --prefix 调用）
 │   ├── src/
 │   │   ├── services/       # gisDataService：API + 静态 mock 兜底
-│   │   ├── views/          # 页面（含 HomeView 首页、Overview 总览等）
+│   │   ├── views/          # 页面（HomeView、Overview、fleet 协同调度等）
+│   │   ├── layouts/        # MainLayout（主平台）· FleetDispatchLayout（编队应用）
 │   │   └── ...
 │   ├── public/
 │   │   ├── geo/hubei/      # 浏览器可访问的省界副本（hubei.*，由脚本从 data 同步）
@@ -52,9 +55,9 @@
    npm run dev
    ```
 
-4. 浏览器打开 **http://localhost:5173/**
-
-### 可选：本地 mock API（前后端联调演示）
+4. 浏览器打开 **http://localhost:5173/**  
+   - 主平台：首页 `/` 或空间总览 `/overview`  
+   - 编队应用：`/fleet-dispatch`（或首页 / 低空页入口）
 
 另开终端：
 
@@ -82,7 +85,8 @@ cd ../database && npm run seed && npm run verify
 | 文档 | 说明 |
 |------|------|
 | [docs/GIS平台启动与数据需求说明.md](./docs/GIS平台启动与数据需求说明.md) | 零基础启动、数据清单 |
-| [docs/交互功能说明.md](./docs/交互功能说明.md) | 各页按钮、滑条、地图交互 |
+| [docs/详细功能说明文档.md](./docs/详细功能说明文档.md) | **主文档 v2.1**：应用群说明、功能、接口与演示 |
+| [docs/交互功能说明.md](./docs/交互功能说明.md) | 各页按钮、滑条、地图交互（含编队应用） |
 | [docs/PRD-城市经济空间平台.md](./docs/PRD-城市经济空间平台.md) | 产品目标、全局三态、URL 键 |
 | [docs/数据与智眼说明.md](./docs/数据与智眼说明.md) | 智眼数据定位与最低数据清单 |
 | [docs/前后端API连接设计.md](./docs/前后端API连接设计.md) | mock-api 与 Vite 代理 |

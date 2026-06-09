@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "sync:geo": "node ../scripts/sync-hubei-to-web-public.mjs",
     "generate:mock-hubei": "node scripts/generate-hubei-mock-datasets.mjs",
+    "generate:sim-wuhan": "node scripts/generate-wuhan-simulation-extension.mjs",
     "prepare:wuhan-dem": "node scripts/prepare-wuhan-dem.mjs",
     "prepare:wuhan-buildings": "py -3.10 ../scripts/prepare-wuhan-building-web-tiles.py"
   },

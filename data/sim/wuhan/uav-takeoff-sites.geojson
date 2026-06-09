@@ -1,0 +1,135 @@
+{
+  "type": "FeatureCollection",
+  "name": "wuhan-uav-takeoff-sites",
+  "meta": {
+    "scope": "武汉市",
+    "version": "uav-sim-2026q1"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "takeoff-jianghan-roof",
+      "properties": {
+        "name": "江汉路屋顶微型起降点",
+        "district": "江汉区",
+        "siteType": "rooftop",
+        "dailyCapacity": 12,
+        "readinessScore": 86,
+        "scenes": [
+          "巡检",
+          "夜间经济复核"
+        ],
+        "charging": true,
+        "status": "可用",
+        "source": "仿真：低空起降服务网络"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.2892,
+          30.5965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "takeoff-wuchang-riverfront",
+      "properties": {
+        "name": "武昌江滩应急起降点",
+        "district": "武昌区",
+        "siteType": "riverside_pad",
+        "dailyCapacity": 18,
+        "readinessScore": 82,
+        "scenes": [
+          "江滩巡航",
+          "应急保障"
+        ],
+        "charging": true,
+        "status": "可用",
+        "source": "仿真：低空起降服务网络"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.3095,
+          30.5568
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "takeoff-optics-hub",
+      "properties": {
+        "name": "光谷站城低空服务点",
+        "district": "东湖高新区",
+        "siteType": "service_hub",
+        "dailyCapacity": 20,
+        "readinessScore": 88,
+        "scenes": [
+          "三维建模",
+          "物流试飞"
+        ],
+        "charging": true,
+        "status": "可用",
+        "source": "仿真：低空起降服务网络"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.4218,
+          30.5227
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "takeoff-qingshan-industrial",
+      "properties": {
+        "name": "青山工业巡检起降点",
+        "district": "青山区",
+        "siteType": "industrial_pad",
+        "dailyCapacity": 16,
+        "readinessScore": 79,
+        "scenes": [
+          "设施巡检",
+          "安全巡查"
+        ],
+        "charging": false,
+        "status": "待复核",
+        "source": "仿真：低空起降服务网络"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.4315,
+          30.6368
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "takeoff-hanyang-park",
+      "properties": {
+        "name": "汉阳滨江临时起降点",
+        "district": "汉阳区",
+        "siteType": "temporary_pad",
+        "dailyCapacity": 8,
+        "readinessScore": 73,
+        "scenes": [
+          "文旅巡检",
+          "跨江联动"
+        ],
+        "charging": false,
+        "status": "待复核",
+        "source": "仿真：低空起降服务网络"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.252,
+          30.551
+        ]
+      }
+    }
+  ]
+}

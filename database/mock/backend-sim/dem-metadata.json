@@ -1,0 +1,79 @@
+{
+  "id": "wuhan-dem",
+  "name": "武汉 DEM 地形数据",
+  "scope": "武汉市",
+  "sourceDir": "data/WuHanDEM",
+  "crs": "WGS84 for WuhanDEM84 and HillShadeWH; projected meters for WuHanDEM",
+  "assets": {
+    "hillshadePng": "/data/dem/wuhan/hillshade-wh.png",
+    "demPreviewPng": "/data/dem/wuhan/dem-preview.png"
+  },
+  "rasters": [
+    {
+      "id": "hillshade-wh",
+      "file": "HillShadeWH.tif",
+      "webAsset": "/data/dem/wuhan/hillshade-wh.png",
+      "width": 1668,
+      "height": 1675,
+      "bounds": {
+        "west": 113.6933338176,
+        "south": 29.9675000316,
+        "east": 115.083333762,
+        "north": 31.3633333091
+      },
+      "worldFile": {
+        "pixel_x": 0.0008333333,
+        "rotation_y": 0.0,
+        "rotation_x": 0.0,
+        "pixel_y": -0.0008333333,
+        "origin_x": 113.6933338176,
+        "origin_y": 31.3633333091
+      },
+      "usage": "二维地图与低空页面地形阴影叠加"
+    },
+    {
+      "id": "wuhan-dem-84",
+      "file": "WuhanDEM84.tif",
+      "webAsset": "/data/dem/wuhan/dem-preview.png",
+      "width": 2293,
+      "height": 2420,
+      "bounds": {
+        "west": 113.3800004843,
+        "south": 29.6175000564,
+        "east": 115.2908337412,
+        "north": 31.6341666424
+      },
+      "worldFile": {
+        "pixel_x": 0.0008333333,
+        "rotation_y": 0.0,
+        "rotation_x": 0.0,
+        "pixel_y": -0.0008333333,
+        "origin_x": 113.3800004843,
+        "origin_y": 31.6341666424
+      },
+      "usage": "航线地形采样、高程概览与净空校核"
+    },
+    {
+      "id": "wuhan-dem-projected",
+      "file": "WuHanDEM.tif",
+      "width": 1529,
+      "height": 1783,
+      "worldFile": {
+        "pixel_x": 86.492577873,
+        "rotation_y": 0.0,
+        "rotation_x": 0.0,
+        "pixel_y": -86.492577873,
+        "origin_x": 470830.8586601779,
+        "origin_y": 3471222.25044694
+      },
+      "usage": "原始投影 DEM，保留给后端/GIS 工具进一步处理"
+    }
+  ],
+  "summary": {
+    "sampledRouteCount": 3,
+    "sampleElevationMinM": 16.0,
+    "sampleElevationMaxM": 56.0,
+    "sampleElevationAvgM": 30.0
+  },
+  "note": "由 data/WuHanDEM 原始 GeoTIFF 转换。前端展示 PNG 和采样结果，不直接读取 GeoTIFF。"
+}

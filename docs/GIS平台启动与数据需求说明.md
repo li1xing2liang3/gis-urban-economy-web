@@ -238,6 +238,18 @@ npm run sync:geo
 | 三维模型 | 与页面 2 一致的 **3D 数据** 或链接。 |
 | 参与模型标志 | 业务字段：**是否参与活力/商圈模型**。 |
 
+#### 应用 B：多无人机协同调度（`/fleet-dispatch`）
+
+| 数据 | 用途 |
+|------|------|
+| `uav-fleet-dispatch-plan.json` | 编队方案、schedule、协同规则、metrics |
+| `uav-fleet-telemetry.json` | 统一时钟 tracks / frames，驱动 Gantt 与回放 |
+| `uav-fleet-registry.json` | 机型、续航、就绪度，合并至编组展示 |
+| `uav-fleet-conflicts.json` | 冲突类型、间隔、消解说明 |
+| 关联单机航线 | `uav-routes` 中的 `routeId`，与低空页数据族一致 |
+
+生成命令：`cd web && npm run generate:sim-wuhan`。入口：首页、低空页、或直接访问 `/fleet-dispatch`。
+
 ### 3. 「武汉智眼」类感知数据（跨页面）
 
 | 数据内容 | 支撑功能 |
@@ -250,8 +262,10 @@ npm run sync:geo
 
 | 数据 | 支撑功能 |
 |------|----------|
-| 无人机影像、点云/mesh | 低空页、三维页、精细尺度活力辅助。 |
-| 观测元数据 | 分辨率、航向、重叠度、处理报告，用于质检与展示。 |
+| 无人机影像、点云/mesh | 低空页、三维页、精细尺度活力辅助 |
+| 单机航线 `uav-routes` | `/lowaltitude` 影像仿真与模型联动 |
+| 编队 `uav-fleet-*` | `/fleet-dispatch` 多机协同调度演示 |
+| 观测元数据 | 分辨率、航向、重叠度、处理报告，用于质检与展示 |
 
 ### 5. 数据交付建议格式（便于与前后端对齐）
 
